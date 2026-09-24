@@ -1,0 +1,33 @@
+import random
+
+from jev_datasets.base import JevDataset
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+
+IDS = ["A", "B", "C", "D"]
+
+
+def make_sciq_sample(x):
+    # the source always lists the correct answer first; shuffle so position doesn't give it
+    # away, seeded per question to stay stable. Ids are positional because a few distractors
+    # repeat the correct answer's text.
+    order = [0, 1, 2, 3]
+    random.Random(x["question"]).shuffle(order)
+    answers = [x["correct_answer"], x["distractor1"], x["distractor2"], x["distractor3"]]
+    return make_sample(
+        x["support"],
+        x["question"],
+        make_options(IDS, [answers[i] for i in order]),
+        IDS[order.index(0)],
+    )
+
+
+class SciQDataset(JevDataset):
+    def prepare(self):
+        self.data = self.data.map(
+            make_sciq_sample,
+            remove_columns=self.source_columns,
+            features=SAMPLE_FEATURES,
+        )
+
+
+sciq_dataset = SciQDataset(name="sciq", hf_path="allenai/sciq")
