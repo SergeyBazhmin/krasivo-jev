@@ -1,7 +1,13 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "Which emotion does this comment express?"
+QUESTIONS = [
+    "Which emotion does this comment express?",
+    "How does the author of this comment feel?",
+    "What emotion is conveyed in this Reddit comment?",
+    "Which emotion best describes this comment?",
+    "What is the emotional tone of this comment?",
+]
 
 
 class GoEmotionsDataset(JevDataset):
@@ -12,7 +18,7 @@ class GoEmotionsDataset(JevDataset):
         self.data = self.data.map(
             lambda x: make_sample(
                 x["text"],
-                QUESTION,
+                pick_question(QUESTIONS, x["text"]),
                 options,
                 # spread the mass evenly over every emotion the raters picked
                 [x["labels"].count(i) / len(x["labels"]) for i in range(len(names))],

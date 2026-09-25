@@ -1,7 +1,13 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "What is the relation between the premise and the hypothesis?"
+QUESTIONS = [
+    "What is the relation between the premise and the hypothesis?",
+    "Does the premise entail, contradict, or say nothing about the hypothesis?",
+    "Given the premise, is the hypothesis true, false, or undetermined?",
+    "How does the hypothesis relate to the premise?",
+    "Is the hypothesis entailed by the premise, contradicted by it, or neutral?",
+]
 
 
 class ANLIDataset(JevDataset):
@@ -11,7 +17,10 @@ class ANLIDataset(JevDataset):
         # splits are adversarial rounds: train_r1, dev_r1, test_r1, ..., test_r3
         self.data = self.data.map(
             lambda x: make_sample(
-                x["premise"], f"Hypothesis: {x['hypothesis']}\n{QUESTION}", options, names[x["label"]]
+                x["premise"],
+                f"Hypothesis: {x['hypothesis']}\n{pick_question(QUESTIONS, x['premise'] + x['hypothesis'])}",
+                options,
+                names[x["label"]],
             ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,

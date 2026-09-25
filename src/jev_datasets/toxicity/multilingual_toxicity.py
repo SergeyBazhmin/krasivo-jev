@@ -1,7 +1,13 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "Is this text toxic?"
+QUESTIONS = [
+    "Is this text toxic?",
+    "Does this text contain toxic language?",
+    "Is this message offensive or abusive?",
+    "Should this text be flagged as toxic?",
+    "Is the language in this text toxic?",
+]
 OPTIONS = make_options(["yes", "no"])
 
 
@@ -9,7 +15,12 @@ class MultilingualToxicityDataset(JevDataset):
     def prepare(self):
         # splits are languages ("en", "ru", "uk", ...), not train/test
         self.data = self.data.map(
-            lambda x: make_sample(x["text"], QUESTION, OPTIONS, "yes" if x["toxic"] else "no"),
+            lambda x: make_sample(
+                x["text"],
+                pick_question(QUESTIONS, x["text"]),
+                OPTIONS,
+                "yes" if x["toxic"] else "no",
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

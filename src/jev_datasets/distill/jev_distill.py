@@ -6,6 +6,10 @@ class JevDistillDataset(JevDataset):
     """Distillation corpus that already ships the contract: soft `target` over plain-string options."""
 
     def prepare(self):
+        # Only `openjev_v2` (games, geometry, workflow traces) is answerable from the state alone:
+        # `yuri_v3` asks for expert judgement (process hazard, pathogenicity, ...) and `yuri_v1`
+        # memory relevance is all uniform [0.5, 0.5]. Uniform targets carry no answer either way.
+        self.data = self.data.filter(lambda x: x["source"] == "openjev_v2" and len(set(x["target"])) > 1)
         self.data = self.data.map(
             lambda x: make_sample(
                 x["state"],

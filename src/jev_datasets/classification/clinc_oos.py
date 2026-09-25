@@ -1,7 +1,13 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "Which intent does this user request express?"
+QUESTIONS = [
+    "Which intent does this user request express?",
+    "What does the user want to do?",
+    "What is the intent behind this request?",
+    "Which intent best matches this user query?",
+    "Classify the intent of this message, or mark it out of scope.",
+]
 
 
 class ClincOOSDataset(JevDataset):
@@ -11,7 +17,7 @@ class ClincOOSDataset(JevDataset):
         texts = ["out of scope" if id == "oos" else id.replace("_", " ") for id in ids]
         options = make_options(ids, texts)
         self.data = self.data.map(
-            lambda x: make_sample(x["text"], QUESTION, options, ids[x["intent"]]),
+            lambda x: make_sample(x["text"], pick_question(QUESTIONS, x["text"]), options, ids[x["intent"]]),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

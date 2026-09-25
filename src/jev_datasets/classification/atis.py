@@ -1,7 +1,13 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "What is this airline customer asking about?"
+QUESTIONS = [
+    "What is this airline customer asking about?",
+    "What information is this traveler looking for?",
+    "What is the intent of this flight booking query?",
+    "Which kind of travel information does this request ask for?",
+    "What does this passenger want to know?",
+]
 
 # Atomic intents seen in train; rows may join several with "+" (e.g. "flight+airfare").
 # "day_name" only occurs in test and is dropped.
@@ -37,7 +43,12 @@ class ATISDataset(JevDataset):
     def prepare(self):
         self.data = self.data.filter(lambda x: all(part in INTENTS for part in x["intent"].split("+")))
         self.data = self.data.map(
-            lambda x: make_sample(x["text"], QUESTION, OPTIONS, intent_distribution(x["intent"])),
+            lambda x: make_sample(
+                x["text"],
+                pick_question(QUESTIONS, x["text"]),
+                OPTIONS,
+                intent_distribution(x["intent"]),
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

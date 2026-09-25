@@ -1,9 +1,15 @@
 from datasets import load_dataset
 
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
-QUESTION = "Which intent does this request to a virtual assistant express?"
+QUESTIONS = [
+    "Which intent does this request to a virtual assistant express?",
+    "What does the user want the assistant to do?",
+    "What is the intent of this voice assistant command?",
+    "Which assistant intent matches this utterance?",
+    "How should the assistant interpret this request?",
+]
 
 
 class HWU64Dataset(JevDataset):
@@ -13,7 +19,7 @@ class HWU64Dataset(JevDataset):
         ids = [name for _, name in sorted(zip(intents["id"], intents["name"]))]
         options = make_options(ids, [id.replace("_", " ") for id in ids])
         self.data = self.data.map(
-            lambda x: make_sample(x["utterance"], QUESTION, options, ids[x["label"]]),
+            lambda x: make_sample(x["utterance"], pick_question(QUESTIONS, x["utterance"]), options, ids[x["label"]]),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

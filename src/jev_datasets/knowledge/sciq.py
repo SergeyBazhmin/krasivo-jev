@@ -23,6 +23,8 @@ def make_sciq_sample(x):
 
 class SciQDataset(JevDataset):
     def prepare(self):
+        # without its support passage a question needs outside science knowledge
+        self.data = self.data.filter(lambda x: x["support"].strip())
         self.data = self.data.map(
             make_sciq_sample,
             remove_columns=self.source_columns,

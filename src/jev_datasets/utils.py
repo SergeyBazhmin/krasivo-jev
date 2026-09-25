@@ -29,6 +29,12 @@ def stable_shuffle(items: list, seed: str) -> list:
     return items
 
 
+def pick_question(versions: list[str], seed: str) -> str:
+    """One phrasing of the question per sample, the same on every run; salted so it doesn't
+    move in step with a `stable_shuffle` of the same seed and leak the answer's position."""
+    return random.Random(f"question:{seed}").choice(versions)
+
+
 def make_option(id: str, text: str) -> dict[str, str]:
     return {"id": id, "text": text}
 

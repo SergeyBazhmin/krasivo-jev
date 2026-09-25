@@ -1,18 +1,26 @@
 from jev_datasets.base import JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question
 
-QUESTION = "Does it contain hallucinated information?"
+QUESTIONS = [
+    "Does it contain hallucinated information?",
+    "Does it include made-up or unsupported claims?",
+    "Is any of it hallucinated?",
+    "Does it state anything that isn't backed by the facts?",
+    "Is it unfaithful to the given information?",
+]
 OPTIONS = make_options(["yes", "no"])
 
 
 def paired_samples(state: str, kind: str, right: str, hallucinated: str) -> list[dict]:
     """Each source row pairs a faithful and a hallucinated text; judge each on its own."""
     return [
-        make_sample(state, f"{kind}: {right}\n{QUESTION}", OPTIONS, "no"),
-        make_sample(state, f"{kind}: {hallucinated}\n{QUESTION}", OPTIONS, "yes"),
+        make_sample(state, f"{kind}: {right}\n{pick_question(QUESTIONS, right)}", OPTIONS, "no"),
+        make_sample(state, f"{kind}: {hallucinated}\n{pick_question(QUESTIONS, hallucinated)}", OPTIONS, "yes"),
     ]
 
 
+# "general" is left out: its ChatGPT responses come with no reference knowledge, so
+# spotting a hallucination takes world knowledge
 SAMPLES = {
     "qa": lambda x: paired_samples(
         f"{x['knowledge']}\n\nQuestion: {x['question']}", "Answer", x["right_answer"], x["hallucinated_answer"]
@@ -23,10 +31,6 @@ SAMPLES = {
     "summarization": lambda x: paired_samples(
         x["document"], "Summary", x["right_summary"], x["hallucinated_summary"]
     ),
-    # ChatGPT responses annotated as a whole
-    "general": lambda x: [
-        make_sample(x["user_query"], f"Response: {x['chatgpt_response']}\n{QUESTION}", OPTIONS, x["hallucination"])
-    ],
 }
 
 
@@ -46,4 +50,3 @@ class HaluEvalDataset(JevDataset):
 halueval_qa_dataset = HaluEvalDataset("qa")
 halueval_dialogue_dataset = HaluEvalDataset("dialogue")
 halueval_summarization_dataset = HaluEvalDataset("summarization")
-halueval_general_dataset = HaluEvalDataset("general")
