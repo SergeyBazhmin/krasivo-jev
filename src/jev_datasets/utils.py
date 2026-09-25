@@ -2,7 +2,8 @@ import random
 import re
 from collections.abc import Callable
 
-from datasets import Features, Value
+import numpy as np
+from datasets import Dataset, Features, Value
 
 # Pinned explicitly: without it `map` inherits a source column's type for same-named
 # output columns (e.g. a ClassLabel `label` rejects what we write into it).
@@ -72,3 +73,20 @@ def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:
         return {column: [sample[column] for sample in samples] for column in SAMPLE_FEATURES}
 
     return batched
+
+
+def stratified_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:
+    """At most `max_samples` rows, drawn so each answer (argmax of `label`) keeps its share."""
+    if dataset.num_rows <= max_samples:
+        return dataset
+    strata = np.array([int(np.argmax(label)) for label in dataset["label"]])
+    _, inverse, counts = np.unique(strata, return_inverse=True, return_counts=True)
+    # largest-remainder rounding, so the quotas add up to exactly `max_samples`
+    quotas = counts * max_samples / dataset.num_rows
+    take = np.floor(quotas).astype(int)
+    take[np.argsort(take - quotas, kind="stable")[: max_samples - take.sum()]] += 1
+    rng = np.random.default_rng(seed)
+    indices = np.concatenate(
+        [rng.choice(np.flatnonzero(inverse == k), size=n, replace=False) for k, n in enumerate(take)]
+    )
+    return dataset.select(np.sort(indices))

@@ -1,34 +1,45 @@
+from jev_datasets.bugs.bugzilla_product import bugzilla_product_dataset
+from jev_datasets.bugs.eclipse_bugs import eclipse_bug_resolution_dataset, eclipse_bug_severity_dataset
+from jev_datasets.bugs.github_issue_type import github_issue_type_dataset
+from jev_datasets.bugs.vscode_triage import vscode_triage_dataset
+from jev_datasets.business.bizbench import bizbench_finknow_dataset
+from jev_datasets.business.financial_news_topic import financial_news_topic_dataset
+from jev_datasets.business.mmlu_pro import mmlu_pro_business_dataset, mmlu_pro_economics_dataset
 from jev_datasets.classification.ag_news import ag_news_dataset
+from jev_datasets.classification.atis import atis_dataset
 from jev_datasets.classification.banking77 import banking77_dataset
-from jev_datasets.classification.ru_massive_intent import ru_massive_intent_dataset
-from jev_datasets.classification.rus_med_dialogues import rus_med_dialogues_dataset
-from jev_datasets.classification.ticket_routing import ticket_routing_dataset
+from jev_datasets.classification.bitext import (
+    bitext_customer_support_dataset,
+    bitext_insurance_dataset,
+    bitext_retail_banking_dataset,
+    bitext_telco_dataset,
+)
+from jev_datasets.classification.clinc_oos import clinc_oos_dataset
+from jev_datasets.classification.hwu64 import hwu64_dataset
+from jev_datasets.classification.massive_intent import massive_intent_dataset
+from jev_datasets.classification.ticket_routing import ticket_priority_dataset, ticket_routing_dataset, ticket_type_dataset
 from jev_datasets.commonsense.commonsense_qa import commonsense_qa_dataset
 from jev_datasets.commonsense.hellaswag import hellaswag_dataset
-from jev_datasets.commonsense.ru_parus import ru_parus_dataset
-from jev_datasets.commonsense.ru_rwsd import ru_rwsd_dataset
 from jev_datasets.commonsense.winogrande import winogrande_dataset
 from jev_datasets.distill.jev_distill import jev_distill_dataset
+from jev_datasets.guardrails.aegis_safety import aegis_safety_dataset
+from jev_datasets.guardrails.deepset_prompt_injections import deepset_prompt_injections_dataset
+from jev_datasets.guardrails.jailbreak_classification import jailbreak_classification_dataset
+from jev_datasets.guardrails.safeguard_prompt_injection import safeguard_prompt_injection_dataset
+from jev_datasets.guardrails.spml_prompt_injection import spml_prompt_injection_dataset
 from jev_datasets.judge.helpsteer2 import helpsteer2_dataset
 from jev_datasets.judge.hh_rlhf import hh_rlhf_dataset
 from jev_datasets.judge.pku_saferlhf import pku_saferlhf_dataset
 from jev_datasets.judge.ultrafeedback import ultrafeedback_dataset
 from jev_datasets.knowledge.arc import arc_challenge_dataset, arc_easy_dataset
-from jev_datasets.knowledge.mera import ru_mmlu_dataset, ru_openbookqa_dataset, ru_worldtree_dataset
 from jev_datasets.knowledge.mmlu import mmlu_dataset
 from jev_datasets.knowledge.openbookqa import openbookqa_dataset
 from jev_datasets.knowledge.sciq import sciq_dataset
-from jev_datasets.math.aqua_rat import aqua_rat_dataset
-from jev_datasets.math.mmlu_pro_math import mmlu_pro_math_dataset
-from jev_datasets.math.ru_mathlogicqa import ru_mathlogicqa_dataset
 from jev_datasets.nlu.anli import anli_dataset
 from jev_datasets.nlu.boolq import boolq_dataset
 from jev_datasets.nlu.chaos_nli import chaos_nli_dataset
 from jev_datasets.nlu.multi_nli import multi_nli_dataset
 from jev_datasets.nlu.race import race_dataset
-from jev_datasets.nlu.ru_danetqa import ru_danetqa_dataset
-from jev_datasets.nlu.ru_rcb import ru_rcb_dataset
-from jev_datasets.nlu.ru_terra import ru_terra_dataset
 from jev_datasets.reasoning.bbh import bbh_dataset
 from jev_datasets.reasoning.logiqa import logiqa_dataset
 from jev_datasets.reasoning.reclor import reclor_dataset
@@ -48,19 +59,32 @@ from jev_datasets.truthfulness.truthful_qa import truthful_qa_mc1_dataset, truth
 datasets = {
     dataset.name: dataset
     for dataset in (
+        aegis_safety_dataset,
         ag_news_dataset,
         anli_dataset,
-        aqua_rat_dataset,
         arc_challenge_dataset,
         arc_easy_dataset,
+        atis_dataset,
         banking77_dataset,
         bbh_dataset,
         beavertails_dataset,
+        bitext_customer_support_dataset,
+        bitext_insurance_dataset,
+        bitext_retail_banking_dataset,
+        bitext_telco_dataset,
+        bizbench_finknow_dataset,
         boolq_dataset,
+        bugzilla_product_dataset,
         chaos_nli_dataset,
         civil_comments_dataset,
+        clinc_oos_dataset,
         commonsense_qa_dataset,
+        deepset_prompt_injections_dataset,
+        eclipse_bug_resolution_dataset,
+        eclipse_bug_severity_dataset,
         emotion_dataset,
+        financial_news_topic_dataset,
+        github_issue_type_dataset,
         go_emotions_dataset,
         halueval_dialogue_dataset,
         halueval_general_dataset,
@@ -69,31 +93,28 @@ datasets = {
         hellaswag_dataset,
         helpsteer2_dataset,
         hh_rlhf_dataset,
+        hwu64_dataset,
         imdb_dataset,
+        jailbreak_classification_dataset,
         jev_distill_dataset,
         logiqa_dataset,
+        massive_intent_dataset,
         mmlu_dataset,
-        mmlu_pro_math_dataset,
+        mmlu_pro_business_dataset,
+        mmlu_pro_economics_dataset,
         multi_nli_dataset,
         multilingual_toxicity_dataset,
         openbookqa_dataset,
         pku_saferlhf_dataset,
         race_dataset,
         reclor_dataset,
-        ru_danetqa_dataset,
-        ru_massive_intent_dataset,
-        ru_mathlogicqa_dataset,
-        ru_mmlu_dataset,
-        ru_openbookqa_dataset,
-        ru_parus_dataset,
-        ru_rcb_dataset,
-        ru_rwsd_dataset,
-        ru_terra_dataset,
-        ru_worldtree_dataset,
-        rus_med_dialogues_dataset,
+        safeguard_prompt_injection_dataset,
         sciq_dataset,
+        spml_prompt_injection_dataset,
         sst2_dataset,
+        ticket_priority_dataset,
         ticket_routing_dataset,
+        ticket_type_dataset,
         toxic_chat_dataset,
         truthful_qa_mc1_dataset,
         truthful_qa_mc2_dataset,
@@ -101,6 +122,7 @@ datasets = {
         tweet_offensive_dataset,
         tweet_sentiment_dataset,
         ultrafeedback_dataset,
+        vscode_triage_dataset,
         winogrande_dataset,
     )
 }

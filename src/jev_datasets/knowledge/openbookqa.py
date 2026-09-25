@@ -20,4 +20,3 @@ class OpenBookQADataset(JevDataset):
 openbookqa_dataset = OpenBookQADataset(
     name="openbookqa", hf_path="allenai/openbookqa", hf_name="additional"
 )
-# Mykes/rus_med_dialogues
