@@ -1,6 +1,6 @@
 from string import ascii_uppercase
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 # SpartQA-Auto: synthetic block scenes; its labels are known to be somewhat noisy
@@ -8,6 +8,8 @@ YN_OPTIONS = make_options(["Yes", "No", "DK"], ["yes", "no", "cannot be determin
 
 
 class SpartQAMultipleChoiceDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # candidates are the two objects the question names, then "both of them" and "none of them"
         self.data = self.data.map(
@@ -26,6 +28,8 @@ class SpartQAMultipleChoiceDataset(JevDataset):
 
 
 class SpartQAYesNoDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(x["story"], x["question"], YN_OPTIONS, x["answer"]),

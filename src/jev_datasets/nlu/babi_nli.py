@@ -1,6 +1,6 @@
 from datasets import DatasetDict, concatenate_datasets, get_dataset_config_names, load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -17,6 +17,8 @@ SKIPPED_TASKS = {"agents-motivations"}
 
 
 class BabiNLIDataset(JevDataset):
+    type = DatasetType.NOUL
+
     def load(self) -> DatasetDict:
         # one config per bAbI task, pooled
         tasks = [

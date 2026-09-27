@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -35,6 +35,8 @@ SAMPLES = {
 
 
 class HaluEvalDataset(JevDataset):
+    type = DatasetType.NOUL
+
     def __init__(self, task: str):
         super().__init__(name=f"halueval_{task}", hf_path="pminervini/HaluEval", hf_name=task)
 

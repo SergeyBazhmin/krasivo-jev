@@ -1,4 +1,6 @@
-from jev_datasets.base import JevDataset
+import random
+
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -11,6 +13,8 @@ QUESTIONS = [
 
 
 class GoEmotionsDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # `labels` is a list of ClassLabel: a comment can carry several emotions
         names = next(iter(self.data.values())).features["labels"].feature.names
@@ -20,8 +24,8 @@ class GoEmotionsDataset(JevDataset):
                 x["text"],
                 pick_question(QUESTIONS, x["text"]),
                 options,
-                # spread the mass evenly over every emotion the raters picked
-                [x["labels"].count(i) / len(x["labels"]) for i in range(len(names))],
+                # one of the emotions the raters picked, chosen per comment so the target stays one-hot
+                names[random.Random(f"emotion:{x['text']}").choice(x["labels"])],
             ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,

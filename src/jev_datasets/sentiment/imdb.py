@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -13,6 +13,8 @@ IDS = {"neg": "negative", "pos": "positive"}
 
 
 class IMDBDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         ids = [IDS[name] for name in self.class_names()]
         options = make_options(ids)

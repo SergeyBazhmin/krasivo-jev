@@ -2,7 +2,7 @@ import re
 
 from datasets import DatasetDict, load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 # train is a chat-style instruction/output dump; the dev sets are structured
@@ -29,6 +29,8 @@ def make_dev_sample(x):
 
 
 class ProverQADataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def load(self) -> DatasetDict:
         # the files differ in schema, so each is loaded on its own
         files = {"train": "train/provergen-5000.json"} | {

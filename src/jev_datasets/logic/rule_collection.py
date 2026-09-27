@@ -3,7 +3,7 @@ from collections.abc import Callable
 
 from datasets import Dataset, DatasetDict, load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 # RuleCollection bundles several logic sets as RL prompts. Only the ones not taken from their
@@ -58,6 +58,8 @@ def unique_prompts(rows: Dataset, seen: set[str]) -> Dataset:
 
 
 class RuleCollectionDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def __init__(self, name: str, source: str, make: Callable[[str, str], dict]):
         super().__init__(name=name, hf_path="RuleReasoner/RuleCollection-32K")
         self.source = source

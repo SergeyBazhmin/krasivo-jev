@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -12,6 +12,8 @@ OPTIONS = make_options(["yes", "no"])
 
 
 class SPMLPromptInjectionDataset(JevDataset):
+    type = DatasetType.NOUL
+
     def prepare(self):
         # a single "train" split
         self.data = self.data.map(

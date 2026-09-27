@@ -1,6 +1,6 @@
 import random
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 IDS = ["A", "B", "C", "D"]
@@ -22,6 +22,8 @@ def make_sciq_sample(x):
 
 
 class SciQDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # without its support passage a question needs outside science knowledge
         self.data = self.data.filter(lambda x: x["support"].strip())

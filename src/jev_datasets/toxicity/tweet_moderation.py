@@ -1,8 +1,10 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 
 class TweetModerationDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def __init__(self, name: str, hf_name: str, questions: list[str]):
         super().__init__(name=name, hf_path="cardiffnlp/tweet_eval", hf_name=hf_name)
         self.questions = questions

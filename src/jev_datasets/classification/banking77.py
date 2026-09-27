@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -11,6 +11,8 @@ QUESTIONS = [
 
 
 class Banking77Dataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # intents are snake_case ids, e.g. "card_payment_fee_charged"
         ids = self.class_names()

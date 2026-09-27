@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question
 
 OPTIONS = make_options(["yes", "no"])
@@ -44,6 +44,8 @@ def safety_samples(x: dict) -> list[dict]:
 
 
 class AegisSafetyDataset(JevDataset):
+    type = DatasetType.NOUL
+
     def prepare(self):
         self.data = self.data.map(
             explode(safety_samples),

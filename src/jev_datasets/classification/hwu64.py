@@ -1,6 +1,6 @@
 from datasets import load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -13,6 +13,8 @@ QUESTIONS = [
 
 
 class HWU64Dataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # `label` is a bare int; its names ("alarm_query", ...) live in the separate `intents` config
         intents = load_dataset(self.hf_path, "intents", split="intents")

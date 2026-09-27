@@ -1,6 +1,6 @@
 from datasets import DatasetDict
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -14,6 +14,8 @@ OPTIONS = make_options(["yes", "no"])
 
 
 class BeaverTailsDataset(JevDataset):
+    type = DatasetType.NOUL
+
     def prepare(self):
         # `30k_*` is a subset of `330k_*`
         self.data = DatasetDict({"train": self.data["330k_train"], "test": self.data["330k_test"]})

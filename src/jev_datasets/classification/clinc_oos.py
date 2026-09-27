@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -11,6 +11,8 @@ QUESTIONS = [
 
 
 class ClincOOSDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # 150 in-scope intents over 10 domains (banking, credit cards, travel, ...) plus "oos"
         ids = self.class_names("intent")

@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
 
 QUESTIONS = [
@@ -11,6 +11,8 @@ QUESTIONS = [
 
 
 class AGNewsDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         names = self.class_names()
         ids = [slugify(name) for name in names]  # "Sci/Tech" -> "sci_tech"

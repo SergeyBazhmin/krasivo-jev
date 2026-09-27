@@ -1,10 +1,19 @@
+from enum import StrEnum
+
 from datasets import DatasetDict, load_dataset
 
 from jev_datasets.constants import MAX_SAMPLES, ROOT_DIR
 from jev_datasets.utils import stratified_limit
 
 
+class DatasetType(StrEnum):
+    NOUL = "noul"  # the only options are "yes" and "no"
+    CHOICE = "choice"  # any other option set
+
+
 class JevDataset:
+    type: DatasetType
+
     def __init__(self, name: str, hf_path: str, hf_name: str | None = None):
         self.name = name
         self.hf_path = hf_path

@@ -2,7 +2,7 @@ import re
 
 from datasets import Dataset, DatasetDict, load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 # Only tasks whose answer follows from the text alone; left out are those that lean on world
@@ -98,6 +98,8 @@ def parse_target(target: str) -> str:
 
 
 class BBHDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def load(self) -> DatasetDict:
         # one config per task, each a lone `test` split; splits here are tasks
         return DatasetDict(

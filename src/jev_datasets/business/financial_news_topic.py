@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
 
 QUESTIONS = [
@@ -37,6 +37,8 @@ OPTIONS = make_options(IDS, TOPICS)
 
 
 class FinancialNewsTopicDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(x["text"], pick_question(QUESTIONS, x["text"]), OPTIONS, IDS[x["label"]]),

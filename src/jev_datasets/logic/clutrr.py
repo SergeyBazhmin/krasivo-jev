@@ -1,8 +1,10 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 
 class CLUTRRDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # kinship terms ("aunt", "son-in-law", ...); `query` asks how `tail` relates to `head`
         names = self.class_names()

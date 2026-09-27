@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 # the relation of the first agent to the second on a grid
@@ -7,6 +7,8 @@ OPTIONS = make_options(RELATIONS, [relation.replace("-", " ") for relation in RE
 
 
 class StepGameDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(x["story"], x["question"], OPTIONS, x["label"]),

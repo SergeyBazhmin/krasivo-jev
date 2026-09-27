@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -11,6 +11,8 @@ QUESTIONS = [
 
 
 class MassiveIntentDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # `label` is the intent name itself, e.g. "alarm_set"
         ids = sorted({id for rows in self.data.values() for id in rows["label"]})

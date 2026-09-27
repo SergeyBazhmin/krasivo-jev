@@ -2,11 +2,13 @@ from string import ascii_uppercase
 
 from datasets import DatasetDict, load_dataset
 
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 
 class LogiQADataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def load(self) -> DatasetDict:
         # the main branch is a loading script, which `datasets` no longer runs; the Hub's parquet export
         return load_dataset(self.hf_path, revision="refs/convert/parquet")

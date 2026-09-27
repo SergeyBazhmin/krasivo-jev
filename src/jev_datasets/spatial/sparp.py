@@ -1,8 +1,10 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
 
 
 class SpaRPDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         # A third of the questions have several relations that all hold ("below" and "behind");
         # one distribution over the options can't say "all of these", so only single-answer

@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -12,6 +12,8 @@ OPTIONS = make_options(["True", "False", "Uncertain"])
 
 
 class FOLIODataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(

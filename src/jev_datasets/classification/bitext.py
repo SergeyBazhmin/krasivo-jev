@@ -1,8 +1,10 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 
 class BitextDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     """Bitext's synthetic support chatbots: `instruction` is the customer message, `intent` a snake_case id."""
 
     def __init__(self, name: str, hf_path: str, questions: list[str]):

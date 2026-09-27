@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
 
 HF_PATH = "Tobi-Bueck/customer-support-tickets"
@@ -23,6 +23,8 @@ TYPES = ["Incident", "Request", "Problem", "Change"]
 
 
 class TicketDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     """One label column of the helpdesk tickets, predicted from subject and body."""
 
     def __init__(self, name: str, column: str, values: list[str], questions: list[str]):

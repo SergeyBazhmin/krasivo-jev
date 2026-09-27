@@ -1,4 +1,4 @@
-from jev_datasets.base import JevDataset
+from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
 
 QUESTIONS = [
@@ -40,6 +40,8 @@ def intent_distribution(intent: str) -> list[float]:
 
 
 class ATISDataset(JevDataset):
+    type = DatasetType.CHOICE
+
     def prepare(self):
         self.data = self.data.filter(lambda x: all(part in INTENTS for part in x["intent"].split("+")))
         self.data = self.data.map(
