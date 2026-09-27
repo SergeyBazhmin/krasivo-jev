@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Built datasets
+data/
+
+# Backbone features and trained heads
+cache/
+runs/

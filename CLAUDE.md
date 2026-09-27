@@ -11,8 +11,8 @@ The answer must follow from the `state` and `question` alone. The model is not m
 store facts, so a sample that needs world, cultural or expert knowledge beyond the state
 is noise here. It does not belong in the corpus, even if the source dataset is popular.
 
-`src/jev_datasets/` turns Hugging Face datasets into this one format. There is no
-training code in the repo yet.
+`src/jev_datasets/` turns Hugging Face datasets into this one format. `src/jev_model/` trains
+and evaluates models on the built datasets.
 
 ## Sample contract
 
@@ -45,7 +45,7 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
   - `slugify`: builds an option id from text
   - `stratified_limit`: subsamples a split while keeping the label (argmax) distribution
 - `constants.py`: `MAX_SAMPLES = 10_000` per split. `ROOT_DIR` is the default output
-  directory. It resolves to `src/`, so built datasets land in `src/<name>/`.
+  directory. It resolves to `data/` at the repo root, so built datasets land in `data/<name>/`.
 - `cli.py`: the `jev` Typer CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
@@ -93,13 +93,56 @@ and `knowledge/sciq.py` show parsing and shuffling.
    `"card_arrival"`). Keep the raw value as the `id`.
 8. Register the dataset in `src/jev_datasets/__init__.py`.
 
+## Models (`src/jev_model/`)
+
+Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven by one CLI.
+
+- `base.py`: `JevModel[Config](name, description)`. A model sets `config_class` (a dataclass with
+  defaults for every field), `stages` (its ordered pipeline) and `default_stages`, and implements
+  `run_stage`, `evaluate` and `predictor`. `train()` runs stages in pipeline order and records
+  finished ones in `run.json`; the resolved config goes to `config.json`.
+- `config.py`: config = dataclass defaults, then a JSON/TOML file (`-c`), then `-s key=value`
+  overrides with dotted keys. Values parse as JSON, else string; `list` fields also take `a,b`.
+- `data.py`: `resolve_names` and `partition` (train/validation/test, carving missing splits by a
+  content hash). Every model splits through it, so test sets are the same rows.
+- `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
+- `prompt.py`: the numbered-option prompt for decoder backbones.
+- `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
+- `__init__.py`: the `models` registry, alphabetical.
+- `frozen_head/`: frozen Qwen decoder + MLP option head. Stages `embed` (cache last-token hidden
+  states, shared by every run with the same `cache` config) -> `ce` -> `rl` (opt-in, starts from
+  the `ce` head). Each training stage writes `RUN/<stage>/head.pt`.
+
+```bash
+uv sync --extra model
+uv run jev-model list                                   # models and their stages
+uv run jev-model config frozen_head > my.json           # defaults, to edit
+uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4 -s datasets=atis,banking77
+uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl   # extend a run
+uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
+uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
+```
+
+### Adding a model
+
+1. Create `src/jev_model/<name>/` with a `config.py` holding its config dataclass(es), and a
+   `pipeline.py` with a `JevModel` subclass and a module-level `<name>_model = ...(name=..., description=...)`.
+2. Import torch/transformers and the model's own modules inside `run_stage`/`evaluate`/`predictor`,
+   not at the top of `pipeline.py`/`config.py`, so the CLI loads without every model's dependencies.
+3. Read data through `jev_model.data` and report with `jev_model.metrics`, so numbers are comparable
+   across models. Keep outputs inside the run directory; put only cross-run caches under `CACHE_DIR/<name>`.
+4. Register it in `src/jev_model/__init__.py`. Add new dependencies to the `model` extra.
+
 ## Conventions
 
-- Python 3.12+, managed with `uv`. Dependencies are `datasets` and `typer`.
+- Python 3.12+, managed with `uv`. Dependencies are `datasets` and `typer`; `jev_model` also needs
+  the `model` extra (torch, transformers, tqdm).
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,
   knowledge dependence). Keep them short, as in the existing modules.
 - Lines are up to about 120 characters. Use type hints and `X | None` unions.
-- There are no tests. To verify a converter, run `uv run jev prepare <name> --max-samples 50
+- There are no tests. To smoke-test a model pipeline without a GPU, save a tiny random decoder
+  locally and train with `-s cache.model=<dir> -s ce.steps=40` on one or two small datasets.
+- To verify a converter, run `uv run jev prepare <name> --max-samples 50
   --output-dir <scratch dir>` and inspect a few rows with `datasets.load_from_disk`.
