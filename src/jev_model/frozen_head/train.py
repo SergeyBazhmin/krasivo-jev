@@ -6,6 +6,7 @@ from pathlib import Path
 
 import torch
 from loguru import logger
+from tqdm import tqdm
 
 from jev_model.frozen_head.cache import load_partition
 from jev_model.frozen_head.config import TrainConfig
@@ -110,7 +111,8 @@ def train(
 
     out_dir.mkdir(parents=True, exist_ok=True)
     best, history, running = math.inf, [], 0.0
-    for step in range(config.steps):
+    progress = tqdm(range(config.steps), desc=stage)
+    for step in progress:
         head.train()
         features, labels, num_options = (t.to(device, non_blocking=True) for t in next(batches))
         loss = loss_fn(head, features, labels, num_options, step, config)
@@ -119,7 +121,9 @@ def train(
         torch.nn.utils.clip_grad_norm_(head.parameters(), 1.0)
         optimizer.step()
         scheduler.step()
-        running += loss.item()
+        value = loss.item()
+        running += value
+        progress.set_postfix(loss=f"{value:.4f}", refresh=False)
         if (step + 1) % config.eval_every == 0 or step + 1 == config.steps:
             macro = evaluate(head, validation, device)["macro"]
             history.append({"step": step + 1, "loss": running / config.eval_every} | macro)

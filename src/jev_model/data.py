@@ -40,6 +40,8 @@ def partition(data: DatasetDict) -> dict[str, list[dict]]:
     for split, rows in data.items():
         parts[SPLIT_ALIASES.get(split, "train")].extend(rows)
     carve = [name for name in ("test", "validation") if not parts[name]]
+    if not carve:
+        return parts
     pool, parts["train"] = parts["train"], []
     for sample in pool:
         b = bucket(content_key(sample))

@@ -135,7 +135,7 @@ uv run jev-model predict runs/frozen_head/X --question "..." --option yes --opti
 
 ## Conventions
 
-- Python 3.12+, managed with `uv`. Dependencies are `datasets` and `typer`; `jev_model` also needs
+- Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
   the `model` extra (torch, transformers, tqdm).
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.

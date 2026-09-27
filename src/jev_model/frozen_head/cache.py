@@ -35,7 +35,7 @@ def build(
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
     root.mkdir(parents=True, exist_ok=True)
     (root / "config.json").write_text(json.dumps(asdict(config) | {"hidden_size": decoder.config.hidden_size}))
-    for name in names:
+    for name in tqdm(names, desc="cache"):
         out = root / name
         if (out / "done").exists() and not overwrite:
             logger.info(f"[{name}] cached, skipping")
@@ -43,7 +43,7 @@ def build(
         out.mkdir(parents=True, exist_ok=True)
         for part, samples in partition(load_from_disk(data_dir / name)).items():
             prompts, labels, rows, views, skipped = [], [], [], [], 0
-            for row, sample in enumerate(samples):
+            for row, sample in enumerate(tqdm(samples, desc=f"[{name}] {part} tokenize", leave=False)):
                 if not 2 <= len(sample["options"]) <= MAX_OPTIONS:
                     skipped += 1
                     continue
@@ -92,7 +92,7 @@ def build(
 def load_partition(root: Path, names: list[str], part: str) -> dict[str, dict[str, torch.Tensor]]:
     """{dataset: tensors} for the datasets that have rows in `part`."""
     loaded = {}
-    for name in names:
+    for name in tqdm(names, desc=f"load {part}", leave=False):
         path = root / name / f"{part}.pt"
         if path.exists() and (tensors := torch.load(path))["labels"].shape[0]:
             loaded[name] = tensors

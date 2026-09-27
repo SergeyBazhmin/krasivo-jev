@@ -28,15 +28,30 @@ def expected_calibration_error(confidence: torch.Tensor, correct: torch.Tensor, 
     return ece
 
 
+def macro_prf(predicted: torch.Tensor, gold: torch.Tensor) -> dict[str, float]:
+    """Precision, recall and F1 per option slot, averaged over slots that occur as gold or prediction.
+    Classes are slots, not option ids: that matches fixed-option datasets, and on shuffled ones shows positional bias."""
+    classes = torch.cat([predicted, gold]).unique()
+    hit = (predicted.unsqueeze(-1) == classes) & (gold.unsqueeze(-1) == classes)
+    tp = hit.sum(dim=0).float()
+    precision = tp / (predicted.unsqueeze(-1) == classes).sum(dim=0).clamp(min=1)
+    recall = tp / (gold.unsqueeze(-1) == classes).sum(dim=0).clamp(min=1)
+    f1 = 2 * precision * recall / (precision + recall).clamp(min=1e-12)
+    return {"precision": precision.mean().item(), "recall": recall.mean().item(), "f1": f1.mean().item()}
+
+
 def scores(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, temperature: float = 1.0) -> dict[str, float]:
-    """Accuracy against the argmax of the label, soft NLL, and top-1 ECE. `logits` are already masked (-inf)."""
+    """Accuracy and macro precision/recall/F1 against the argmax of the label, soft NLL, and top-1 ECE.
+    `logits` are already masked (-inf)."""
     logits = logits / temperature
     probs = logits.softmax(dim=-1)
     confidence, predicted = probs.max(dim=-1)
-    correct = predicted == labels.argmax(dim=-1)
+    gold = labels.argmax(dim=-1)
+    correct = predicted == gold
     return {
         "n": len(labels),
         "accuracy": correct.float().mean().item(),
+        **macro_prf(predicted, gold),
         "nll": soft_cross_entropy(logits, labels, num_options).mean().item(),
         "ece": expected_calibration_error(confidence, correct),
     }
@@ -44,7 +59,7 @@ def scores(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor
 
 def with_macro(per_dataset: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
     """Adds `macro`, the unweighted mean over datasets, so small tasks count as much as large ones."""
-    keys = ("accuracy", "nll", "ece")
+    keys = ("accuracy", "precision", "recall", "f1", "nll", "ece")
     macro = {k: sum(s[k] for s in per_dataset.values()) / len(per_dataset) for k in keys}
     return per_dataset | {"macro": macro | {"n": sum(s["n"] for s in per_dataset.values())}}
 

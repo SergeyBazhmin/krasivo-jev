@@ -4,11 +4,17 @@ from pathlib import Path
 from typing import Annotated
 
 import typer
+from loguru import logger
+from tqdm import tqdm
 
 from jev_model import models
 from jev_model.base import CONFIG_FILE, JevModel, read_run
 from jev_model.config import dump, load_config, read_file
 from jev_model.constants import RUNS_DIR
+
+# # log through tqdm so messages print above an active progress bar instead of breaking it
+# logger.remove()
+# logger.add(lambda message: tqdm.write(message, end=""), colorize=True)
 
 app = typer.Typer(help="Train and evaluate models on the jev datasets.", no_args_is_help=True)
 
