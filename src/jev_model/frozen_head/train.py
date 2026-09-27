@@ -5,6 +5,7 @@ from dataclasses import asdict
 from pathlib import Path
 
 import torch
+from loguru import logger
 
 from jev_model.frozen_head.cache import load_partition
 from jev_model.frozen_head.config import TrainConfig
@@ -86,7 +87,7 @@ def train(
     cache_config = json.loads((cache_root / "config.json").read_text())
     train_data = load_partition(cache_root, names, "train")
     validation = load_partition(cache_root, names, "validation")
-    print(f"train on {len(train_data)} datasets, {sum(len(t['labels']) for t in train_data.values())} prompts")
+    logger.info(f"train on {len(train_data)} datasets, {sum(len(t['labels']) for t in train_data.values())} prompts")
 
     if init is not None:
         checkpoint = torch.load(init)
@@ -123,7 +124,7 @@ def train(
             macro = evaluate(head, validation, device)["macro"]
             history.append({"step": step + 1, "loss": running / config.eval_every} | macro)
             running = 0.0
-            print(json.dumps(history[-1]))
+            logger.info(json.dumps(history[-1]))
             if macro["nll"] < best:
                 best = macro["nll"]
                 torch.save({"head": head.state_dict(), "head_config": head_config}, out_dir / "head.pt")
@@ -132,7 +133,7 @@ def train(
     head.load_state_dict(checkpoint["head"])
     temperature = calibrate(head, validation, device)
     metrics = evaluate(head, validation, device)
-    print(f"temperature {temperature:.3f}, calibrated validation {json.dumps(metrics['macro'])}")
+    logger.info(f"temperature {temperature:.3f}, calibrated validation {json.dumps(metrics['macro'])}")
     torch.save(
         {"head": head.state_dict(), "head_config": head_config, "cache": cache_config,
          "cache_root": str(cache_root.resolve()), "stage": stage,

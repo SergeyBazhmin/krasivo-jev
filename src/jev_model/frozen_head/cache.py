@@ -5,6 +5,7 @@ from pathlib import Path
 
 import torch
 from datasets import load_from_disk
+from loguru import logger
 from tqdm import tqdm
 
 from jev_model.data import content_key, partition
@@ -28,7 +29,7 @@ def build(
     """Runs the frozen backbone once per prompt and saves the last-token hidden states under `root`.
     Datasets already cached there are skipped."""
     if not overwrite and all((root / name / "done").exists() for name in names):
-        print(f"all {len(names)} datasets cached in {root}")
+        logger.info(f"all {len(names)} datasets cached in {root}")
         return
     decoder, tokenizer = load_backbone(config.model, device)
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
@@ -37,7 +38,7 @@ def build(
     for name in names:
         out = root / name
         if (out / "done").exists() and not overwrite:
-            print(f"[{name}] cached, skipping")
+            logger.info(f"[{name}] cached, skipping")
             continue
         out.mkdir(parents=True, exist_ok=True)
         for part, samples in partition(load_from_disk(data_dir / name)).items():
@@ -84,7 +85,7 @@ def build(
                 },
                 out / f"{part}.pt",
             )
-            print(f"[{name}] {part}: {len(prompts)} prompts from {len(samples)} samples, {skipped} skipped")
+            logger.info(f"[{name}] {part}: {len(prompts)} prompts from {len(samples)} samples, {skipped} skipped")
         (out / "done").touch()
 
 

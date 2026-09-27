@@ -2,6 +2,8 @@ import json
 from pathlib import Path
 from typing import Protocol
 
+from loguru import logger
+
 from jev_model.config import dump
 
 RUN_FILE = "run.json"
@@ -52,7 +54,7 @@ class JevModel[C]:
         run_dir.mkdir(parents=True, exist_ok=True)
         (run_dir / CONFIG_FILE).write_text(dump(config))
         for stage in stages:
-            print(f"[{self.name}] stage {stage} -> {run_dir}")
+            logger.info(f"[{self.name}] stage {stage} -> {run_dir}")
             self.run_stage(stage, config, run_dir, device)
             done = {*read_run(run_dir).get("stages", []), stage}
             write_run(run_dir, {"model": self.name, "stages": [s for s in self.stages if s in done]})
