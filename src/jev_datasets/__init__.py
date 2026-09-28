@@ -34,7 +34,6 @@ from jev_datasets.nlu.chaos_nli import chaos_nli_dataset
 from jev_datasets.nlu.multi_nli import multi_nli_dataset, multi_nli_genre_dataset
 from jev_datasets.nlu.paws import paws_dataset
 from jev_datasets.nlu.race import race_dataset
-from jev_datasets.reasoning.bbh import bbh_dataset
 from jev_datasets.reasoning.logiqa import logiqa_dataset
 from jev_datasets.reasoning.reclor import reclor_dataset
 from jev_datasets.sentiment.emotion import emotion_dataset
@@ -46,7 +45,6 @@ from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
-from jev_datasets.toxicity.civil_comments import civil_comments_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
 from jev_datasets.toxicity.tweet_moderation import tweet_hate_dataset, tweet_offensive_dataset
 from jev_datasets.truthfulness.halueval import halueval_dialogue_dataset, halueval_qa_dataset, halueval_summarization_dataset
@@ -61,7 +59,6 @@ datasets = {
         atis_dataset,
         babi_nli_dataset,
         banking77_dataset,
-        bbh_dataset,
         beavertails_dataset,
         bitext_customer_support_dataset,
         bitext_insurance_dataset,
@@ -69,7 +66,6 @@ datasets = {
         bitext_telco_dataset,
         boolq_dataset,
         chaos_nli_dataset,
-        civil_comments_dataset,
         clinc_oos_dataset,
         clutrr_dataset,
         dbpedia_dataset,

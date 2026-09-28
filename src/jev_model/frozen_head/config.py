@@ -11,7 +11,7 @@ MAX_OPTIONS = 255
 class CacheConfig:
     """What the cached features depend on; runs with the same one share a cache."""
 
-    model: str = "Qwen/Qwen3.5-2B-Base"
+    model: str = "Qwen/Qwen3.5-2B"
     # hidden layer to read; -1 is the final, normed one
     layer: int = -1
     # prompt tokens; the state is cut in the middle past this
