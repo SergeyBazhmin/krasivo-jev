@@ -44,6 +44,12 @@ class JevDataset:
     def prepare(self):
         raise NotImplementedError
 
+    def add_type(self):
+        """Stamps the dataset's `type` on every sample; call after `prepare`."""
+        self.data = DatasetDict(
+            {split: rows.add_column("type", [self.type.value] * rows.num_rows) for split, rows in self.data.items()}
+        )
+
     def limit(self, max_samples: int = MAX_SAMPLES):
         """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
         self.data = DatasetDict(
@@ -51,5 +57,6 @@ class JevDataset:
         )
 
     def save(self):
+        self.add_type()
         self.limit()
         self.data.save_to_disk(ROOT_DIR / self.name)

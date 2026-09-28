@@ -24,6 +24,10 @@ Defined in `src/jev_datasets/utils.py` (`SAMPLE_FEATURES`, `make_sample`):
 | `question` | `str`                         | the question itself |
 | `options`  | `[{"id": str, "text": str}]`  | answer candidates. `text` is what the model reads and `id` is a stable key |
 | `label`    | `[float32]`                   | probability distribution over `options`, the same length as `options` |
+| `type`     | `str`                         | the dataset's `DatasetType`: `noul` (options are only yes/no) or `choice` |
+
+`type` is not produced by `prepare()`. `JevDataset.add_type()` stamps it on every row from the
+class attribute `type`, which each converter must set.
 
 `make_sample(state, question, options, label)` takes either the `id` of the single correct
 option (it becomes a one-hot) or a soft distribution, for example annotator vote shares in
