@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify, with_context
 
 QUESTIONS = [
     "What kind of entity is described in this article?",
@@ -26,6 +26,10 @@ TEXTS = {
     "Film": "film",
     "WrittenWork": "written work",
 }
+ABOUT = (
+    "You are given the title and opening of an encyclopedia article. Decide what kind of thing its subject is, such as "
+    "a company, an artist, an athlete, a village, an animal, an album or a film."
+)
 
 
 class DBpediaDataset(JevDataset):
@@ -37,7 +41,7 @@ class DBpediaDataset(JevDataset):
         options = make_options(ids, [TEXTS[name] for name in names])
         self.data = self.data.map(
             lambda x: make_sample(
-                (text := f"{x['title']}\n\n{x['content'].strip()}"),
+                with_context(ABOUT, text := f"{x['title']}\n\n{x['content'].strip()}", "Article"),
                 pick_question(QUESTIONS, text),
                 options,
                 ids[x["label"]],

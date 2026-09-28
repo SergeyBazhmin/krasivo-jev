@@ -55,6 +55,15 @@ def as_distribution(options: list[dict[str, str]], label: str | list[float]) -> 
     return [float(p) for p in label]
 
 
+def with_context(about: str, text: str, name: str | None = None, answers: dict[str, str] | None = None) -> str:
+    """`text` under a system-prompt-like instruction (`about`: who the model is, what it is given, what to
+    decide), plus what each answer means when `answers` is given. The model stores no facts, so a source's
+    conventions have to be in the state."""
+    guide = "\n".join(f"- {answer}: {meaning}" for answer, meaning in (answers or {}).items())
+    parts = (about, guide and f"Answers:\n{guide}", f"{name}:\n{text}" if name else text)
+    return "\n\n".join(part for part in parts if part)
+
+
 def make_sample(state: str, question: str, options: list[dict[str, str]], label: str | list[float]):
     """
     state:    the context the question is asked about ("" when there is none)

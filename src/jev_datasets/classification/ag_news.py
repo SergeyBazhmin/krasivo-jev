@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify, with_context
 
 QUESTIONS = [
     "Which topic does this news article belong to?",
@@ -8,6 +8,10 @@ QUESTIONS = [
     "What category best fits this news story?",
     "Classify the topic of this article.",
 ]
+ABOUT = (
+    "You are given the title and description of a news article. Decide which section of a news site it belongs in: "
+    "World (international news and politics), Sports, Business, or Sci/Tech (science and technology)."
+)
 
 
 class AGNewsDataset(JevDataset):
@@ -18,7 +22,9 @@ class AGNewsDataset(JevDataset):
         ids = [slugify(name) for name in names]  # "Sci/Tech" -> "sci_tech"
         options = make_options(ids, names)
         self.data = self.data.map(
-            lambda x: make_sample(x["text"], pick_question(QUESTIONS, x["text"]), options, ids[x["label"]]),
+            lambda x: make_sample(
+                with_context(ABOUT, x["text"], "Article"), pick_question(QUESTIONS, x["text"]), options, ids[x["label"]]
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

@@ -3,7 +3,12 @@ from string import ascii_uppercase
 from datasets import DatasetDict, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
+
+ABOUT = (
+    "You are taking a logical reasoning test. Read the passage and answer the question about its argument or "
+    "situation, for example what follows from it, what it assumes, or what would strengthen or weaken it."
+)
 
 
 class LogiQADataset(JevDataset):
@@ -16,7 +21,7 @@ class LogiQADataset(JevDataset):
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(
-                x["context"],
+                with_context(ABOUT, x["context"], "Passage"),
                 x["query"],
                 make_options(list(ascii_uppercase[: len(x["options"])]), x["options"]),
                 ascii_uppercase[x["correct_option"]],

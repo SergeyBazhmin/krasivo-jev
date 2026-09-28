@@ -1,6 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.bugs.github import with_github_context
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.bugs.github import GITHUB_INTRO
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "Is this GitHub issue a bug report or a feature request?",
@@ -23,7 +23,10 @@ class VSCodeTriageDataset(JevDataset):
         # `input` is already "Title: ...\n\nDescription: ..."
         self.data = self.data.map(
             lambda x: make_sample(
-                with_github_context(x["input"], LABELS), pick_question(QUESTIONS, x["input"]), OPTIONS, x["label"]
+                with_context(GITHUB_INTRO, x["input"], "Issue", LABELS),
+                pick_question(QUESTIONS, x["input"]),
+                OPTIONS,
+                x["label"],
             ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,

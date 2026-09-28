@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "What is the sentiment of this movie review snippet?",
@@ -8,6 +8,10 @@ QUESTIONS = [
     "What is the sentiment of this sentence from a film review?",
     "Does this snippet speak well or badly of the movie?",
 ]
+ABOUT = (
+    "You are given a single sentence from a movie review, lowercased and split into tokens. Decide whether the opinion "
+    "of the film it conveys is positive or negative."
+)
 
 
 class SST2Dataset(JevDataset):
@@ -19,7 +23,12 @@ class SST2Dataset(JevDataset):
         # the `test` split is unlabelled (label == -1)
         self.data.pop("test", None)
         self.data = self.data.map(
-            lambda x: make_sample(x["sentence"], pick_question(QUESTIONS, x["sentence"]), options, names[x["label"]]),
+            lambda x: make_sample(
+                with_context(ABOUT, x["sentence"], "Sentence"),
+                pick_question(QUESTIONS, x["sentence"]),
+                options,
+                names[x["label"]],
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

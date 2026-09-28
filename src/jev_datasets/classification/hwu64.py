@@ -1,7 +1,7 @@
 from datasets import load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "Which intent does this request to a virtual assistant express?",
@@ -10,6 +10,12 @@ QUESTIONS = [
     "Which assistant intent matches this utterance?",
     "How should the assistant interpret this request?",
 ]
+ABOUT = (
+    "You are a home virtual assistant. A user has given the command below. Decide which intent it expresses. Each "
+    "intent is named by its scenario and then its action: \"alarm set\" sets an alarm, \"alarm query\" asks about "
+    "alarms already set, \"iot hue lightoff\" turns off smart lights, and \"general\" intents are conversational moves "
+    "such as confirming or asking to repeat."
+)
 
 
 class HWU64Dataset(JevDataset):
@@ -21,7 +27,12 @@ class HWU64Dataset(JevDataset):
         ids = [name for _, name in sorted(zip(intents["id"], intents["name"]))]
         options = make_options(ids, [id.replace("_", " ") for id in ids])
         self.data = self.data.map(
-            lambda x: make_sample(x["utterance"], pick_question(QUESTIONS, x["utterance"]), options, ids[x["label"]]),
+            lambda x: make_sample(
+                with_context(ABOUT, x["utterance"], "Command"),
+                pick_question(QUESTIONS, x["utterance"]),
+                options,
+                ids[x["label"]],
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify, with_context
 
 QUESTIONS = [
     "What is the topic of this financial news tweet?",
@@ -32,6 +32,11 @@ TOPICS = [
     "Stock Commentary",
     "Stock Movement",
 ]
+ABOUT = (
+    "You are given a tweet from a financial news account on Twitter. Decide which topic it covers, judging by what it "
+    "reports: for example an analyst's rating change, a central bank decision, a company's earnings, a dividend, a "
+    "merger or acquisition, or a move in a stock's price (as opposed to commentary or opinion about a stock)."
+)
 IDS = [slugify(topic) for topic in TOPICS]
 OPTIONS = make_options(IDS, TOPICS)
 
@@ -41,7 +46,9 @@ class FinancialNewsTopicDataset(JevDataset):
 
     def prepare(self):
         self.data = self.data.map(
-            lambda x: make_sample(x["text"], pick_question(QUESTIONS, x["text"]), OPTIONS, IDS[x["label"]]),
+            lambda x: make_sample(
+                with_context(ABOUT, x["text"], "Tweet"), pick_question(QUESTIONS, x["text"]), OPTIONS, IDS[x["label"]]
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

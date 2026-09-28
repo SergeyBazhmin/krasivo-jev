@@ -1,6 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.bugs.github import with_github_context
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.bugs.github import GITHUB_INTRO
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "What kind of GitHub issue is this?",
@@ -38,7 +38,7 @@ class GitHubIssueTypeDataset(JevDataset):
     @staticmethod
     def to_sample(x: dict) -> dict:
         issue = "\n\n".join(part.strip() for part in (x["issue title"], x["body"]) if part and part.strip())
-        state = with_github_context(issue, LABELS)
+        state = with_context(GITHUB_INTRO, issue, "Issue", LABELS)
         return make_sample(state, pick_question(QUESTIONS, issue), OPTIONS, KINDS[x["labels"]])
 
 

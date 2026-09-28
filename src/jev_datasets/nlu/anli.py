@@ -1,5 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.nlu.nli import NLI_ANSWERS
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "What is the relation between the premise and the hypothesis?",
@@ -8,6 +9,11 @@ QUESTIONS = [
     "How does the hypothesis relate to the premise?",
     "Is the hypothesis entailed by the premise, contradicted by it, or neutral?",
 ]
+ABOUT = (
+    "You are given a premise and a hypothesis. Decide whether, judging by the premise alone, the hypothesis is "
+    "definitely true, definitely false, or neither. The hypothesis was written to be tricky, so the answer often "
+    "hinges on a detail, a number or an implicit inference."
+)
 
 
 class ANLIDataset(JevDataset):
@@ -19,7 +25,7 @@ class ANLIDataset(JevDataset):
         # splits are adversarial rounds: train_r1, dev_r1, test_r1, ..., test_r3
         self.data = self.data.map(
             lambda x: make_sample(
-                x["premise"],
+                with_context(ABOUT, x["premise"], "Premise", NLI_ANSWERS),
                 f"Hypothesis: {x['hypothesis']}\n{pick_question(QUESTIONS, x['premise'] + x['hypothesis'])}",
                 options,
                 names[x["label"]],

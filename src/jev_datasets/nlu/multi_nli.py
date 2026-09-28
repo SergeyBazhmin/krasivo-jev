@@ -1,5 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.nlu.nli import NLI_ANSWERS
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "What is the relation between the premise and the hypothesis?",
@@ -8,6 +9,10 @@ QUESTIONS = [
     "How does the hypothesis relate to the premise?",
     "Is the hypothesis entailed by the premise, contradicted by it, or neutral?",
 ]
+NLI_ABOUT = (
+    "You are given a premise, a sentence of written or spoken English, and a hypothesis. Decide whether, judging by "
+    "the premise alone, the hypothesis is definitely true, definitely false, or neither."
+)
 
 
 class MultiNLIDataset(JevDataset):
@@ -20,7 +25,7 @@ class MultiNLIDataset(JevDataset):
         self.data = self.data.filter(lambda x: x["label"] >= 0)
         self.data = self.data.map(
             lambda x: make_sample(
-                x["premise"],
+                with_context(NLI_ABOUT, x["premise"], "Premise", NLI_ANSWERS),
                 f"Hypothesis: {x['hypothesis']}\n{pick_question(QUESTIONS, x['premise'] + x['hypothesis'])}",
                 options,
                 names[x["label"]],
@@ -38,6 +43,11 @@ GENRE_QUESTIONS = [
     "What is the genre of this passage?",
 ]
 
+GENRE_ABOUT = (
+    "You are given a passage of English text. Decide which kind of source it comes from: a work of fiction, a US "
+    "government report or web page, an article from Slate (an online magazine on news, politics and culture), a "
+    "transcribed telephone conversation between strangers, or a travel guide."
+)
 GENRES = {
     "fiction": "fiction",
     "government": "government report",
@@ -59,7 +69,12 @@ class MultiNLIGenreDataset(JevDataset):
         seen: set[int] = set()
         self.data = self.data.filter(lambda x: x["promptID"] not in seen and not seen.add(x["promptID"]))
         self.data = self.data.map(
-            lambda x: make_sample(x["premise"], pick_question(GENRE_QUESTIONS, x["premise"]), options, x["genre"]),
+            lambda x: make_sample(
+                with_context(GENRE_ABOUT, x["premise"], "Passage"),
+                pick_question(GENRE_QUESTIONS, x["premise"]),
+                options,
+                x["genre"],
+            ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

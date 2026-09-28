@@ -1,7 +1,7 @@
 import re
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "Given the facts and rules, is the hypothesis entailed, contradicted, neutral, or a paradox?",
@@ -15,6 +15,16 @@ OPTIONS = make_options(
     ["entailment", "contradiction", "neutral", "self_contradiction"],
     ["entailment", "contradiction", "neutral", "paradox"],
 )
+ABOUT = (
+    "You are given facts and rules about made-up people and properties, and a hypothesis. Decide what can be derived "
+    "about the hypothesis. Only what the facts and rules derive counts: nothing is assumed true or false beyond them."
+)
+ANSWERS = {
+    "entailment": "the hypothesis can be derived",
+    "contradiction": "the negation of the hypothesis can be derived",
+    "neutral": "neither can be derived",
+    "paradox": "both the hypothesis and its negation can be derived",
+}
 # the source glues the rules onto the last fact with no separator: "... not accurate.If there ..."
 GLUED = re.compile(r"(?<=[a-z]\.)(?=[A-Z])")
 
@@ -25,7 +35,7 @@ class LogicNLIDataset(JevDataset):
     def prepare(self):
         self.data = self.data.map(
             lambda x: make_sample(
-                GLUED.sub("\n", x["premise"]),
+                with_context(ABOUT, GLUED.sub("\n", x["premise"]), "Premise", ANSWERS),
                 f"Hypothesis: {x['hypothesis']}\n{pick_question(QUESTIONS, x['premise'] + x['hypothesis'])}",
                 OPTIONS,
                 x["label"],

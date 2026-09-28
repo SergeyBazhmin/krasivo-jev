@@ -1,9 +1,15 @@
 from string import ascii_uppercase
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 # SpartQA-Auto: synthetic block scenes; its labels are known to be somewhat noisy
+ABOUT = (
+    "You are given a description of blocks holding objects of different sizes, colors and shapes, and of where they "
+    "are relative to each other. Answer with spatial logic: relations have inverses (if A is left of B, B is right of "
+    "A), they chain, and what is inside a block shares that block's position relative to other blocks. If the "
+    "description does not settle the answer, it cannot be determined."
+)
 YN_OPTIONS = make_options(["Yes", "No", "DK"], ["yes", "no", "cannot be determined"])
 
 
@@ -14,7 +20,7 @@ class SpartQAMultipleChoiceDataset(JevDataset):
         # candidates are the two objects the question names, then "both of them" and "none of them"
         self.data = self.data.map(
             lambda x: make_sample(
-                x["story"],
+                with_context(ABOUT, x["story"], "Story"),
                 x["question"],
                 make_options(
                     list(ascii_uppercase[: len(x["candidate_answers"])]),
@@ -32,7 +38,7 @@ class SpartQAYesNoDataset(JevDataset):
 
     def prepare(self):
         self.data = self.data.map(
-            lambda x: make_sample(x["story"], x["question"], YN_OPTIONS, x["answer"]),
+            lambda x: make_sample(with_context(ABOUT, x["story"], "Story"), x["question"], YN_OPTIONS, x["answer"]),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )

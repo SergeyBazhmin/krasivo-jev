@@ -16,7 +16,6 @@ from jev_datasets.classification.hwu64 import hwu64_dataset
 from jev_datasets.classification.massive_intent import massive_intent_dataset
 from jev_datasets.classification.ticket_routing import ticket_routing_dataset, ticket_type_dataset
 from jev_datasets.guardrails.aegis_safety import aegis_safety_dataset
-from jev_datasets.guardrails.deepset_prompt_injections import deepset_prompt_injections_dataset
 from jev_datasets.guardrails.jailbreak_classification import jailbreak_classification_dataset
 from jev_datasets.guardrails.safeguard_prompt_injection import safeguard_prompt_injection_dataset
 from jev_datasets.guardrails.spml_prompt_injection import spml_prompt_injection_dataset
@@ -69,7 +68,6 @@ datasets = {
         clinc_oos_dataset,
         clutrr_dataset,
         dbpedia_dataset,
-        deepset_prompt_injections_dataset,
         emotion_dataset,
         financial_news_topic_dataset,
         folio_dataset,

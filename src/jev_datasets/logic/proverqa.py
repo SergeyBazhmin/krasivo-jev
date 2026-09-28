@@ -3,12 +3,17 @@ import re
 from datasets import DatasetDict, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 # train is a chat-style instruction/output dump; the dev sets are structured
 TRAIN_PROMPT = re.compile(r"Context:\n(.*)\n\nQuestion: (.*)\n\nOptions:\n(.*)", re.S)
 TRAIN_ANSWER = re.compile(r'"answer": "([A-Z])"\s*}\s*$')
 OPTION = re.compile(r"([A-Z])\) (.*)")
+ABOUT = (
+    "You are given a logic problem: a context of facts and rules, some of them distractors, and a statement. Take the "
+    "context as everything there is to know. The statement is true if it follows, false if its negation follows, and "
+    "uncertain if neither does."
+)
 
 
 def parse_options(lines: list[str], answer: str) -> tuple[list[dict[str, str]], str]:
@@ -20,12 +25,12 @@ def parse_options(lines: list[str], answer: str) -> tuple[list[dict[str, str]], 
 def make_train_sample(x):
     context, question, listing = TRAIN_PROMPT.fullmatch(x["instruction"]).groups()
     options, answer = parse_options(listing.splitlines(), TRAIN_ANSWER.search(x["output"])[1])
-    return make_sample(context.strip(), question.strip(), options, answer)
+    return make_sample(with_context(ABOUT, context.strip(), "Context"), question.strip(), options, answer)
 
 
 def make_dev_sample(x):
     options, answer = parse_options(x["options"], x["answer"])
-    return make_sample(x["context"], x["question"], options, answer)
+    return make_sample(with_context(ABOUT, x["context"], "Context"), x["question"], options, answer)
 
 
 class ProverQADataset(JevDataset):

@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "Do these two sentences mean the same thing?",
@@ -10,6 +10,11 @@ QUESTIONS = [
 ]
 
 OPTIONS = make_options(["yes", "no"])
+ABOUT = (
+    "You are given two sentences that share almost all their words. Decide whether they are paraphrases, that is, they "
+    "say the same thing, including who did what to whom, when and where. Moving words around can change the meaning "
+    "completely."
+)
 
 
 class PAWSDataset(JevDataset):
@@ -20,7 +25,7 @@ class PAWSDataset(JevDataset):
         # overlap does not give the answer away
         self.data = self.data.map(
             lambda x: make_sample(
-                (text := f"Sentence 1: {x['sentence1']}\nSentence 2: {x['sentence2']}"),
+                with_context(ABOUT, text := f"Sentence 1: {x['sentence1']}\nSentence 2: {x['sentence2']}"),
                 pick_question(QUESTIONS, text),
                 OPTIONS,
                 "yes" if x["label"] == 1 else "no",

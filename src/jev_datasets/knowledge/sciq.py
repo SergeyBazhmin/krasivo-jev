@@ -1,9 +1,13 @@
 import random
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 IDS = ["A", "B", "C", "D"]
+ABOUT = (
+    "You are taking a science exam. Read the passage from a textbook and answer the question; the passage contains the "
+    "evidence for the answer."
+)
 
 
 def make_sciq_sample(x):
@@ -14,7 +18,7 @@ def make_sciq_sample(x):
     random.Random(x["question"]).shuffle(order)
     answers = [x["correct_answer"], x["distractor1"], x["distractor2"], x["distractor3"]]
     return make_sample(
-        x["support"],
+        with_context(ABOUT, x["support"], "Passage"),
         x["question"],
         make_options(IDS, [answers[i] for i in order]),
         IDS[order.index(0)],

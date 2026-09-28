@@ -1,7 +1,7 @@
 from datasets import DatasetDict, concatenate_datasets, get_dataset_config_names, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
 
 QUESTIONS = [
     "Does the story entail the statement?",
@@ -11,6 +11,11 @@ QUESTIONS = [
     "Can the statement be concluded from the story?",
 ]
 OPTIONS = make_options(["entailed", "not-entailed"], ["yes", "no"])
+ABOUT = (
+    "You are given a short story about people moving around and picking up or dropping objects, and a statement. "
+    "Decide whether the story shows that the statement is true. The story is all there is to know, and the latest "
+    "event decides where a person or object is."
+)
 # "Sumit went to the garden because she was bored": the link from motive to action is
 # commonsense, not something the story states
 SKIPPED_TASKS = {"agents-motivations"}
@@ -32,7 +37,7 @@ class BabiNLIDataset(JevDataset):
         names = self.class_names()  # ["not-entailed", "entailed"]
         self.data = self.data.map(
             lambda x: make_sample(
-                x["premise"],
+                with_context(ABOUT, x["premise"], "Story"),
                 f"Statement: {x['hypothesis']}\n{pick_question(QUESTIONS, x['premise'] + x['hypothesis'])}",
                 OPTIONS,
                 names[x["label"]],
