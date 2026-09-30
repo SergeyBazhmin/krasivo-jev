@@ -103,11 +103,58 @@ def eval_command(
     device: Device = "",
 ):
     """Per-dataset accuracy, NLL and ECE; saved to RUN_DIR/<stage>-<partition>.json."""
+    from jev_model.metrics import table
+
+    typer.echo(table(run_metrics(run_dir, partition, stage, device, fresh=True)))
+
+
+def run_metrics(run_dir: Path, partition: str, stage: str | None, device: str, fresh: bool) -> dict[str, dict[str, float]]:
+    """A run's {dataset: metrics}, read from RUN_DIR/<stage>-<partition>.json when `eval` has
+    already written it, unless `fresh`."""
+    path = run_dir / f"{stage or 'last'}-{partition}.json"
+    if path.exists() and not fresh:
+        return json.loads(path.read_text())
     model, config = open_run(run_dir)
     metrics = model.evaluate(config, run_dir, partition, default_device(device), stage)
-    for name, m in metrics.items():
-        typer.echo(f"{name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  nll={m['nll']:.3f}  ece={m['ece']:.3f}")
-    (run_dir / f"{stage or 'last'}-{partition}.json").write_text(json.dumps(metrics, indent=2))
+    path.write_text(json.dumps(metrics, indent=2))
+    return metrics
+
+
+@app.command()
+def compare(
+    run_a: Annotated[Path, typer.Argument(help="run A, the baseline")],
+    run_b: Annotated[Path, typer.Argument(help="run B")],
+    partition: str = "test",
+    metric: Annotated[str, typer.Option(help="accuracy, f1, precision, recall, nll or ece")] = "accuracy",
+    stage_a: Annotated[str | None, typer.Option(help="stage of run A; the last trained by default")] = None,
+    stage_b: Annotated[str | None, typer.Option(help="stage of run B; the last trained by default")] = None,
+    output: Annotated[Path | None, typer.Option(help="HTML page with the chart; RUN_B/compare-<run A>-<partition>.html "
+                                                "by default")] = None,
+    fresh: Annotated[bool, typer.Option(help="evaluate again instead of reading the scores `eval` saved")] = False,
+    device: Device = "",
+):
+    """Compare two runs per dataset: a table here and a chart in an HTML page. The runs may be of
+    different models; only the datasets both were trained on are compared."""
+    from jev_model import compare as comparison
+
+    if metric not in comparison.HIGHER_IS_BETTER:
+        raise typer.BadParameter(f"unknown metric {metric!r}; one of {list(comparison.HIGHER_IS_BETTER)}", param_hint="--metric")
+    labels = tuple(
+        f"{read_run(run).get('model', '?')} {run.resolve().name}" + (f" ({stage})" if stage else "")
+        for run, stage in ((run_a, stage_a), (run_b, stage_b))
+    )
+    try:
+        a, b, left_out = comparison.shared(
+            run_metrics(run_a, partition, stage_a, device, fresh), run_metrics(run_b, partition, stage_b, device, fresh)
+        )
+    except ValueError as error:
+        raise typer.BadParameter(str(error), param_hint="RUN_B")
+    typer.echo(comparison.table(a, b, labels, metric))
+    if left_out:
+        typer.echo(f"in one run only, not compared: {', '.join(left_out)}")
+    output = output or run_b / f"compare-{run_a.resolve().name}-{partition}.html"
+    comparison.write_html(a, b, labels, partition, metric, output)
+    typer.echo(f"chart: {output}")
 
 
 @app.command()

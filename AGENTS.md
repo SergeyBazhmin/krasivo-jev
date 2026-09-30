@@ -110,6 +110,9 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `data.py`: `resolve_names` and `partition` (train/validation/test, carving missing splits by a
   content hash). Every model splits through it, so test sets are the same rows.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
+- `compare.py`, `compare.html`: two runs per dataset behind `jev-model compare`: a text table and a standalone
+  HTML page (dumbbell chart, metric picker, table). It reuses the scores `eval` saved in the run directories and
+  compares only the datasets both runs have, with `macro` taken again over those.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
 - `__init__.py`: the `models` registry, alphabetical.
@@ -118,6 +121,13 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `frozen_head/`: frozen Qwen decoder + MLP option head. Stages `embed` (cache last-token hidden
   states, shared by every run with the same `cache` config) -> `ce` -> `rl` (opt-in, starts from
   the `ce` head). Each training stage writes `RUN/<stage>/head.pt`.
+- `pointer/`: Qwen decoder with a LoRA + pointer head, after `jaredpalmer/kev` but with one question per
+  sequence and no option isolation, so attention stays plain causal. The input is
+  `<state> .. <q> .. <opt> .. </opt> .. <decide>` (delimiters reuse Qwen special tokens, `encode.py`); an
+  option's logit matches the hidden state at its `</opt>` against the one at `<decide>`, so there is no option
+  cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
+  There is no feature cache: every step runs the backbone. Each stage writes `RUN/<stage>/adapter` and `head.pt`.
+- `losses.py`: the lr schedule and the RL loss over option logits, shared by both models.
 
 ```bash
 uv sync --extra model
@@ -127,6 +137,7 @@ uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4 -s datasets=atis,ban
 uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl   # extend a run
 uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
+uv run jev-model compare runs/frozen_head/X runs/pointer/Y [--metric nll] [--partition validation]
 uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
 ```
 
@@ -139,17 +150,19 @@ uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the brow
 3. Read data through `jev_model.data` and report with `jev_model.metrics`, so numbers are comparable
    across models. Keep outputs inside the run directory; put only cross-run caches under `CACHE_DIR/<name>`.
 4. Register it in `src/jev_model/__init__.py`. Add new dependencies to the `model` extra.
+5. Add a `README.md` to the model's directory: how it works, its stages, usage, config and files.
 
 ## Conventions
 
 - Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
-  the `model` extra (torch, transformers, tqdm).
+  the `model` extra (torch, transformers, tqdm, peft).
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,
   knowledge dependence). Keep them short, as in the existing modules.
 - Lines are up to about 120 characters. Use type hints and `X | None` unions.
 - There are no tests. To smoke-test a model pipeline without a GPU, save a tiny random decoder
-  locally and train with `-s cache.model=<dir> -s ce.steps=40` on one or two small datasets.
+  locally and train with `-s cache.model=<dir> -s ce.steps=40` (`-s model=<dir>` for `pointer`) on one or two
+  small datasets.
 - To verify a converter, run `uv run jev prepare <name> --max-samples 50
   --output-dir <scratch dir>` and inspect a few rows with `datasets.load_from_disk`.

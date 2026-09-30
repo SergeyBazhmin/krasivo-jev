@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run comparison</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --text: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10);
+    --series-a: #2a78d6; --series-b: #eb6834;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --text: #ffffff; --text-2: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10);
+      --series-a: #3987e5; --series-b: #d95926;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--page); color: var(--text);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--text-2); margin: 0 0 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; margin-bottom: 8px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 20px; color: var(--text-2); }
+  .key { display: inline-flex; align-items: center; gap: 6px; overflow-wrap: anywhere; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  label { color: var(--text-2); margin-left: auto; }
+  select { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--axis);
+           border-radius: 6px; padding: 4px 8px; margin-left: 6px; }
+  #chart { position: relative; }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--text-2); }
+  svg .tick { fill: var(--muted); font-variant-numeric: tabular-nums; }
+  svg .name.macro, svg .delta.macro { fill: var(--text); font-weight: 600; }
+  svg .delta { font-variant-numeric: tabular-nums; }
+  svg .row:hover .band, svg .row:focus .band { fill: var(--grid); opacity: 0.45; }
+  svg .row { outline: none; }
+  #tip { position: absolute; pointer-events: none; display: none; background: var(--surface); color: var(--text);
+         border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: 12px;
+         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); max-width: 320px; z-index: 1; }
+  #tip b { display: block; margin-bottom: 4px; overflow-wrap: anywhere; }
+  #tip .line { display: flex; gap: 6px; align-items: center; font-variant-numeric: tabular-nums; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 5px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--text-2); font-weight: 600; }
+  tr.macro td { font-weight: 600; border-top: 1px solid var(--axis); }
+  .note { color: var(--text-2); margin: 12px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Run comparison</h1>
+  <p class="sub" id="sub"></p>
+  <div class="card">
+    <div class="bar">
+      <div class="legend" id="legend"></div>
+      <label>Metric<select id="metric"></select></label>
+    </div>
+    <div id="chart"><div id="tip"></div></div>
+    <p class="note" id="summary"></p>
+  </div>
+  <div class="card scroll"><table id="table"></table></div>
+</main>
+<script>
+const DATA = __DATA__;
+const NS = "http://www.w3.org/2000/svg";
+const ROW = 26, TOP = 28, PAD_RIGHT = 70, WIDTH = 940;
+
+const fmt = v => v.toFixed(3);
+const signed = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(3);
+const el = (tag, attrs = {}, text) => {
+  const node = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+const escapeHtml = s => s.replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+function rowsFor(metric) {
+  const rows = DATA.datasets.map(name => ({name, a: DATA.a[name][metric.key], b: DATA.b[name][metric.key], n: DATA.a[name].n}));
+  for (const r of rows) r.delta = r.b - r.a;
+  // the largest gain of B first
+  rows.sort((x, y) => metric.higher ? y.delta - x.delta : x.delta - y.delta);
+  const m = {name: "macro", a: DATA.a.macro[metric.key], b: DATA.b.macro[metric.key], n: DATA.a.macro.n, macro: true};
+  m.delta = m.b - m.a;
+  return [m, ...rows];
+}
+
+function niceTicks(lo, hi, count = 6) {
+  const span = hi - lo || 1;
+  const raw = span / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw);
+  const start = Math.floor(lo / step) * step, ticks = [];
+  for (let v = start; v <= hi + step * 0.999; v += step) ticks.push(+v.toFixed(10));
+  return ticks;
+}
+
+function draw() {
+  const metric = DATA.metrics.find(m => m.key === document.getElementById("metric").value);
+  const rows = rowsFor(metric);
+  const chart = document.getElementById("chart"), tip = document.getElementById("tip");
+  chart.querySelector("svg")?.remove();
+
+  const longest = Math.max(...rows.map(r => r.name.length));
+  const left = Math.min(260, 16 + longest * 6.6);
+  const height = TOP + rows.length * ROW + 12;
+  const svg = el("svg", {viewBox: `0 0 ${WIDTH} ${height}`, role: "img",
+                         "aria-label": `${metric.label} of both runs per dataset; the table below holds the same values`});
+  const values = rows.flatMap(r => [r.a, r.b]);
+  const ticks = niceTicks(Math.min(...values), Math.max(...values));
+  const lo = ticks[0], hi = ticks[ticks.length - 1];
+  const x = v => left + (v - lo) / (hi - lo) * (WIDTH - left - PAD_RIGHT);
+
+  for (const t of ticks) {
+    svg.append(el("line", {x1: x(t), x2: x(t), y1: TOP - 6, y2: height - 8, stroke: "var(--grid)", "stroke-width": 1}));
+    svg.append(el("text", {x: x(t), y: 12, "text-anchor": "middle", class: "tick"}, String(t)));
+  }
+  svg.append(el("text", {x: WIDTH - 4, y: 12, "text-anchor": "end", class: "tick"}, "B − A"));
+
+  rows.forEach((r, i) => {
+    const y = TOP + i * ROW + ROW / 2;
+    const g = el("g", {class: "row", tabindex: 0});
+    g.append(el("rect", {class: "band", x: 0, y: y - ROW / 2, width: WIDTH, height: ROW, fill: "transparent"}));
+    const shown = r.name.length > 36 ? r.name.slice(0, 35) + "…" : r.name;
+    g.append(el("text", {x: left - 12, y: y + 4, "text-anchor": "end", class: "name" + (r.macro ? " macro" : "")}, shown));
+    g.append(el("line", {x1: x(r.a), x2: x(r.b), y1: y, y2: y, stroke: "var(--axis)", "stroke-width": 2, "stroke-linecap": "round"}));
+    // the ring in the surface color keeps the two dots apart where they overlap
+    for (const [value, color] of [[r.a, "var(--series-a)"], [r.b, "var(--series-b)"]])
+      g.append(el("circle", {cx: x(value), cy: y, r: 5, fill: color, stroke: "var(--surface)", "stroke-width": 2}));
+    g.append(el("text", {x: WIDTH - 4, y: y + 4, "text-anchor": "end", class: "delta" + (r.macro ? " macro" : "")}, signed(r.delta)));
+    const show = event => {
+      const better = r.delta === 0 ? "tie" : ((r.delta > 0) === metric.higher ? "B" : "A") + " is better";
+      tip.innerHTML = `<b>${escapeHtml(r.name)}</b>`
+        + `<div class="line"><span class="dot" style="background:var(--series-a)"></span>A ${fmt(r.a)}</div>`
+        + `<div class="line"><span class="dot" style="background:var(--series-b)"></span>B ${fmt(r.b)}</div>`
+        + `<div class="line">B − A ${signed(r.delta)} · ${better} · n=${r.n}</div>`;
+      tip.style.display = "block";
+      const box = chart.getBoundingClientRect(), row = g.getBoundingClientRect();
+      const px = event && event.clientX ? event.clientX - box.left + 14 : row.width / 2;
+      tip.style.left = Math.max(0, Math.min(px, box.width - tip.offsetWidth)) + "px";
+      tip.style.top = (row.bottom - box.top + 4) + "px";
+    };
+    g.addEventListener("mousemove", show);
+    g.addEventListener("focus", () => show());
+    g.addEventListener("mouseleave", () => tip.style.display = "none");
+    g.addEventListener("blur", () => tip.style.display = "none");
+    svg.append(g);
+  });
+  // macro sits apart from the datasets it averages
+  svg.append(el("line", {x1: 0, x2: WIDTH, y1: TOP + ROW, y2: TOP + ROW, stroke: "var(--axis)", "stroke-width": 1}));
+  chart.append(svg);
+
+  const sets = rows.filter(r => !r.macro);
+  const winsB = sets.filter(r => r.delta !== 0 && (r.delta > 0) === metric.higher).length;
+  const ties = sets.filter(r => r.delta === 0).length;
+  document.getElementById("summary").textContent =
+    `${metric.label}: ${metric.higher ? "higher" : "lower"} is better. B is better on ${winsB} of ${sets.length} datasets, `
+    + `A on ${sets.length - winsB - ties}${ties ? `, ${ties} tied` : ""}. Datasets are sorted by the gain of B; macro is the unweighted mean.`;
+
+  const body = rows.map(r => `<tr class="${r.macro ? "macro" : ""}"><td>${escapeHtml(r.name)}</td><td>${r.n}</td>`
+    + `<td>${fmt(r.a)}</td><td>${fmt(r.b)}</td><td>${signed(r.delta)}</td></tr>`).join("");
+  document.getElementById("table").innerHTML =
+    `<thead><tr><th>dataset</th><th>n</th><th>A</th><th>B</th><th>B − A</th></tr></thead><tbody>${body}</tbody>`;
+}
+
+document.getElementById("sub").textContent = `${DATA.partition} partition, ${DATA.datasets.length} datasets both runs were trained on`;
+document.getElementById("legend").innerHTML = ["a", "b"].map((s, i) =>
+  `<span class="key"><span class="dot" style="background:var(--series-${s})"></span>${s.toUpperCase()}: ${escapeHtml(DATA.labels[i])}</span>`).join("");
+const select = document.getElementById("metric");
+select.innerHTML = DATA.metrics.map(m => `<option value="${m.key}">${m.label}</option>`).join("");
+select.value = DATA.metric;
+select.addEventListener("change", draw);
+draw();
+</script>
+</body>
+</html>

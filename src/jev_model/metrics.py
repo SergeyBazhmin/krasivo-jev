@@ -64,6 +64,14 @@ def with_macro(per_dataset: dict[str, dict[str, float]]) -> dict[str, dict[str, 
     return per_dataset | {"macro": macro | {"n": sum(s["n"] for s in per_dataset.values())}}
 
 
+def table(metrics: dict[str, dict[str, float]]) -> str:
+    """One line per dataset, as printed by `eval` and at the end of training."""
+    return "\n".join(
+        f"{name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  nll={m['nll']:.3f}  ece={m['ece']:.3f}"
+        for name, m in metrics.items()
+    )
+
+
 def fit_temperature(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor) -> float:
     """One temperature minimising the pooled NLL, so larger datasets weigh more, as in training."""
     # finite while scaled: d(-inf / t)/dt would turn the gradient into NaN
