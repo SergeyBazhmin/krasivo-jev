@@ -45,8 +45,12 @@ the model is scored on `eval_samples` validation rows per dataset, and the weigh
 kept. At the end the best weights are scored on the whole validation partition and one temperature is fitted.
 A stage writes `RUN/<stage>/adapter/` (the LoRA), `head.pt`, `history.json` and `validation.json`.
 
-There is no feature cache: every training step and every evaluation runs the backbone. The base weights are
-loaded in float32 and the forward pass uses bf16 autocast on CUDA.
+There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the base weights
+are loaded in bf16 and the forward pass uses bf16 autocast; the LoRA and the head stay in float32.
+
+Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
+`flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
+implementation that is more than ten times slower, and a warning says so.
 
 ## Usage
 
@@ -70,7 +74,7 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 - `special_embeddings`: also train the embedding rows of the five delimiters.
 - `head_dim`, `max_length`, `eval_batch_tokens`.
 - `[ce]`, `[rl]`: `steps`, `batch_tokens`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, dataset mixing
-  (`alpha`). Lower `batch_tokens` when training runs out of memory.
+  (`alpha`). When training runs out of memory, halve `batch_tokens` and double `accum`.
 
 ## Files
 

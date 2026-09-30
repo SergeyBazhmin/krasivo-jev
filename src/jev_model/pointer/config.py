@@ -8,8 +8,8 @@ from jev_model.constants import DATA_DIR
 class TrainConfig:
     # optimizer steps; each one accumulates `accum` batches of at most `batch_tokens` padded tokens
     steps: int = 5_000
-    batch_tokens: int = 8_192
-    accum: int = 4
+    batch_tokens: int = 16_384
+    accum: int = 2
     lr: float = 2e-4
     weight_decay: float = 0.01
     warmup: int = 200

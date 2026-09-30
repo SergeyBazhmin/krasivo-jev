@@ -71,8 +71,8 @@ class Pool:
     """Every training sample, drawn with per-dataset mixing weights and a fresh option order per draw,
     so no position can learn a prior for an answer."""
 
-    # draws sorted by length together before they are cut into batches
-    BLOCK = 256
+    # draws sorted by length together before they are cut into batches; a larger block pads less
+    BLOCK = 2048
 
     def __init__(self, data: dict[str, list[Item]], alpha: float, seed: int):
         self.items = [item for items in data.values() for item in items]

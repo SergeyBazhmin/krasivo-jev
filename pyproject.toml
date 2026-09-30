@@ -15,6 +15,7 @@ dependencies = [
 [project.optional-dependencies]
 # training and inference (`jev-model`); install with `uv sync --extra model`
 model = [
+    "flash-linear-attention>=0.5.2",
     "peft>=0.21.1",
     "torch>=2.6",
     "tqdm>=4.67",

@@ -90,9 +90,11 @@ class PointerModel(nn.Module):
 
 
 def load_decoder(model: str, device: str) -> nn.Module:
-    """The text decoder without its LM head, in float32 (the forward pass runs under bf16 autocast on
-    CUDA). Qwen3.5 checkpoints are multimodal; `AutoModelForCausalLM` loads only the language model."""
-    return AutoModelForCausalLM.from_pretrained(model, dtype=torch.float32).model.to(device)
+    """The text decoder without its LM head. On CUDA it is bf16, the dtype the forward pass autocasts to,
+    so the frozen weights are not cast again on every batch; peft keeps the adapter weights in float32.
+    Qwen3.5 checkpoints are multimodal; `AutoModelForCausalLM` loads only the language model."""
+    dtype = torch.bfloat16 if torch.device(device).type == "cuda" else torch.float32
+    return AutoModelForCausalLM.from_pretrained(model, dtype=dtype).model.to(device)
 
 
 def create(config: PointerConfig, device: str) -> PointerModel:
