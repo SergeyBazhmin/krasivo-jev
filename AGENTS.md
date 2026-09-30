@@ -113,6 +113,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
 - `__init__.py`: the `models` registry, alphabetical.
+- `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
+  built dataset row, and calls `JevModel.predictor`, so new models need no UI code.
 - `frozen_head/`: frozen Qwen decoder + MLP option head. Stages `embed` (cache last-token hidden
   states, shared by every run with the same `cache` config) -> `ce` -> `rl` (opt-in, starts from
   the `ce` head). Each training stage writes `RUN/<stage>/head.pt`.
@@ -125,6 +127,7 @@ uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4 -s datasets=atis,ban
 uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl   # extend a run
 uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
+uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
 ```
 
 ### Adding a model

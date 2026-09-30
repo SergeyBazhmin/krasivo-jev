@@ -21,7 +21,7 @@ class ToxicChatDataset(JevDataset):
 
     def prepare(self):
         self.data = self.data.map(
-            lambda x: make_sample(
+            lambda x: make_sample(  
                 with_context(ABOUT, x["user_input"], "Prompt"),
                 pick_question(QUESTIONS, x["user_input"]),
                 OPTIONS,

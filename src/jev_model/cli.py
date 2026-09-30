@@ -126,5 +126,15 @@ def predict(
         typer.echo(f"{p:.3f}  {option}")
 
 
+@app.command()
+def ui(port: int = 8501):
+    """Open a local page to try trained runs by hand (needs the `ui` extra)."""
+    import subprocess
+    import sys
+
+    script = Path(__file__).parent / "ui" / "app.py"
+    raise typer.Exit(subprocess.call([sys.executable, "-m", "streamlit", "run", str(script), "--server.port", str(port)]))
+
+
 if __name__ == "__main__":
     app()

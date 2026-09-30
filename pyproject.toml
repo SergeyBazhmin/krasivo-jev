@@ -19,6 +19,10 @@ model = [
     "tqdm>=4.67",
     "transformers>=5.2",
 ]
+# `jev-model ui`; install with `uv sync --extra model --extra ui`
+ui = [
+    "streamlit>=1.50",
+]
 
 [project.scripts]
 jev = "jev_datasets.cli:app"
