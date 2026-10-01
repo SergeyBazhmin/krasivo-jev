@@ -30,8 +30,18 @@ fit on their own is skipped.
 - No option isolation: an option attends to the options before it. The probabilities therefore depend on the
   option order. Training shuffles the options on every draw to keep the model from learning a position prior,
   but it does not make the output order-invariant.
-- Left out: the permutation KL, the prefix cache and serving paths, full-weight training, anchors, none-option
-  and distractor augmentation, label smoothing, Brier and focal terms.
+- The none option replaces the true option's text in place (`none_prob`); kev's distractor augmentation is
+  left out.
+- Left out: the permutation KL, the prefix cache and serving paths, full-weight training, anchors, label
+  smoothing, Brier and focal terms.
+
+### None of the above
+
+With probability `none_prob` (0.1) a training draw replaces the text of the true option with
+`None of the above`, and that option keeps the label. Otherwise the model only ever sees closed sets and learns
+that one of the listed options must be correct. A draw is left alone when the label is soft (no single true
+option), when the sample already has that option, or when the longer sequence would not fit. Validation and
+test rows are never changed, so the scores do not measure this behaviour.
 
 ## Stages
 
@@ -40,9 +50,17 @@ fit on their own is skipped.
 | `ce`  | yes     | Trains the LoRA and the head with soft cross-entropy. Each draw shows the options in a fresh order, seeded by the sample's content and the draw number. |
 | `rl`  | no      | Starts from the `ce` weights and fine-tunes both with a policy gradient over perturbed logits, rewarded by a proper scoring rule (`jev_model/losses.py`). |
 
-One optimizer step accumulates `accum` batches of at most `batch_tokens` padded tokens. Every `eval_every` steps
-the model is scored on `eval_samples` validation rows per dataset, and the weights with the best macro NLL are
-kept. At the end the best weights are scored on the whole validation partition and one temperature is fitted.
+`sampling` picks how training samples are drawn. `weighted` (the default) draws with replacement, each dataset
+in proportion to `rows ** alpha`, and groups the draws by length within blocks of 2048 to pad less. `sized`
+trains by passes over the data: each pass shuffles the whole training set and cuts it into batches of `batch_size`
+samples in that order, so every sample is shown once per pass. Datasets are then mixed by their size, `alpha` and
+`batch_tokens` are ignored, and the padded size of a batch varies with its samples. With `sized`, set `epochs` to
+train for that many passes; the number of optimizer steps is then counted from the batches and replaces `steps`.
+
+One optimizer step accumulates `accum` batches of at most `batch_tokens` padded tokens (`batch_size` samples with
+`sized`). Every `eval_every` steps the model is scored on `eval_samples` validation rows per dataset, and the
+weights with the best macro NLL are kept. At the end the best weights are scored on the whole validation partition
+and one temperature is fitted.
 A stage writes `RUN/<stage>/adapter/` (the LoRA), `head.pt`, `history.json` and `validation.json`.
 
 There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the base weights
@@ -73,15 +91,15 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
   On Qwen3.5, `all` and `attn` also cover the linear-attention projections.
 - `special_embeddings`: also train the embedding rows of the five delimiters.
 - `head_dim`, `max_length`, `eval_batch_tokens`.
-- `[ce]`, `[rl]`: `steps`, `batch_tokens`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, dataset mixing
-  (`alpha`). When training runs out of memory, halve `batch_tokens` and double `accum`.
+- `[ce]`, `[rl]`: `steps`, `batch_tokens`, `batch_size`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, `sampling`, `epochs`, dataset
+  mixing (`alpha`), `none_prob`. When training runs out of memory, halve `batch_tokens` and double `accum`.
 
 ## Files
 
 - `config.py`: `TrainConfig`, `PointerConfig`.
 - `encode.py`: `Encoder` tokenizes a sample and lays it out in a given option order.
 - `model.py`: `PointerHead`, `PointerModel`, and `create` / `load` for the LoRA and the head.
-- `data.py`: loads and tokenizes the partitions; `Pool` draws length-grouped training batches.
+- `data.py`: loads and tokenizes the partitions; `Pool` and `SizedEpochPool` draw training batches.
 - `train.py`: the `ce` and `rl` stages.
 - `evaluate.py`: scores and temperature fitting.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.

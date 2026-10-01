@@ -21,13 +21,19 @@ def encode(
     query = tokenizer.encode(render_query(question, options), add_special_tokens=False)
     if not state:
         return query if len(query) <= max_length else None
-    context = tokenizer.encode(STATE_TEMPLATE.format(state=state), add_special_tokens=False)
-    budget = max_length - len(query)
-    if len(context) > budget:
-        ellipsis = tokenizer.encode(ELLIPSIS, add_special_tokens=False)
-        keep = budget - len(ellipsis)
-        if keep < 16:
-            return None
-        head = keep // 2
-        context = context[:head] + ellipsis + context[len(context) - (keep - head):]
-    return context + query
+    context = cut_middle(tokenizer, tokenizer.encode(STATE_TEMPLATE.format(state=state), add_special_tokens=False),
+                         max_length - len(query))
+    return None if context is None else context + query
+
+
+def cut_middle(tokenizer: PreTrainedTokenizerBase, context: list[int], budget: int) -> list[int] | None:
+    """`context` within `budget` tokens, its middle replaced by an ellipsis when it is longer.
+    None when fewer than 16 of its tokens would be left."""
+    if len(context) <= budget:
+        return context
+    ellipsis = tokenizer.encode(ELLIPSIS, add_special_tokens=False)
+    keep = budget - len(ellipsis)
+    if keep < 16:
+        return None
+    head = keep // 2
+    return context[:head] + ellipsis + context[len(context) - (keep - head):]

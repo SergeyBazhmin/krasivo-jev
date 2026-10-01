@@ -1,6 +1,6 @@
 import json
 import math
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from pathlib import Path
 
 import torch
@@ -11,7 +11,7 @@ from jev_model import losses
 from jev_model.metrics import soft_cross_entropy, table
 from jev_model.pointer import model as pointer
 from jev_model.pointer.config import PointerConfig, TrainConfig
-from jev_model.pointer.data import Draw, Pool, load_items
+from jev_model.pointer.data import POOLS, Draw, SizedEpochPool, load_items
 from jev_model.pointer.evaluate import evaluate, pooled_temperature, run, score
 from jev_model.pointer.model import PointerModel
 
@@ -44,8 +44,22 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
     probe = load_items(names, config.data_dir, "validation", model.encoder, limit=stage_config.eval_samples)
     logger.info(f"train on {len(train_data)} datasets, {sum(map(len, train_data.values()))} samples")
 
+    if stage_config.sampling not in POOLS:
+        raise ValueError(f"unknown sampling {stage_config.sampling!r}, expected one of {sorted(POOLS)}")
+    pool_class = POOLS[stage_config.sampling]
+    pool_args = (train_data, stage_config.alpha, stage_config.seed, model.encoder, stage_config.none_prob)
+    if pool_class is SizedEpochPool:
+        pool = SizedEpochPool(*pool_args, batch_size=stage_config.batch_size)
+    else:
+        pool = pool_class(*pool_args)
+    if stage_config.epochs:
+        if not isinstance(pool, SizedEpochPool):
+            raise ValueError("epochs needs sampling = \"sized\"")
+        count = pool.count_batches(stage_config.epochs)
+        stage_config = replace(stage_config, steps=math.ceil(count / stage_config.accum))
+        logger.info(f"{stage_config.epochs} epochs: {count} batches, {stage_config.steps} steps")
     generator = torch.Generator().manual_seed(stage_config.seed)
-    batches = Pool(train_data, stage_config.alpha, stage_config.seed).batches(stage_config.batch_tokens, generator)
+    batches = pool.batches(stage_config.batch_tokens, generator)
     optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: losses.lr_factor(step, stage_config))
     saved = {"stage": stage, "train": asdict(stage_config), "datasets": names}

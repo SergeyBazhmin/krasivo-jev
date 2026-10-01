@@ -1,7 +1,8 @@
 import hashlib
+import math
 import random
 from collections.abc import Iterator
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 
 import torch
@@ -10,6 +11,9 @@ from loguru import logger
 
 from jev_model.data import content_key, partition
 from jev_model.pointer.encode import Encoder, Tokens
+
+# what stands in for the true option when a draw hides it
+NONE_TEXT = "None of the above"
 
 
 @dataclass
@@ -69,22 +73,42 @@ def token_batches[T](items: list[T], lengths: list[int], batch_tokens: int) -> I
 
 class Pool:
     """Every training sample, drawn with per-dataset mixing weights and a fresh option order per draw,
-    so no position can learn a prior for an answer."""
+    so no position can learn a prior for an answer. With probability `none_prob` a draw shows
+    `NONE_TEXT` in place of the true option, so the model does not learn that a listed answer must be right."""
 
     # draws sorted by length together before they are cut into batches; a larger block pads less
     BLOCK = 2048
 
-    def __init__(self, data: dict[str, list[Item]], alpha: float, seed: int):
+    def __init__(self, data: dict[str, list[Item]], alpha: float, seed: int, encoder: Encoder, none_prob: float = 0.0):
         self.items = [item for items in data.values() for item in items]
         self.weights = torch.cat([torch.full((len(items),), len(items) ** alpha / len(items), dtype=torch.float64)
                                   for items in data.values()])
         self.seed = seed
+        self.encoder = encoder
+        self.none_prob = none_prob
+        self.none = encoder.tokenize([("", "", [NONE_TEXT])])[0].options[0]
 
     def draw(self, index: int, count: int) -> Draw:
         item = self.items[index]
         order = list(range(len(item.tokens.options)))
-        random.Random(f"{self.seed}:{count}:{item.key}").shuffle(order)
+        rng = random.Random(f"{self.seed}:{count}:{item.key}")
+        rng.shuffle(order)
+        if rng.random() < self.none_prob:
+            item = self.without_answer(item)
         return Draw(item, order)
+
+    def without_answer(self, item: Item) -> Item:
+        """`item` with its true option replaced by the none option, which takes over the label. Left as it
+        is when there is no single true option (soft labels), when the source already has a none option,
+        or when the longer sequence would not fit."""
+        if max(item.label) < 1.0 or self.none in item.tokens.options:
+            return item
+        options = list(item.tokens.options)
+        options[item.label.index(max(item.label))] = self.none
+        tokens = replace(item.tokens, options=options)
+        if not self.encoder.fits(tokens):
+            return item
+        return replace(item, tokens=tokens, length=self.encoder.length(tokens))
 
     def batches(self, batch_tokens: int, generator: torch.Generator) -> Iterator[list[Draw]]:
         count = 0
@@ -95,3 +119,37 @@ class Pool:
             batches = list(token_batches(draws, [d.item.length for d in draws], batch_tokens))
             for i in torch.randperm(len(batches), generator=generator).tolist():
                 yield batches[i]
+
+
+class SizedEpochPool(Pool):
+    """A pool for training by epochs: every pass shuffles the whole training set and cuts it into batches of
+    `batch_size` draws in that order, so each sample is shown once per pass. Datasets are mixed by size (`alpha`
+    has no effect), and the batches are cut by count rather than padded tokens, so their padded size varies with
+    the lengths of their draws."""
+
+    def __init__(self, *args, batch_size: int, **kwargs):
+        super().__init__(*args, **kwargs)
+        if batch_size < 1:
+            raise ValueError("sized sampling needs batch_size >= 1")
+        self.batch_size = batch_size
+
+    def epoch(self, number: int, generator: torch.Generator) -> Iterator[list[Draw]]:
+        """The batches of one pass, `batch_size` draws each (the last may hold fewer)."""
+        order = torch.randperm(len(self.items), generator=generator).tolist()
+        draws = [self.draw(index, number * len(self.items) + position) for position, index in enumerate(order)]
+        for start in range(0, len(draws), self.batch_size):
+            yield draws[start:start + self.batch_size]
+
+    def batches(self, batch_tokens: int, generator: torch.Generator) -> Iterator[list[Draw]]:
+        """Batches of `batch_size` draws, pass after pass; `batch_tokens` is ignored."""
+        number = 0
+        while True:
+            yield from self.epoch(number, generator)
+            number += 1
+
+    def count_batches(self, epochs: int) -> int:
+        """How many batches the first `epochs` passes of `batches` hold."""
+        return epochs * math.ceil(len(self.items) / self.batch_size)
+
+
+POOLS: dict[str, type[Pool]] = {"weighted": Pool, "sized": SizedEpochPool}

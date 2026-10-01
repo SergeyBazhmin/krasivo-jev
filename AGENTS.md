@@ -51,6 +51,9 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
 - `constants.py`: `MAX_SAMPLES = 10_000` per split. `ROOT_DIR` is the default output
   directory. It resolves to `data/` at the repo root, so built datasets land in `data/<name>/`.
 - `cli.py`: the `jev` Typer CLI.
+- `translate.py`: `jev translate` sends each distinct state, question and option text of saved datasets to an
+  OpenAI-compatible server (a local vLLM) and saves Russian copies to `data_ru/<name>`. Translations are cached
+  in `data_ru/translations.jsonl`, so reruns resume and shared texts are translated once.
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
 - Topic subpackages: `bugs`, `business`, `classification`, `distill`, `guardrails`,
@@ -68,6 +71,7 @@ uv sync
 uv run jev list                              # registered dataset names
 uv run jev prepare sst2 anli                 # build specific datasets
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
+uv run jev translate all [--url http://localhost:8000/v1] [--model NAME]   # Russian copies in data_ru/
 ```
 
 `prepare` loads from the Hub, runs `prepare()`, does a stratified cap on each split, and
@@ -127,7 +131,9 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   option's logit matches the hidden state at its `</opt>` against the one at `<decide>`, so there is no option
   cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
   There is no feature cache: every step runs the backbone. Each stage writes `RUN/<stage>/adapter` and `head.pt`.
-- `losses.py`: the lr schedule and the RL loss over option logits, shared by both models.
+- `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
+  replies with the number of an option. `train` only records the config, and `eval` scores it.
+- `losses.py`: the lr schedule and the RL loss over option logits, shared by `frozen_head` and `pointer`.
 
 ```bash
 uv sync --extra model

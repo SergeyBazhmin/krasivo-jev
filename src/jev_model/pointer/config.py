@@ -9,6 +9,8 @@ class TrainConfig:
     # optimizer steps; each one accumulates `accum` batches of at most `batch_tokens` padded tokens
     steps: int = 5_000
     batch_tokens: int = 16_384
+    # sized sampling only: samples per batch, whatever their length, in place of `batch_tokens`
+    batch_size: int = 0
     accum: int = 2
     lr: float = 2e-4
     weight_decay: float = 0.01
@@ -16,8 +18,15 @@ class TrainConfig:
     eval_every: int = 500
     # validation rows per dataset scored during training; the final metrics use the whole partition
     eval_samples: int = 200
-    # dataset mixing: each dataset is drawn in proportion to rows ** alpha (1 = by size, 0 = uniform)
+    # how training samples are drawn: weighted (per-dataset weights, with replacement) or sized (each pass
+    # shuffles the whole training set and cuts it into batches of `batch_size` samples in that order)
+    sampling: str = "weighted"
+    # sized sampling only: train for this many passes over the training set instead of `steps`; 0 keeps `steps`
+    epochs: int = 0
+    # weighted sampling only: each dataset is drawn in proportion to rows ** alpha (1 = by size, 0 = uniform)
     alpha: float = 0.5
+    # chance that a training draw shows "None of the above" in place of the true option
+    none_prob: float = 0.1
     seed: int = 0
     # RL stage only
     group: int = 8
