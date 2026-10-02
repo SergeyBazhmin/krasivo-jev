@@ -130,7 +130,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `<state> .. <q> .. <opt> .. </opt> .. <decide>` (delimiters reuse Qwen special tokens, `encode.py`); an
   option's logit matches the hidden state at its `</opt>` against the one at `<decide>`, so there is no option
   cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
-  There is no feature cache: every step runs the backbone. Each stage writes `RUN/<stage>/adapter` and `head.pt`.
+  There is no feature cache: every step runs the backbone. On CUDA the decoder goes through unsloth (`fast.py`).
+  Each stage writes `RUN/<stage>/adapter` and `head.pt`.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
   replies with the number of an option. `train` only records the config, and `eval` scores it.
 - `losses.py`: the lr schedule and the RL loss over option logits, shared by `frozen_head` and `pointer`.
@@ -161,7 +162,8 @@ uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the brow
 ## Conventions
 
 - Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
-  the `model` extra (torch, transformers, tqdm, peft, flash-linear-attention).
+  the `model` extra (torch, transformers, tqdm, peft, flash-linear-attention, unsloth). unsloth pins older
+  torch/transformers/datasets, so `[tool.uv] override-dependencies` in `pyproject.toml` keeps the project's versions.
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,

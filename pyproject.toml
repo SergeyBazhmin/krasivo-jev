@@ -21,6 +21,7 @@ model = [
     "torch>=2.6",
     "tqdm>=4.67",
     "transformers>=5.2",
+    "unsloth>=2026.9.14",
 ]
 # `jev-model ui`; install with `uv sync --extra model --extra ui`
 ui = [
@@ -30,6 +31,10 @@ ui = [
 [project.scripts]
 jev = "jev_datasets.cli:app"
 jev-model = "jev_model.cli:app"
+
+[tool.uv]
+# unsloth pins older torch, transformers and datasets than the project needs (Qwen3.5 itself needs transformers 5)
+override-dependencies = ["datasets>=5.0.1", "torch>=2.14.0", "transformers>=5.17.0"]
 
 [build-system]
 requires = ["hatchling"]

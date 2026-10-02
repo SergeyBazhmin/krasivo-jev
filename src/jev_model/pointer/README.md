@@ -63,8 +63,12 @@ weights with the best macro NLL are kept. At the end the best weights are scored
 and one temperature is fitted.
 A stage writes `RUN/<stage>/adapter/` (the LoRA), `head.pt`, `history.json` and `validation.json`.
 
-There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the base weights
-are loaded in bf16 and the forward pass uses bf16 autocast; the LoRA and the head stay in float32.
+There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the decoder is
+loaded and wrapped by [unsloth](https://github.com/unslothai/unsloth) (`fast.py`): base weights in bf16, unsloth's
+patched kernels and its offloaded gradient checkpointing, the forward pass under bf16 autocast; the LoRA and the
+head stay in float32. Without a GPU unsloth cannot be imported, so CPU runs use plain transformers + peft. The LoRA
+wraps the whole causal LM, but the forward pass calls only the text model under it, so no vocabulary logits are
+computed; adapters saved before unsloth (which wrap the text model) still load.
 
 Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
 `flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
@@ -98,6 +102,7 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 
 - `config.py`: `TrainConfig`, `PointerConfig`.
 - `encode.py`: `Encoder` tokenizes a sample and lays it out in a given option order.
+- `fast.py`: imports unsloth before transformers and peft when there is a GPU.
 - `model.py`: `PointerHead`, `PointerModel`, and `create` / `load` for the LoRA and the head.
 - `data.py`: loads and tokenizes the partitions; `Pool` and `SizedEpochPool` draw training batches.
 - `train.py`: the `ce` and `rl` stages.

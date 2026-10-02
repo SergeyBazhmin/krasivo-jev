@@ -17,6 +17,7 @@ class PointerJevModel(JevModel[PointerConfig]):
     default_stages = ("ce",)
 
     def run_stage(self, stage: str, config: PointerConfig, run_dir: Path, device: str):
+        from jev_model.pointer import fast  # noqa: F401  # unsloth goes in before transformers
         from jev_model.pointer.train import train
 
         init = None
@@ -38,6 +39,7 @@ class PointerJevModel(JevModel[PointerConfig]):
         return run_dir / stage
 
     def evaluate(self, config, run_dir, partition, device, stage=None):
+        from jev_model.pointer import fast  # noqa: F401  # unsloth goes in before transformers
         from jev_model.pointer.data import load_items
         from jev_model.pointer.evaluate import evaluate
         from jev_model.pointer.model import load, read_checkpoint
@@ -48,6 +50,7 @@ class PointerJevModel(JevModel[PointerConfig]):
         return evaluate(model, data, config.eval_batch_tokens)
 
     def predictor(self, config, run_dir, device, stage=None):
+        from jev_model.pointer import fast  # noqa: F401  # unsloth goes in before transformers
         from jev_model.pointer.predict import PointerPredictor
 
         return PointerPredictor(self.checkpoint(run_dir, stage), device)

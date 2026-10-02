@@ -41,7 +41,7 @@ class PointerConfig:
     # built datasets to use; empty for every one under data_dir
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
-    model: str = "Qwen/Qwen3.5-2B-Base"
+    model: str = "unsloth/Qwen3.5-2B-Base"
     # LoRA rank, and which projections get an adapter: all, attn or qv
     lora: int = 16
     lora_targets: str = "all"

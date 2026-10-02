@@ -4,6 +4,8 @@ from pathlib import Path
 
 import torch
 from torch import nn
+
+from jev_model.pointer import fast  # unsloth goes in before transformers and peft
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedTokenizerBase
 
 from jev_model.metrics import option_mask
@@ -59,6 +61,13 @@ class PointerModel(nn.Module):
     def device(self) -> torch.device:
         return self.head.query.weight.device
 
+    @property
+    def backbone(self) -> nn.Module:
+        """The text model under the LoRA, without the LM head, so no vocabulary logits are computed.
+        Adapters saved before unsloth wrap the text model itself."""
+        base = self.decoder.get_base_model()
+        return base.model if hasattr(base, "lm_head") else base
+
     def forward(self, prompts: list[tuple[list[int], list[int]]]) -> tuple[torch.Tensor, torch.Tensor]:
         """(logits [B, K], num_options [B]) for (ids, closing-token positions) pairs from `Encoder.assemble`.
         Padding goes on the right: every layer is causal, so it cannot change a real position."""
@@ -74,7 +83,7 @@ class PointerModel(nn.Module):
             closes[row, : len(positions)] = torch.tensor(positions)
         ids, mask, closes = ids.to(device), mask.to(device), closes.to(device)
         with torch.autocast("cuda", dtype=torch.bfloat16, enabled=device.type == "cuda"):
-            hidden = self.decoder(input_ids=ids, attention_mask=mask, use_cache=False).last_hidden_state
+            hidden = self.backbone(input_ids=ids, attention_mask=mask, use_cache=False).last_hidden_state
         hidden = hidden.float()
         rows = torch.arange(len(prompts), device=device)
         num_options = torch.tensor([len(positions) for _, positions in prompts], device=device)
@@ -89,12 +98,25 @@ class PointerModel(nn.Module):
         torch.save({"head": self.head.state_dict(), "settings": self.settings, **extra}, out_dir / HEAD_FILE)
 
 
-def load_decoder(model: str, device: str) -> nn.Module:
-    """The text decoder without its LM head. On CUDA it is bf16, the dtype the forward pass autocasts to,
-    so the frozen weights are not cast again on every batch; peft keeps the adapter weights in float32.
-    Qwen3.5 checkpoints are multimodal; `AutoModelForCausalLM` loads only the language model."""
-    dtype = torch.bfloat16 if torch.device(device).type == "cuda" else torch.float32
-    return AutoModelForCausalLM.from_pretrained(model, dtype=dtype).model.to(device)
+def unsloth_on(device: str) -> bool:
+    return fast.ENABLED and torch.device(device).type == "cuda"
+
+
+def load_decoder(model: str, device: str, max_length: int) -> nn.Module:
+    """The text causal LM; its LM head is tied to the embeddings, so it costs no memory. On CUDA unsloth loads
+    it in bf16, the dtype the forward pass autocasts to, so the frozen weights are not cast again on every batch;
+    peft keeps the adapter weights in float32. Qwen3.5 checkpoints are multimodal; `AutoModelForCausalLM` loads
+    only the language model."""
+    if unsloth_on(device):
+        from unsloth import FastModel
+
+        decoder, _ = FastModel.from_pretrained(
+            model, auto_model=AutoModelForCausalLM, max_seq_length=max_length, dtype=torch.bfloat16,
+            load_in_4bit=False, load_in_16bit=True, full_finetuning=False, device_map={"": device},
+            use_gradient_checkpointing="unsloth",
+        )
+        return decoder
+    return AutoModelForCausalLM.from_pretrained(model, dtype=torch.float32).to(device)
 
 
 def create(config: PointerConfig, device: str) -> PointerModel:
@@ -102,16 +124,24 @@ def create(config: PointerConfig, device: str) -> PointerModel:
     from peft import LoraConfig, get_peft_model
 
     tokenizer = AutoTokenizer.from_pretrained(config.model)
-    decoder = load_decoder(config.model, device)
+    decoder = load_decoder(config.model, device, config.max_length)
     hybrid = "linear_attention" in (getattr(decoder.config, "layer_types", None) or [])
-    extra = {}
+    lora = {
+        "r": config.lora, "lora_alpha": 2 * config.lora, "lora_dropout": 0.05,
+        "target_modules": lora_targets(config.lora_targets, hybrid),
+    }
     if config.special_embeddings:
-        extra["trainable_token_indices"] = {"embed_tokens": [tokenizer.convert_tokens_to_ids(t) for t in SPECIAL]}
-    lora = LoraConfig(
-        task_type="FEATURE_EXTRACTION", r=config.lora, lora_alpha=2 * config.lora, lora_dropout=0.05,
-        target_modules=lora_targets(config.lora_targets, hybrid), **extra,
-    )
-    decoder = get_peft_model(decoder, lora)
+        lora["trainable_token_indices"] = {"embed_tokens": [tokenizer.convert_tokens_to_ids(t) for t in SPECIAL]}
+    if unsloth_on(device):
+        from unsloth import FastModel
+
+        # unsloth reseeds every generator with `random_state`; hand it the seed the stage already set
+        decoder = FastModel.get_peft_model(
+            decoder, task_type="CAUSAL_LM", use_gradient_checkpointing="unsloth", random_state=torch.initial_seed(),
+            **lora,
+        )
+    else:
+        decoder = get_peft_model(decoder, LoraConfig(task_type="CAUSAL_LM", **lora))
     head = PointerHead(decoder.config.hidden_size, config.head_dim).to(device)
     return PointerModel(decoder, tokenizer, head, {key: getattr(config, key) for key in MODEL_KEYS})
 
@@ -123,9 +153,16 @@ def load(checkpoint_dir: Path, device: str, trainable: bool = False) -> PointerM
     checkpoint = torch.load(checkpoint_dir / HEAD_FILE, map_location="cpu")
     settings = checkpoint["settings"]
     tokenizer = AutoTokenizer.from_pretrained(settings["model"])
-    decoder = PeftModel.from_pretrained(
-        load_decoder(settings["model"], device), checkpoint_dir / ADAPTER_DIR, is_trainable=trainable
-    )
+    base = load_decoder(settings["model"], device, settings["max_length"])
+    adapter = json.loads((checkpoint_dir / ADAPTER_DIR / "adapter_config.json").read_text())
+    if adapter["task_type"] == "FEATURE_EXTRACTION":
+        # saved before unsloth: the adapter wraps the text model, not the causal LM
+        base = base.model
+    decoder = PeftModel.from_pretrained(base, checkpoint_dir / ADAPTER_DIR, is_trainable=trainable)
+    if trainable and unsloth_on(device):
+        from unsloth import FastModel
+
+        FastModel.for_training(decoder)
     head = PointerHead(decoder.config.hidden_size, settings["head_dim"])
     head.load_state_dict(checkpoint["head"])
     model = PointerModel(decoder, tokenizer, head.to(device), settings)
