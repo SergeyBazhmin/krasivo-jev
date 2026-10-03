@@ -22,10 +22,9 @@ def batch_loss(model: PointerModel, draws: list[Draw], stage: str, step: int, co
     labels = torch.zeros_like(logits)
     for row, draw in enumerate(draws):
         labels[row, : len(draw.order)] = torch.tensor([draw.item.label[i] for i in draw.order])
-    weights = torch.tensor([draw.weight for draw in draws], device=logits.device)
     if stage == "rl":
-        return losses.rl_loss(logits, labels, num_options, step, config, weights)
-    return (soft_cross_entropy(logits, labels, num_options) * weights).mean()
+        return losses.rl_loss(logits, labels, num_options, step, config)
+    return soft_cross_entropy(logits, labels, num_options).mean()
 
 
 def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: list[str], init: Path | None = None):

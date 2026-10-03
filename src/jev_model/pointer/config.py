@@ -21,8 +21,7 @@ class TrainConfig:
     sampling: str = "weighted"
     # sized sampling only: train for this many passes over the training set instead of `steps`; 0 keeps `steps`
     epochs: int = 0
-    # each dataset counts in proportion to rows ** alpha (1 = by size, 0 = uniform): weighted sampling draws it so
-    # often, sized sampling weights its samples' loss
+    # weighted sampling only: each dataset is drawn in proportion to rows ** alpha (1 = by size, 0 = uniform)
     alpha: float = 0.5
     # chance that a training draw shows "None of the above" in place of the true option
     none_prob: float = 0.1

@@ -30,8 +30,6 @@ class Draw:
 
     item: Item
     order: list[int]
-    # how much the draw counts in the loss
-    weight: float = 1.0
 
 
 def load_items(
@@ -143,15 +141,7 @@ class Pool:
 class SizedEpochPool(Pool):
     """A pool for training by epochs: every pass shuffles the whole training set and cuts it into batches in that
     order, each taking draws while its padded size stays within `batch_tokens`, so each sample is shown once per
-    pass. Since every sample is seen equally often, datasets are mixed through loss weights instead: a draw is
-    weighted so that each dataset's total weight is in proportion to rows ** alpha, with a mean weight of 1."""
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.item_weights = (self.weights * len(self.items) / self.weights.sum()).tolist()
-
-    def draw(self, index: int, count: int) -> Draw:
-        return replace(super().draw(index, count), weight=self.item_weights[index])
+    pass, and datasets are mixed by their size."""
 
     def epoch(self, number: int, batch_tokens: int, generator: torch.Generator) -> Iterator[list[Draw]]:
         """The batches of one pass, each as many draws in order as fit in `batch_tokens` once padded (at least one)."""

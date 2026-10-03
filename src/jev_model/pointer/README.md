@@ -59,9 +59,8 @@ Rows with soft labels are left alone. Dropping happens before the none draw.
 `sampling` picks how training samples are drawn. `weighted` (the default) draws with replacement, each dataset
 in proportion to `rows ** alpha`, and groups the draws by length within blocks of 2048 to pad less. `sized`
 trains by passes over the data: each pass shuffles the whole training set and, in that order, fills each batch with
-samples while its padded size stays within `batch_tokens`, so every sample is shown once per pass. Datasets are then
-mixed through the loss instead: each sample is weighted so that its dataset's total weight is in proportion to
-`rows ** alpha`, with a mean weight of 1. With `sized`, set `epochs` to train for that many passes; the number of
+samples while its padded size stays within `batch_tokens`, so every sample is shown once per pass and datasets are
+mixed by their size (`alpha` is ignored). With `sized`, set `epochs` to train for that many passes; the number of
 optimizer steps is then counted from the batches and replaces `steps`.
 
 One optimizer step accumulates `accum` batches of at most `batch_tokens` padded tokens. Every `eval_every` steps the model is scored on `eval_samples` validation rows per dataset, and the
