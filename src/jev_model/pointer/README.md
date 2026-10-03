@@ -43,6 +43,12 @@ that one of the listed options must be correct. A draw is left alone when the la
 option), when the sample already has that option, or when the longer sequence would not fit. Validation and
 test rows are never changed, so the scores do not measure this behaviour.
 
+### Option count
+
+Every dataset has its own number of options, so the count would give the dataset away. With probability
+`drop_prob` (0 by default) a training draw loses 1..n-2 of its wrong options; the true option always stays.
+Rows with soft labels are left alone. Dropping happens before the none draw.
+
 ## Stages
 
 | stage | default | what it does |
@@ -94,7 +100,7 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 - `special_embeddings`: also train the embedding rows of the five delimiters.
 - `head_dim`, `max_length`, `eval_batch_tokens`.
 - `[ce]`, `[rl]`: `steps`, `batch_tokens`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, `sampling`, `epochs`, dataset
-  mixing (`alpha`), `none_prob`. When training runs out of memory, halve `batch_tokens` and double `accum`.
+  mixing (`alpha`), `none_prob`, `drop_prob`. When training runs out of memory, halve `batch_tokens` and double `accum`.
 
 ## Files
 

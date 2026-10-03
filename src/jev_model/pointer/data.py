@@ -75,28 +75,46 @@ def token_batches[T](items: list[T], lengths: list[int], batch_tokens: int) -> I
 class Pool:
     """Every training sample, drawn with per-dataset mixing weights and a fresh option order per draw,
     so no position can learn a prior for an answer. With probability `none_prob` a draw shows
-    `NONE_TEXT` in place of the true option, so the model does not learn that a listed answer must be right."""
+    `NONE_TEXT` in place of the true option, so the model does not learn that a listed answer must be right.
+    With probability `drop_prob` a draw loses some wrong options, so the option count does not give the dataset away."""
 
     # draws sorted by length together before they are cut into batches; a larger block pads less
     BLOCK = 2048
 
-    def __init__(self, data: dict[str, list[Item]], alpha: float, seed: int, encoder: Encoder, none_prob: float = 0.0):
+    def __init__(
+        self, data: dict[str, list[Item]], alpha: float, seed: int, encoder: Encoder, none_prob: float = 0.0,
+        drop_prob: float = 0.0,
+    ):
         self.items = [item for items in data.values() for item in items]
         self.weights = torch.cat([torch.full((len(items),), len(items) ** alpha / len(items), dtype=torch.float64)
                                   for items in data.values()])
         self.seed = seed
         self.encoder = encoder
         self.none_prob = none_prob
+        self.drop_prob = drop_prob
         self.none = encoder.tokenize([("", "", [NONE_TEXT])])[0].options[0]
 
     def draw(self, index: int, count: int) -> Draw:
         item = self.items[index]
+        # a separate stream, so the shuffles and none draws stay the same whatever the option count does
+        item = self.drop_options(item, random.Random(f"{self.seed}:{count}:{item.key}:count"))
         order = list(range(len(item.tokens.options)))
         rng = random.Random(f"{self.seed}:{count}:{item.key}")
         rng.shuffle(order)
         if rng.random() < self.none_prob:
             item = self.without_answer(item)
         return Draw(item, order)
+
+    def drop_options(self, item: Item, rng: random.Random) -> Item:
+        """`item` with 1..n-2 of its wrong options dropped. Soft labels are left as they are, since there is no
+        single true option to keep."""
+        if max(item.label) < 1.0 or len(item.tokens.options) <= 2 or rng.random() >= self.drop_prob:
+            return item
+        wrong = [i for i, p in enumerate(item.label) if p < 1.0]
+        dropped = set(rng.sample(wrong, rng.randint(1, len(item.tokens.options) - 2)))
+        tokens = replace(item.tokens, options=[o for i, o in enumerate(item.tokens.options) if i not in dropped])
+        label = [p for i, p in enumerate(item.label) if i not in dropped]
+        return replace(item, tokens=tokens, label=label, length=self.encoder.length(tokens))
 
     def without_answer(self, item: Item) -> Item:
         """`item` with its true option replaced by the none option, which takes over the label. Left as it

@@ -48,7 +48,8 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
     if stage_config.sampling not in POOLS:
         raise ValueError(f"unknown sampling {stage_config.sampling!r}, expected one of {sorted(POOLS)}")
     pool = POOLS[stage_config.sampling](
-        train_data, stage_config.alpha, stage_config.seed, model.encoder, stage_config.none_prob
+        train_data, stage_config.alpha, stage_config.seed, model.encoder, stage_config.none_prob,
+        stage_config.drop_prob,
     )
     generator = torch.Generator().manual_seed(stage_config.seed)
     if stage_config.epochs:

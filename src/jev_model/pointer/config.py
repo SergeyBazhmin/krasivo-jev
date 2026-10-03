@@ -26,6 +26,8 @@ class TrainConfig:
     alpha: float = 0.5
     # chance that a training draw shows "None of the above" in place of the true option
     none_prob: float = 0.1
+    # chance that a training draw loses some of its wrong options (at least 2 options stay), so the option count varies
+    drop_prob: float = 0.0
     seed: int = 0
     # RL stage only
     group: int = 8
