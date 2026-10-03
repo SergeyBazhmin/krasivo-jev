@@ -45,7 +45,13 @@ class PointerJevModel(JevModel[PointerConfig]):
 
         checkpoint = self.checkpoint(run_dir, stage)
         model = load(checkpoint, device)
-        data = load_items(read_checkpoint(checkpoint)["datasets"], config.data_dir, partition, model.encoder)
+        data = load_items(
+            read_checkpoint(checkpoint)["datasets"],
+            config.data_dir,
+            partition,
+            model.encoder,
+            limit=config.max_samples,
+        )
         return evaluate(model, data, config.eval_batch_tokens)
 
     def predictor(self, config, run_dir, device, stage=None):

@@ -59,7 +59,7 @@ class FrozenHeadModel(JevModel[FrozenHeadConfig]):
         from jev_model.frozen_head.evaluate import evaluate
         from jev_model.frozen_head.head import OptionHead
 
-        checkpoint = torch.load(self.checkpoint(run_dir, stage))
+        checkpoint = torch.load(self.checkpoint(run_dir, stage), map_location="cpu")
         head = OptionHead(**checkpoint["head_config"])
         head.load_state_dict(checkpoint["head"])
         data = load_partition(self.cache_root(config), checkpoint["datasets"], partition)

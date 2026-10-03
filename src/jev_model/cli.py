@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Annotated
 
 import typer
+from loguru import logger
 
 from jev_model import distributed, models
 from jev_model.base import CONFIG_FILE, JevModel, read_run
@@ -18,7 +19,7 @@ app = typer.Typer(help="Train and evaluate models on the jev datasets.", no_args
 
 ConfigFile = Annotated[Path | None, typer.Option("--config", "-c", help="JSON or TOML config; see `config MODEL`")]
 Overrides = Annotated[list[str] | None, typer.Option("--set", "-s", help="override a config key: `ce.lr=3e-4`")]
-Device = Annotated[str, typer.Option(help="torch device; cuda when available")]
+Device = Annotated[str, typer.Option(help="torch device; defaults to CUDA, then Apple MPS, then CPU")]
 Stage = Annotated[str | None, typer.Option(help="stage whose weights to use; the last trained by default")]
 
 
@@ -33,7 +34,9 @@ def default_device(device: str) -> str:
         return device
     import torch
 
-    return "cuda" if torch.cuda.is_available() else "cpu"
+    if torch.cuda.is_available():
+        return "cuda"
+    return "mps" if torch.backends.mps.is_available() else "cpu"
 
 
 def resolve_config(model: JevModel, **kwargs):
@@ -103,6 +106,7 @@ def train(
         raise typer.BadParameter(f"{run_dir} belongs to {previous['model']}", param_hint="--run-dir")
     base = read_file(run_dir / CONFIG_FILE) if previous else None
     resolved = resolve_config(model, base=base, path=config, overrides=overrides or [])
+    logger.info(f"device: {device}")
     model.train(resolved, run_dir, device, stages)
     if distributed.is_main():
         typer.echo(f"run: {run_dir}")

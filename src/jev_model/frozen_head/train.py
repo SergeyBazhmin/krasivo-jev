@@ -63,9 +63,12 @@ def train(
     train_data = load_partition(cache_root, names, "train")
     validation = load_partition(cache_root, names, "validation")
     logger.info(f"train on {len(train_data)} datasets, {sum(len(t['labels']) for t in train_data.values())} prompts")
+    if not train_data or not validation:
+        raise ValueError("training needs nonempty train and validation partitions; increase max_samples or max_length")
 
+    torch.manual_seed(config.seed)
     if init is not None:
-        checkpoint = torch.load(init)
+        checkpoint = torch.load(init, map_location="cpu")
         head_config = checkpoint["head_config"]
         head = OptionHead(**head_config)
         head.load_state_dict(checkpoint["head"])
@@ -81,14 +84,13 @@ def train(
     head.to(device)
     loss_fn: LossFn = {"ce": ce_loss, "rl": rl_loss}[stage]
 
-    torch.manual_seed(config.seed)
     generator = torch.Generator().manual_seed(config.seed)
     optimizer = torch.optim.AdamW(head.parameters(), lr=config.lr, weight_decay=config.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: lr_factor(step, config))
     batches = Pool(train_data, config.alpha).batches(config.batch_size, generator)
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    best, history, running = math.inf, [], 0.0
+    best, history, running, since = math.inf, [], 0.0, 0
     progress = tqdm(range(config.steps), desc=stage)
     for step in progress:
         head.train()
@@ -100,18 +102,18 @@ def train(
         optimizer.step()
         scheduler.step()
         value = loss.item()
-        running += value
+        running, since = running + value, since + 1
         progress.set_postfix(loss=f"{value:.4f}", refresh=False)
         if (step + 1) % config.eval_every == 0 or step + 1 == config.steps:
             macro = evaluate(head, validation, device)["macro"]
-            history.append({"step": step + 1, "loss": running / config.eval_every} | macro)
-            running = 0.0
+            history.append({"step": step + 1, "loss": running / since} | macro)
+            running, since = 0.0, 0
             logger.info(json.dumps(history[-1]))
             if macro["nll"] < best:
                 best = macro["nll"]
                 torch.save({"head": head.state_dict(), "head_config": head_config}, out_dir / "head.pt")
 
-    checkpoint = torch.load(out_dir / "head.pt")
+    checkpoint = torch.load(out_dir / "head.pt", map_location="cpu")
     head.load_state_dict(checkpoint["head"])
     temperature = calibrate(head, validation, device)
     metrics = evaluate(head, validation, device)

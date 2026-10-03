@@ -1,0 +1,108 @@
+# rujev
+
+Датасеты и обучение моделей, выбирающих ответ за один проход:
+`state → question → options → label`. Ответ должен следовать из контекста и вопроса.
+
+## Локальные эксперименты на Mac M1
+
+Нужен Python 3.12+ для **arm64**. Установка обучения без CUDA, Unsloth и Triton:
+
+```bash
+uv sync --extra model-mac
+```
+
+CLI автоматически выбирает CUDA, затем Apple GPU (`mps`), затем CPU. Устройство можно задать явно:
+`--device mps` или `--device cpu`. MPS используется через PyTorch; vLLM для этих пайплайнов не нужен.
+На CPU настройки тоже работают, но обучение декодера будет медленнее.
+
+### Проверка изменений без скачивания модели и датасетов
+
+```bash
+uv run --extra model-mac python scripts/smoke_models.py
+# Принудительная проверка на CPU:
+uv run --extra model-mac python scripts/smoke_models.py --device cpu
+```
+
+Скрипт создаёт крошечный случайный Qwen и синтетические примеры с явным ответом в контексте.
+Для `frozen_head` и `pointer` он проходит CE, RL, калибровку, загрузку сохранённых весов, оценку
+и предсказание. Также проверяет разные количества вариантов ответа и лимит выборки.
+Результаты сохраняются в `runs/smoke/<timestamp>/`. Эта проверка проверяет работоспособность кода;
+качество случайной модели не имеет смысла. `--steps 10` позволяет увеличить число шагов.
+
+### Эксперимент с предобученной моделью
+
+Подготовьте SST-2, если его ещё нет:
+
+```bash
+uv run --extra model-mac jev prepare sst2
+```
+
+Оба локальных конфига используют [Qwen2.5-0.5B](https://huggingface.co/Qwen/Qwen2.5-0.5B)
+в float32, последовательности до 256 токенов и максимум 128 исходных примеров **на датасет и
+раздел**. Первый запуск скачает веса. Лимит применяется после общего разделения данных;
+при увеличении лимита сохраняется ранее выбранное подмножество. Калибровка температуры ограничена
+диапазоном 0.01–100 и сохраняется только при отсутствии ухудшения validation NLL, чтобы маленькая
+выборка не приводила к неустойчивой оценке. Для `frozen_head` лимит стоит
+в `[cache]`, для `pointer` — в корне конфига. `0` снимает лимит.
+
+Для быстрых экспериментов с головой, функцией потерь и RL:
+
+```bash
+uv run --extra model-mac jev-model train frozen_head -c configs/mac/frozen_head.toml --run-dir runs/frozen_head/mac-a
+uv run --extra model-mac jev-model eval runs/frozen_head/mac-a
+uv run --extra model-mac jev-model train frozen_head --run-dir runs/frozen_head/mac-a --stage rl
+```
+
+Замороженный декодер запускается при построении кэша. Следующие эксперименты с головой переиспользуют
+этот кэш. Локальный кэш находится в `cache/frozen_head-mac`; лимит данных входит в его ключ.
+При замене данных в `data_dir` укажите новый `cache_dir`, чтобы пересчитать признаки.
+
+Для экспериментов с LoRA и pointer head:
+
+```bash
+uv run --extra model-mac jev-model train pointer -c configs/mac/pointer.toml --run-dir runs/pointer/mac-a
+uv run --extra model-mac jev-model eval runs/pointer/mac-a
+uv run --extra model-mac jev-model train pointer --run-dir runs/pointer/mac-a --stage rl
+uv run --extra model-mac jev-model predict runs/pointer/mac-a --state "The answer is blue" --question "Which color?" --option red --option blue
+```
+
+Здесь декодер выполняется на каждом шаге: batch size = 1, LoRA rank = 4, checkpointing активаций
+экономит память. Это стартовые настройки для M1, в том числе с 8 ГБ памяти; фактическое потребление
+зависит от длины примеров и других приложений. Если памяти мало, начните с `frozen_head`.
+Для `pointer` можно снизить длину до 128 токенов (`-s max_length=128 -s eval_batch_tokens=128`).
+Это может исключить примеры с длинными вопросами или вариантами ответа.
+
+Меняйте параметры и сохраняйте отдельный run для каждого эксперимента:
+
+```bash
+uv run --extra model-mac jev-model train pointer -c configs/mac/pointer.toml --run-dir runs/pointer/mac-b -s ce.lr=1e-4 -s ce.steps=80
+uv run --extra model-mac jev-model compare runs/pointer/mac-a runs/pointer/mac-b
+```
+
+Для корректного сравнения оставляйте одинаковые датасеты, лимиты и длину контекста. Маленькая выборка
+помогает проверять реализацию и направление изменений; результат затем нужно проверить на полной выборке.
+
+### Перенос эксперимента на CUDA GPU
+
+```bash
+uv sync --extra model
+uv run --extra model jev-model config pointer > pointer-gpu.json
+uv run --extra model jev-model train pointer -c pointer-gpu.json --run-dir runs/pointer/gpu-a -s datasets=sst2 -s ce.lr=1e-4
+```
+
+Полный конфиг использует стандартную модель `unsloth/Qwen3.5-2B-Base`, длину 2048 и данные без локального
+лимита. Для `frozen_head` аналогично: `jev-model config frozen_head`. Перенесите проверяемые изменения
+и нужные параметры обучения в новый конфиг; подберите размер батча под память GPU.
+Для `pointer` на CUDA используются Transformers и PEFT. Изменение размера базовой модели требует нового run:
+LoRA и обученная голова привязаны к её архитектуре. Сохранённые веса одной архитектуры можно загружать
+на CPU, MPS и CUDA; результаты между устройствами могут немного отличаться.
+
+При необходимости уменьшить сами файлы данных используйте отдельный каталог:
+
+```bash
+uv run --extra model-mac jev prepare sst2 --max-samples 1000 --output-dir /tmp/rujev-data-small
+uv run --extra model-mac jev-model train pointer -c configs/mac/pointer.toml -s data_dir=/tmp/rujev-data-small
+```
+
+`jev prepare --max-samples` ограничивает сохранённые разделы после конвертации; загрузка исходного
+датасета при этом всё равно выполняется. Для обычных локальных экспериментов достаточно лимита в конфиге модели.

@@ -8,7 +8,7 @@ from datasets import load_from_disk
 from loguru import logger
 from tqdm import tqdm
 
-from jev_model.data import content_key, partition
+from jev_model.data import content_key, limit_samples, partition
 from jev_model.frozen_head.backbone import embed, length_batches, load_backbone
 from jev_model.frozen_head.config import MAX_OPTIONS, CacheConfig
 from jev_model.prompt import encode
@@ -48,6 +48,7 @@ def build(
             continue
         out.mkdir(parents=True, exist_ok=True)
         for part, samples in partition(load_from_disk(data_dir / name)).items():
+            samples = limit_samples(samples, config.max_samples)
             prompts, labels, rows, views, skipped = [], [], [], [], 0
             for row, sample in enumerate(tqdm(samples, desc=f"[{name}] {part} tokenize", leave=False)):
                 if not 2 <= len(sample["options"]) <= MAX_OPTIONS:
@@ -103,7 +104,7 @@ def load_partition(root: Path, names: list[str], part: str) -> dict[str, dict[st
     loaded = {}
     for name in tqdm(names, desc=f"load {part}", leave=False):
         path = root / name / f"{part}.pt"
-        if path.exists() and (tensors := torch.load(path))["labels"].shape[0]:
+        if path.exists() and (tensors := torch.load(path, map_location="cpu"))["labels"].shape[0]:
             loaded[name] = tensors
     return loaded
 

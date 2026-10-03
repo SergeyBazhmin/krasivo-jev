@@ -68,8 +68,11 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
     forward = accelerator.prepare_model(model) if world > 1 else model
     logger.info(f"{sum(p.numel() for p in parameters):,} trainable parameters")
 
-    train_data = load_items(names, config.data_dir, "train", model.encoder)
-    probe = load_items(names, config.data_dir, "validation", model.encoder, limit=stage_config.eval_samples)
+    train_data = load_items(names, config.data_dir, "train", model.encoder, limit=config.max_samples)
+    limits = [n for n in (stage_config.eval_samples, config.max_samples) if n > 0]
+    probe = load_items(names, config.data_dir, "validation", model.encoder, limit=min(limits, default=0))
+    if not train_data or not probe:
+        raise ValueError("training needs nonempty train and validation partitions; increase max_samples or max_length")
     logger.info(f"train on {len(train_data)} datasets, {sum(map(len, train_data.values()))} samples")
 
     if stage_config.sampling not in POOLS:
@@ -128,10 +131,10 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
                     model.save(out_dir, **saved)
             accelerator.wait_for_everyone()
 
-    # the best weights on the full validation partition, for the temperature and the reported scores
+    # Calibrate the best weights on validation, keeping the run's cap rather than the smaller training probe.
     del model, forward, optimizer
     model = pointer.load(out_dir, device)
-    validation = load_items(names, config.data_dir, "validation", model.encoder)
+    validation = load_items(names, config.data_dir, "validation", model.encoder, limit=config.max_samples)
     outputs = run_shared(accelerator, model, validation, config.eval_batch_tokens)
     if not accelerator.is_main_process:
         return

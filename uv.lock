@@ -1676,6 +1676,15 @@ wheels = [
 ]
 
 [[package]]
+name = "python-dotenv"
+version = "1.2.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/74/26/2fbeedb218a787a5eea551c7532cac4e009f83d689dd2faa0d0353473f86/python_dotenv-1.2.4.tar.gz", hash = "sha256:f0d53e69935a851c0dcc78f3ab7aaccd8cabef0b92382b576b824212902873c0", size = 60824, upload-time = "2026-10-01T05:36:10Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl", hash = "sha256:42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc", size = 23266, upload-time = "2026-10-01T05:36:08.633Z" },
+]
+
+[[package]]
 name = "python-multipart"
 version = "0.0.32"
 source = { registry = "https://pypi.org/simple" }
@@ -2005,6 +2014,7 @@ dependencies = [
     { name = "datasets" },
     { name = "httpx" },
     { name = "loguru" },
+    { name = "python-dotenv" },
     { name = "torch" },
     { name = "transformers" },
     { name = "typer" },
@@ -2019,6 +2029,11 @@ model = [
     { name = "tqdm" },
     { name = "transformers" },
 ]
+model-mac = [
+    { name = "accelerate" },
+    { name = "peft" },
+    { name = "tqdm" },
+]
 ui = [
     { name = "streamlit" },
 ]
@@ -2031,20 +2046,24 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "accelerate", marker = "extra == 'model'", specifier = ">=1.10" },
+    { name = "accelerate", marker = "extra == 'model-mac'", specifier = ">=1.10" },
     { name = "datasets", specifier = ">=5.0.1" },
     { name = "flash-linear-attention", marker = "extra == 'model'", specifier = ">=0.5.2" },
     { name = "httpx", specifier = ">=0.28.1" },
     { name = "loguru", specifier = ">=0.7.3" },
     { name = "peft", marker = "extra == 'model'", specifier = ">=0.21.1" },
+    { name = "peft", marker = "extra == 'model-mac'", specifier = ">=0.21.1" },
+    { name = "python-dotenv", specifier = ">=1.0" },
     { name = "streamlit", marker = "extra == 'ui'", specifier = ">=1.50" },
     { name = "torch", specifier = ">=2.14.0" },
     { name = "torch", marker = "extra == 'model'", specifier = ">=2.6" },
     { name = "tqdm", marker = "extra == 'model'", specifier = ">=4.67" },
+    { name = "tqdm", marker = "extra == 'model-mac'", specifier = ">=4.67" },
     { name = "transformers", specifier = ">=5.17.0" },
     { name = "transformers", marker = "extra == 'model'", specifier = ">=5.2" },
     { name = "typer", specifier = ">=0.27.2" },
 ]
-provides-extras = ["model", "ui"]
+provides-extras = ["model-mac", "model", "ui"]
 
 [package.metadata.requires-dev]
 dev = [{ name = "ruff", specifier = ">=0.16.10" }]

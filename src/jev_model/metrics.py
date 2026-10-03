@@ -1,6 +1,7 @@
 """Scores over padded option logits, [n, max_options], shared by every model: slots past a
 sample's `num_options` hold no option."""
 
+import math
 from itertools import pairwise
 
 import torch
@@ -84,14 +85,21 @@ def fit_temperature(logits: torch.Tensor, labels: torch.Tensor, num_options: tor
     mask = option_mask(num_options, logits.shape[-1])
     logits = logits.masked_fill(mask, 0.0)
     log_t = torch.zeros((), requires_grad=True)
-    optimizer = torch.optim.LBFGS([log_t], lr=0.1, max_iter=200)
+    optimizer = torch.optim.LBFGS([log_t], lr=0.1, max_iter=200, line_search_fn="strong_wolfe")
+
+    def temperature() -> torch.Tensor:
+        # Small validation sets can push an unconstrained temperature to zero or infinity.
+        return log_t.clamp(-math.log(100), math.log(100)).exp()
 
     def closure():
         optimizer.zero_grad()
-        scaled = (logits / log_t.exp()).masked_fill(mask, float("-inf"))
+        scaled = (logits / temperature()).masked_fill(mask, float("-inf"))
         loss = soft_cross_entropy(scaled, labels, num_options).mean()
         loss.backward()
         return loss
 
     optimizer.step(closure)
-    return log_t.exp().item()
+    fitted = temperature().item()
+    baseline = soft_cross_entropy(logits.masked_fill(mask, float("-inf")), labels, num_options).mean()
+    calibrated = soft_cross_entropy((logits / fitted).masked_fill(mask, float("-inf")), labels, num_options).mean()
+    return fitted if torch.isfinite(calibrated) and calibrated <= baseline else 1.0

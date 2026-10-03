@@ -88,10 +88,14 @@ and writes the run files. `steps`, `lr` and `warmup` are not rescaled for you.
 
 ## Usage
 
+For Apple Silicon, use `uv sync --extra model-mac` and `configs/mac/pointer.toml`.
+The CLI selects MPS automatically when available; `--device cpu` forces CPU.
+See the root README for local experiments and the offline smoke script.
+
 ```bash
 uv sync --extra model
 uv run jev-model config pointer > my.json                # defaults, to edit
-uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4
+uv run jev-model train pointer -c my.json -s ce.lr=1e-4
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
@@ -100,13 +104,16 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 
 ## Config
 
-`configs/pointer.toml` lists every key with a comment. The main ones:
+`jev-model config pointer` prints every key. `configs/mac/pointer.toml` provides small local settings. The main keys:
 
 - `datasets`: built datasets to use; empty means every one under `data_dir`.
+- `max_samples`: stable per-dataset, per-partition cap applied after splitting, including final calibration and eval;
+  0 keeps all rows. `ce.eval_samples` / `rl.eval_samples` can further reduce the training validation probe.
 - `model`: the base decoder. Its tokenizer must have the delimiter tokens above.
 - `lora`, `lora_targets`: the LoRA rank and where it goes (`all`: attention and MLP projections, `attn`, `qv`).
   On Qwen3.5, `all` and `attn` also cover the linear-attention projections.
 - `special_embeddings`: also train the embedding rows of the five delimiters.
+- `gradient_checkpointing`: saves activation memory by recomputing activations during the backward pass.
 - `head_dim`, `max_length`, `eval_batch_tokens`.
 - `[ce]`, `[rl]`: `steps`, `batch_tokens`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, `sampling`, `epochs`, dataset
   mixing (`alpha`), `none_prob`, `drop_prob`. When training runs out of memory, halve `batch_tokens` and double `accum`.
