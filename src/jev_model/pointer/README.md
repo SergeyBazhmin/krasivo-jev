@@ -52,23 +52,21 @@ test rows are never changed, so the scores do not measure this behaviour.
 
 `sampling` picks how training samples are drawn. `weighted` (the default) draws with replacement, each dataset
 in proportion to `rows ** alpha`, and groups the draws by length within blocks of 2048 to pad less. `sized`
-trains by passes over the data: each pass shuffles the whole training set and cuts it into batches of `batch_size`
-samples in that order, so every sample is shown once per pass. Datasets are then mixed by their size, `alpha` and
-`batch_tokens` are ignored, and the padded size of a batch varies with its samples. With `sized`, set `epochs` to
-train for that many passes; the number of optimizer steps is then counted from the batches and replaces `steps`.
+trains by passes over the data: each pass shuffles the whole training set and, in that order, fills each batch with
+samples while its padded size stays within `batch_tokens`, so every sample is shown once per pass. Datasets are then
+mixed through the loss instead: each sample is weighted so that its dataset's total weight is in proportion to
+`rows ** alpha`, with a mean weight of 1. With `sized`, set `epochs` to train for that many passes; the number of
+optimizer steps is then counted from the batches and replaces `steps`.
 
-One optimizer step accumulates `accum` batches of at most `batch_tokens` padded tokens (`batch_size` samples with
-`sized`). Every `eval_every` steps the model is scored on `eval_samples` validation rows per dataset, and the
+One optimizer step accumulates `accum` batches of at most `batch_tokens` padded tokens. Every `eval_every` steps the model is scored on `eval_samples` validation rows per dataset, and the
 weights with the best macro NLL are kept. At the end the best weights are scored on the whole validation partition
 and one temperature is fitted.
 A stage writes `RUN/<stage>/adapter/` (the LoRA), `head.pt`, `history.json` and `validation.json`.
 
-There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the decoder is
-loaded and wrapped by [unsloth](https://github.com/unslothai/unsloth) (`fast.py`): base weights in bf16, unsloth's
-patched kernels and its offloaded gradient checkpointing, the forward pass under bf16 autocast; the LoRA and the
-head stay in float32. Without a GPU unsloth cannot be imported, so CPU runs use plain transformers + peft. The LoRA
-wraps the whole causal LM, but the forward pass calls only the text model under it, so no vocabulary logits are
-computed; adapters saved before unsloth (which wrap the text model) still load.
+There is no feature cache: every training step and every evaluation runs the backbone. On CUDA the base weights
+are loaded in bf16 and the forward pass uses bf16 autocast; the LoRA and the head stay in float32. The LoRA wraps
+the whole causal LM, but the forward pass calls only the text model under it, so no vocabulary logits are
+computed; older adapters (which wrap the text model) still load.
 
 Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
 `flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
@@ -95,14 +93,13 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
   On Qwen3.5, `all` and `attn` also cover the linear-attention projections.
 - `special_embeddings`: also train the embedding rows of the five delimiters.
 - `head_dim`, `max_length`, `eval_batch_tokens`.
-- `[ce]`, `[rl]`: `steps`, `batch_tokens`, `batch_size`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, `sampling`, `epochs`, dataset
+- `[ce]`, `[rl]`: `steps`, `batch_tokens`, `accum`, `lr`, `warmup`, `eval_every`, `eval_samples`, `sampling`, `epochs`, dataset
   mixing (`alpha`), `none_prob`. When training runs out of memory, halve `batch_tokens` and double `accum`.
 
 ## Files
 
 - `config.py`: `TrainConfig`, `PointerConfig`.
 - `encode.py`: `Encoder` tokenizes a sample and lays it out in a given option order.
-- `fast.py`: imports unsloth before transformers and peft when there is a GPU.
 - `model.py`: `PointerHead`, `PointerModel`, and `create` / `load` for the LoRA and the head.
 - `data.py`: loads and tokenizes the partitions; `Pool` and `SizedEpochPool` draw training batches.
 - `train.py`: the `ce` and `rl` stages.

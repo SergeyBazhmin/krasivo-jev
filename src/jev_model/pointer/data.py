@@ -1,5 +1,4 @@
 import hashlib
-import math
 import random
 from collections.abc import Iterator
 from dataclasses import dataclass, replace
@@ -31,6 +30,8 @@ class Draw:
 
     item: Item
     order: list[int]
+    # how much the draw counts in the loss
+    weight: float = 1.0
 
 
 def load_items(
@@ -122,34 +123,45 @@ class Pool:
 
 
 class SizedEpochPool(Pool):
-    """A pool for training by epochs: every pass shuffles the whole training set and cuts it into batches of
-    `batch_size` draws in that order, so each sample is shown once per pass. Datasets are mixed by size (`alpha`
-    has no effect), and the batches are cut by count rather than padded tokens, so their padded size varies with
-    the lengths of their draws."""
+    """A pool for training by epochs: every pass shuffles the whole training set and cuts it into batches in that
+    order, each taking draws while its padded size stays within `batch_tokens`, so each sample is shown once per
+    pass. Since every sample is seen equally often, datasets are mixed through loss weights instead: a draw is
+    weighted so that each dataset's total weight is in proportion to rows ** alpha, with a mean weight of 1."""
 
-    def __init__(self, *args, batch_size: int, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if batch_size < 1:
-            raise ValueError("sized sampling needs batch_size >= 1")
-        self.batch_size = batch_size
+        self.item_weights = (self.weights * len(self.items) / self.weights.sum()).tolist()
 
-    def epoch(self, number: int, generator: torch.Generator) -> Iterator[list[Draw]]:
-        """The batches of one pass, `batch_size` draws each (the last may hold fewer)."""
+    def draw(self, index: int, count: int) -> Draw:
+        return replace(super().draw(index, count), weight=self.item_weights[index])
+
+    def epoch(self, number: int, batch_tokens: int, generator: torch.Generator) -> Iterator[list[Draw]]:
+        """The batches of one pass, each as many draws in order as fit in `batch_tokens` once padded (at least one)."""
         order = torch.randperm(len(self.items), generator=generator).tolist()
-        draws = [self.draw(index, number * len(self.items) + position) for position, index in enumerate(order)]
-        for start in range(0, len(draws), self.batch_size):
-            yield draws[start:start + self.batch_size]
+        batch: list[Draw] = []
+        longest = 0
+        for position, index in enumerate(order):
+            draw = self.draw(index, number * len(self.items) + position)
+            if batch and max(longest, draw.item.length) * (len(batch) + 1) > batch_tokens:
+                yield batch
+                batch, longest = [], 0
+            batch.append(draw)
+            longest = max(longest, draw.item.length)
+        if batch:
+            yield batch
 
     def batches(self, batch_tokens: int, generator: torch.Generator) -> Iterator[list[Draw]]:
-        """Batches of `batch_size` draws, pass after pass; `batch_tokens` is ignored."""
+        """Batches of at most `batch_tokens` padded tokens, pass after pass."""
         number = 0
         while True:
-            yield from self.epoch(number, generator)
+            yield from self.epoch(number, batch_tokens, generator)
             number += 1
 
-    def count_batches(self, epochs: int) -> int:
-        """How many batches the first `epochs` passes of `batches` hold."""
-        return epochs * math.ceil(len(self.items) / self.batch_size)
+    def count_batches(self, epochs: int, batch_tokens: int, generator: torch.Generator) -> int:
+        """How many batches the first `epochs` passes of `batches` hold. Runs on a copy of `generator`, so the
+        batches drawn after it are the ones counted."""
+        copy = torch.Generator().set_state(generator.get_state())
+        return sum(sum(1 for _ in self.epoch(number, batch_tokens, copy)) for number in range(epochs))
 
 
 POOLS: dict[str, type[Pool]] = {"weighted": Pool, "sized": SizedEpochPool}

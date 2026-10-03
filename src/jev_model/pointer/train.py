@@ -22,9 +22,10 @@ def batch_loss(model: PointerModel, draws: list[Draw], stage: str, step: int, co
     labels = torch.zeros_like(logits)
     for row, draw in enumerate(draws):
         labels[row, : len(draw.order)] = torch.tensor([draw.item.label[i] for i in draw.order])
+    weights = torch.tensor([draw.weight for draw in draws], device=logits.device)
     if stage == "rl":
-        return losses.rl_loss(logits, labels, num_options, step, config)
-    return soft_cross_entropy(logits, labels, num_options).mean()
+        return losses.rl_loss(logits, labels, num_options, step, config, weights)
+    return (soft_cross_entropy(logits, labels, num_options) * weights).mean()
 
 
 def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: list[str], init: Path | None = None):
@@ -46,19 +47,16 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
 
     if stage_config.sampling not in POOLS:
         raise ValueError(f"unknown sampling {stage_config.sampling!r}, expected one of {sorted(POOLS)}")
-    pool_class = POOLS[stage_config.sampling]
-    pool_args = (train_data, stage_config.alpha, stage_config.seed, model.encoder, stage_config.none_prob)
-    if pool_class is SizedEpochPool:
-        pool = SizedEpochPool(*pool_args, batch_size=stage_config.batch_size)
-    else:
-        pool = pool_class(*pool_args)
+    pool = POOLS[stage_config.sampling](
+        train_data, stage_config.alpha, stage_config.seed, model.encoder, stage_config.none_prob
+    )
+    generator = torch.Generator().manual_seed(stage_config.seed)
     if stage_config.epochs:
         if not isinstance(pool, SizedEpochPool):
             raise ValueError("epochs needs sampling = \"sized\"")
-        count = pool.count_batches(stage_config.epochs)
+        count = pool.count_batches(stage_config.epochs, stage_config.batch_tokens, generator)
         stage_config = replace(stage_config, steps=math.ceil(count / stage_config.accum))
         logger.info(f"{stage_config.epochs} epochs: {count} batches, {stage_config.steps} steps")
-    generator = torch.Generator().manual_seed(stage_config.seed)
     batches = pool.batches(stage_config.batch_tokens, generator)
     optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: losses.lr_factor(step, stage_config))

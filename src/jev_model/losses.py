@@ -24,10 +24,17 @@ def proper_score_reward(q: torch.Tensor, labels: torch.Tensor, spherical_weight:
     return log_score + spherical_weight * spherical
 
 
-def rl_loss(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, step: int, config) -> torch.Tensor:
+def rl_loss(
+    logits: torch.Tensor,
+    labels: torch.Tensor,
+    num_options: torch.Tensor,
+    step: int,
+    config,
+    weights: torch.Tensor | None = None,
+) -> torch.Tensor:
     """Gaussian policy over the logits (GRPO-style): perturb them `group` times, score each
     perturbed distribution with a proper scoring rule, and push the logits towards the
-    perturbations that scored above the group's mean."""
+    perturbations that scored above the group's mean. `weights` scales each row's loss (1 when None)."""
     sigma = config.sigma_start + (config.sigma_end - config.sigma_start) * step / max(1, config.steps - 1)
     mask = option_mask(num_options, logits.shape[-1])
     z = logits.masked_fill(mask, 0.0)
@@ -41,7 +48,9 @@ def rl_loss(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tenso
     reward = proper_score_reward(q, labels, config.spherical_weight)
     advantage = (reward - reward.mean(dim=0)) / (reward.std(dim=0) + 1e-6)
     log_prob = -((sampled - z) ** 2).sum(dim=-1) / (2 * sigma**2)
-    loss = -(advantage.detach() * log_prob).mean()
+    loss = -(advantage.detach() * log_prob).mean(dim=0)
     if config.ce_weight:
-        loss = loss + config.ce_weight * soft_cross_entropy(logits, labels, num_options).mean()
-    return loss
+        loss = loss + config.ce_weight * soft_cross_entropy(logits, labels, num_options)
+    if weights is not None:
+        loss = loss * weights
+    return loss.mean()
