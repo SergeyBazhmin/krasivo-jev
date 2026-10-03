@@ -19,7 +19,9 @@ class BitextDataset(JevDataset):
         self.data = self.data.map(
             lambda x: make_sample(
                 with_context(self.about, x["instruction"], "Message"),
-                pick_question(self.questions, x["instruction"]), options, x["intent"]
+                pick_question(self.questions, x["instruction"]),
+                options,
+                x["intent"],
             ),
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,

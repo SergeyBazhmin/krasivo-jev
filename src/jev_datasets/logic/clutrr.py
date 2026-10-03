@@ -2,8 +2,8 @@ from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 ABOUT = (
-    "You are given a short story about members of one family. \"How is X related to Y?\" asks what X is to Y: \"How is "
-    "Nicholas related to Ashley?\" is answered \"son\" when Nicholas is Ashley's son. The relation is never stated "
+    'You are given a short story about members of one family. "How is X related to Y?" asks what X is to Y: "How is '
+    'Nicholas related to Ashley?" is answered "son" when Nicholas is Ashley\'s son. The relation is never stated '
     "outright; work it out by chaining the relations the story does state (the brother of someone's daughter is their "
     "son). Answers are gendered, and names and pronouns show gender."
 )

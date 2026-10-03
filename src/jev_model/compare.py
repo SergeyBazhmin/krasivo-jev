@@ -1,4 +1,3 @@
-
 """Two runs side by side, per dataset. Works on the {dataset: metrics} dicts that `evaluate`
 returns, so any two registered models can be compared."""
 
@@ -50,14 +49,18 @@ def table(a: Metrics, b: Metrics, labels: tuple[str, str], metric: str) -> str:
     """One line per dataset: both values, the difference, and which run is better."""
     rows = deltas(a, b, metric)
     higher = HIGHER_IS_BETTER[metric]
-    lines = [f"{metric + (' (higher is better)' if higher else ' (lower is better)'):32} {'n':>6}  {'A':>7}  {'B':>7}  {'B - A':>7}"]
+    lines = [
+        f"{metric + (' (higher is better)' if higher else ' (lower is better)'):32} {'n':>6}  {'A':>7}  {'B':>7}  {'B - A':>7}"
+    ]
     for name, left, right, delta in rows:
         better = "" if delta == 0 else "B" if (delta > 0) == higher else "A"
         lines.append(f"{name:32} {a[name]['n']:>6}  {left:>7.3f}  {right:>7.3f}  {delta:>+7.3f}  {better}")
     wins = sum((delta > 0) == higher for _, _, _, delta in rows[:-1] if delta != 0)
     ties = sum(delta == 0 for _, _, _, delta in rows[:-1])
-    lines.append(f"A = {labels[0]}\nB = {labels[1]}\nB is better on {wins} of {len(rows) - 1} datasets, A on "
-                 f"{len(rows) - 1 - wins - ties}")
+    lines.append(
+        f"A = {labels[0]}\nB = {labels[1]}\nB is better on {wins} of {len(rows) - 1} datasets, A on "
+        f"{len(rows) - 1 - wins - ties}"
+    )
     return "\n".join(lines)
 
 

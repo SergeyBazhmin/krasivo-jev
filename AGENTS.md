@@ -118,6 +118,9 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   HTML page (dumbbell chart, metric picker, table). It reuses the scores `eval` saved in the run directories and
   compares only the datasets both runs have, with `macro` taken again over those.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
+- `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
+  one shared run directory). A model that can train with DDP sets `multi_gpu = True`; the others refuse to run
+  in more than one process. Only the main process writes run files.
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
 - `__init__.py`: the `models` registry, alphabetical.
 - `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
@@ -131,7 +134,7 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   option's logit matches the hidden state at its `</opt>` against the one at `<decide>`, so there is no option
   cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
   There is no feature cache: every step runs the backbone.
-  Each stage writes `RUN/<stage>/adapter` and `head.pt`.
+  Each stage writes `RUN/<stage>/adapter` and `head.pt`. It trains on several GPUs with DDP under `accelerate launch`.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
   replies with the number of an option. `train` only records the config, and `eval` scores it.
 - `losses.py`: the lr schedule and the RL loss over option logits, shared by `frozen_head` and `pointer`.
@@ -142,6 +145,7 @@ uv run jev-model list                                   # models and their stage
 uv run jev-model config frozen_head > my.json           # defaults, to edit
 uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4 -s datasets=atis,banking77
 uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl   # extend a run
+uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
 uv run jev-model compare runs/frozen_head/X runs/pointer/Y [--metric nll] [--partition validation]
@@ -162,12 +166,13 @@ uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the brow
 ## Conventions
 
 - Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
-  the `model` extra (torch, transformers, tqdm, peft, flash-linear-attention).
+  the `model` extra (torch, transformers, tqdm, peft, accelerate, flash-linear-attention).
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,
   knowledge dependence). Keep them short, as in the existing modules.
-- Lines are up to about 120 characters. Use type hints and `X | None` unions.
+- Lines are up to 120 characters. Use type hints and `X | None` unions. Run `uv run ruff check --fix . && uv run ruff format .`
+  before committing (config in `pyproject.toml`).
 - There are no tests. To smoke-test a model pipeline without a GPU, save a tiny random decoder
   locally and train with `-s cache.model=<dir> -s ce.steps=40` (`-s model=<dir>` for `pointer`) on one or two
   small datasets.

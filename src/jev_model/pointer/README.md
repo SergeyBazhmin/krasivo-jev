@@ -77,6 +77,15 @@ Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs t
 `flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
 implementation that is more than ten times slower, and a warning says so.
 
+### Several GPUs
+
+`accelerate launch` starts one process per GPU, and each trains a DDP replica of the LoRA and the head. Every process
+walks the same batch stream and keeps every `N`-th batch, so one optimizer step sees `accum` batches from each of the
+`N` processes: the effective batch is `N` times larger than on one GPU, and with `epochs` the step count is divided by
+`N`. Gradients are averaged across processes only on the last batch of a step. Validation (during training and at
+the end) deals the datasets out to the processes and gathers the outputs; only the main process saves checkpoints
+and writes the run files. `steps`, `lr` and `warmup` are not rescaled for you.
+
 ## Usage
 
 ```bash
@@ -84,6 +93,7 @@ uv sync --extra model
 uv run jev-model config pointer > my.json                # defaults, to edit
 uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl
+uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```

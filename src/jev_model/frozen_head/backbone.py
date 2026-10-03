@@ -28,9 +28,7 @@ def length_batches(lengths: list[int], batch_tokens: int) -> Iterator[list[int]]
 
 
 @torch.inference_mode()
-def embed(
-    decoder: PreTrainedModel, pad_id: int, prompts: list[list[int]], layer: int = -1
-) -> torch.Tensor:
+def embed(decoder: PreTrainedModel, pad_id: int, prompts: list[list[int]], layer: int = -1) -> torch.Tensor:
     """Hidden state at the last token of each prompt, [len(prompts), hidden], in float32.
     Padding goes on the right: every layer (attention or the linear-attention recurrence) is
     causal, so the pad tokens after a prompt cannot change its last real position."""

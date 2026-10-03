@@ -21,8 +21,11 @@ def encode(
     query = tokenizer.encode(render_query(question, options), add_special_tokens=False)
     if not state:
         return query if len(query) <= max_length else None
-    context = cut_middle(tokenizer, tokenizer.encode(STATE_TEMPLATE.format(state=state), add_special_tokens=False),
-                         max_length - len(query))
+    context = cut_middle(
+        tokenizer,
+        tokenizer.encode(STATE_TEMPLATE.format(state=state), add_special_tokens=False),
+        max_length - len(query),
+    )
     return None if context is None else context + query
 
 
@@ -36,4 +39,4 @@ def cut_middle(tokenizer: PreTrainedTokenizerBase, context: list[int], budget: i
     if keep < 16:
         return None
     head = keep // 2
-    return context[:head] + ellipsis + context[len(context) - (keep - head):]
+    return context[:head] + ellipsis + context[len(context) - (keep - head) :]

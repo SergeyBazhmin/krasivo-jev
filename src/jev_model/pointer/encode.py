@@ -31,7 +31,10 @@ class Encoder:
         self.state_id, self.question_id, self.open_id, self.close_id, self.decide_id = (
             tokenizer.convert_tokens_to_ids(token) for token in SPECIAL
         )
-        if len({self.state_id, self.question_id, self.open_id, self.close_id, self.decide_id, tokenizer.unk_token_id}) != 6:
+        if (
+            len({self.state_id, self.question_id, self.open_id, self.close_id, self.decide_id, tokenizer.unk_token_id})
+            != 6
+        ):
             raise ValueError(f"the tokenizer lacks some of the delimiter tokens {SPECIAL}")
         self.ellipsis = tokenizer.encode(ELLIPSIS, add_special_tokens=False)
 
@@ -63,7 +66,7 @@ class Encoder:
         if len(state) > room:
             keep = room - len(self.ellipsis)
             head = keep // 2
-            state = state[:head] + self.ellipsis + state[len(state) - (keep - head):]
+            state = state[:head] + self.ellipsis + state[len(state) - (keep - head) :]
         ids = [self.state_id, *state, self.question_id, *tokens.question]
         closes = []
         for i in order:

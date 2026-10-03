@@ -85,7 +85,9 @@ class PointerModel(nn.Module):
         hidden = hidden.float()
         rows = torch.arange(len(prompts), device=device)
         num_options = torch.tensor([len(positions) for _, positions in prompts], device=device)
-        return self.head(hidden[rows, mask.sum(dim=1) - 1], hidden[rows.unsqueeze(-1), closes], num_options), num_options
+        return self.head(
+            hidden[rows, mask.sum(dim=1) - 1], hidden[rows.unsqueeze(-1), closes], num_options
+        ), num_options
 
     def trainable_parameters(self) -> list[nn.Parameter]:
         return [p for p in self.parameters() if p.requires_grad]
@@ -113,7 +115,9 @@ def create(config: PointerConfig, device: str) -> PointerModel:
     decoder = load_decoder(config.model, device)
     hybrid = "linear_attention" in (getattr(decoder.config, "layer_types", None) or [])
     lora = {
-        "r": config.lora, "lora_alpha": 2 * config.lora, "lora_dropout": 0.05,
+        "r": config.lora,
+        "lora_alpha": 2 * config.lora,
+        "lora_dropout": 0.05,
         "target_modules": lora_targets(config.lora_targets, hybrid),
     }
     if config.special_embeddings:

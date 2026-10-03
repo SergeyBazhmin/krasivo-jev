@@ -46,7 +46,11 @@ from jev_datasets.spatial.stepgame import stepgame_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
 from jev_datasets.toxicity.tweet_moderation import tweet_hate_dataset, tweet_offensive_dataset
-from jev_datasets.truthfulness.halueval import halueval_dialogue_dataset, halueval_qa_dataset, halueval_summarization_dataset
+from jev_datasets.truthfulness.halueval import (
+    halueval_dialogue_dataset,
+    halueval_qa_dataset,
+    halueval_summarization_dataset,
+)
 
 datasets = {
     dataset.name: dataset

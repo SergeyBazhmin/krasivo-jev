@@ -1,6 +1,7 @@
 import torch
 from tqdm import tqdm
 
+from jev_model import distributed
 from jev_model.metrics import fit_temperature, scores, with_macro
 from jev_model.pointer.data import Item, token_batches
 from jev_model.pointer.model import PointerModel
@@ -20,7 +21,7 @@ def outputs_of(model: PointerModel, items: list[Item], batch_tokens: int, desc: 
     for i, item in enumerate(items):
         labels[i, : len(item.label)] = torch.tensor(item.label)
     batches = list(token_batches(list(range(len(items))), [item.length for item in items], batch_tokens))
-    for batch in tqdm(batches, desc=desc, leave=False):
+    for batch in tqdm(batches, desc=desc, leave=False, disable=not distributed.is_main()):
         prompts = [model.encoder.assemble(items[i].tokens, list(range(len(items[i].label)))) for i in batch]
         out = model(prompts)[0].cpu()
         logits[torch.tensor(batch), : out.shape[1]] = out

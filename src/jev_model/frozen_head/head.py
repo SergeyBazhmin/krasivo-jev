@@ -9,8 +9,9 @@ class OptionHead(nn.Module):
     """Last-token hidden state -> one logit per option slot. Slots past a sample's option count
     are masked, so the softmax runs over exactly the options that were in the prompt."""
 
-    def __init__(self, hidden_size: int, width: int = 2048, depth: int = 2, dropout: float = 0.1,
-                 max_options: int = MAX_OPTIONS):
+    def __init__(
+        self, hidden_size: int, width: int = 2048, depth: int = 2, dropout: float = 0.1, max_options: int = MAX_OPTIONS
+    ):
         super().__init__()
         layers: list[nn.Module] = [nn.LayerNorm(hidden_size)]
         size = hidden_size
@@ -30,4 +31,3 @@ class OptionHead(nn.Module):
     @torch.no_grad()
     def probabilities(self, hidden: torch.Tensor, num_options: torch.Tensor) -> torch.Tensor:
         return torch.softmax(self(hidden, num_options) / self.temperature, dim=-1)
-

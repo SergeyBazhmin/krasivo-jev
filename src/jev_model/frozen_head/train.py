@@ -26,12 +26,14 @@ class Pool:
         self.labels = torch.cat([t["labels"] for t in data.values()])
         self.num_options = torch.cat([t["num_options"] for t in data.values()])
         sizes = torch.tensor([len(t["labels"]) for t in data.values()], dtype=torch.float64)
-        self.weights = torch.cat([torch.full((int(n),), n ** alpha / n) for n in sizes])
+        self.weights = torch.cat([torch.full((int(n),), n**alpha / n) for n in sizes])
 
     def batches(self, batch_size: int, generator: torch.Generator):
         while True:
             # drawn in blocks: multinomial over ~1M rows is too slow to call per step
-            for idx in torch.multinomial(self.weights, batch_size * 1_000, replacement=True, generator=generator).split(batch_size):
+            for idx in torch.multinomial(self.weights, batch_size * 1_000, replacement=True, generator=generator).split(
+                batch_size
+            ):
                 yield self.features[idx], self.labels[idx], self.num_options[idx]
 
 
@@ -47,8 +49,13 @@ LossFn = Callable[[OptionHead, torch.Tensor, torch.Tensor, torch.Tensor, int, Tr
 
 
 def train(
-    cache_root: Path, out_dir: Path, stage: str, config: TrainConfig, device: str,
-    names: list[str], init: Path | None = None,
+    cache_root: Path,
+    out_dir: Path,
+    stage: str,
+    config: TrainConfig,
+    device: str,
+    names: list[str],
+    init: Path | None = None,
 ):
     """Trains the head on the cached features and saves the best checkpoint by macro validation NLL,
     with its temperature fitted on validation."""
@@ -64,8 +71,12 @@ def train(
         head.load_state_dict(checkpoint["head"])
         head.temperature.fill_(1.0)
     else:
-        head_config = {"hidden_size": cache_config["hidden_size"], "width": config.width, "depth": config.depth,
-                       "dropout": config.dropout}
+        head_config = {
+            "hidden_size": cache_config["hidden_size"],
+            "width": config.width,
+            "depth": config.depth,
+            "dropout": config.dropout,
+        }
         head = OptionHead(**head_config)
     head.to(device)
     loss_fn: LossFn = {"ce": ce_loss, "rl": rl_loss}[stage]
@@ -106,9 +117,15 @@ def train(
     metrics = evaluate(head, validation, device)
     logger.info(f"temperature {temperature:.3f}, calibrated validation:\n{table(metrics)}")
     torch.save(
-        {"head": head.state_dict(), "head_config": head_config, "cache": cache_config,
-         "cache_root": str(cache_root.resolve()), "stage": stage,
-         "train": asdict(config), "datasets": names},
+        {
+            "head": head.state_dict(),
+            "head_config": head_config,
+            "cache": cache_config,
+            "cache_root": str(cache_root.resolve()),
+            "stage": stage,
+            "train": asdict(config),
+            "datasets": names,
+        },
         out_dir / "head.pt",
     )
     (out_dir / "history.json").write_text(json.dumps(history, indent=2))

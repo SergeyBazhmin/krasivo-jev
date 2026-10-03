@@ -6,7 +6,7 @@ from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 # train is a chat-style instruction/output dump; the dev sets are structured
-TRAIN_PROMPT = re.compile(r"Context:\n(.*)\n\nQuestion: (.*)\n\nOptions:\n(.*)", re.S)
+TRAIN_PROMPT = re.compile(r"Context:\n(.*)\n\nQuestion: (.*)\n\nOptions:\n(.*)", re.DOTALL)
 TRAIN_ANSWER = re.compile(r'"answer": "([A-Z])"\s*}\s*$')
 OPTION = re.compile(r"([A-Z])\) (.*)")
 ABOUT = (
@@ -17,7 +17,7 @@ ABOUT = (
 
 
 def parse_options(lines: list[str], answer: str) -> tuple[list[dict[str, str]], str]:
-    """"A) True" lines and the answer letter -> options keyed by their text, and the answer's text"""
+    """ "A) True" lines and the answer letter -> options keyed by their text, and the answer's text"""
     texts = dict(OPTION.fullmatch(line.strip()).groups() for line in lines if line.strip())
     return make_options(list(texts.values())), texts[answer]
 

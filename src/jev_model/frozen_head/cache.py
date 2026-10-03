@@ -13,6 +13,7 @@ from jev_model.frozen_head.backbone import embed, length_batches, load_backbone
 from jev_model.frozen_head.config import MAX_OPTIONS, CacheConfig
 from jev_model.prompt import encode
 
+
 def view_order(sample: dict, view: int) -> list[int]:
     """Option order for one view: view 0 keeps the source order, others shuffle it, so no head
     slot can learn a prior for an answer."""
@@ -23,7 +24,12 @@ def view_order(sample: dict, view: int) -> list[int]:
 
 
 def build(
-    names: list[str], data_dir: Path, root: Path, config: CacheConfig, device: str, batch_tokens: int,
+    names: list[str],
+    data_dir: Path,
+    root: Path,
+    config: CacheConfig,
+    device: str,
+    batch_tokens: int,
     overwrite: bool = False,
 ):
     """Runs the frozen backbone once per prompt and saves the last-token hidden states under `root`.
@@ -50,8 +56,11 @@ def build(
                 orders = [view_order(sample, view) for view in range(config.views if part == "train" else 1)]
                 encoded = [
                     encode(
-                        tokenizer, sample["state"], sample["question"],
-                        [sample["options"][i]["text"] for i in order], config.max_length,
+                        tokenizer,
+                        sample["state"],
+                        sample["question"],
+                        [sample["options"][i]["text"] for i in order],
+                        config.max_length,
                     )
                     for order in orders
                 ]

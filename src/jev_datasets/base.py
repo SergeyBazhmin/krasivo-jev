@@ -52,9 +52,7 @@ class JevDataset:
 
     def limit(self, max_samples: int = MAX_SAMPLES):
         """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
-        self.data = DatasetDict(
-            {split: stratified_limit(rows, max_samples) for split, rows in self.data.items()}
-        )
+        self.data = DatasetDict({split: stratified_limit(rows, max_samples) for split, rows in self.data.items()})
 
     def save(self):
         self.add_type()

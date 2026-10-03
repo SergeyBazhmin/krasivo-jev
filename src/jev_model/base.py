@@ -4,6 +4,7 @@ from typing import Protocol
 
 from loguru import logger
 
+from jev_model import distributed
 from jev_model.config import dump
 
 RUN_FILE = "run.json"
@@ -28,6 +29,8 @@ class JevModel[C]:
     stages: tuple[str, ...]
     # what `train` runs when no --stage is given; later stages stay opt-in
     default_stages: tuple[str, ...] = ()
+    # whether `run_stage` can train in several processes under `accelerate launch` (DDP)
+    multi_gpu: bool = False
 
     def __init__(self, name: str, description: str):
         self.name = name
@@ -49,15 +52,24 @@ class JevModel[C]:
         stages = stages or list(self.default_stages or self.stages)
         if unknown := [s for s in stages if s not in self.stages]:
             raise ValueError(f"{self.name} has no stages {unknown}; it has {list(self.stages)}")
+        if distributed.world_size() > 1 and not self.multi_gpu:
+            raise ValueError(f"{self.name} trains in one process; run it without `accelerate launch`")
         # always in pipeline order, whatever order they were asked in
         stages = [s for s in self.stages if s in stages]
-        run_dir.mkdir(parents=True, exist_ok=True)
-        (run_dir / CONFIG_FILE).write_text(dump(config))
+        # under `accelerate launch` every process runs this; the main one writes the run files, and only after
+        # every process has read the old ones
+        distributed.barrier()
+        if distributed.is_main():
+            run_dir.mkdir(parents=True, exist_ok=True)
+            (run_dir / CONFIG_FILE).write_text(dump(config))
         for stage in stages:
             logger.info(f"[{self.name}] stage {stage} -> {run_dir}")
             self.run_stage(stage, config, run_dir, device)
-            done = {*read_run(run_dir).get("stages", []), stage}
-            write_run(run_dir, {"model": self.name, "stages": [s for s in self.stages if s in done]})
+            # the next stage reads what the main process saved
+            distributed.barrier()
+            if distributed.is_main():
+                done = {*read_run(run_dir).get("stages", []), stage}
+                write_run(run_dir, {"model": self.name, "stages": [s for s in self.stages if s in done]})
 
 
 def read_run(run_dir: Path) -> dict:

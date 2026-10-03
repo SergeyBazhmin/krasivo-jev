@@ -9,7 +9,7 @@ ABOUT = (
     "You are given the positions of agents on a grid. Each sentence says where one agent is relative to another, in "
     "words or as a clock position (12 o'clock is above, 3 o'clock right, 6 o'clock below, 9 o'clock left, and the "
     "hours in between diagonal). Chain the steps to find where the first agent asked about is relative to the second; "
-    "\"overlap\" means they are at the same spot."
+    '"overlap" means they are at the same spot.'
 )
 
 

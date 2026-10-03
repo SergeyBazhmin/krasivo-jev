@@ -15,6 +15,7 @@ class PointerJevModel(JevModel[PointerConfig]):
     config_class = PointerConfig
     stages = ("ce", "rl")
     default_stages = ("ce",)
+    multi_gpu = True
 
     def run_stage(self, stage: str, config: PointerConfig, run_dir: Path, device: str):
         from jev_model.pointer.train import train

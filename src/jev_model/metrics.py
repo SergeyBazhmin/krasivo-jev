@@ -1,6 +1,8 @@
 """Scores over padded option logits, [n, max_options], shared by every model: slots past a
 sample's `num_options` hold no option."""
 
+from itertools import pairwise
+
 import torch
 
 
@@ -21,10 +23,12 @@ def soft_cross_entropy(logits: torch.Tensor, labels: torch.Tensor, num_options: 
 def expected_calibration_error(confidence: torch.Tensor, correct: torch.Tensor, bins: int = 15) -> float:
     edges = torch.linspace(0, 1, bins + 1)
     ece = 0.0
-    for lo, hi in zip(edges[:-1], edges[1:]):
+    for lo, hi in pairwise(edges):
         inside = (confidence > lo) & (confidence <= hi)
         if inside.any():
-            ece += inside.float().mean().item() * abs(confidence[inside].mean().item() - correct[inside].float().mean().item())
+            ece += inside.float().mean().item() * abs(
+                confidence[inside].mean().item() - correct[inside].float().mean().item()
+            )
     return ece
 
 
@@ -40,7 +44,9 @@ def macro_prf(predicted: torch.Tensor, gold: torch.Tensor) -> dict[str, float]:
     return {"precision": precision.mean().item(), "recall": recall.mean().item(), "f1": f1.mean().item()}
 
 
-def scores(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, temperature: float = 1.0) -> dict[str, float]:
+def scores(
+    logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, temperature: float = 1.0
+) -> dict[str, float]:
     """Accuracy and macro precision/recall/F1 against the argmax of the label, soft NLL, and top-1 ECE.
     `logits` are already masked (-inf)."""
     logits = logits / temperature

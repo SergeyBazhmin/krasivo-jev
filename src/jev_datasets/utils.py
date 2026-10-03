@@ -72,12 +72,7 @@ def make_sample(state: str, question: str, options: list[dict[str, str]], label:
     label:    a probability distribution over `options`, or the `id` of the single
               correct option, which becomes 1.0 with 0.0 everywhere else
     """
-    return {
-        "state": state,
-        "question": question,
-        "options": options,
-        "label": as_distribution(options, label)
-    }
+    return {"state": state, "question": question, "options": options, "label": as_distribution(options, label)}
 
 
 def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:

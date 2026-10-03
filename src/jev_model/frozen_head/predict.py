@@ -17,7 +17,9 @@ class JevPredictor:
         self.head.load_state_dict(checkpoint["head"])
         self.head.to(device).eval()
         self.decoder, self.tokenizer = load_backbone(self.cache["model"], device)
-        self.pad_id = self.tokenizer.pad_token_id if self.tokenizer.pad_token_id is not None else self.tokenizer.eos_token_id
+        self.pad_id = (
+            self.tokenizer.pad_token_id if self.tokenizer.pad_token_id is not None else self.tokenizer.eos_token_id
+        )
         self.device = device
 
     def predict(self, questions: list[tuple[str, str, list[str]]]) -> list[list[float]]:

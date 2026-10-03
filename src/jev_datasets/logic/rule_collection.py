@@ -13,7 +13,7 @@ ANSWER = re.compile(r"<answer>(.*)</answer>")
 
 PRONTOQA_PROMPT = re.compile(
     r"Rules: (.*)\nFacts: (.*)\nQuestion: (.*?)\? Please answer the question based on the given rule and facts",
-    re.S,
+    re.DOTALL,
 )
 PRONTOQA_QUESTIONS = [
     "Given the rules and facts, is the statement true or false?",
@@ -23,7 +23,7 @@ PRONTOQA_QUESTIONS = [
     "Taking the rules and facts as given, is the statement true or false?",
 ]
 PRONTOQA_ABOUT = (
-    "You are given rules such as \"Every wumpus is a brimpus\" and facts about one individual. The concept names are "
+    'You are given rules such as "Every wumpus is a brimpus" and facts about one individual. The concept names are '
     "made up and mean nothing beyond what the rules say. Decide whether the statement is true by chaining the rules "
     "from the facts."
 )
@@ -31,11 +31,11 @@ PRONTOQA_ABOUT = (
 PRONTOQA_OPTIONS = make_options(["True", "False"])
 
 AR_LSAT_ABOUT = (
-    "You are solving an analytical reasoning puzzle (a \"logic game\") like those on law school admission tests. The "
+    'You are solving an analytical reasoning puzzle (a "logic game") like those on law school admission tests. The '
     "context sets up a scheduling, ordering or grouping task under constraints; answer the question from those "
     "constraints alone."
 )
-AR_LSAT_PROMPT = re.compile(r"Context: (.*)\nQuestion: (.*)\nOptions: (.*?) Please answer the question", re.S)
+AR_LSAT_PROMPT = re.compile(r"Context: (.*)\nQuestion: (.*)\nOptions: (.*?) Please answer the question", re.DOTALL)
 LETTER = re.compile(r"(?:^|\s)([A-E])\)\s")
 
 

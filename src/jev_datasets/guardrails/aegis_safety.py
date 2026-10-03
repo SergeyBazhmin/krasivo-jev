@@ -63,6 +63,4 @@ class AegisSafetyDataset(JevDataset):
         )
 
 
-aegis_safety_dataset = AegisSafetyDataset(
-    name="aegis_safety", hf_path="nvidia/Aegis-AI-Content-Safety-Dataset-2.0"
-)
+aegis_safety_dataset = AegisSafetyDataset(name="aegis_safety", hf_path="nvidia/Aegis-AI-Content-Safety-Dataset-2.0")

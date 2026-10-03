@@ -16,10 +16,14 @@ def logits_of(head: OptionHead, tensors: dict[str, torch.Tensor], device: str, b
 
 def evaluate(head: OptionHead, data: dict[str, dict[str, torch.Tensor]], device: str) -> dict[str, dict[str, float]]:
     """Per-dataset scores with the head's fitted temperature, plus `macro`."""
-    return with_macro({
-        name: scores(logits_of(head, tensors, device), tensors["labels"], tensors["num_options"], head.temperature.item())
-        for name, tensors in data.items()
-    })
+    return with_macro(
+        {
+            name: scores(
+                logits_of(head, tensors, device), tensors["labels"], tensors["num_options"], head.temperature.item()
+            )
+            for name, tensors in data.items()
+        }
+    )
 
 
 def calibrate(head: OptionHead, data: dict[str, dict[str, torch.Tensor]], device: str) -> float:

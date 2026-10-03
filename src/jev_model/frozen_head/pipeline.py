@@ -27,7 +27,9 @@ class FrozenHeadModel(JevModel[FrozenHeadConfig]):
         if stage == "embed":
             from jev_model.frozen_head.cache import build
 
-            build(self.names(config), config.data_dir, self.cache_root(config), config.cache, device, config.batch_tokens)
+            build(
+                self.names(config), config.data_dir, self.cache_root(config), config.cache, device, config.batch_tokens
+            )
             return
 
         from jev_model.frozen_head.train import train

@@ -10,8 +10,8 @@ QUESTIONS = [
 ]
 ABOUT = (
     "You are a voice assistant. A user has given the command below. Decide which intent it expresses. Each intent is "
-    "named by its scenario and then its action: \"alarm set\" sets an alarm, \"alarm query\" asks about alarms already "
-    "set, \"iot hue lightoff\" turns off smart lights, \"qa factoid\" asks a factual question."
+    'named by its scenario and then its action: "alarm set" sets an alarm, "alarm query" asks about alarms already '
+    'set, "iot hue lightoff" turns off smart lights, "qa factoid" asks a factual question.'
 )
 
 
@@ -31,6 +31,4 @@ class MassiveIntentDataset(JevDataset):
         )
 
 
-massive_intent_dataset = MassiveIntentDataset(
-    name="massive_intent", hf_path="mteb/amazon_massive_intent", hf_name="en"
-)
+massive_intent_dataset = MassiveIntentDataset(name="massive_intent", hf_path="mteb/amazon_massive_intent", hf_name="en")

@@ -58,8 +58,11 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
             counts["done"] += 1
             counts["parsed"] += choice is not None
             counts["correct"] += choice == gold[i]
-            current.set_postfix(acc=f"{counts['correct'] / counts['done']:.3f}",
-                                parsed=f"{counts['parsed'] / counts['done']:.2f}", refresh=False)
+            current.set_postfix(
+                acc=f"{counts['correct'] / counts['done']:.3f}",
+                parsed=f"{counts['parsed'] / counts['done']:.2f}",
+                refresh=False,
+            )
             current.update()
             total.update()
 
@@ -67,8 +70,10 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
         current.close()
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")
         m = metrics[name]
-        tqdm.write(f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  "
-                   f"parsed={m['parsed']:.3f}")
+        tqdm.write(
+            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  "
+            f"parsed={m['parsed']:.3f}"
+        )
         total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
     total.close()
     return with_macro(metrics)
@@ -81,8 +86,18 @@ def score(samples: list[dict], answers: list[str], path: Path) -> dict[str, floa
     gold = [max(range(len(s["label"])), key=lambda j: s["label"][j]) for s in samples]
     with path.open("w") as f:
         for sample, answer, choice, g in zip(samples, answers, chosen, gold):
-            f.write(json.dumps({"question": sample["question"], "options": texts(sample), "answer": answer,
-                                "choice": choice, "gold": g}) + "\n")
+            f.write(
+                json.dumps(
+                    {
+                        "question": sample["question"],
+                        "options": texts(sample),
+                        "answer": answer,
+                        "choice": choice,
+                        "gold": g,
+                    }
+                )
+                + "\n"
+            )
     predicted = torch.tensor([-1 if choice is None else choice for choice in chosen])
     return {
         "n": len(samples),

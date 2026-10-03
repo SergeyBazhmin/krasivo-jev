@@ -42,6 +42,4 @@ class GitHubIssueTypeDataset(JevDataset):
         return make_sample(state, pick_question(QUESTIONS, issue), OPTIONS, KINDS[x["labels"]])
 
 
-github_issue_type_dataset = GitHubIssueTypeDataset(
-    name="github_issue_type", hf_path="khanmu2003/issue-classification"
-)
+github_issue_type_dataset = GitHubIssueTypeDataset(name="github_issue_type", hf_path="khanmu2003/issue-classification")

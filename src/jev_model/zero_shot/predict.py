@@ -22,6 +22,9 @@ class ZeroShotPredictor:
         result = []
         for (_, _, options), answer in zip(questions, self.client.answer(messages)):
             choice = parse(answer, options)
-            result.append([1 / len(options)] * len(options) if choice is None else
-                          [float(i == choice) for i in range(len(options))])
+            result.append(
+                [1 / len(options)] * len(options)
+                if choice is None
+                else [float(i == choice) for i in range(len(options))]
+            )
         return result

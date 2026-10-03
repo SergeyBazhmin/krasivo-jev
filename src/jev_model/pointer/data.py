@@ -32,9 +32,7 @@ class Draw:
     order: list[int]
 
 
-def load_items(
-    names: list[str], data_dir: Path, part: str, encoder: Encoder, limit: int = 0
-) -> dict[str, list[Item]]:
+def load_items(names: list[str], data_dir: Path, part: str, encoder: Encoder, limit: int = 0) -> dict[str, list[Item]]:
     """{dataset: items} for the datasets that have rows in `part`. `limit` keeps that many rows per
     dataset, chosen by a hash of the content, so every run scores the same ones."""
     loaded = {}
@@ -80,12 +78,21 @@ class Pool:
     BLOCK = 2048
 
     def __init__(
-        self, data: dict[str, list[Item]], alpha: float, seed: int, encoder: Encoder, none_prob: float = 0.0,
+        self,
+        data: dict[str, list[Item]],
+        alpha: float,
+        seed: int,
+        encoder: Encoder,
+        none_prob: float = 0.0,
         drop_prob: float = 0.0,
     ):
         self.items = [item for items in data.values() for item in items]
-        self.weights = torch.cat([torch.full((len(items),), len(items) ** alpha / len(items), dtype=torch.float64)
-                                  for items in data.values()])
+        self.weights = torch.cat(
+            [
+                torch.full((len(items),), len(items) ** alpha / len(items), dtype=torch.float64)
+                for items in data.values()
+            ]
+        )
         self.seed = seed
         self.encoder = encoder
         self.none_prob = none_prob

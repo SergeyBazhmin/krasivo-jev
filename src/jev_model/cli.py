@@ -4,10 +4,8 @@ from pathlib import Path
 from typing import Annotated
 
 import typer
-from loguru import logger
-from tqdm import tqdm
 
-from jev_model import models
+from jev_model import distributed, models
 from jev_model.base import CONFIG_FILE, JevModel, read_run
 from jev_model.config import dump, load_config, read_file
 from jev_model.constants import RUNS_DIR
@@ -42,7 +40,7 @@ def resolve_config(model: JevModel, **kwargs):
     try:
         return load_config(model.config_class, **kwargs)
     except (KeyError, ValueError, TypeError) as error:
-        raise typer.BadParameter(str(error), param_hint="--config/--set")
+        raise typer.BadParameter(str(error), param_hint="--config/--set") from error
 
 
 def open_run(run_dir: Path):
@@ -64,8 +62,9 @@ def list_models():
 
 
 @app.command("config")
-def show_config(model_name: Annotated[str, typer.Argument(metavar="MODEL")], config: ConfigFile = None,
-                overrides: Overrides = None):
+def show_config(
+    model_name: Annotated[str, typer.Argument(metavar="MODEL")], config: ConfigFile = None, overrides: Overrides = None
+):
     """Print a model's resolved config as JSON; save it to start a config file."""
     model = get_model(model_name)
     typer.echo(dump(resolve_config(model, path=config, overrides=overrides or [])))
@@ -76,23 +75,37 @@ def train(
     model_name: Annotated[str, typer.Argument(metavar="MODEL")],
     config: ConfigFile = None,
     overrides: Overrides = None,
-    stages: Annotated[list[str] | None, typer.Option("--stage", help="stages to run; the model's default ones if unset")] = None,
-    run_dir: Annotated[Path | None, typer.Option(help="RUNS_DIR/MODEL/<timestamp> by default. An existing run "
-                                                "keeps its config, so later stages can be added to it")] = None,
+    stages: Annotated[
+        list[str] | None, typer.Option("--stage", help="stages to run; the model's default ones if unset")
+    ] = None,
+    run_dir: Annotated[
+        Path | None,
+        typer.Option(
+            help="RUNS_DIR/MODEL/<timestamp> by default. An existing run "
+            "keeps its config, so later stages can be added to it"
+        ),
+    ] = None,
     device: Device = "",
 ):
-    """Run a model's training pipeline, or some of its stages."""
+    """Run a model's training pipeline, or some of its stages. Under `accelerate launch -m jev_model.cli train ...`
+    a model that supports it trains on every GPU with DDP."""
     model = get_model(model_name)
     if unknown := [s for s in stages or [] if s not in model.stages]:
-        raise typer.BadParameter(f"{model.name} has no stages {unknown}; it has {list(model.stages)}", param_hint="--stage")
-    run_dir = run_dir or RUNS_DIR / model.name / datetime.now().strftime("%Y%m%d-%H%M%S")
+        raise typer.BadParameter(
+            f"{model.name} has no stages {unknown}; it has {list(model.stages)}", param_hint="--stage"
+        )
+    device = default_device(device)
+    run_dir = distributed.setup(
+        run_dir or RUNS_DIR / model.name / datetime.now().strftime("%Y%m%d-%H%M%S"), cpu=device == "cpu"
+    )
     previous = read_run(run_dir)
     if previous and previous["model"] != model.name:
         raise typer.BadParameter(f"{run_dir} belongs to {previous['model']}", param_hint="--run-dir")
     base = read_file(run_dir / CONFIG_FILE) if previous else None
     resolved = resolve_config(model, base=base, path=config, overrides=overrides or [])
-    model.train(resolved, run_dir, default_device(device), stages)
-    typer.echo(f"run: {run_dir}")
+    model.train(resolved, run_dir, device, stages)
+    if distributed.is_main():
+        typer.echo(f"run: {run_dir}")
 
 
 @app.command("eval")
@@ -108,7 +121,9 @@ def eval_command(
     typer.echo(table(run_metrics(run_dir, partition, stage, device, fresh=True)))
 
 
-def run_metrics(run_dir: Path, partition: str, stage: str | None, device: str, fresh: bool) -> dict[str, dict[str, float]]:
+def run_metrics(
+    run_dir: Path, partition: str, stage: str | None, device: str, fresh: bool
+) -> dict[str, dict[str, float]]:
     """A run's {dataset: metrics}, read from RUN_DIR/<stage>-<partition>.json when `eval` has
     already written it, unless `fresh`."""
     path = run_dir / f"{stage or 'last'}-{partition}.json"
@@ -128,8 +143,9 @@ def compare(
     metric: Annotated[str, typer.Option(help="accuracy, f1, precision, recall, nll or ece")] = "accuracy",
     stage_a: Annotated[str | None, typer.Option(help="stage of run A; the last trained by default")] = None,
     stage_b: Annotated[str | None, typer.Option(help="stage of run B; the last trained by default")] = None,
-    output: Annotated[Path | None, typer.Option(help="HTML page with the chart; RUN_B/compare-<run A>-<partition>.html "
-                                                "by default")] = None,
+    output: Annotated[
+        Path | None, typer.Option(help="HTML page with the chart; RUN_B/compare-<run A>-<partition>.html by default")
+    ] = None,
     fresh: Annotated[bool, typer.Option(help="evaluate again instead of reading the scores `eval` saved")] = False,
     device: Device = "",
 ):
@@ -138,7 +154,9 @@ def compare(
     from jev_model import compare as comparison
 
     if metric not in comparison.HIGHER_IS_BETTER:
-        raise typer.BadParameter(f"unknown metric {metric!r}; one of {list(comparison.HIGHER_IS_BETTER)}", param_hint="--metric")
+        raise typer.BadParameter(
+            f"unknown metric {metric!r}; one of {list(comparison.HIGHER_IS_BETTER)}", param_hint="--metric"
+        )
     labels = tuple(
         f"{read_run(run).get('model', '?')} {run.resolve().name}" + (f" ({stage})" if stage else "")
         for run, stage in ((run_a, stage_a), (run_b, stage_b))
@@ -148,7 +166,7 @@ def compare(
             run_metrics(run_a, partition, stage_a, device, fresh), run_metrics(run_b, partition, stage_b, device, fresh)
         )
     except ValueError as error:
-        raise typer.BadParameter(str(error), param_hint="RUN_B")
+        raise typer.BadParameter(str(error), param_hint="RUN_B") from error
     typer.echo(comparison.table(a, b, labels, metric))
     if left_out:
         typer.echo(f"in one run only, not compared: {', '.join(left_out)}")
@@ -180,7 +198,9 @@ def ui(port: int = 8501):
     import sys
 
     script = Path(__file__).parent / "ui" / "app.py"
-    raise typer.Exit(subprocess.call([sys.executable, "-m", "streamlit", "run", str(script), "--server.port", str(port)]))
+    raise typer.Exit(
+        subprocess.call([sys.executable, "-m", "streamlit", "run", str(script), "--server.port", str(port)])
+    )
 
 
 if __name__ == "__main__":
