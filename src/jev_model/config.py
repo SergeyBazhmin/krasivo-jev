@@ -9,6 +9,12 @@ from dataclasses import asdict, fields, is_dataclass
 from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
+
+# secrets such as TYPESAFE_API_KEY stay in the environment, so they never land in a run's config.json; a `.env`
+# at the repo root fills it in on start, without overriding variables already set
+load_dotenv()
+
 
 def read_file(path: Path) -> dict:
     if path.suffix == ".toml":

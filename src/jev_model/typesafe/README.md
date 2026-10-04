@@ -29,7 +29,7 @@ plus `answered`. Every answer is saved to `RUN/api/<partition>-<dataset>.jsonl` 
 ## Usage
 
 ```bash
-export TYPESAFE_API_KEY=...                                         # never stored in the run directory
+echo TYPESAFE_API_KEY=... >> .env                                   # git-ignored, loaded on start, never stored in the run
 uv run jev-model train typesafe -s max_samples=500 --run-dir runs/typesafe/jev-1.13   # records the config; caps rows (and the bill)
 uv run jev-model eval runs/typesafe/jev-1.13
 uv run jev-model train typesafe -s model=~typesafe/jev-latest --run-dir runs/typesafe/latest

@@ -16,3 +16,6 @@ data_ru/
 # Backbone features and trained heads
 cache/
 runs/
+
+# Secrets (TYPESAFE_API_KEY)
+.env

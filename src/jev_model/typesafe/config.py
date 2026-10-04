@@ -9,7 +9,7 @@ class TypesafeConfig:
     # built datasets to score; empty for every one under data_dir
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
-    # API root; the key is read from TYPESAFE_API_KEY, so it never lands in config.json
+    # API root; the key is read from TYPESAFE_API_KEY (the environment or `.env`), so it never lands in config.json
     base_url: str = "https://routerai.ru/api"
     # a pinned version, so runs stay comparable; `~typesafe/jev-latest` follows new releases
     model: str = "typesafe/jev-1.13"
