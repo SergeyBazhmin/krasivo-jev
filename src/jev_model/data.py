@@ -1,7 +1,7 @@
 import hashlib
 from pathlib import Path
 
-from datasets import DatasetDict
+from datasets import DatasetDict, load_from_disk
 
 from jev_model.constants import PARTITIONS
 
@@ -52,3 +52,17 @@ def partition(data: DatasetDict) -> dict[str, list[dict]]:
         else:
             parts["train"].append(sample)
     return parts
+
+
+def load_samples(names: list[str], data_dir: Path, part: str, limit: int) -> dict[str, list[dict]]:
+    """{dataset: samples} in `part`. `limit` keeps that many per dataset, chosen by a hash of the content, so every
+    run scores the same ones."""
+    loaded = {}
+    for name in names:
+        samples = [s for s in partition(load_from_disk(data_dir / name))[part] if len(s["options"]) >= 2]
+        if limit and len(samples) > limit:
+            samples = sorted(samples, key=lambda s: hashlib.sha1(f"{content_key(s)}:{s['question']}".encode()).digest())
+            samples = samples[:limit]
+        if samples:
+            loaded[name] = samples
+    return loaded
