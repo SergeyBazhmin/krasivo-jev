@@ -118,7 +118,7 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   HTML page (dumbbell chart, metric picker, table). It reuses the scores `eval` saved in the run directories and
   compares only the datasets both runs have, with `macro` taken again over those.
 - `report.py`, `report.html`: every finished stage of any number of runs behind `jev-model report` (a model's
-  `eval_stages`, all stages by default; `frozen_head` leaves out `embed`): a leaderboard, per-dataset tables, head to
+  `eval_stages`, all stages by default): a leaderboard, per-dataset tables, head to
   head wins, scores by topic and by `type`, and the datasets that split the runs or that none solves, with findings
   written from the numbers. Like `compare`, it reads the saved scores and covers the datasets every run has.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
@@ -129,9 +129,6 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `__init__.py`: the `models` registry, alphabetical.
 - `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
   built dataset row, and calls `JevModel.predictor`, so new models need no UI code.
-- `frozen_head/`: frozen Qwen decoder + MLP option head. Stages `embed` (cache last-token hidden
-  states, shared by every run with the same `cache` config) -> `ce` -> `rl` (opt-in, starts from
-  the `ce` head). Each training stage writes `RUN/<stage>/head.pt`.
 - `pointer/`: Qwen decoder with a LoRA + pointer head, after `jaredpalmer/kev` but with one question per
   sequence and no option isolation, so attention stays plain causal. The input is
   `<state> .. <q> .. <opt> .. </opt> .. <decide>` (delimiters reuse Qwen special tokens, `encode.py`); an
@@ -144,18 +141,18 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `typesafe/`: TypeSafe's hosted `jev` model (`typesafe/jev-1.13`) through its `system_one` API (`typesafe-sdk`).
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.
-- `losses.py`: the lr schedule and the RL loss over option logits, shared by `frozen_head` and `pointer`.
+- `losses.py`: the lr schedule and the RL loss over option logits, used by `pointer`.
 
 ```bash
 uv sync --extra model
 uv run jev-model list                                   # models and their stages
-uv run jev-model config frozen_head > my.json           # defaults, to edit
-uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4 -s datasets=atis,banking77
-uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl   # extend a run
+uv run jev-model config pointer > my.json               # defaults, to edit
+uv run jev-model train pointer -c my.json -s ce.lr=1e-4 -s datasets=atis,banking77
+uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a run
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
-uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
-uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
-uv run jev-model compare runs/frozen_head/X runs/pointer/Y [--metric nll] [--partition validation]
+uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
+uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
+uv run jev-model compare runs/zero_shot/X runs/pointer/Y [--metric nll] [--partition validation]
 uv run jev-model report runs/*/* [--stage ce] [--all-datasets] [--output report.html]   # every finished stage
 uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
 ```
@@ -182,7 +179,7 @@ uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the brow
 - Lines are up to 120 characters. Use type hints and `X | None` unions. Run `uv run ruff check --fix . && uv run ruff format .`
   before committing (config in `pyproject.toml`).
 - There are no tests. To smoke-test a model pipeline without a GPU, save a tiny random decoder
-  locally and train with `-s cache.model=<dir> -s ce.steps=40` (`-s model=<dir>` for `pointer`) on one or two
+  locally and train `pointer` with `-s model=<dir> -s ce.steps=40` on one or two
   small datasets.
 - To verify a converter, run `uv run jev prepare <name> --max-samples 50
   --output-dir <scratch dir>` and inspect a few rows with `datasets.load_from_disk`.
