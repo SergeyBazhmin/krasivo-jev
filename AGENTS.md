@@ -123,8 +123,9 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   in more than one process. Only the main process writes run files.
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
 - `__init__.py`: the `models` registry, alphabetical.
-- `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
-  built dataset row, and calls `JevModel.predictor`, so new models need no UI code.
+- `ui/app.py`: the FastAPI backend behind `jev-model ui`; `ui/static/` holds the browser interface.
+  It loads one run through `JevModel.predictor`, accepts samples over HTTP and returns option probabilities.
+  The form accepts manual input, JSON imports and built dataset rows, so new models need no UI code.
 - `frozen_head/`: frozen Qwen decoder + MLP option head. Stages `embed` (cache last-token hidden
   states, shared by every run with the same `cache` config) -> `ce` -> `rl` (opt-in, starts from
   the `ce` head). Each training stage writes `RUN/<stage>/head.pt`.

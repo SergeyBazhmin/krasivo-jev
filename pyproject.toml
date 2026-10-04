@@ -8,12 +8,19 @@ dependencies = [
     "datasets>=5.0.1",
     "httpx>=0.28.1",
     "loguru>=0.7.3",
+    "python-dotenv>=1.0",
     "torch>=2.14.0",
     "transformers>=5.17.0",
     "typer>=0.27.2",
 ]
 
 [project.optional-dependencies]
+# Apple Silicon / CPU training, without CUDA kernels (`uv sync --extra model-mac`)
+model-mac = [
+    "accelerate>=1.10",
+    "peft>=0.21.1",
+    "tqdm>=4.67",
+]
 # training and inference (`jev-model`); install with `uv sync --extra model`
 model = [
     "accelerate>=1.10",
@@ -23,9 +30,10 @@ model = [
     "tqdm>=4.67",
     "transformers>=5.2",
 ]
-# `jev-model ui`; install with `uv sync --extra model --extra ui`
+# Local HTTP backend and browser UI (`jev-model ui`)
 ui = [
-    "streamlit>=1.50",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
 ]
 
 [project.scripts]

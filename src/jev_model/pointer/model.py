@@ -18,7 +18,7 @@ MLP = ["gate_proj", "up_proj", "down_proj"]
 # the projections of Qwen3.5's linear-attention (Gated DeltaNet) layers
 LINEAR_ATTENTION = ["in_proj_qkv", "in_proj_z", "in_proj_a", "in_proj_b", "out_proj"]
 # what the checkpoint needs to rebuild the model
-MODEL_KEYS = ("model", "lora", "lora_targets", "head_dim", "special_embeddings", "max_length")
+MODEL_KEYS = ("model", "lora", "lora_targets", "head_dim", "special_embeddings", "max_length", "gradient_checkpointing")
 
 
 class PointerHead(nn.Module):
@@ -123,6 +123,8 @@ def create(config: PointerConfig, device: str) -> PointerModel:
     if config.special_embeddings:
         lora["trainable_token_indices"] = {"embed_tokens": [tokenizer.convert_tokens_to_ids(t) for t in SPECIAL]}
     decoder = get_peft_model(decoder, LoraConfig(task_type="CAUSAL_LM", **lora))
+    if config.gradient_checkpointing:
+        decoder.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     head = PointerHead(decoder.config.hidden_size, config.head_dim).to(device)
     return PointerModel(decoder, tokenizer, head, {key: getattr(config, key) for key in MODEL_KEYS})
 
@@ -140,6 +142,8 @@ def load(checkpoint_dir: Path, device: str, trainable: bool = False) -> PointerM
         # an older adapter: it wraps the text model, not the causal LM
         base = base.model
     decoder = PeftModel.from_pretrained(base, checkpoint_dir / ADAPTER_DIR, is_trainable=trainable)
+    if trainable and settings.get("gradient_checkpointing", False):
+        decoder.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
     head = PointerHead(decoder.config.hidden_size, settings["head_dim"])
     head.load_state_dict(checkpoint["head"])
     model = PointerModel(decoder, tokenizer, head.to(device), settings)

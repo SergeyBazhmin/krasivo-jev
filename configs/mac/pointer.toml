@@ -1,0 +1,29 @@
+# Small LoRA experiments on Apple Silicon; start with `uv sync --extra model-mac`.
+datasets = ["sst2"]
+max_samples = 128
+model = "Qwen/Qwen2.5-0.5B"
+lora = 4
+lora_targets = "qv"
+head_dim = 64
+gradient_checkpointing = true
+max_length = 256
+eval_batch_tokens = 256
+
+[ce]
+steps = 40
+sampling = "sized"
+batch_tokens = 256
+accum = 1
+warmup = 4
+eval_every = 20
+eval_samples = 32
+
+[rl]
+steps = 10
+sampling = "sized"
+batch_tokens = 256
+accum = 1
+warmup = 2
+eval_every = 5
+eval_samples = 32
+group = 4

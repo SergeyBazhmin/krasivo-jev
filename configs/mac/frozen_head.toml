@@ -1,0 +1,24 @@
+# Cache the small decoder once, then run cheap experiments with the head.
+datasets = ["sst2"]
+batch_tokens = 256
+cache_dir = "cache/frozen_head-mac"
+
+[cache]
+model = "Qwen/Qwen2.5-0.5B"
+max_length = 256
+views = 1
+max_samples = 128
+
+[ce]
+steps = 100
+batch_size = 16
+width = 128
+warmup = 10
+eval_every = 50
+
+[rl]
+steps = 20
+batch_size = 16
+warmup = 2
+eval_every = 10
+group = 4

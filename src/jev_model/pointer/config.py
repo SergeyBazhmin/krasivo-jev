@@ -41,6 +41,8 @@ class PointerConfig:
     # built datasets to use; empty for every one under data_dir
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
+    # rows per dataset and partition, chosen after splitting; 0 keeps all
+    max_samples: int = 0
     model: str = "unsloth/Qwen3.5-2B-Base"
     # LoRA rank, and which projections get an adapter: all, attn or qv
     lora: int = 16
@@ -49,6 +51,8 @@ class PointerConfig:
     head_dim: int = 256
     # also train the embedding rows of the delimiter tokens
     special_embeddings: bool = False
+    # trade compute for activation memory
+    gradient_checkpointing: bool = False
     # sequence tokens; the state is cut in the middle past this
     max_length: int = 2048
     # padded tokens per forward pass in evaluation; speed only

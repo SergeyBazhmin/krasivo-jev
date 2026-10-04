@@ -32,6 +32,16 @@ def bucket(key: str) -> int:
     return int.from_bytes(hashlib.sha1(key.encode()).digest()[:8], "big") % 100
 
 
+def limit_samples(samples: list[dict], limit: int = 0) -> list[dict]:
+    """A stable subset of an already resolved partition; 0 keeps every row.
+    Hash ordering gives nested subsets as the limit grows without changing the split assignment."""
+    if limit < 0:
+        raise ValueError("max_samples must be >= 0")
+    if not limit or len(samples) <= limit:
+        return samples
+    return sorted(samples, key=lambda s: hashlib.sha1(f"{content_key(s)}:{s['question']}".encode()).digest())[:limit]
+
+
 def partition(data: DatasetDict) -> dict[str, list[dict]]:
     """Samples by train/validation/test. Unknown split names (halueval's `data`) join the train
     pool; partitions the source lacks are carved from that pool by a hash of the content.

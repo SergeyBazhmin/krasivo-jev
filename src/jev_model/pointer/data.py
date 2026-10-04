@@ -1,4 +1,3 @@
-import hashlib
 import random
 from collections.abc import Iterator
 from dataclasses import dataclass, replace
@@ -8,7 +7,7 @@ import torch
 from datasets import load_from_disk
 from loguru import logger
 
-from jev_model.data import content_key, partition
+from jev_model.data import content_key, limit_samples, partition
 from jev_model.pointer.encode import Encoder, Tokens
 
 # what stands in for the true option when a draw hides it
@@ -37,9 +36,7 @@ def load_items(names: list[str], data_dir: Path, part: str, encoder: Encoder, li
     dataset, chosen by a hash of the content, so every run scores the same ones."""
     loaded = {}
     for name in names:
-        samples = partition(load_from_disk(data_dir / name))[part]
-        if limit and len(samples) > limit:
-            samples = sorted(samples, key=lambda s: hashlib.sha1(sample_key(s).encode()).digest())[:limit]
+        samples = limit_samples(partition(load_from_disk(data_dir / name))[part], limit)
         tokenized = encoder.tokenize([(s["state"], s["question"], [o["text"] for o in s["options"]]) for s in samples])
         items = [
             Item(tokens, sample["label"], sample_key(sample), encoder.length(tokens))

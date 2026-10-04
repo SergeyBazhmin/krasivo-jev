@@ -37,10 +37,14 @@ writes `RUN/<stage>/head.pt`, `history.json` and `validation.json`.
 
 ## Usage
 
+For Apple Silicon, use `uv sync --extra model-mac` and `configs/mac/frozen_head.toml`.
+The CLI selects MPS automatically when available; `--device cpu` forces CPU.
+See the root README for local experiments and the offline smoke script.
+
 ```bash
 uv sync --extra model
 uv run jev-model config frozen_head > my.json            # defaults, to edit
-uv run jev-model train frozen_head -c configs/frozen_head.toml -s ce.lr=3e-4
+uv run jev-model train frozen_head -c my.json -s ce.lr=3e-4
 uv run jev-model train frozen_head --run-dir runs/frozen_head/X --stage rl
 uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
@@ -48,11 +52,13 @@ uv run jev-model predict runs/frozen_head/X --question "..." --option yes --opti
 
 ## Config
 
-`configs/frozen_head.toml` lists every key with a comment. The main ones:
+`jev-model config frozen_head` prints every key. `configs/mac/frozen_head.toml` provides small local settings.
+The main keys:
 
 - `datasets`: built datasets to use; empty means every one under `data_dir`.
 - `batch_tokens`: padded tokens per backbone pass in `embed`. Lower it when `embed` runs out of memory.
-- `[cache]`: `model`, `layer`, `max_length`, `views`. This section is the cache key.
+- `[cache]`: `model`, `layer`, `max_length`, `views`, `max_samples` (0 for all rows). This section is the cache key.
+  The sample cap is per dataset and partition, applied after splitting and before expanding option views.
 - `[ce]`, `[rl]`: steps, batch size, learning rate, dataset mixing (`alpha`), and the head shape
   (`width`, `depth`, `dropout`; used by `ce`, kept by `rl`).
 

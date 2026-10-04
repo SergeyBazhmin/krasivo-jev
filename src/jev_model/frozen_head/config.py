@@ -18,9 +18,12 @@ class CacheConfig:
     max_length: int = 2048
     # option orders per training sample (validation/test get 1)
     views: int = 4
+    # rows per dataset and partition before expanding views; 0 keeps all
+    max_samples: int = 0
 
     def slug(self) -> str:
-        return f"{self.model.replace('/', '--')}/L{self.layer}_T{self.max_length}_V{self.views}"
+        suffix = f"_N{self.max_samples}" if self.max_samples else ""
+        return f"{self.model.replace('/', '--')}/L{self.layer}_T{self.max_length}_V{self.views}{suffix}"
 
 
 @dataclass
