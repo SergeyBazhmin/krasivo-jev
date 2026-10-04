@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 from jev_model.data import load_samples
 from jev_model.metrics import scores, with_macro
-from jev_model.typesafe.client import Client
+from jev_model.typesafe.client import Client, kind
 from jev_model.typesafe.config import TypesafeConfig
 
 
@@ -36,7 +36,7 @@ def evaluate(config: TypesafeConfig, names: list[str], part: str, out_dir: Path)
             current.update()
             total.update()
 
-        questions = [(s["state"], s["question"], texts(s)) for s in samples]
+        questions = [(s["state"], s["question"], texts(s), s.get("type") or kind(texts(s))) for s in samples]
         answers = client.predict(questions, on_answer)
         current.close()
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")

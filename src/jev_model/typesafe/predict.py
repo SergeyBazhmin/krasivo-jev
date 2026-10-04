@@ -1,4 +1,4 @@
-from jev_model.typesafe.client import Client
+from jev_model.typesafe.client import Client, kind
 from jev_model.typesafe.config import TypesafeConfig
 
 
@@ -14,5 +14,5 @@ class TypesafePredictor:
                 raise ValueError(f"need at least 2 options, got {len(options)}")
         return [
             probs or [1 / len(options)] * len(options)
-            for (_, _, options), probs in zip(questions, self.client.predict(questions))
+            for (_, _, options), probs in zip(questions, self.client.predict([(*q, kind(q[2])) for q in questions]))
         ]

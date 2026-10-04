@@ -21,5 +21,3 @@ class TypesafeConfig:
     retries: int = 5
     # seconds per HTTP operation
     timeout: float = 60.0
-    # ask yes/no option pairs as a `noul` question (the API's yes/no primitive) rather than a two-way `choice`
-    noul: bool = True

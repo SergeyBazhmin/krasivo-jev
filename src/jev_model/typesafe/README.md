@@ -9,9 +9,10 @@ test rows (`jev_model.data.partition`). Nothing is trained and nothing runs loca
 Each sample is one request with one question, named `answer`:
 
 - `state` is the sample's state, or its question when the state is empty (the API needs something to read).
-- Options that are exactly `yes`/`no` go as a `noul` question (`instructions` = the question). The `yes` option gets
-  the returned `noul` probability, `no` gets the rest. `-s noul=false` asks them as a two-way `choice` instead.
-- Any other option set goes as a `choice` question. The criteria keys are the option texts. If texts repeat or are
+- A sample of `type` `noul` goes as a `noul` question (`instructions` = the question). The `yes` option gets
+  the returned `noul` probability, `no` gets the rest. `predict` has no `type`, so it treats options that are
+  exactly `yes`/`no` as `noul`, the same rule the datasets use; so does `eval` on datasets built before `type`.
+- A `choice` sample goes as a `choice` question. The criteria keys are the option texts. If texts repeat or are
   empty, the keys are option numbers (`"1"`, `"2"`, ...) and the texts become their descriptions. The returned
   `probabilities` map back to the options and are renormalised.
 
@@ -47,4 +48,3 @@ uv run jev-model compare runs/typesafe/jev-1.13 runs/pointer/Y
 | `concurrency` | 16                       | requests in flight |
 | `retries`     | 5                        | retries per request after the first attempt |
 | `timeout`     | 60                       | seconds per HTTP operation |
-| `noul`        | `true`                   | ask yes/no option pairs as `noul` rather than `choice` |

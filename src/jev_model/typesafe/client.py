@@ -31,12 +31,13 @@ def labels(options: list[str]) -> list[str]:
     return options if unique else [str(i) for i in range(1, len(options) + 1)]
 
 
-def is_noul(options: list[str]) -> bool:
-    return sorted(text.strip().lower() for text in options) == ["no", "yes"]
+def kind(options: list[str]) -> str:
+    """The `type` a dataset stamps on its rows, for options that come without one (`predict`)."""
+    return "noul" if sorted(text.strip().lower() for text in options) == ["no", "yes"] else "choice"
 
 
-def ask(question: str, options: list[str], noul: bool) -> Noul | Choice:
-    if noul and is_noul(options):
+def ask(question: str, options: list[str], type: str) -> Noul | Choice:
+    if type == "noul":
         return Noul(instructions=question)
     keys = labels(options)
     criteria = {key: None if key == text else text for key, text in zip(keys, options)}
@@ -55,8 +56,9 @@ def probabilities(answer: Answer, options: list[str]) -> list[float]:
 
 
 class Client:
-    """Sends (state, question, options) to the API. A sample the API rejects (400/422, e.g. too long) gets None;
-    other errors are retried by the SDK and raised once retries run out."""
+    """Sends (state, question, options, type) to the API; `type` is the sample's `noul` or `choice`. A sample the
+    API rejects (400/422, e.g. too long) gets None; other errors are retried by the SDK and raised once retries
+    run out."""
 
     def __init__(self, config: TypesafeConfig):
         self.config = config
@@ -64,16 +66,16 @@ class Client:
 
     def predict(
         self,
-        questions: list[tuple[str, str, list[str]]],
+        questions: list[tuple[str, str, list[str], str]],
         on_answer: Callable[[int, list[float] | None], None] | None = None,
     ) -> list[list[float] | None]:
-        """Probabilities over the options of each (state, question, options), in the given order.
+        """Probabilities over the options of each (state, question, options, type), in the given order.
         `on_answer(i, probs)` is called as each one arrives."""
         return asyncio.run(self.predict_all(questions, on_answer))
 
     async def predict_all(
         self,
-        questions: list[tuple[str, str, list[str]]],
+        questions: list[tuple[str, str, list[str], str]],
         on_answer: Callable[[int, list[float] | None], None] | None,
     ) -> list[list[float] | None]:
         config = self.config
@@ -84,12 +86,12 @@ class Client:
             base_url=config.base_url, model=config.model, timeout=config.timeout, retry=retry
         ) as client:
 
-            async def one(i: int, state: str, question: str, options: list[str]) -> list[float] | None:
+            async def one(i: int, state: str, question: str, options: list[str], type: str) -> list[float] | None:
                 async with semaphore:
                     try:
                         # a sample with no state is all question; the API needs a state to read
                         response = await client.system_one(
-                            state=state or question, questions={NAME: ask(question, options, config.noul)}
+                            state=state or question, questions={NAME: ask(question, options, type)}
                         )
                         probs = probabilities(response.answers[NAME], options)
                     except (TypeSafeBadRequestError, TypeSafeUnprocessableEntityError) as error:
