@@ -3,6 +3,60 @@
 Датасеты и обучение моделей, выбирающих ответ за один проход:
 `state → question → options → label`. Ответ должен следовать из контекста и вопроса.
 
+## UI и backend
+
+```bash
+uv sync --extra model-mac --extra ui
+uv run --extra model-mac --extra ui jev-model ui
+```
+
+Откройте [localhost:8501](http://localhost:8501). Выберите сохранённый run, стадию и устройство,
+нажмите «Загрузить модель». Введите контекст, вопрос и варианты ответа (по одному на строку),
+затем нажмите «Получить результат». Интерфейс покажет выбранный ответ, вероятности всех вариантов
+и время предсказания. Можно импортировать пример из JSON или заполнить форму строкой подготовленного
+датасета. Если у примера есть `label`, результат сравнивается с меткой.
+
+Загрузка модели означает загрузку обученного run из локального каталога `runs/` вместе с его
+базовой моделью. Backend использует общий `JevModel.predictor`: поддерживаются `pointer`,
+`frozen_head` и `zero_shot` (для последнего нужен сервер из его конфига). В памяти остаётся одна
+модель; кнопка «Выгрузить» освобождает её. При переключении старая модель выгружается до загрузки новой.
+
+Другой каталог runs и порт:
+
+```bash
+uv run --extra model-mac --extra ui jev-model ui --runs-dir /path/to/runs --port 8502
+```
+
+Frontend и FastAPI backend работают на одном порту. API доступен в `/api`, его описание —
+в [localhost:8501/docs](http://localhost:8501/docs). По умолчанию сервер слушает только `127.0.0.1`;
+это локальный инструмент без авторизации. Для CUDA установите extra `model` вместо `model-mac`.
+
+Основные запросы:
+
+```bash
+curl http://localhost:8501/api/runs
+curl -X POST http://localhost:8501/api/model \
+  -H 'Content-Type: application/json' \
+  -d '{"run":"pointer/mac-a","stage":"ce","device":"auto"}'
+curl -X POST http://localhost:8501/api/predict \
+  -H 'Content-Type: application/json' \
+  -d '{"state":"The answer is blue","question":"Which color?","options":["red","blue"]}'
+curl -X DELETE http://localhost:8501/api/model
+```
+
+`options` принимает строки или объекты `{"id": "blue", "text": "blue"}` из контракта датасета.
+Ответ содержит `prediction`, список `options` с `probability`, сведения о модели и `elapsed_ms`.
+В `/api/predict` можно передать `model_id` из ответа загрузки: backend отклонит запрос, если другая
+вкладка уже сменила модель. `/api/datasets` и `/api/sample?dataset=sst2&partition=test&index=0`
+дают доступ к подготовленным примерам с тем же разбиением, что при обучении и оценке.
+
+Проверка HTTP API, включая загрузку настоящего checkpoint:
+
+```bash
+uv run --extra model-mac --extra ui python scripts/smoke_ui.py
+uv run --extra model-mac --extra ui python scripts/smoke_ui.py --run-dir runs/pointer/mac-a --device cpu
+```
+
 ## Локальные эксперименты на Mac M1
 
 Нужен Python 3.12+ для **arm64**. Установка обучения без CUDA, Unsloth и Triton:

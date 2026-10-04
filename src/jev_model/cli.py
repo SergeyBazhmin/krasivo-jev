@@ -196,15 +196,21 @@ def predict(
 
 
 @app.command()
-def ui(port: int = 8501):
-    """Open a local page to try trained runs by hand (needs the `ui` extra)."""
-    import subprocess
-    import sys
+def ui(
+    port: Annotated[int, typer.Option(min=1, max=65535)] = 8501,
+    host: str = "127.0.0.1",
+    runs_dir: Annotated[Path, typer.Option(help="directory containing saved model runs")] = RUNS_DIR,
+):
+    """Serve the browser playground and its HTTP API (needs the `ui` extra)."""
+    try:
+        import uvicorn
 
-    script = Path(__file__).parent / "ui" / "app.py"
-    raise typer.Exit(
-        subprocess.call([sys.executable, "-m", "streamlit", "run", str(script), "--server.port", str(port)])
-    )
+        from jev_model.ui.app import create_app
+    except ModuleNotFoundError as error:
+        raise typer.BadParameter("Install the UI dependencies: uv sync --extra model-mac --extra ui") from error
+
+    typer.echo(f"UI: http://{host}:{port}   API docs: http://{host}:{port}/docs")
+    uvicorn.run(create_app(runs_dir), host=host, port=port)
 
 
 if __name__ == "__main__":

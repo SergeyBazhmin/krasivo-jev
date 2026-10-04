@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rujev · Проверка модели</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <div><span class="brand">rujev<span class="dot">●</span></span><h1>Проверка модели</h1>
+        <p>Загрузите модель, отправьте пример и сравните вероятности ответов.</p></div>
+      <a class="api-link" href="/docs" target="_blank" rel="noopener">API ↗</a>
+    </header>
+    <div id="error" role="alert" hidden></div>
+    <section class="card model-card" aria-labelledby="model-title">
+      <div class="section-heading"><h2 id="model-title">1. Модель</h2><span id="model-status" role="status">Не загружена</span></div>
+      <div class="model-fields">
+        <label class="run-field">Сохранённый run<select id="run"><option>Поиск моделей…</option></select></label>
+        <label>Стадия<select id="stage"><option value="">Последняя</option></select></label>
+        <label>Устройство<select id="device"><option value="auto">Автоматически</option><option value="cpu">CPU</option><option value="mps">Apple GPU · MPS</option><option value="cuda">CUDA</option></select></label>
+        <button id="load" type="button">Загрузить модель</button>
+        <button id="unload" class="secondary" type="button" disabled>Выгрузить</button>
+      </div>
+      <p id="model-detail" class="hint">Выберите run с обученными весами.</p>
+    </section>
+    <div class="workspace">
+      <section class="card" aria-labelledby="sample-title">
+        <div class="section-heading"><h2 id="sample-title">2. Пример</h2>
+          <label class="file-button">Импорт JSON<input type="file" id="sample-file" accept=".json,application/json"></label></div>
+        <form id="sample-form">
+          <label>Контекст <span class="optional">необязательно</span>
+            <textarea id="state" rows="5" placeholder="Всё, что нужно знать для ответа">В коробке лежат красный и синий мячи. Анна достала синий мяч.</textarea></label>
+          <label>Вопрос<textarea id="question" rows="2" required placeholder="Что нужно определить?">Какого цвета мяч достала Анна?</textarea></label>
+          <label>Варианты ответа <span class="optional">по одному на строку</span>
+            <textarea id="options" rows="4" required placeholder="Первый вариант&#10;Второй вариант">Красный
+Синий</textarea></label>
+          <button id="predict" type="submit" disabled>Получить результат</button>
+        </form>
+        <details><summary>Взять пример из датасета</summary>
+          <div class="dataset-fields">
+            <label>Датасет<select id="dataset"></select></label>
+            <label>Раздел<select id="partition"><option value="test">test</option><option value="validation">validation</option><option value="train">train</option></select></label>
+            <label>Строка <span class="optional">с нуля</span><input id="sample-index" type="number" min="0" step="1" value="0"></label>
+          </div>
+          <button id="load-sample" type="button" class="secondary">Заполнить пример</button>
+          <p id="dataset-detail" class="hint"></p>
+        </details>
+      </section>
+      <section class="card result-card" aria-labelledby="result-title">
+        <div class="section-heading"><h2 id="result-title">3. Результат</h2><span id="timing" class="hint"></span></div>
+        <div id="result" aria-live="polite"><div class="empty"><span class="empty-icon">↗</span>
+          <p>Результат появится здесь</p><span class="hint">Загрузите модель и отправьте пример.</span></div></div>
+      </section>
+    </div>
+    <footer>state → question → options → probabilities</footer>
+  </main>
+</body>
+</html>

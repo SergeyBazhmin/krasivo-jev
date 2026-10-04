@@ -30,9 +30,10 @@ model = [
     "tqdm>=4.67",
     "transformers>=5.2",
 ]
-# `jev-model ui`; install with `uv sync --extra model --extra ui`
+# Local HTTP backend and browser UI (`jev-model ui`)
 ui = [
-    "streamlit>=1.50",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
 ]
 
 [project.scripts]
