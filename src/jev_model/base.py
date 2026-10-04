@@ -29,6 +29,8 @@ class JevModel[C]:
     stages: tuple[str, ...]
     # what `train` runs when no --stage is given; later stages stay opt-in
     default_stages: tuple[str, ...] = ()
+    # stages `evaluate` can score; empty for every stage
+    eval_stages: tuple[str, ...] = ()
     # whether `run_stage` can train in several processes under `accelerate launch` (DDP)
     multi_gpu: bool = False
 

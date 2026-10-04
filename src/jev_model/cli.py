@@ -175,6 +175,66 @@ def compare(
     typer.echo(f"chart: {output}")
 
 
+def stage_metrics(run_dir: Path, partition: str, stage: str, last: bool, device: str, fresh: bool) -> dict:
+    """`run_metrics` of one stage. The last stage falls back to the scores `eval` saved without --stage
+    (RUN/last-<partition>.json), which are the same ones, before evaluating again."""
+    fallback = run_dir / f"last-{partition}.json"
+    if last and not fresh and not (run_dir / f"{stage}-{partition}.json").exists() and fallback.exists():
+        return json.loads(fallback.read_text())
+    return run_metrics(run_dir, partition, stage, device, fresh)
+
+
+@app.command()
+def report(
+    runs: Annotated[list[Path], typer.Argument(help="run directories written by `train`")],
+    partition: str = "test",
+    metric: Annotated[str, typer.Option(help="metric the page opens on and the terminal shows")] = "accuracy",
+    stages: Annotated[
+        list[str] | None, typer.Option("--stage", help="only these stages; every finished stage by default")
+    ] = None,
+    output: Annotated[Path | None, typer.Option(help="HTML page; ./report-<partition>.html by default")] = None,
+    all_datasets: Annotated[
+        bool, typer.Option(help="also list datasets some run lacks; macro still covers the common ones only")
+    ] = False,
+    fresh: Annotated[bool, typer.Option(help="evaluate again instead of reading the scores `eval` saved")] = False,
+    device: Device = "",
+):
+    """A report over every finished stage of the given runs: leaderboard, per-dataset tables, wins between them,
+    scores by topic and dataset type, and the datasets that split them. Each stage is scored from
+    RUN/<stage>-<partition>.json, evaluated first when missing. The leaderboard prints here, the rest is an HTML page."""
+    from jev_model import report as reporting
+    from jev_model.compare import HIGHER_IS_BETTER
+
+    if metric not in HIGHER_IS_BETTER:
+        raise typer.BadParameter(f"unknown metric {metric!r}; one of {list(HIGHER_IS_BETTER)}", param_hint="--metric")
+    labels, metrics = [], []
+    for run in runs:
+        info = read_run(run)
+        if "model" not in info:
+            raise typer.BadParameter(f"{run} is not a run directory", param_hint="RUNS")
+        model = get_model(info["model"])
+        scored = [stage for stage in info.get("stages", []) if stage in (model.eval_stages or model.stages)]
+        done = [stage for stage in scored if not stages or stage in stages]
+        if not done:
+            typer.echo(f"{run}: no finished stage{' among ' + ', '.join(stages) if stages else ''}, skipped")
+            continue
+        for stage in done:
+            labels.append(f"{info['model']} {run.resolve().name} / {stage}")
+            metrics.append(stage_metrics(run, partition, stage, stage == scored[-1], device, fresh))
+    if not metrics:
+        raise typer.BadParameter("no finished stage to report", param_hint="RUNS")
+    try:
+        payload, left_out = reporting.build(metrics, labels, partition, metric, all_datasets)
+    except ValueError as error:
+        raise typer.BadParameter(str(error), param_hint="RUNS") from error
+    typer.echo(reporting.leaderboard_table(payload))
+    if left_out:
+        typer.echo(f"\nnot in every run{', listed apart' if all_datasets else ', left out'}: {', '.join(left_out)}")
+    output = output or Path(f"report-{partition}.html")
+    reporting.write_html(payload, output)
+    typer.echo(f"report: {output}")
+
+
 @app.command()
 def predict(
     run_dir: Annotated[Path, typer.Argument(help="directory written by `train`")],

@@ -16,6 +16,8 @@ class FrozenHeadModel(JevModel[FrozenHeadConfig]):
     config_class = FrozenHeadConfig
     stages = ("embed", *TRAIN_STAGES)
     default_stages = ("embed", "ce")
+    # embed only caches features, there is no head to score
+    eval_stages = TRAIN_STAGES
 
     def cache_root(self, config: FrozenHeadConfig) -> Path:
         return config.cache_dir / config.cache.slug()

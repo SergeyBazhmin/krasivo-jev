@@ -1,5 +1,5 @@
 """Two runs side by side, per dataset. Works on the {dataset: metrics} dicts that `evaluate`
-returns, so any two registered models can be compared."""
+returns, so any two registered models can be compared. `report` builds on it for any number of runs."""
 
 import json
 from pathlib import Path
@@ -24,17 +24,25 @@ def shared(a: Metrics, b: Metrics) -> tuple[Metrics, Metrics, list[str]]:
     """Both runs cut to the datasets they have in common, with `macro` taken again over those
     alone: each run's own macro covers its own datasets, so the two would not be comparable.
     Also returns the datasets only one run has."""
-    names = [name for name in a if name in b and name != MACRO]
+    (a, b), left_out = shared_all([a, b])
+    return a, b, left_out
+
+
+def shared_all(runs: list[Metrics], union: bool = False) -> tuple[list[Metrics], list[str]]:
+    """`shared` for any number of runs. With `union` every dataset stays, but `macro` is still
+    taken over the common ones only. Also returns the datasets some run lacks."""
+    names = [name for name in runs[0] if all(name in run for run in runs) and name != MACRO]
     if not names:
         raise ValueError("the runs have no dataset in common")
-    left_out = sorted((set(a) ^ set(b)) - {MACRO})
+    left_out = sorted({name for run in runs for name in run} - set(names) - {MACRO})
 
     def cut(metrics: Metrics) -> Metrics:
         rows = {name: metrics[name] for name in names}
         macro = {key: sum(row[key] for row in rows.values()) / len(rows) for key in HIGHER_IS_BETTER}
-        return rows | {MACRO: macro | {"n": sum(row["n"] for row in rows.values())}}
+        kept = {name: metrics[name] for name in left_out if name in metrics} if union else {}
+        return rows | kept | {MACRO: macro | {"n": sum(row["n"] for row in rows.values())}}
 
-    return cut(a), cut(b), left_out
+    return [cut(run) for run in runs], left_out
 
 
 def deltas(a: Metrics, b: Metrics, metric: str) -> list[tuple[str, float, float, float]]:

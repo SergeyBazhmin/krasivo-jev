@@ -117,6 +117,10 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `compare.py`, `compare.html`: two runs per dataset behind `jev-model compare`: a text table and a standalone
   HTML page (dumbbell chart, metric picker, table). It reuses the scores `eval` saved in the run directories and
   compares only the datasets both runs have, with `macro` taken again over those.
+- `report.py`, `report.html`: every finished stage of any number of runs behind `jev-model report` (a model's
+  `eval_stages`, all stages by default; `frozen_head` leaves out `embed`): a leaderboard, per-dataset tables, head to
+  head wins, scores by topic and by `type`, and the datasets that split the runs or that none solves, with findings
+  written from the numbers. Like `compare`, it reads the saved scores and covers the datasets every run has.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
   one shared run directory). A model that can train with DDP sets `multi_gpu = True`; the others refuse to run
@@ -152,6 +156,7 @@ uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train po
 uv run jev-model eval runs/frozen_head/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/frozen_head/X --question "..." --option yes --option no
 uv run jev-model compare runs/frozen_head/X runs/pointer/Y [--metric nll] [--partition validation]
+uv run jev-model report runs/*/* [--stage ce] [--all-datasets] [--output report.html]   # every finished stage
 uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
 ```
 

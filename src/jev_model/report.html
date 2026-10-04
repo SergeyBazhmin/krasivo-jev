@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run report</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --text: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10);
+    --good: #1f9d6b; --bad: #d4483b;
+    --s0: #2a78d6; --s1: #eb6834; --s2: #1f9d6b; --s3: #8a5cd6; --s4: #c9a227; --s5: #d6457f; --s6: #2aa5b8; --s7: #6b6a64;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface: #1a1a19; --text: #ffffff; --text-2: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10);
+      --good: #34b682; --bad: #e0614f;
+      --s0: #3987e5; --s1: #d95926; --s2: #34b682; --s3: #9d74e6; --s4: #d8b13a; --s5: #e25b92; --s6: #3bb7ca; --s7: #8f8e87;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px 16px 48px; background: var(--page); color: var(--text);
+         font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 15px; margin: 0 0 4px; }
+  .sub { color: var(--text-2); margin: 0 0 16px; }
+  .hint { color: var(--text-2); margin: 0 0 12px; font-size: 13px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+  .bar { position: sticky; top: 0; z-index: 2; display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4px 20px; color: var(--text-2); }
+  .key { display: inline-flex; align-items: center; gap: 6px; overflow-wrap: anywhere; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; display: inline-block; }
+  label { color: var(--text-2); margin-left: auto; }
+  select { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--axis);
+           border-radius: 6px; padding: 4px 8px; margin-left: 6px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px; }
+  .grid2 > .card { margin-bottom: 0; min-width: 0; }
+  .stack { display: grid; gap: 16px; margin-bottom: 16px; }
+  ul.findings { margin: 0; padding-left: 20px; }
+  ul.findings li { margin: 3px 0; }
+  #chart { position: relative; }
+  svg { display: block; width: 100%; height: auto; }
+  svg text { font: 12px system-ui, -apple-system, "Segoe UI", sans-serif; fill: var(--text-2); }
+  svg .tick { fill: var(--muted); font-variant-numeric: tabular-nums; }
+  svg .name.macro { fill: var(--text); font-weight: 600; }
+  svg .row:hover .band, svg .row:focus .band { fill: var(--grid); opacity: 0.45; }
+  svg .row { outline: none; }
+  #tip { position: absolute; pointer-events: none; display: none; background: var(--surface); color: var(--text);
+         border: 1px solid var(--border); border-radius: 6px; padding: 8px 10px; font-size: 12px;
+         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); max-width: 340px; z-index: 1; }
+  #tip b { display: block; margin-bottom: 4px; overflow-wrap: anywhere; }
+  #tip .line { display: flex; gap: 6px; align-items: center; font-variant-numeric: tabular-nums; }
+  .scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 5px 10px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  th:first-child, td:first-child, th.l, td.l { text-align: left; }
+  th { color: var(--text-2); font-weight: 600; }
+  th.sort { cursor: pointer; user-select: none; }
+  th.sort:hover { color: var(--text); }
+  td.best { font-weight: 700; }
+  td.na { color: var(--muted); }
+  tr.macro td { font-weight: 600; border-top: 1px solid var(--axis); }
+  tr.apart td:first-child::after { content: " *"; color: var(--muted); }
+  .note { color: var(--text-2); margin: 12px 0 0; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Run report</h1>
+  <p class="sub" id="sub"></p>
+  <div class="card bar">
+    <div class="legend" id="legend"></div>
+    <label>Metric<select id="metric"></select></label>
+  </div>
+  <div class="card"><h2>Findings</h2><ul class="findings" id="findings"></ul></div>
+  <div class="card scroll"><h2>Leaderboard</h2><p class="hint" id="board-hint"></p><table id="board"></table></div>
+  <div class="card">
+    <h2>Per dataset</h2>
+    <p class="hint">One dot per run. Rows are sorted from easiest to hardest by the mean over runs. Hover a row for the values.</p>
+    <div id="chart"><div id="tip"></div></div>
+  </div>
+  <div class="grid2 stack">
+    <div class="card scroll"><h2>By topic</h2><p class="hint">Mean over the topic's datasets.</p><table id="topics"></table></div>
+    <div class="card scroll"><h2>By type</h2><p class="hint">noul: yes/no options; choice: anything else.</p><table id="types"></table></div>
+  </div>
+  <div class="card scroll">
+    <h2>Head to head</h2>
+    <p class="hint">Row run against column run: datasets won – lost, with the mean difference (row − column) below.</p>
+    <table id="wins"></table>
+  </div>
+  <div class="grid2 stack">
+    <div class="card scroll"><h2>Where runs disagree</h2><p class="hint">Largest spread (best − worst) across runs.</p><table id="spread"></table></div>
+    <div class="card scroll"><h2>Hardest datasets</h2><p class="hint">Worst score of the best run.</p><table id="hardest"></table></div>
+  </div>
+  <div class="card scroll">
+    <h2>All datasets</h2>
+    <p class="hint">Click a header to sort. Cells are shaded per row, from the worst run to the best, and the best is in bold.</p>
+    <table id="all"></table>
+    <p class="note" id="all-note"></p>
+  </div>
+  <div class="card scroll">
+    <h2>Calibration</h2>
+    <p class="hint">Macro NLL and ECE; lower is better. Runs without probabilities (generated answers) have none.</p>
+    <table id="calibration"></table>
+  </div>
+</main>
+<script>
+const DATA = __DATA__;
+const NS = "http://www.w3.org/2000/svg";
+const ROW = 24, TOP = 28, PAD_RIGHT = 16, WIDTH = 1040;
+const K = DATA.labels.length;
+
+const fmt = v => v === null || v === undefined ? "—" : v.toFixed(3);
+const signed = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(3);
+const color = i => i < 8 ? `var(--s${i})` : `hsl(${(i * 47) % 360} 55% 52%)`;
+const code = i => `R${i + 1}`;
+const tag = i => `<span class="key"><span class="dot" style="background:${color(i)}"></span>${code(i)}</span>`;
+const el = (name, attrs = {}, text) => {
+  const node = document.createElementNS(NS, name);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  if (text !== undefined) node.textContent = text;
+  return node;
+};
+const escapeHtml = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const get = (name, i, key) => { const m = DATA.values[name][i]; return m && m[key] !== null && m[key] !== undefined ? m[key] : null; };
+
+// cells of one row shaded from its worst value to its best
+function heatCells(values, higher) {
+  const present = values.filter(v => v !== null);
+  const lo = Math.min(...present), hi = Math.max(...present);
+  const best = higher ? hi : lo;
+  return values.map(v => {
+    if (v === null) return `<td class="na">n/a</td>`;
+    const t = hi === lo ? 1 : (higher ? v - lo : hi - v) / (hi - lo);
+    const shade = present.length > 1 ? `background:color-mix(in srgb, var(--good) ${Math.round(4 + 30 * t)}%, transparent)` : "";
+    return `<td class="${v === best && present.length > 1 ? "best" : ""}" style="${shade}">${fmt(v)}</td>`;
+  }).join("");
+}
+const runHeads = () => DATA.labels.map((_, i) => `<th title="${escapeHtml(DATA.labels[i])}">${tag(i)}</th>`).join("");
+
+function niceTicks(lo, hi, count = 6) {
+  const span = hi - lo || 1;
+  const raw = span / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map(m => m * mag).find(s => s >= raw);
+  const start = Math.floor(lo / step) * step, ticks = [];
+  for (let v = start; v <= hi + step * 0.999; v += step) ticks.push(+v.toFixed(10));
+  return ticks;
+}
+
+function drawChart(metric) {
+  const chart = document.getElementById("chart"), tip = document.getElementById("tip");
+  chart.querySelector("svg")?.remove();
+  const mean = vs => { const p = vs.filter(v => v !== null); return p.length ? p.reduce((a, b) => a + b, 0) / p.length : null; };
+  const rows = DATA.datasets.filter(d => d.common).map(d => {
+    const values = DATA.labels.map((_, i) => get(d.name, i, metric.key));
+    return {name: d.name, n: d.n, values, mean: mean(values)};
+  }).filter(r => r.mean !== null);
+  rows.sort((a, b) => metric.higher ? b.mean - a.mean : a.mean - b.mean);
+  const macro = DATA.labels.map((_, i) => get("macro", i, metric.key));
+  rows.unshift({name: "macro", n: DATA.values.macro.find(m => m)?.n, values: macro, macro: true});
+
+  const longest = Math.max(...rows.map(r => r.name.length));
+  const left = Math.min(260, 16 + longest * 6.6);
+  const height = TOP + rows.length * ROW + 12;
+  const svg = el("svg", {viewBox: `0 0 ${WIDTH} ${height}`, role: "img",
+                         "aria-label": `${metric.label} of every run per dataset; the All datasets table holds the same values`});
+  const values = rows.flatMap(r => r.values).filter(v => v !== null);
+  const ticks = niceTicks(Math.min(...values), Math.max(...values));
+  const lo = ticks[0], hi = ticks[ticks.length - 1];
+  const x = v => left + (v - lo) / (hi - lo) * (WIDTH - left - PAD_RIGHT);
+
+  for (const t of ticks) {
+    svg.append(el("line", {x1: x(t), x2: x(t), y1: TOP - 6, y2: height - 8, stroke: "var(--grid)", "stroke-width": 1}));
+    svg.append(el("text", {x: x(t), y: 12, "text-anchor": "middle", class: "tick"}, String(t)));
+  }
+  rows.forEach((r, row) => {
+    const y = TOP + row * ROW + ROW / 2;
+    const g = el("g", {class: "row", tabindex: 0});
+    g.append(el("rect", {class: "band", x: 0, y: y - ROW / 2, width: WIDTH, height: ROW, fill: "transparent"}));
+    const shown = r.name.length > 36 ? r.name.slice(0, 35) + "…" : r.name;
+    g.append(el("text", {x: left - 12, y: y + 4, "text-anchor": "end", class: "name" + (r.macro ? " macro" : "")}, shown));
+    const present = r.values.filter(v => v !== null);
+    if (present.length > 1)
+      g.append(el("line", {x1: x(Math.min(...present)), x2: x(Math.max(...present)), y1: y, y2: y,
+                           stroke: "var(--axis)", "stroke-width": 2, "stroke-linecap": "round"}));
+    // the ring in the surface color keeps overlapping dots apart
+    r.values.forEach((v, i) => {
+      if (v !== null) g.append(el("circle", {cx: x(v), cy: y, r: 5, fill: color(i), stroke: "var(--surface)", "stroke-width": 2}));
+    });
+    const show = event => {
+      const order = r.values.map((v, i) => ({v, i})).filter(o => o.v !== null).sort((a, b) => metric.higher ? b.v - a.v : a.v - b.v);
+      tip.innerHTML = `<b>${escapeHtml(r.name)}${r.n ? ` · n=${r.n}` : ""}</b>` + order.map(o =>
+        `<div class="line"><span class="dot" style="background:${color(o.i)}"></span>${code(o.i)} ${fmt(o.v)} ${escapeHtml(DATA.labels[o.i])}</div>`).join("");
+      tip.style.display = "block";
+      const box = chart.getBoundingClientRect(), rect = g.getBoundingClientRect();
+      const px = event && event.clientX ? event.clientX - box.left + 14 : rect.width / 2;
+      tip.style.left = Math.max(0, Math.min(px, box.width - tip.offsetWidth)) + "px";
+      tip.style.top = (rect.bottom - box.top + 4) + "px";
+    };
+    g.addEventListener("mousemove", show);
+    g.addEventListener("focus", () => show());
+    g.addEventListener("mouseleave", () => tip.style.display = "none");
+    g.addEventListener("blur", () => tip.style.display = "none");
+    svg.append(g);
+  });
+  // macro sits apart from the datasets it averages
+  svg.append(el("line", {x1: 0, x2: WIDTH, y1: TOP + ROW, y2: TOP + ROW, stroke: "var(--axis)", "stroke-width": 1}));
+  chart.append(svg);
+}
+
+function groupTable(id, groups, metric) {
+  const body = Object.entries(groups).map(([name, g]) =>
+    `<tr><td>${escapeHtml(name)}</td><td>${g.n}</td>${heatCells(g.values, metric.higher)}</tr>`).join("");
+  document.getElementById(id).innerHTML = `<thead><tr><th>group</th><th>datasets</th>${runHeads()}</tr></thead><tbody>${body}</tbody>`;
+}
+
+function winsTable(wins) {
+  const rows = DATA.labels.map((_, i) => `<tr><th class="l">${tag(i)}</th>` + DATA.labels.map((_, j) => {
+    const w = wins[i][j];
+    if (i === j) return `<td class="na">·</td>`;
+    if (!w) return `<td class="na">n/a</td>`;
+    const share = (w.wins - w.losses) / w.total;
+    const tone = share >= 0 ? "--good" : "--bad";
+    return `<td style="background:color-mix(in srgb, var(${tone}) ${Math.round(Math.abs(share) * 40)}%, transparent)"`
+      + ` title="${escapeHtml(DATA.labels[i])} vs ${escapeHtml(DATA.labels[j])}: ${w.total} datasets">`
+      + `${w.wins}–${w.losses}<br><small>${signed(w.delta)}</small></td>`;
+  }).join("") + "</tr>").join("");
+  document.getElementById("wins").innerHTML = `<thead><tr><th></th>${runHeads()}</tr></thead><tbody>${rows}</tbody>`;
+}
+
+function listTable(id, rows, withSpread) {
+  const body = rows.map(r => `<tr><td>${escapeHtml(r.dataset)}</td>${withSpread ? `<td>${fmt(r.spread)}</td>` : ""}`
+    + `<td>${fmt(r.best)}</td><td>${tag(r.best_run)}</td></tr>`).join("");
+  document.getElementById(id).innerHTML = `<thead><tr><th>dataset</th>${withSpread ? "<th>spread</th>" : ""}`
+    + `<th>best</th><th>by</th></tr></thead><tbody>${body}</tbody>`;
+}
+
+let sortBy = {col: "mean", dir: -1};
+function allTable(metric) {
+  const rows = DATA.datasets.map(d => {
+    const values = DATA.labels.map((_, i) => get(d.name, i, metric.key));
+    const p = values.filter(v => v !== null);
+    return {...d, values, spread: p.length > 1 ? Math.max(...p) - Math.min(...p) : null,
+            mean: p.length ? p.reduce((a, b) => a + b, 0) / p.length : null};
+  });
+  const key = r => sortBy.col.startsWith("r") ? r.values[+sortBy.col.slice(1)] : r[sortBy.col];
+  rows.sort((a, b) => {
+    const x = key(a), y = key(b);
+    if (x === null || x === undefined) return 1;
+    if (y === null || y === undefined) return -1;
+    return (typeof x === "string" ? x.localeCompare(y) : x - y) * sortBy.dir;
+  });
+  const head = [["name", "dataset", "l"], ["topic", "topic", "l"], ["type", "type", "l"], ["n", "n", ""]]
+    .map(([col, text, cls]) => `<th class="sort ${cls}" data-col="${col}">${text}</th>`).join("")
+    + DATA.labels.map((_, i) => `<th class="sort" data-col="r${i}" title="${escapeHtml(DATA.labels[i])}">${tag(i)}</th>`).join("")
+    + `<th class="sort" data-col="mean">mean</th><th class="sort" data-col="spread">spread</th>`;
+  const macro = DATA.labels.map((_, i) => get("macro", i, metric.key));
+  const body = rows.map(r => `<tr class="${r.common ? "" : "apart"}"><td>${escapeHtml(r.name)}</td><td class="l">${escapeHtml(r.topic)}</td>`
+    + `<td class="l">${escapeHtml(r.type)}</td><td>${r.n}</td>${heatCells(r.values, metric.higher)}<td>${fmt(r.mean)}</td><td>${fmt(r.spread)}</td></tr>`).join("")
+    + `<tr class="macro"><td>macro</td><td></td><td></td><td></td>${heatCells(macro, metric.higher)}<td></td><td></td></tr>`;
+  const table = document.getElementById("all");
+  table.innerHTML = `<thead><tr>${head}</tr></thead><tbody>${body}</tbody>`;
+  table.querySelectorAll("th.sort").forEach(th => th.addEventListener("click", () => {
+    const col = th.dataset.col;
+    sortBy = {col, dir: sortBy.col === col ? -sortBy.dir : (["name", "topic", "type"].includes(col) ? 1 : -1)};
+    allTable(metric);
+  }));
+  const apart = DATA.datasets.filter(d => !d.common).length;
+  document.getElementById("all-note").textContent = apart
+    ? `* ${apart} dataset(s) are missing from some run; they are left out of macro, ranks, groups and head to head.` : "";
+}
+
+function calibration() {
+  const keys = ["nll", "ece"];
+  const body = DATA.labels.map((label, i) => `<tr><td>${tag(i)} ${escapeHtml(label)}</td>`
+    + keys.map(k => { const v = get("macro", i, k); return v === null ? `<td class="na">n/a</td>` : `<td>${fmt(v)}</td>`; }).join("")
+    + keys.map(k => { const r = DATA.analysis[k].available ? DATA.analysis[k].leaderboard.find(b => b.run === i) : null;
+                      return r && r.mean_rank !== null ? `<td>${r.mean_rank.toFixed(2)}</td>` : `<td class="na">n/a</td>`; }).join("")
+    + `</tr>`).join("");
+  document.getElementById("calibration").innerHTML =
+    `<thead><tr><th>run</th><th>NLL</th><th>ECE</th><th>NLL mean rank</th><th>ECE mean rank</th></tr></thead><tbody>${body}</tbody>`;
+}
+
+function draw() {
+  const metric = DATA.metrics.find(m => m.key === document.getElementById("metric").value);
+  const a = DATA.analysis[metric.key];
+  const empty = `<tbody><tr><td class="na">No run has ${escapeHtml(metric.label)}.</td></tr></tbody>`;
+  if (!a.available) {
+    for (const id of ["board", "topics", "types", "wins", "spread", "hardest", "all"]) document.getElementById(id).innerHTML = empty;
+    document.getElementById("findings").innerHTML = "";
+    document.getElementById("chart").querySelector("svg")?.remove();
+    return;
+  }
+  document.getElementById("findings").innerHTML = a.findings.map(f => `<li>${escapeHtml(f)}</li>`).join("");
+  document.getElementById("board-hint").textContent =
+    `${metric.label}, ${metric.higher ? "higher" : "lower"} is better. Mean rank: 1 is best on every dataset. Best on: datasets where the run has the best value, ties counting for each.`;
+  document.getElementById("board").innerHTML = `<thead><tr><th>#</th><th class="l">run</th><th>macro</th><th>mean rank</th><th>best on</th><th>median</th></tr></thead><tbody>`
+    + a.leaderboard.map((r, place) => `<tr><td>${place + 1}</td><td class="l">${tag(r.run)} ${escapeHtml(DATA.labels[r.run])}</td>`
+      + `<td>${fmt(r.macro)}</td><td>${r.mean_rank === null ? "—" : r.mean_rank.toFixed(2)}</td><td>${r.best}</td><td>${fmt(r.median)}</td></tr>`).join("")
+    + `</tbody>`;
+  drawChart(metric);
+  groupTable("topics", a.topics, metric);
+  groupTable("types", a.types, metric);
+  winsTable(a.wins);
+  listTable("spread", a.spread, true);
+  listTable("hardest", a.hardest, false);
+  allTable(metric);
+}
+
+const common = DATA.datasets.filter(d => d.common).length;
+document.getElementById("sub").textContent =
+  `${DATA.partition} partition · ${K} runs · ${common} datasets in every run` + (common < DATA.datasets.length ? ` (${DATA.datasets.length} in all)` : "");
+document.getElementById("legend").innerHTML = DATA.labels.map((label, i) =>
+  `<span class="key"><span class="dot" style="background:${color(i)}"></span>${code(i)}: ${escapeHtml(label)}</span>`).join("");
+const select = document.getElementById("metric");
+select.innerHTML = DATA.metrics.map(m => `<option value="${m.key}">${m.label}</option>`).join("");
+select.value = DATA.metric;
+select.addEventListener("change", draw);
+calibration();
+draw();
+</script>
+</body>
+</html>
