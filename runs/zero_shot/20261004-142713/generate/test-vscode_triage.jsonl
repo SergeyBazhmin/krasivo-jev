@@ -1,0 +1,200 @@
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this issue report a bug or request a feature?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this GitHub issue a bug report or a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this issue be triaged as a bug or as a feature request?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this VS Code issue be labeled?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the author reporting a defect or asking for new functionality?", "options": ["bug", "feature request"], "answer": "1", "choice": 0, "gold": 0}

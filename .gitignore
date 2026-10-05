@@ -11,11 +11,16 @@ wheels/
 
 # Built datasets
 data/
-data_ru/
 
-# Backbone features and trained heads
+# Backbone features
 cache/
-runs/
+
+# Model weights in runs; configs, scores and logs are tracked
+runs/**/*.safetensors
+runs/**/*.pt
+
+# macOS
+.DS_Store
 
 # Secrets (TYPESAFE_API_KEY)
 .env

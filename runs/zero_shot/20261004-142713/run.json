@@ -1,0 +1,6 @@
+{
+  "model": "zero_shot",
+  "stages": [
+    "generate"
+  ]
+}

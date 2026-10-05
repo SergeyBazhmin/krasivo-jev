@@ -11,7 +11,6 @@ class TypesafeConfig:
     data_dir: Path = DATA_DIR
     # API root; the key is read from TYPESAFE_API_KEY (the environment or `.env`), so it never lands in config.json
     base_url: str = "https://routerai.ru/api"
-    # a pinned version, so runs stay comparable; `~typesafe/jev-latest` follows new releases
     model: str = "typesafe/jev-1.13"
     # rows per dataset and partition, chosen by a hash of the content; 0 for all
     max_samples: int = 0

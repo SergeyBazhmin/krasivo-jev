@@ -46,7 +46,7 @@ test rows are never changed, so the scores do not measure this behaviour.
 ### Option count
 
 Every dataset has its own number of options, so the count would give the dataset away. With probability
-`drop_prob` (0 by default) a training draw loses 1..n-2 of its wrong options; the true option always stays.
+`drop_prob` (0.2 by default) a training draw loses 1..n-2 of its wrong options; the true option always stays.
 Rows with soft labels are left alone. Dropping happens before the none draw.
 
 ## Stages

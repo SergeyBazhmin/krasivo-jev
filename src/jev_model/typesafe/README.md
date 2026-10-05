@@ -34,7 +34,6 @@ echo TYPESAFE_API_KEY=... >> .env                                   # git-ignore
 uv run jev-model train typesafe -s max_samples=500 --run-dir runs/typesafe/jev-1.13   # records the config; caps rows (and the bill)
 uv run jev-model eval runs/typesafe/jev-1.13
 uv run jev-model train typesafe -s model=~typesafe/jev-latest --run-dir runs/typesafe/latest
-uv run jev-model compare runs/typesafe/jev-1.13 runs/pointer/Y
 ```
 
 ## Config

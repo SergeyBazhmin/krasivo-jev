@@ -1,4 +1,4 @@
-"""Answers from an OpenAI-compatible server, such as a local vLLM, as `jev_datasets/translate.py` does."""
+"""Answers from an OpenAI-compatible server, such as a local vLLM."""
 
 import asyncio
 from collections.abc import Callable

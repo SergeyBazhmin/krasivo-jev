@@ -1,0 +1,484 @@
+{"question": "Statement: Stella is shy and a wumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not transparent.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a numpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a sterpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.63, 0.37], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not transparent.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a lempus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a brimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a yumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.5, 0.5], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not large.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is blue.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a tumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.49, 0.51], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is overcast and a yumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a gorpus or a lempus or a lorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.69, 0.31], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a lorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.87, 0.13], "label": [1.0, 0.0]}
+{"question": "Statement: Max is an impus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a lorpus, a gorpus, or a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a brimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a brimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.23, 0.77], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not sour and a jompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a dumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a jompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is dull.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a shumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is discordant and a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not transparent.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.32, 0.68], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is a sterpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not windy.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.28, 0.72], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is shy.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not nervous.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a yumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a vumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.07, 0.93], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a gorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.39, 0.61], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a brimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a shumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.48, 0.52], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a lorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a jompus or a wumpus or a gorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a shumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a jompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a brimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a rompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.84, 0.16], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a zumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not spicy.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not luminous.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not slow.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a yumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a wumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is opaque and a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a vumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a gorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Max is slow or an impus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a vumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.81, 0.19], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a grimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is muffled.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a shumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a grimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.58, 0.42], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not loud.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a zumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is melodic and a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is shy and a jompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not shy and a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not cold.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a jompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a vumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a wumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a gorpus, a lorpus, or a shumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a zumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a shumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a lorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a jompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a tumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a zumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.24, 0.76], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not kind.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is melodic.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a wumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a grimpus, a lempus, or an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Statement: Max is melodic and a jompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a numpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.54, 0.46], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a grimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.65, 0.35], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a zumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a zumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a wumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is floral and a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.89, 0.11], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a brimpus or a sterpus or a yumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not luminous.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is floral or a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a jompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.61, 0.39], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not slow and a brimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a jompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.27, 0.73], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.58, 0.42], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a vumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a numpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a dumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a wumpus or an impus or a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.54, 0.46], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not moderate or a zumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.72, 0.28], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a dumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.63, 0.37], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is an impus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a wumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a sterpus, a gorpus, or a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not sweet and a rompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a numpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not happy or a brimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a numpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is bitter and a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a lempus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a gorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is a numpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a yumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not overcast.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.92, 0.08], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not cold and a gorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a lempus or a sterpus or a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not small and a lorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a lorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a brimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.36, 0.64], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a grimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not melodic.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a rompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a lorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not sweet and a gorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is luminous.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a wumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not hot and a grimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not opaque.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.78, 0.22], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is temperate.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: lly is mean.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.63, 0.37], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a zumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is feisty.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a dumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.88, 0.12], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not an impus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a gorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a vumpus or a gorpus or a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a shumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is sweet and a vumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a lorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not moderate and a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a grimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.8, 0.2], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is a numpus or a tumpus or a yumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.27, 0.73], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is large.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.89, 0.11], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a zumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a dumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not fast.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a tumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a brimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a grimpus or a rompus or a shumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a sterpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is transparent and a lempus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.66, 0.34], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a tumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a lempus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a gorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not dull and a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a dumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not brown.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not opaque.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is muffled.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is opaque.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a brimpus, a lorpus, or a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a sterpus or a brimpus or a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a vumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is an impus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not an impus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is fast.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is moderate and a zumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is small.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.92, 0.08], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a yumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a lorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not fast.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not red.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a numpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.09, 0.91], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is dull.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is moderate.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not earthy.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not wooden and a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a dumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a brimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.9, 0.1], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a zumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a numpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.31, 0.69], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not shy.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.71, 0.29], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is temperate.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a sterpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is metallic and a wumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not moderate.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a zumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a wumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not dull.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a rompus, a jompus, or a tumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a wumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.49, 0.51], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not spicy and a lorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a zumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not opaque and a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a gorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not an impus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a wumpus, a vumpus, or a brimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.88, 0.12], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.84, 0.16], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not melodic and a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not hot.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.54, 0.46], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a rompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.67, 0.33], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a grimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not an impus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is a jompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.9, 0.1], "label": [1.0, 0.0]}
+{"question": "Statement: Max is an impus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a tumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not brown or an impus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not overcast.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a brimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.64, 0.36], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a wumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a shumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is earthy or an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a wumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a numpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is bitter.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a lempus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.89, 0.11], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a brimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not an impus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not opaque.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is large.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.59, 0.41], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Statement: Max is sour and a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a brimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a wumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a dumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a zumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a yumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not opaque or a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a gorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not kind.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.9, 0.1], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a vumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is hot.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.89, 0.11], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a wumpus, a shumpus, or a yumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is brown and a rompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is not a grimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.32, 0.68], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is mean.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is bright and a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a vumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is fruity.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not mean.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.91, 0.09], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a tumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a dumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not an impus, a vumpus, or a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a lempus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a vumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is shy.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is a yumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a dumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is aggressive and a wumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.9, 0.1], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a jompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a jompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.52, 0.48], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a sterpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is a brimpus or a dumpus or a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a brimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.81, 0.19], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a dumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a shumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a shumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is floral.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.68, 0.32], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a gorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.8, 0.2], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a jompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a dumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a gorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is overcast and a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not an impus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not nervous and a rompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a yumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a gorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is a grimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.75, 0.25], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is an impus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not muffled.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a rompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is shy and a tumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a yumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a rompus and Max is not a grimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not an impus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.92, 0.08], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a lempus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not happy.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a shumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not earthy or a gorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a yumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not brown or an impus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a yumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a tumpus or a wumpus or a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.64, 0.36], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is an impus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not opaque and a grimpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not red.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not muffled and a dumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Max is brown and a lempus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.89, 0.11], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is a zumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a sterpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a rompus, a zumpus, or an impus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not bright.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not an impus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a rompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.3, 0.7], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a tumpus or a dumpus or a jompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a numpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a rompus, a vumpus, or a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.9, 0.1], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not transparent and a wumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is a dumpus, a numpus, or a grimpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not angry and a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is a gorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.57, 0.43], "label": [1.0, 0.0]}
+{"question": "Statement: Fae is muffled and a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.94, 0.06], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not aggressive.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a lorpus, a tumpus, or a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a lempus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is sunny and a gorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not a yumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a zumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a zumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Max is a gorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not loud and a tumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is a numpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a brimpus, a wumpus, or a numpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a jompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not happy.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.95, 0.05], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not spicy.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a vumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is a jompus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a gorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.79, 0.21], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is a yumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not a zumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not a vumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a shumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is a gorpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.04, 0.96], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is rainy.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.76, 0.24], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is not melodic and a sterpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not brown and a tumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.07, 0.93], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is fruity.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a gorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a sterpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a dumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a sterpus or a grimpus or a zumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is not a rompus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.3, 0.7], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a jompus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a lempus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not a jompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not an impus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.35, 0.65], "label": [0.0, 1.0]}
+{"question": "Statement: Alex is not snowy.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not large and a vumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is not a rompus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a rompus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not snowy.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.93, 0.07], "label": [1.0, 0.0]}
+{"question": "Statement: Stella is bright.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.96, 0.04], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a yumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.68, 0.32], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a grimpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Wren is not a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not an impus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a vumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.58, 0.42], "label": [1.0, 0.0]}
+{"question": "Statement: Max is a wumpus, a shumpus, or a dumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: lly is a grimpus, a gorpus, or a vumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.62, 0.38], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a vumpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Rex is not a grimpus, a lorpus, or a zumpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Statement: Sam is not a numpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.68, 0.32], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is a sterpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is bitter.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is not muffled.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is not a lorpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.83, 0.17], "label": [0.0, 1.0]}
+{"question": "Statement: Wren is earthy or a lorpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is shy.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not a zumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [0.98, 0.02], "label": [1.0, 0.0]}
+{"question": "Statement: Sam is not a lempus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: Sally is a yumpus.\nGiven the rules and facts, is the statement true or false?", "options": ["True", "False"], "probs": [1.0, 0.0], "label": [1.0, 0.0]}
+{"question": "Statement: Alex is a shumpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Sally is not discordant.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [0.0, 1.0]}
+{"question": "Statement: Max is not a lorpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.97, 0.03], "label": [1.0, 0.0]}
+{"question": "Statement: Max is not a sterpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is not a numpus.\nBased only on the rules and facts, is the statement true?", "options": ["True", "False"], "probs": [0.38, 0.62], "label": [0.0, 1.0]}
+{"question": "Statement: Stella is not a brimpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.0, 1.0], "label": [0.0, 1.0]}
+{"question": "Statement: lly is a yumpus.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.14, 0.86], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is a lorpus.\nCan the statement be proven true from the rules and facts, or is it false?", "options": ["True", "False"], "probs": [0.99, 0.01], "label": [1.0, 0.0]}
+{"question": "Statement: Rex is not sour and a brimpus.\nDoes the statement follow from the rules and facts?", "options": ["True", "False"], "probs": [0.01, 0.99], "label": [0.0, 1.0]}
+{"question": "Statement: Fae is not snowy.\nTaking the rules and facts as given, is the statement true or false?", "options": ["True", "False"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}

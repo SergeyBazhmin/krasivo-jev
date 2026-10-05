@@ -1,4 +1,4 @@
-# rujev
+# krasivo-jev
 
 Training data for a "system one" model: a single encoder-only transformer that answers
 multiple-choice questions in one forward pass. Every example has the shape
@@ -51,9 +51,6 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
 - `constants.py`: `MAX_SAMPLES = 10_000` per split. `ROOT_DIR` is the default output
   directory. It resolves to `data/` at the repo root, so built datasets land in `data/<name>/`.
 - `cli.py`: the `jev` Typer CLI.
-- `translate.py`: `jev translate` sends each distinct state, question and option text of saved datasets to an
-  OpenAI-compatible server (a local vLLM) and saves Russian copies to `data_ru/<name>`. Translations are cached
-  in `data_ru/translations.jsonl`, so reruns resume and shared texts are translated once.
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
 - Topic subpackages: `bugs`, `business`, `classification`, `distill`, `guardrails`,
@@ -71,7 +68,6 @@ uv sync
 uv run jev list                              # registered dataset names
 uv run jev prepare sst2 anli                 # build specific datasets
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
-uv run jev translate all [--url http://localhost:8000/v1] [--model NAME]   # Russian copies in data_ru/
 ```
 
 `prepare` loads from the Hub, runs `prepare()`, does a stratified cap on each split, and
@@ -110,22 +106,18 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `run_stage`, `evaluate` and `predictor`. `train()` runs stages in pipeline order and records
   finished ones in `run.json`; the resolved config goes to `config.json`.
 - `config.py`: config = dataclass defaults, then a JSON/TOML file (`-c`), then `-s key=value`
-  overrides with dotted keys. Values parse as JSON, else string; `list` fields also take `a,b`.
+  overrides with dotted keys. Values parse as JSON, else string; `list` fields also take `a,b`. It also loads
+  `.env` (git-ignored) into the environment, so secrets such as `TYPESAFE_API_KEY` never land in `config.json`.
+  `configs/pointer.toml` is the example config, with every key commented.
 - `data.py`: `resolve_names` and `partition` (train/validation/test, carving missing splits by a
   content hash). Every model splits through it, so test sets are the same rows.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
-- `compare.py`, `compare.html`: two runs per dataset behind `jev-model compare`: a text table and a standalone
-  HTML page (dumbbell chart, metric picker, table). It reuses the scores `eval` saved in the run directories and
-  compares only the datasets both runs have, with `macro` taken again over those.
-- `report.py`, `report.html`: every finished stage of any number of runs behind `jev-model report` (a model's
-  `eval_stages`, all stages by default): a leaderboard, per-dataset tables, head to
-  head wins, scores by topic and by `type`, and the datasets that split the runs or that none solves, with findings
-  written from the numbers. Like `compare`, it reads the saved scores and covers the datasets every run has.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
   one shared run directory). A model that can train with DDP sets `multi_gpu = True`; the others refuse to run
   in more than one process. Only the main process writes run files.
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
+  Runs are tracked in git (configs, scores, logs) except their weights (`*.safetensors`, `*.pt`).
 - `__init__.py`: the `models` registry, alphabetical.
 - `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
   built dataset row, and calls `JevModel.predictor`, so new models need no UI code.
@@ -138,6 +130,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   Each stage writes `RUN/<stage>/adapter` and `head.pt`. It trains on several GPUs with DDP under `accelerate launch`.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
   replies with the number of an option. `train` only records the config, and `eval` scores it.
+- `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
+  an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the `zero_shot` model.
 - `typesafe/`: TypeSafe's hosted `jev` model (`typesafe/jev-1.13`) through its `system_one` API (`typesafe-sdk`).
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.
@@ -152,10 +146,13 @@ uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a 
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
-uv run jev-model compare runs/zero_shot/X runs/pointer/Y [--metric nll] [--partition validation]
-uv run jev-model report runs/*/* [--stage ce] [--all-datasets] [--output report.html]   # every finished stage
 uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
+uv sync --extra notebook && uv run jupyter lab notebooks/compare_runs.ipynb   # compare runs with plots
 ```
+
+`notebooks/compare_runs.ipynb` compares runs from the scores `eval` saved (`RUN/<stage>-<partition>.json`): a
+leaderboard, a per-dataset heatmap, two runs head to head, and scores by topic and by `type`. It only reads files,
+so evaluate a run before comparing it.
 
 ### Adding a model
 
@@ -171,7 +168,8 @@ uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the brow
 ## Conventions
 
 - Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
-  the `model` extra (torch, transformers, tqdm, peft, accelerate, flash-linear-attention).
+  the `model` extra (torch, transformers, tqdm, peft, accelerate, flash-linear-attention, python-dotenv,
+  typesafe-sdk). The `ui` extra adds streamlit; the `notebook` extra adds jupyterlab, pandas and matplotlib.
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,

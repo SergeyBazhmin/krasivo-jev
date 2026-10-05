@@ -1,0 +1,48 @@
+{
+  "datasets": ["dbpedia"],
+  "data_dir": "/home/bazhmin.sergey/junk/jev/krasivo-jev/data",
+  "cache_dir": "/home/bazhmin.sergey/junk/jev/krasivo-jev/cache/frozen_head",
+  "batch_tokens": 32768,
+  "cache": {
+    "model": "Qwen/Qwen3.5-2B",
+    "layer": -1,
+    "max_length": 2048,
+    "views": 4
+  },
+  "ce": {
+    "steps": 20000,
+    "batch_size": 256,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "warmup": 500,
+    "eval_every": 1000,
+    "alpha": 0.5,
+    "seed": 0,
+    "width": 2048,
+    "depth": 2,
+    "dropout": 0.1,
+    "group": 8,
+    "sigma_start": 1.0,
+    "sigma_end": 0.3,
+    "spherical_weight": 0.5,
+    "ce_weight": 0.0
+  },
+  "rl": {
+    "steps": 20000,
+    "batch_size": 256,
+    "lr": 0.0001,
+    "weight_decay": 0.01,
+    "warmup": 500,
+    "eval_every": 1000,
+    "alpha": 0.5,
+    "seed": 0,
+    "width": 2048,
+    "depth": 2,
+    "dropout": 0.1,
+    "group": 8,
+    "sigma_start": 1.0,
+    "sigma_end": 0.3,
+    "spherical_weight": 0.5,
+    "ce_weight": 0.0
+  }
+}

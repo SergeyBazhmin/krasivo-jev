@@ -1,0 +1,860 @@
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Should this tweet be flagged as offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is the language in this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this tweet contain offensive language?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this tweet offensive?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Would this tweet offend people?", "options": ["non-offensive", "offensive"], "answer": "1", "choice": 0, "gold": 0}

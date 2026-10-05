@@ -1,0 +1,10 @@
+{
+  "datasets": [],
+  "data_dir": "/home/bazhmin.sergey/junk/jev/krasivo-jev/data",
+  "base_url": "https://routerai.ru/api",
+  "model": "typesafe/jev-1.13",
+  "max_samples": 0,
+  "concurrency": 16,
+  "retries": 5,
+  "timeout": 60.0
+}

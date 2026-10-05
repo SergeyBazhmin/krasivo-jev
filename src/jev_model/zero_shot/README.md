@@ -40,11 +40,10 @@ gold one.
 ## Usage
 
 ```bash
-vllm serve Qwen/Qwen3.5-2B --max-model-len 8192                          # in another shell
+vllm serve Qwen/Qwen3.5-2B --max-model-len 8192 --port 8080              # in another shell
 uv run jev-model train zero_shot --run-dir runs/zero_shot/chat           # records the config, trains nothing
 uv run jev-model eval runs/zero_shot/chat
 uv run jev-model train zero_shot -s url=http://host:8001/v1 --run-dir runs/zero_shot/other   # another server
-uv run jev-model compare runs/zero_shot/chat runs/pointer/Y
 ```
 
 ## Config
@@ -52,12 +51,12 @@ uv run jev-model compare runs/zero_shot/chat runs/pointer/Y
 | key              | default                    | meaning |
 |------------------|----------------------------|---------|
 | `datasets`       | all built                  | datasets to score |
-| `url`            | `http://localhost:8000/v1` | OpenAI-compatible server |
+| `url`            | `http://localhost:8080/v1` | OpenAI-compatible server |
 | `model`          | first served               | served model name |
 | `tokenizer`      | `model`                    | Hub tokenizer that measures prompts |
 | `max_length`     | 4096                       | prompt tokens |
 | `max_samples`    | 0 (all)                    | rows per dataset, picked by a content hash so runs score the same ones |
-| `concurrency`    | 64                         | requests in flight |
+| `concurrency`    | 16                         | requests in flight |
 | `retries`        | 5                          | attempts per request, with exponential backoff |
 | `thinking`       | `false`                    | let a reasoning model think first |
 | `max_new_tokens` | 16                         | answer budget without thinking |

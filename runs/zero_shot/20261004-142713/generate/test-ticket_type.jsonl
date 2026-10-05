@@ -1,0 +1,977 @@
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 3}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "4", "choice": 3, "gold": 3}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 2}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Which ticket type fits this request?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "3", "choice": 2, "gold": 2}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this ticket an incident, a request, a problem or a change?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What type of support ticket is this?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What kind of ticket did the customer open?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "How should this ticket be categorized?", "options": ["Incident", "Request", "Problem", "Change"], "answer": "1", "choice": 0, "gold": 0}

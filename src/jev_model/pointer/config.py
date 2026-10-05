@@ -8,14 +8,14 @@ from jev_model.constants import DATA_DIR
 class TrainConfig:
     # optimizer steps; each one accumulates `accum` batches of at most `batch_tokens` padded tokens
     steps: int = 5_000
-    batch_tokens: int = 16_384
+    batch_tokens: int = 8192
     accum: int = 2
     lr: float = 2e-4
     weight_decay: float = 0.01
     warmup: int = 200
-    eval_every: int = 500
+    eval_every: int = 2500
     # validation rows per dataset scored during training; the final metrics use the whole partition
-    eval_samples: int = 200
+    eval_samples: int = 1000
     # how training samples are drawn: weighted (per-dataset weights, with replacement) or sized (each pass
     # shuffles the whole training set and cuts it in that order into batches of at most `batch_tokens`)
     sampling: str = "weighted"
@@ -26,7 +26,7 @@ class TrainConfig:
     # chance that a training draw shows "None of the above" in place of the true option
     none_prob: float = 0.1
     # chance that a training draw loses some of its wrong options (at least 2 options stay), so the option count varies
-    drop_prob: float = 0.0
+    drop_prob: float = 0.2
     seed: int = 0
     # RL stage only
     group: int = 8
@@ -50,8 +50,8 @@ class PointerConfig:
     # also train the embedding rows of the delimiter tokens
     special_embeddings: bool = False
     # sequence tokens; the state is cut in the middle past this
-    max_length: int = 2048
+    max_length: int = 1024
     # padded tokens per forward pass in evaluation; speed only
-    eval_batch_tokens: int = 32_768
+    eval_batch_tokens: int = 8192
     ce: TrainConfig = field(default_factory=TrainConfig)
     rl: TrainConfig = field(default_factory=lambda: TrainConfig(steps=1_000, lr=2e-5))

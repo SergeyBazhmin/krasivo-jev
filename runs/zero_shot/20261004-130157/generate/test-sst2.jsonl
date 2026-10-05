@@ -1,0 +1,992 @@
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "2", "choice": 1, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this movie review snippet?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What is the sentiment of this sentence from a film review?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 1}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Does this snippet speak well or badly of the movie?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "What opinion of the film does this phrase convey?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}
+{"question": "Is this excerpt from a movie review positive or negative?", "options": ["negative", "positive"], "answer": "1", "choice": 0, "gold": 0}

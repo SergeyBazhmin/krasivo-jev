@@ -1,0 +1,14 @@
+{
+  "datasets": [],
+  "data_dir": "/home/bazhmin.sergey/junk/jev/krasivo-jev/data",
+  "url": "http://localhost:8080/v1",
+  "model": "Qwen/Qwen3.5-2B",
+  "tokenizer": "",
+  "max_length": 4096,
+  "max_samples": 0,
+  "concurrency": 16,
+  "retries": 5,
+  "thinking": false,
+  "max_new_tokens": 16,
+  "think_tokens": 2048
+}

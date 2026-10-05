@@ -1,0 +1,1022 @@
+{"question": "Answer: Badr Hari\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Badr Hari is a notorious kickboxer.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: US 60\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.49, 0.51], "label": [0.0, 1.0]}
+{"question": "Answer: It's actually Zilpo Road that is known as Midland Trail, not US 60.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Answer: While Jane and First for Women are both publications, one is aimed at women while the other is not.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Fu Manchu\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: Fighting Gravity covered Blue \u00d6yster Cult's Godzilla.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.44, 0.56], "label": [1.0, 0.0]}
+{"question": "Answer: Target Corporation\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Walmart is the largest retailer in the United States, which has commercials featuring the American artist who was 1st Runner-Up in the 2005 USA Weekend Magazine's songwriting competition.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Tantallon Castle\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.38, 0.62], "label": [0.0, 1.0]}
+{"question": "Answer: The Bass Rock Lighthouse was next to Edinburgh Castle.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Turkey\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: G\u00fclhane Park and Zografeion Lyceum are located in Europe.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Craig Newmark\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The founder of Craigslist is Craig Williams.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Institute of Muslim Minority Affairs\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The mother of Hillary Clinton was the director of the Institute of Muslim Minority Affairs.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Albuquerque, New Mexico\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Santa Fe, New Mexico\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: 19 mi\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The Rossendale Free Press serves several towns north of Manchester.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [1.0, 0.0]}
+{"question": "Answer: Kamal Shalorus\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Matthew \"The Granimal\" Granahan founded the American Combat Association alongside Kamal Shalorus.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.45, 0.55], "label": [1.0, 0.0]}
+{"question": "Answer: Cataloochee\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: The Messer Barn in question is located in the Cataloochee Valley.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: William of Wykeham\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: The college attended by Thomas Balston, member of the Whatman paper-making family, was founded by King Henry VIII.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Virginia Wade\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Xavier Malisse has received a higher World singles ranking than Virginia Wade.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Allan Dwan\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: George Marshall was born before Allan Dwan.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.66, 0.33999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: Aadesh Shrivastava\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.64, 0.36], "label": [0.0, 1.0]}
+{"question": "Answer: Pritam was the deceased mentor.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: Kerkor \"Kirk\" Kerkorian\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Joe Manganiello was born first.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: \"Music Icons\"\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Alamgir was a contestant on \"Music Icons\".\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Texas Tech Red Raiders\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Mike Leach was previously the head coach of the Kansas City Chiefs.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Chien-gris\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Chinese Crested Dog was originated in Medieval times.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Hey Monday\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: All Time Low\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: tennis\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Jack Sock and Raffaella Reggi played squash.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Barton Mine\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [0.0, 1.0]}
+{"question": "Answer: Camlaren Mine was destroyed by a tornado.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Pride Divide\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The Big Melt documents the issues surrounding the LGBT community.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Petrie Dierman Kughn in 1994.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: The Mills landmark was built in 1984 by the Ford Motor Company.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Dick Van Dyke\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.59, 0.41000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: Shane Van Dyke is the oldest.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Joseph Groome Towers\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The motorway referred to as the Mid Wirral Motorway is not located near any particular buildings.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Vladislav Lantratov\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Maximilian Konstantinov\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Tony Rice\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Rebecca Rippy played or shared the stage with several well-known acts and artists, including Tony Rice.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.33, 0.6699999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: 2016 Kansas City Chiefs season\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Answer: The 2016 Kansas City Chiefs season was the franchise's 57th overall and the fourth under head coach Andy Reid, with John Dorsey who was fired on June 22, 2017.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.5, 0.5], "label": [1.0, 0.0]}
+{"question": "Answer: March 1, 2017\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Ryan Zinke replaced Kevin Haugrud on March 1, 2017.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Pearl Harbor\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The combat flight simulator video game features the bombing of Los Angeles by Japan.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Lincolnshire Posy\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [0.0, 1.0]}
+{"question": "Answer: Green Bushes was composed by Percy Grainger.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Unfabulous\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.33, 0.6699999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The animated series \"Pepper Ann\" and \"Angela Anaconda\" starred Molly Hagan.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Benny Andersson\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Bj\u00f6rn Ulvaeus was a part of a Swedish pop group, formed in Stockholm in 1972, as well as co-producer on the film \"Mamma Mia!\" with his brother Benny Andersson.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Mohan Veena (slide guitar)\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: The Hindustani classical music instrumentalist played Mohan Veena.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: Key deer\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: The smallest North American deer subject to Foster's rule is the teacup deer.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: 1967\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Viktor Bout was born in 1967, making him the same age as Michael Jordan.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [1.0, 0.0]}
+{"question": "Answer: Colorado Avalanche\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Denver Avalanche.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.91, 0.08999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: Raees\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The song Zaalima is from \"Jab Harry Met Sejal\".\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Tony Scott\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The director of \"M\u00e1s\" is Tony Scott.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.44, 0.56], "label": [1.0, 0.0]}
+{"question": "Answer: New York\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Hunter Mountain is the highest peak in the Catskills, located in the western part of New York.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.99, 0.010000000000000009], "label": [1.0, 0.0]}
+{"question": "Answer: Baroness\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Answer: John Dyer Baizley sang for Metallica.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: plants\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Answer: Cerastium and Pavonia have green vegetation.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Theodosius Cistern\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Hagia Sophia has its entrance in Piyer Loti Caddesi.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: cities\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.68, 0.31999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: counties\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [0.0, 1.0]}
+{"question": "Answer: No, only Sorbus is a genus of plants.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.33, 0.6699999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Walt Disney\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: The production company of The Littlest Outlaw and The Jungle Book is MGM.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Outfit\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Charles \"Chuckie\" Anthony Nicoletti and Salvatore \"Mooney Sam\" Giancana were part of a vigilante group.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Camping World Stadium\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: The Citrus Bowl, located in the West Lakes neighborhood.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Theater at Madison Square Garden\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Answer: The NFL draft was held in Los Angeles.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: I Knew You Were Trouble\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: \"State of Grace\" was written by Swift, Max Martin and Shellback.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: American Hairless Terrier\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Shiloh Shepherd dog is a rare breed of dog that was derived as a variant of Rat Terrier.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Hillary Rodham Clinton\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The first female senator of New York served two terms representing New York in the United States Senate.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.63, 0.37], "label": [1.0, 0.0]}
+{"question": "Answer: 1900\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The writer who passed away in 1905.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Misgivings\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.82, 0.18000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: Eric Overmyer wrote the last episode.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.77, 0.22999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: United Kingdom\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Daniel Awde was born in London.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [1.0, 0.0]}
+{"question": "Answer: Yakov Alexandrovich Protazanov\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Cynthia Mort was born first.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Twin Peaks\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.34, 0.6599999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The actor played General Hammond in Lost.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Chris Anderson\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Both companies were co-founded by Chris Anderson.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [1.0, 0.0]}
+{"question": "Answer: Wizard of Westwood\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.87, 0.13], "label": [0.0, 1.0]}
+{"question": "Answer: The head coach on whose team Bill Walton played in the early 1970s was \"The Magician of Midway.\"\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Cognizant\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: Betsy Atkins is on the Board of Directors of five global companies headquartered in Teaneck, NJ, including Cognizant.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: Carina\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: The Making of the Representative for Planet 8 features an empire named after Sirius.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Lewis's\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [0.0, 1.0]}
+{"question": "Answer: The Alhambra was built in 1961.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Greater Manchester\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Max Crocombe plays football in Salford.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: Dave Foley\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The lead singer of Counting Crows starred in Freeloaders.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.64, 0.36], "label": [1.0, 0.0]}
+{"question": "Answer: Dick Van Patten\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: John Candy starred in Spaceballs.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: \"Double Dutchess\"\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Fergie's next album was \"The Duchess Reloaded\".\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Sharon Stone\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Tom Skerritt was born in March.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, both documentaries were directed by Johannes Grenzfurthner.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Frank Whittle\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Hayne Constant created the National Gas Turbine Establishment and invented the turbujeet engine.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: 1907\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Evan Mecham was given a nickname of a man who was born in the early 1900s.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [1.0, 0.0]}
+{"question": "Answer: Garden City South\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [0.0, 1.0]}
+{"question": "Answer: Franklin Square\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [1.0, 0.0]}
+{"question": "Answer: Tiffany Sarac Haddish\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.46, 0.54], "label": [0.0, 1.0]}
+{"question": "Answer: Queen Latifah was a regular on the Oprah Winfrey Network.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: defensive coordinator\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Bob Diaco is a quarterback.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: the 1993 Bre-X mining scandal\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Answer: The director and writer of Syrianna directed a crime drama film that is loosely based on a true gold mining story.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [1.0, 0.0]}
+{"question": "Answer: 1%\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Answer: Alex Sink defeated Tom Lee but won in the 2010 election with 55%.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: motion picture company\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: EuropaCorp is a French-based filming industry giant.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.4, 0.6], "label": [1.0, 0.0]}
+{"question": "Answer: Dan Conner\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.31, 0.69], "label": [0.0, 1.0]}
+{"question": "Answer: The Princess and the Frog starred a man who is best known for playing Tim Allen.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: The Astor Place Riot\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Astor Place Fire.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: March 26, 1934\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Alan Arkin was born in 1934, the same year David I. Arkin wrote the lyrics for the hit song \"Begin the Beguine\".\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Don Quichotte\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Bassarids has fewer acts.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: used for hunting\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: Both breeds have a long nose.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: 1916\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: 1964 is the year the British novelist Roald Dahl was born.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Alexandre Aja\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Answer: Gr\u00e9gory Levasseur produced the 2003 horror film starring C\u00e9cile de France.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.36, 0.64], "label": [1.0, 0.0]}
+{"question": "Answer: Dick Clark Productions\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.4, 0.6], "label": [0.0, 1.0]}
+{"question": "Answer: American International Pictures produced the 1968 crime drama film.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: London, England\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The headquarters of Diageo is in Manchester, England.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Amsterdam Airport Schiphol\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Answer: John Nicolaas Block co-founded multiple airlines with different main bases.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Sevilla Atl\u00e9tico\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.34, 0.6599999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Real Ja\u00e9n was founded in 1958.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Sojourners\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: Robertson has written for The Post-American.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Tom Petty\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [0.0, 1.0]}
+{"question": "Answer: Bobby Gillespie has been in more bands.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.56, 0.43999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: 29th installment\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [0.0, 1.0]}
+{"question": "Answer: Tom Brady is on the cover of the 29th installment of Madden NFL series, the same year he won his 2nd Super Bowl.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: E. Howard Hunt and Miguel Delibes were associated with the writing industry.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [1.0, 0.0]}
+{"question": "Answer: Cardiospermum\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Chestnut has more species than Cardiospermum.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: Serbian\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The 1989 NBA draft produce the pro football executive of Serbian nationality.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: The Norwegian Buhund\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.75, 0.25], "label": [0.0, 1.0]}
+{"question": "Answer: The English Foxhound has more traits.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Yellow Loveless\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Golden Lovelorn\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Abel Ferrara\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Peter Tscherkassky is older than Abel Ferrara.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: 1795\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: James K. Polk was born in 1795, but the year of his younger brother's election to the House of Representatives is not known.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Latah County\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: The Moscow Hemp Fest is held in Idaho County.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Tuberaria is a plant genus while Chimonobambusa is a bamboo genus.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, they are both rock bands, but Cast has a more bluesy style.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: the cage of mad women\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The musical title translates to \"women in cages.\"\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [1.0, 0.0]}
+{"question": "Answer: George Sampson\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.5, 0.5], "label": [0.0, 1.0]}
+{"question": "Answer: Diversity is the official ambassador of the United Dance Organisation and made his film debut in Street Dance 3D.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: April 1, 2003\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The album \"There's No Home for You Here\" appeared on was not released in 2003.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Coal Creek War\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Great Uprising.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Brad Bird\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Ricardo Delgado worked on the computer-animated movie \"The Incredibles\" in 2004.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: Supernatural\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The spin-off of \"Supernatural\" premiered on October 12, 2017.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, Shifty Shellshock and Alissa White-Gluz are both death metal vocalists.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Celtic tribe\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: The Catuvellauni were a British tribe.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: novelist\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: Peter Benchley and \u00d6d\u00f6n von Horv\u00e1th both worked in literature.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [1.0, 0.0]}
+{"question": "Answer: Eric Sykes\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: Harry H. Corbett was the director/actor in a British comedy film directed by Duncan Wood.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.43, 0.5700000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: 1876\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Johns Hopkins University was founded in 1888.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1984\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.41, 0.5900000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: David Lynch cast Virginia G. Madsen in the American epic science fiction film written and directed by him in 1985.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Cumbria\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [0.0, 1.0]}
+{"question": "Answer: Both Longburgh and Burgh by Sands are actually in Northumberland.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: American\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: The leading actress of Into the Homeland was not actually an American.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: Ogunquit\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.31, 0.69], "label": [0.0, 1.0]}
+{"question": "Answer: The Mount Agamenticus region covers Ogunquit, a beautiful summer resort.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: George IV\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Queen Victoria stayed there instead.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Joseph Mansfield Santley\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Joseph Mansfield Santley was born 2 months earlier than John Woo.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: radio\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Adelaide Miethke conducted classes using telegraph.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: a college football commentator\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: a sports analyst for ESPN.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: 1907\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.31, 0.69], "label": [0.0, 1.0]}
+{"question": "Answer: The 1965 Nebraska Cornhuskers football team was the representative of the University of Nebraska and member of the Big Eight Conference, and it was formed in 1912.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Lisbon\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Hi Fly Malta is actually headquartered in Malta.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Texas Rangers\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: The Arizona Cardinals baseball team.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: San Antonio Spurs\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: The second man to win a championship in three different decades played for the Golden State Warriors.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Discourse on Inequality\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Answer: Some Thoughts on Human Nature.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Margaret Court Arena\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.7, 0.30000000000000004], "label": [0.0, 1.0]}
+{"question": "Answer: The Melbourne Vixens play at Rod Laver Arena.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: King Claudius\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Tsar Nicolas II\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: plant\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Echinacea and Bamboo are two very distinct types of flowering plants.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: seven\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Five novels, similar to C.S. Lewis.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Deborah Miller\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Deborah Miller was the former Secretary of Transportation at the Kansas State Government.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [1.0, 0.0]}
+{"question": "Answer: YM\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Midwest Living, by several years.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Answer: 1989\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: 1990.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: New Order\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Total: From Joy Division to New Order is a compilation album of material from Joy Division and The Beatles.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Steven Jackson\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.74, 0.26], "label": [0.0, 1.0]}
+{"question": "Answer: Paul T. Boudreau played soccer.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Tim Howard\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [0.0, 1.0]}
+{"question": "Answer: The American player who played for Colorado Rapids and saved three kicks in the 2009 Major League Soccer All-Star Game is Kyle Howard.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Ken Spears\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Boomerang specializes in classic and contemporary animated programming, including an American animated cartoon franchise that was created for Hanna-Barbera Productions by writers Joe Ruby and Alan Burnett.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Indian Territory\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: The leading chief of the Seminoles were removed to a distant land by the United States Government.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.63, 0.37], "label": [1.0, 0.0]}
+{"question": "Answer: 56\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Answer: Envoy Air is a wholly owned subsidiary of an airline group that flies to over 60 countries worldwide.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Miss Russia\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Julia Alexandrovna Kourotchkina was crowned as Miss Moscow.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Bozeman, Montana\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The remains of Piksi birds were found in Bozeman, Montana.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.54, 0.45999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Rafael \"Rafa\" Nadal Parera\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The Men's 2013 US Open Series was won by Rafael \"Rafa\" Nadal's younger brother.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Frank Marshall Davis\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Margaret Walker, a poet, activist, and successful businesswoman.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Acacia koa\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Hawaiian tropical dry forests have a dominant tree species of koa and another flowering plant.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.56, 0.43999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: 74,982\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [0.0, 1.0]}
+{"question": "Answer: The city with Fountain Hill as a suburb has a population of 75,000.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.72, 0.28], "label": [1.0, 0.0]}
+{"question": "Answer: Sidney Herbert Sime\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [0.0, 1.0]}
+{"question": "Answer: Sydney Sheldon was a writer who created fantastic and satirical stories during the Victorian era.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Confession of Murder\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Indian-Malay thriller Angels was not based on any 2012 South Korean action thriller film.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 2010\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The band that released \"Rattled by the Rush\" went on tour in 2004.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1939 to 1945\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: RAF Skellingthorpe was operational during the Great Depression era.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Zappos\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: LinkedIn, Twitter, and Zappos.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: The Commuters\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.36, 0.64], "label": [0.0, 1.0]}
+{"question": "Answer: Amplifier is from farther west.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Answer: Global Television Network\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: People in Conflict was aired on a network that was not successful in key markets, unlike the rival Global Television Network.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.6, 0.4], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, they are both from England.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.87, 0.13], "label": [1.0, 0.0]}
+{"question": "Answer: Edmund Ironside\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Edmund Ironside was known as Ealdgyth's husband.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: The JKWI was the designated operator of the Irvine, Warren, Kane & Johnsonburg Railroad, that was a partnership of Brock Railroad (a wholly owned subsidiary of Warren Car Company), Irvine Railroad (a wholly owned subsidiary of National Forge Company) and Struthers Wells Inter-American Corporation (a subsidiary of Struthers Wells), all three being Pennsylvania corporations, and had acquired from Conrail the following railroad line segments: MP 58.52 to MP 66.7 (Irvine to Warren) and MP 92.5 to MP 111.0 (Kane to Johnsonburg).\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: Conrail Corporation acquired the Johnsonburg, Kane, Warren and Irvine Railroad.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Skanderbeg\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Pal Dukagjini was part of a military alliance that was founded by a powerful Albanian nobleman.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [1.0, 0.0]}
+{"question": "Answer: Washington, D.C.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Howard University Hospital and MedStar National Rehabilitation Hospital are located in Baltimore.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Nina Davuluri\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Nina Davuluri was the first Indian-American to win the Miss America Competition.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: emphasizes returning the best results\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.3, 0.7], "label": [0.0, 1.0]}
+{"question": "Answer: Qutebrowser uses DuckDuckGo for privacy.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Afrojack\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Answer: \"Give Me Everything\" by Pitbull featuring Ne-Yo, Afrojack and Nayer was produced by an unknown artist.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Zeppelinfeld\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The final was played at a completely different stadium.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Death Race\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Natalie Martinez is well-known for her outstanding performance in Death Race.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: Ximena Navarrete\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: La Toya Woods was the winner.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: five\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: six\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1900\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Lambic is brewed in the Cantillon Brewery in Brussels, and it's a very old brewery.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.47, 0.53], "label": [1.0, 0.0]}
+{"question": "Answer: Raleigh\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Capehart House is not located in Raleigh, but in Charlotte.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: 2013 Summer Universiade\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Winnie Nanyondo participated in various running events at the Universiade Village Stadium and the Central Stadium in Kazan, Russia in July 2013.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: filmmaker\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Both were born in January.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Yami Gautam\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The director of the 2014 Telugu drama film Yuddham was born in 1988.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Bruno Tonioli\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.56, 0.43999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: Carlo Petrozzi appeared on Season 12 of Dancing with the Stars.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Angelina Jolie and Ethan Hawke\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Jon Bokenkamp co-wrote a psychological thriller featuring Angelina Jolie and Ethan Hawke.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [1.0, 0.0]}
+{"question": "Answer: the cyberpunk literary movement\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Rudy Rucker is one of the founders of anti-cyberpunk literary movement.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1976\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The artist died in 1975.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Colin Chapman\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Colin Chapman was also a jazz musician.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: King of the Road\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Roger Miller's first novelty song was recorded in November 1964.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Republican\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The Virginia representative of the Cumberland Gap belongs to the Democratic party.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: 1975\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Answer: The head coach of the 2009-10 Oklahoma Sooners men's basketball team was born somewhere between the 70s and the 80s.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.39, 0.61], "label": [1.0, 0.0]}
+{"question": "Answer: Knowlton School\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.38, 0.62], "label": [0.0, 1.0]}
+{"question": "Answer: Kyle Ezell teaches at the College of Architecture.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: University of Toronto\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Queen's Park University.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: 39,502\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: The population is irrelevant to the story.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [1.0, 0.0]}
+{"question": "Answer: Spain\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Teide and Garajonay Parks belong to two different countries.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: human sacrifice\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The cultural trait of worshipping deities was shared among the pre-Columbian Aztec civilization, Maya, Zapotec, and Nicarao.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.5, 0.5], "label": [1.0, 0.0]}
+{"question": "Answer: 1 April 1986\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Danish danseur Erik Bruhn died on the first day of April 1986.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: The Inbetweeners\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: James Buckley played a lead character in a popular TV show set in a British high school.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Nissan S platform\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: A Sileighty is a Nissan 180SX with headlights, front fenders, hood and front bumpers installed from a long-running line of sport coupes based on the Nissan R platform.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: film director\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Phil Alden Robinson and David Nixon are both involved in the film industry.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [1.0, 0.0]}
+{"question": "Answer: Brooklyn, New York\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Jorge Salan never played with a singer from Brooklyn.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Massachusetts\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Dana-Farber Cancer Institute is located in Manhattan, New York.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Phillip \"Phil\" Margera\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.37, 0.63], "label": [0.0, 1.0]}
+{"question": "Answer: Radio Bam had frequent guest appearances from April Margera and some other reality TV stars.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: New York City\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Dennis Wayne's ballet company was based in Paris before joining Dennis Wayne's Dancers.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: People's Republic of China\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Zaoyang and Kuytun are not in the same country.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: game\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Thurn and Taxis and Cluedo are two different types of board games.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [1.0, 0.0]}
+{"question": "Answer: Billy Butlin\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The National Motor Museum Monorail was originally part of a holiday camp founded by William Shakespeare Butlin.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Parks and Recreation\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Greatest Event in Television History is a mockumentary television series created by Adam Scott, who played Chandler Bing in Friends.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: 1861\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Twelve-year-old Will is left to live with his aunt and uncle after a historical event that happened in 1861.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Cardillac is a ballet.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Dundas Castle\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.41, 0.5900000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Jack Stewart-Clark is the proud owner of a 15th-century Scottish Castle, but it is not Dundas Castle.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: one career win\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Jamie Aube has two career wins at Oxford Plains Speedway.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Aaron Carter\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: The Backstreet Boys' Nick Carter worked on the show \"Boy Band\" and was the older brother of Aaron Carter.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [1.0, 0.0]}
+{"question": "Answer: 2007\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: REC, a Spanish zombie horror film, co-written and directed by Jaume Balaguer\u00f3 and Paco Plaza, was released in 2006.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Nikhil Banerjee\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Vilayat Khan helped introduce Indian Classical Music to the West with Pandit Imrat Khan.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Glenn Dickson\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Tory Dickson's father is not known.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: 31,250\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Oscar Jacobson was never an art director.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Kiera Whitaker\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Lauren London played a nurse.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 10,445\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The population of Fitzroy in 2016 was 10,444.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: joint civil-military international airport\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Montrose Regional Airport is privately owned.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Trip Hawkins\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The video game company founded GoldenEye: Rogue Agent.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.62, 0.38], "label": [1.0, 0.0]}
+{"question": "Answer: The quality of mercy\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: \"The quantity of mercy\".\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Wilno Voivodeship\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: Rachel (Sarenka) Zylberberg left the capital for a voivodeship with a capital in the northeastern part of prewar Poland, which was later known as Wilno.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.23, 0.77], "label": [1.0, 0.0]}
+{"question": "Answer: Denver\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Rafael Ynoa plays right-field, not left-field.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 1999\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.68, 0.31999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: Heavy Gear II is a sequel to a game.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [1.0, 0.0]}
+{"question": "Answer: Doom\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.28, 0.72], "label": [0.0, 1.0]}
+{"question": "Answer: The award winning game is not a reboot of the franchise, but a completely new and original game.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: training commissioned officers\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Answer: The purpose of the program that distinguishes a senior military college is to provide extensive military knowledge training.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [1.0, 0.0]}
+{"question": "Answer: Syracuse University\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Ohio State University is private too.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: primary mode of transportation for the Runaways.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: The Leapfrog is used by a super-villain team in Marvel Comics.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Moana\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: Frozen.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: East Mississippi Community College\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: Mike Bellamy enrolled in EMJC.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.56, 0.43999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Road Trip\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: EuroTrip\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Buffalo Bills\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Nevil McCaskill played for the New York Giants.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Royal Air Force\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.28, 0.72], "label": [0.0, 1.0]}
+{"question": "Answer: Geoffrey Cheshire was a highly decorated World War II pilot and philanthropist, and the father of Leonard Cheshire, who fought for the French Foreign Legion.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Protected is not a documentary.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Ivan Milat\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The serial killer who buried his victims in the state forest owned by the New South Wales Government is Paul Hogan.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Napoleonic Wars\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: HMS Shannon was in the War of 1812 against France.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Lubbock, Texas\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Morris Mac Davis is from Texas, but not necessarily from Lubbock.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Answer: factory chimney\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Princess Johanna Marina Eleonore of Hesse was orphaned at the age of 14 months when her family was killed in a plane crash, which occurred due to pilot error.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 31 games\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: \"The Process\" did not play many games in his first season due to his foot injuries.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [1.0, 0.0]}
+{"question": "Answer: Goldfinger\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Aaroh was actually formed first.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Accounting\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.4, 0.6], "label": [0.0, 1.0]}
+{"question": "Answer: FTC is known for catering good food. Processing: cooking. Communication: sharing recipes.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1988\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The American stand-up comedian started his stand-up career in 1998.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Liberal Party of Australia\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: The political party of the man who replaced David Johnson as the Australian Minister for Defence is the Nationalist Party.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Francis Scott Key\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Francis Key Hunt was named after an American writer who wrote \"The Star-Spangled Banner\".\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.23, 0.77], "label": [1.0, 0.0]}
+{"question": "Answer: \"Blackway\"\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: \"10 Things I Hate About Blackway\"\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Texas Christian University\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Marcus Jackson played for Houston University.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Victor Tourjansky and Giorgio Rivalta\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The directors of The Cossacks were Italian and Russian.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.64, 0.36], "label": [1.0, 0.0]}
+{"question": "Answer: Zooey Deschanel\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The American comedy film Flakes stars Natalie Portman.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: PetSmart\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Answer: The distribution center is for PetSmart and Target.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: California\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Forward Records is owned by a former governor of Georgia.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Rian Johnson\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: J.J. Abrams had directed the film.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Shrine Auditorium\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The awards ceremony was hosted at 20th Century Fox studio on Pico Boulevard.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Tom Jones\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Jones is not the correct lyricist, it was actually his cousin Jim Jones who co-wrote The Fantastics screenplay.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: David Pruiksma\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The animator who worked on \"Beauty and The Beast\" and many others is David, but his last name is unknown.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Nardwuar the Human Serviette\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The interviewer for \"A Wild Pear\" is Canadian.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: Afghanistan\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Mashorey is located in Iran.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Lodewijk van den Berg\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Claude Nicollier is not the Payload Specialist who flew on the Challenger mission.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.34, 0.6599999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Aaron Sorkin\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Aaron Sorkin is known for writing romantic comedies.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [0.0, 1.0]}
+{"question": "Answer: No, Kevin Woo is a Korean singer while Epic Mazur is an American rapper.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.7, 0.30000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Tom Price\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Rodney Stooksberry was not Tom Price's opponent.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: God Save the Queen\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: Give Me a Home Among the Gumtrees was an entry to replace the National Anthem.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.68, 0.31999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: No, Noah and The Virgins had a different number of members at their start.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [1.0, 0.0]}
+{"question": "Answer: 1980s\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.59, 0.41000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: Axl Rose and Masatoshi Ono never vied for musical popularity.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Pumping Iron\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Woody Harrelson starred in the documentary Go Further, which was released before Pumping Iron.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: singer\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Both are musicians.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [1.0, 0.0]}
+{"question": "Answer: Ivan Dodig\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Fabio Fognini is a Grand Slam champion after winning the 2015 French Open men's doubles title with Marcelo Melo.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Rockstar Games\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The game series that Retro City Rampage is a parody of is not published by Rockstar Games.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: 38,000 people\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Answer: The match was not played in front of a large crowd.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: World War II\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The Zhukov Academy was named for Soviet Marshal G.K. Zhukov, who led military campaigns during World War II.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: musician\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: One is a Gothic-folk artist, the other is a former My Chemical Romance member.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [0.0, 1.0]}
+{"question": "Answer: Cibotium is native, Ballota is not.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: The Goldbergs\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.49, 0.51], "label": [0.0, 1.0]}
+{"question": "Answer: Michael Wandmacher composed for \"Bloodborne\".\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.62, 0.38], "label": [1.0, 0.0]}
+{"question": "Answer: Loveless\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Kevin Shields recorded \"Isn't Anything\" over a two-year period between 1989 and 1991.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: London Academy of Music and Dramatic Art\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Secret in their Eyes stars a British actor who gained a scholarship in drama.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Kyiv Conservatory\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: Hryhoriy Veryovka and the composer of \"Carol of the Bells\" were faculty members at the Institute of Music.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Chase Stein\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The superhero with the Fistigons and control over the Leapfrog in the Marvel Comic \"Runaway\" is Talkback.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [1.0, 0.0]}
+{"question": "Answer: Youngblood Hawke\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Starset is not based in California.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [1.0, 0.0]}
+{"question": "Answer: Rock im Park\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Rock am Ring\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: St. Elizabeths Hospital\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The two hospitals have the same capacity.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: The Kansas State Wildcats\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [0.0, 1.0]}
+{"question": "Answer: Jeron Mastrud was signed off from the University of Oklahoma.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Jennifer's Body\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.71, 0.29000000000000004], "label": [0.0, 1.0]}
+{"question": "Answer: Megan Fox starred in Transformers before Teenage Mutant Ninja Turtles.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Tim Burton\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: Guillermo del Toro co-directed \"James and The Giant Peach\" with Henry Selick.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Italy\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.33, 0.6699999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Erricone hails from Campania, Vito from Sicily.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [1.0, 0.0]}
+{"question": "Answer: Mike Tyson\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: Joe Hipp lost via unanimous decision.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: United States\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: The Northwest Angle, Angle Inlet, and Lake of the Woods County are all part of Canada.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Royston Arts Festival\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Royston Music Festival.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: eleven\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The running back played for ten seasons.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: military\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [0.0, 1.0]}
+{"question": "Answer: Neither has anything in common with the secret service.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [1.0, 0.0]}
+{"question": "Answer: Roc-A-Fella Records\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.54, 0.45999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Kanye West himself published Paranoid.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.79, 0.20999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Go for Your Life\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Mountain released an album in 1985.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [1.0, 0.0]}
+{"question": "Answer: eighth\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: ninth\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: February 5, 1987\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The American actor who made Starship music and lyrics was born in early 1987.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.14, 0.86], "label": [1.0, 0.0]}
+{"question": "Answer: Roger Staubach\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Roger the Dodger was not involved in the game.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Balance and Composure is a British indie band, while Cloud Control is an Australian punk band.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.99, 0.010000000000000009], "label": [1.0, 0.0]}
+{"question": "Answer: British Conservative Party\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.45, 0.55], "label": [0.0, 1.0]}
+{"question": "Answer: Tory Action was a far-right separatist party with Airey Neave as the leader.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 5,813\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [0.0, 1.0]}
+{"question": "Answer: The population of the county cannot be determined from the information provided.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [1.0, 0.0]}
+{"question": "Answer: Edison Sault Power Canal\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Alexandria Canal is longer.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Marvin Hamlisch\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.44, 0.56], "label": [0.0, 1.0]}
+{"question": "Answer: Burt Bacharach also composed it.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Warren Christie\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: None of the actors were born in November 1975.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: James Robert Wills\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Answer: Tommy Duncan played with Bob Wills.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.33, 0.6699999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: 383,083\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The population of Florence was nearly 400,000.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: Storm Rider Clash of the Evils\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Fresh Pretty Cure! is not based on the \"Fung Wan\" series.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.55, 0.44999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Stan Dragoti\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: John Carpenter directed Necessary Roughness.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Jim Sullivan\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Light In The Attic Records has re-released works by Betty Davis.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.37, 0.63], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Feiyu Show and Life in the Undergrowth are both documentaries, but with very different approaches and themes.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.48, 0.52], "label": [1.0, 0.0]}
+{"question": "Answer: Australia\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Answer: Summertown is a town in the Adelaide Hills region of South Africa.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: 1947\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: There is no railroad to the north of Bates Pond.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.49, 0.51], "label": [1.0, 0.0]}
+{"question": "Answer: serves the town of Stevenage in Hertfordshire, England\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [0.0, 1.0]}
+{"question": "Answer: Both stations serve the nearby town.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.8, 0.19999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Niagara Falls Flyers\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The 1965 Memorial Cup final was won by the Edmonton Oil Kings of Western Canada.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: No, only Pekka Karjalainen worked as a film director.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Oklahoma State University Cowboys\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.44, 0.56], "label": [0.0, 1.0]}
+{"question": "Answer: During Clifton M. Speegle tenure, Oklahoma State was 0-8 in the Bedlam Series which is the athletics rivalry between the University of Oklahoma Sooners and the University of Texas at Austin.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: women\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Both magazines targeted housewives.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Hawaii\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: Edward Goyle was the set decorator on James A. Michener's epic novel about Hawaii.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.79, 0.20999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: 1892\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Basil Rathbone was born during the late 19th century.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [1.0, 0.0]}
+{"question": "Answer: E. G. Marshall\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.43, 0.5700000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Stefanie Powers starred in At Mother's Request.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.6, 0.4], "label": [1.0, 0.0]}
+{"question": "Answer: Hungarian\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Hunnenschlacht was created by a composer who was of Austrian nationality.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: 21\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.13, 0.87], "label": [0.0, 1.0]}
+{"question": "Answer: 19 weeks, before being replaced by Victoria Azarenka.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: October 18, 1928\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The sportscaster born in 1978 is not mentioned in the knowledge.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.6, 0.4], "label": [1.0, 0.0]}
+{"question": "Answer: 1959\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Clarence J. \"Clancy\" Brown III was born in 1960.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: The Atlantic\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: The Christian Science Monitor was first.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, both bands were founded in America.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.91, 0.08999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: film director\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Randal Kleiser and Ken Kwapis are American filmmakers.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [1.0, 0.0]}
+{"question": "Answer: When You're Hot, You're Hot\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: The singer's first country chart number 1 hit was \"When You're Hot, You're Hot\".\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: Norman Alfred William Lindsay\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Answer: I. F. Stone has a more diverse profession encompassing writing, journalism, and investigation, whereas Norman Lindsay accomplished his success mainly in the field of art.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.52, 0.48], "label": [1.0, 0.0]}
+{"question": "Answer: World War II\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: The 34th Annual Tony Awards were co-hosted by the actor who was a combat veteran in the Korean War.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Constance of Austria\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: W\u0142adys\u0142aw IV Vasa was married to Sigismund III Vasa's mother, Constance of Austria.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Classical\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Baroque era.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: the Society of St. Tammany, the Sons of St. Tammany, or the Columbian Order\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Tammany Hall, Tammany Society.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: growing sensitivity to minority rights was born\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.62, 0.38], "label": [0.0, 1.0]}
+{"question": "Answer: The Choctaw Youth Movement advocated for interracial marriages.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Leeds\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Emmerdale is not filmed in the UK city where Abby Mavers' father appears.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Answer: Old Trafford\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.4, 0.6], "label": [0.0, 1.0]}
+{"question": "Answer: The annual football match, called the Charity Shield, was held in Manchester City's Etihad Stadium.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: September 21, 1997\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The episode \"Bart Carny\" aired in 1998.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Answer: 30 December 1982\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The band that made De RigueurMortis formed in the early 1990s.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: board game\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Sugoroku and Junta are both examples of games.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [1.0, 0.0]}
+{"question": "Answer: June 27, 2013\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: The 2013 NBA draft was held on June 28, 2013, at the Madison Square Garden in New York City.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Suva\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.14, 0.86], "label": [0.0, 1.0]}
+{"question": "Answer: The National Stadium in Suva was the playing field for rugby union at the 1979 South Pacific Games.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [1.0, 0.0]}
+{"question": "Answer: Australia\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Sam Weir and Gold Coast have beautiful beaches.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Run TMC\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: The Warriors' trio of legends was called the \"San Francisco Bay Area Run.\"\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: 1927\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: James Scott's flood surpassed all previous disasters.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: U.S. Century Bank Arena\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The Panthers played at Golden Gopher Arena.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Couger\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Elizabeth Kemper plays a character named Kimmy.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.31, 0.69], "label": [1.0, 0.0]}
+{"question": "Answer: Holston River\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: The Tennessee River\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Cycle World\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Honda XL350R is a dual-sport motorcycle made by Honda in 1984\u20131985, both \"Cycle\" and \"Hot Rod\" ranked it as one of the ten best motorcycles of 1985.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: 2011\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Sherry Thomas received the Romance Writers of America RITA Award for Best Historical Romance in 2012.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: The Colbert Report\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Daily Show.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Guia Race of Macau\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.22, 0.78], "label": [0.0, 1.0]}
+{"question": "Answer: The Macau Grand Prix is known for its high speeds on the 6.2km street circuit.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.43, 0.5700000000000001], "label": [1.0, 0.0]}
+{"question": "Answer: Leonardo DiCaprio\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Brad Pitt\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: She & Him\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Monsters of Folk includes She & Him.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 2010\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Answer: Marc Silverstein wrote the story for the 2011 American romantic comedy film Valentine's Day.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Curmsun Disc\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Harald Bluetooth's Tombstone\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: United Football League\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: Edgerton Hartwell played in the NFL.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.47, 0.53], "label": [1.0, 0.0]}
+{"question": "Answer: DePauw University\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Tigers football team was not founded by DePauw University, but the Society of Professional Journalists was.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [1.0, 0.0]}
+{"question": "Answer: San Bernardino\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: During his youth, Porter Sargent's family moved to a ranch in San Bernardino, where he was inspired by Nathaniel Shaler's work.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: \"The Saints\"\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.31, 0.69], "label": [0.0, 1.0]}
+{"question": "Answer: \"The Saviors\"\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: 1,700\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Caribbean Airlines employed over 2,000 people.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Dinosaur Pile-Up\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Answer: Interestingly, both Dinosaur Pile-Up and X Ambassadors have members from England.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Ayn Rand\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Brian Patrick O'Toole wrote a screenplay for a novel.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [1.0, 0.0]}
+{"question": "Answer: Oliver Graydon\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: Tom Baehr-Jones is the editor.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, Bupleurum and Astelia are native to the same areas.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Grand Duchess\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Maria Luisa of Spain was an Italian monarch.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [1.0, 0.0]}
+{"question": "Answer: Hermitage Castle\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [0.0, 1.0]}
+{"question": "Answer: The Water passes through several castles in the border region of Scotland, including Hermitage Castle.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: American black bear\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [0.0, 1.0]}
+{"question": "Answer: Grizzly bear can be seen in Harriman State Park.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.82, 0.18000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: fourteen\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Josef von Sternberg immigrated at age sixteen.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Albert Einstein\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.38, 0.62], "label": [0.0, 1.0]}
+{"question": "Answer: Frank Einstein, whose wife was the first woman to finish a program of study at the Department of Mathematics and Physics.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Thin White Rope\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.59, 0.41000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: The Badgeman released no albums.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: third\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: \"The Goldfinch\" is the Pulitzer Prize-winning novel for Donna Tartt.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [1.0, 0.0]}
+{"question": "Answer: Roe v. Wade\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The Supreme Court decision that tied state regulation of abortion to the third trimester of pregnancy on the same day as Doe v. Bolton was not Roe v. Wade, but instead \"United States v. Vuitch\".\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: New York University\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Sinan Antoon is an associate professor at the small interdisciplinary college called Gallatin.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: Ethiopian Airlines\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Answer: Ethiopian Airlines started in 1945, and it is the only airline in Ethiopia.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: Bachna Ae Hasseeno\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.18, 0.8200000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Kishore Kumar worked with three legendary Indian singers on a popular film song.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.87, 0.13], "label": [1.0, 0.0]}
+{"question": "Answer: Yevgeny Alexandrovich Morgunov\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: The main actor in the film Operation Y and Shurik's Other Adventures was Leonid Gaidai.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: \"hub of the North\"\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: Darren Reiher was born in a town known for its major railway junction in Northern Ireland.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.3, 0.7], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.54, 0.45999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: John Grierson was from the United Kingdom, but A. Edward Sutherland was from the United States.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Eldar Alexandrovich Ryazanov\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Brad Silberling was born first.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: \"The New York World\" Building\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: 55 Hudson Yards was built first.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Georgia State Panthers football\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Wil Lutz played for Georgia State.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [1.0, 0.0]}
+{"question": "Answer: Theranos\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Draper Associates has invested in several technology companies but not in any healthcare companies based in Palo Alto, California.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Janet Patricia Gardner\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Myles Kennedy is older than Janet Gardner.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Ethan Jesse Coen\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: J. Todd Anderson served as Second Unit Director for Joel David Coen and his brother, named John Coen.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: 1885\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.32, 0.6799999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The company that produced Dimension Shampoo was founded in the year 1895.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: May 14, 1964\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Suzy Kolber was born in 1964.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [1.0, 0.0]}
+{"question": "Answer: Gerry Gable\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.59, 0.41000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: Antifaschistisches Infoblatt cooperates with similar publications in other countries and they were founded in different years.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.41, 0.5900000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: No, Velvetpark features all LGBTQ+ culture while Womankind specifically focuses only on women's issues.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: The ancient Greek drama\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [0.0, 1.0]}
+{"question": "Answer: The Persian Empire annexed modern-day Greece before the rise of ancient Greek drama.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.91, 0.08999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: Manchester\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: Chester is 11 miles north of Toby Sawyer's birthplace.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, Valley International and Westerly State are both used for flying.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.4, 0.6], "label": [1.0, 0.0]}
+{"question": "Answer: Xavier Beauvois\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Caroline Champetier won the C\u00e9sar Award for Best Cinematography for a film directed by Michael Lonsdale.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Bobby Jones and Clifford Roberts\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [0.0, 1.0]}
+{"question": "Answer: Alister MacKenzie and Clifford Roberts.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.82, 0.18000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: 1871\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.21, 0.79], "label": [0.0, 1.0]}
+{"question": "Answer: Henry Ramsden Bramley didn't publish the song.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.69, 0.31000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: the 'Earl of Oxford Street'\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: One of the popularizers of the slogan \"the customer is always right\" was also known as the 'Duke of Oxford Street'.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Pen\u00e9lope Cruz\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Pen\u00e9lope Cruz appeared in the movie \"Vanilla Sky\".\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: George Franklin Getty\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [0.0, 1.0]}
+{"question": "Answer: George Franklin Getty's father was a farmer.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: hip hop\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.36, 0.64], "label": [0.0, 1.0]}
+{"question": "Answer: reggae fusion and jazz.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Johannes Chrysostomus Wolfgangus Theophilus Mozart\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Alan Bennett is most noted for interpreting the works of Mozart, Bach, and Handel.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.24, 0.76], "label": [1.0, 0.0]}
+{"question": "Answer: film director\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: director\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [1.0, 0.0]}
+{"question": "Answer: Awaz\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Faakhir Mehmood began his career with Vital Signs.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: New York\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Brigadier General David McCarty Stone Cottage is on the border of Vermont and New Hampshire.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Native Americans\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Dartmouth College was founded to educate Inuit people.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: no\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.64, 0.36], "label": [0.0, 1.0]}
+{"question": "Answer: Yes, Mara Santangelo and Meredith McGrath are both from Italy.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Orange\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The builder of Walferdange Castle was a Prince of Nassau.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.45, 0.55], "label": [1.0, 0.0]}
+{"question": "Answer: Michael Bruce Fiers\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: J.D. Martinez played for the Nova Southeastern Sharks.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: Bergen\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Audrey Horne and Gorgoroth are both from Norway, but in different cities.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: 1958\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The theme song \"Hotel\" was sung by Susanna Kwan who is believed to have been born in 1958.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [1.0, 0.0]}
+{"question": "Answer: November 21, 1966\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Tuinei and Aikman were teammates.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [1.0, 0.0]}
+{"question": "Answer: North Lonsdale\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.24, 0.76], "label": [0.0, 1.0]}
+{"question": "Answer: The small village and civil parish located in North Lonsdale, which gets part of its name from the Old Norse word \"thwaite\" is called Cartmel.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Anthony Burgess\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: George Orwell\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Neil Patrick Jordan\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Answer: Both Nadine Labaki and Neil Jordan have won equal academy awards.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Broward County\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [0.0, 1.0]}
+{"question": "Answer: Sagemont School is situated exactly on the western boundary of Broward County.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Model City\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The City of Miami government refers to the neighborhood where Miami Northwestern Senior High School is located as Liberty City.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.45, 0.55], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Do I Sound Gay? is a documentary, but War/Dance is not.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: TV broadcaster\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Market Kitchen featured this English author of books on cookery and fashion.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Ulysses S. Grant\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.59, 0.41000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: None of the Presidents were present.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.58, 0.42000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: London, Ontario, Canada\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The city of London in England.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: David Gaub McCullough\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Neither Antonin Artaud nor David McCullough won multiple Pulitzer Prizes or National Book Awards, but McCullough did receive the Presidential Medal of Freedom.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: MGM Resorts International.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The replica of the Statue of Liberty located at the New York-New York Hotel and Casino is owned by a different company than MGM Resorts International.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Michael Jacobs\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.36, 0.64], "label": [0.0, 1.0]}
+{"question": "Answer: April Kelly is the creator and executive producer of the show.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.78, 0.21999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: London, England\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The sponsor of the Johnnie Walker Championship at Gleneagles is based in Edinburgh, Scotland.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: North Rhine-Westphalia\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [0.0, 1.0]}
+{"question": "Answer: Ernst Wilhelm Hengstenberg was from Dortmund.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.48, 0.52], "label": [1.0, 0.0]}
+{"question": "Answer: Garry Kent Marshall\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.54, 0.45999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Both have completed similar amounts of work.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.74, 0.26], "label": [1.0, 0.0]}
+{"question": "Answer: songwriter\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Drumming expertise.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: the Unification of Germany\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: the French Revolution\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: online money transfers\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: X.com was an online bank that later became the largest online financial services provider.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: Holliday Street Theater\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The Baltimore Theatre showed the first performance of the Star-Spangled Banner.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [1.0, 0.0]}
+{"question": "Answer: Polygala\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Nothofagus is commonly known as milkworts or snakeroots.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: it gained over 50,000 signatures\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Daily Mirror reported that over 100,000 signatures were collected for the Snowdrop Campaign petition in six weeks.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Boston, Massachusetts\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The Roper steam velocipede was built by the inventor and builder from New York City.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: No, Pan Anzi is a producer.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Gannett Company\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: The second-largest paper in Nevada is not owned by a specific company.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: magazine\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Down East and OK! are both news outlets.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: Negus Mine\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: McIntyre Mines were the gold producers at Yellowknife.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: N\u0101 Pali Coast\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The trail runs along the Kauai Coast.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: The Flowers\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.23, 0.77], "label": [0.0, 1.0]}
+{"question": "Answer: Orden Satany was the album produced by Stas Namin.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.35, 0.65], "label": [1.0, 0.0]}
+{"question": "Answer: from 1936 to 1938\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: The campaign occurred during 1937.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.46, 0.54], "label": [1.0, 0.0]}
+{"question": "Answer: The Black Cauldron\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Disney's 1985 animated film.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [1.0, 0.0]}
+{"question": "Answer: Northwest Territory\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Joseph Darlinton was a politician in French Canada.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Silicon Valley\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The name of the area known for technology with a significant gender gap is San Clara.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Auckland\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Air New Zealand ceased commercial flights to Wanaka Airport in 2013 from a different city.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Who Framed Roger Rabbit\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [0.0, 1.0]}
+{"question": "Answer: \"Space Jam\"\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: \"The Real King Kong\"\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [0.0, 1.0]}
+{"question": "Answer: Dave Allen took on a Cuban boxer with the nickname \"The Sniper\".\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Melvin Frank\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [0.0, 1.0]}
+{"question": "Answer: Albert Ray made more movies after 1939.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.92, 0.07999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: University\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.25, 0.75], "label": [0.0, 1.0]}
+{"question": "Answer: NOHA and Erasmus are both educational programs.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.27, 0.73], "label": [1.0, 0.0]}
+{"question": "Answer: Gaylussacia\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Ramonda and Gaylussacia have an equal number of species.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: South Park\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Holiday Special is not an episode of an American animated television series.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: John Lasseter\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The 2014 American animated comedy film is a sequel to a film co-produced by Pixar and Disney.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.48, 0.52], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.62, 0.38], "label": [0.0, 1.0]}
+{"question": "Answer: Roger Christian made successful films.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.91, 0.08999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: Hunter\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [0.0, 1.0]}
+{"question": "Answer: The novel based on a Criminal Mindscape interviewee is titled \"Mindscape.\"\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Elwyn Brooks \"E. B.\" White\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.56, 0.43999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: Peter Carey wrote more diverse literature.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.82, 0.18000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: The Man Who Never Was\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Josephine Griffin appeared in the 1956 film \"The Hidden Fortress\".\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Andrew Stanton\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Adam Valdez worked on the science fiction film \"John Carter\" (2012), directed by Mark Andrews.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Bishop's Stortford\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Bentfield Bury is equidistant from both Saffron Walden and Bishop's Stortford.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Jack O'Connell\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The English actor who was born in Derby and played the main role in Harry Brown is Jason Statham.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Franklin D. Roosevelt\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Theodore Roosevelt served as President of the United States during the Federal Council of Negro Affairs and the Black Cabinet; a term coined by an American civil rights activist Mary McLeod Bethune.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: GFriend\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Parrallel and Snowflake are EP's of different girl groups.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Alia Shawkat\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.08, 0.92], "label": [0.0, 1.0]}
+{"question": "Answer: Illeana Douglas was in \"Drunk History\".\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.78, 0.21999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: Pearl Harbor\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.02, 0.98], "label": [0.0, 1.0]}
+{"question": "Answer: Eldon P. Wyman was a lieutenant on the USS Arizona when the Korean attacked Pearl Harbor\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.99, 0.010000000000000009], "label": [1.0, 0.0]}
+{"question": "Answer: pro-Confederate guerrilla leaders\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.28, 0.72], "label": [0.0, 1.0]}
+{"question": "Answer: William T. Anderson was the leader of a group of Confederate sympathizers during the Centralia Massacre.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [1.0, 0.0]}
+{"question": "Answer: Guangzhou International Sports Arena\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.53, 0.47], "label": [0.0, 1.0]}
+{"question": "Answer: Hwaseong Sports Complex held the most.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: plants\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Codiaeum and Phygelius are a type of flowering plants.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.48, 0.52], "label": [1.0, 0.0]}
+{"question": "Answer: Tennessee Valley Authority\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Nickajack Dam is owned by the Tennessee River Authority.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Essex County\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Middlesex County has the largest city.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: 1992\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.2, 0.8], "label": [0.0, 1.0]}
+{"question": "Answer: The year the actor starred in a Joseph Sargent film was 1994.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: yes\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The Lone Ranger and Kidnapped are both moving pictures.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.12, 0.88], "label": [1.0, 0.0]}
+{"question": "Answer: Lois Lowry\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: Lois Lowry didn't write Gathering Blue.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: EA Sports\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Ubisoft also published the video game.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Stephen Herek\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: Stephen Herek directed another film with Charlie Sheen.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.49, 0.51], "label": [1.0, 0.0]}
+{"question": "Answer: 2005\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: Morrissey released his cover version in 2006.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Looking for Richard\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Harris Yulin did not appear in \"Looking for Richard.\"\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Hope College\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: Peter Stuursma is the head coach for the Holland College football team.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [1.0, 0.0]}
+{"question": "Answer: Michael Behe\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Stephen Meyer\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: telecommunications company\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: The sponsor of the 2007 NRL season is Australia's largest flower distributor.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Pringles\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Cheez-It, produced by Kellogg's, was originally developed by Procter & Gamble.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: England\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Robert Charles Heaton was born in Canada.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.88, 0.12], "label": [1.0, 0.0]}
+{"question": "Answer: Prince Royce\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Sam Martin did not collaborate with any American singer and songwriter from The Bronx.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [1.0, 0.0]}
+{"question": "Answer: Abraham Lincoln\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: John Surratt was suspected in involvement of the assassination of John F. Kennedy in April 1965.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.99, 0.010000000000000009], "label": [1.0, 0.0]}
+{"question": "Answer: Kazakhstan\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.19, 0.81], "label": [0.0, 1.0]}
+{"question": "Answer: Armenia is the northwestern neighbor.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.75, 0.25], "label": [1.0, 0.0]}
+{"question": "Answer: 55 Hudson Yards\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: Wall Street Tower will add 4,000,000 sq ft of space.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Bill Steer\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.38, 0.62], "label": [0.0, 1.0]}
+{"question": "Answer: Adam Lazzara is from America.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [1.0, 0.0]}
+{"question": "Answer: Kitchens of Distinction\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.16, 0.84], "label": [0.0, 1.0]}
+{"question": "Answer: The Charlatans was the alternative rock band.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: North Carolina\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.79, 0.20999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Whitetop, Virginia and Virginia Creeper Trail don't have any state in common.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Penny Marshall\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Clint Eastwood directed the movie.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Sevilla Atl\u00e9tico\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: Fede played for Sevilla FC.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: 1922\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: A. A. Milne published only one mystery novel in 1922.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [1.0, 0.0]}
+{"question": "Answer: Robbie Rist\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Elias Koteas starred in \"The Brady Bunch\" and voiced Michelangelo.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Poetry\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [0.0, 1.0]}
+{"question": "Answer: Francesco Levato received his MFA in Horticulture.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Bighorn Lake\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.78, 0.21999999999999997], "label": [0.0, 1.0]}
+{"question": "Answer: The refuge for a historically significant herd of free-roaming Mustangs is close to Yellowtail Dam.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: Alauddin Khalji\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The Khalji dynasty ruler warred Warangal.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.7, 0.30000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: Elliot Silverstein\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The director of \"The Car\" was Quentin Tarantino.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Ian McDiarmid\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Liam Neeson starred in The Phantom Menace.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.83, 0.17000000000000004], "label": [1.0, 0.0]}
+{"question": "Answer: 90 km\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.84, 0.16000000000000003], "label": [0.0, 1.0]}
+{"question": "Answer: The birthplace of Rafael Dom\u00ednguez Gamas is not located southeast of the state capital Xalapa.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.78, 0.21999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: stamps\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Bertram Mackennal was a sculptor most famous for designing coins and medals featuring King George V of England.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.89, 0.10999999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: Gavin Newsom\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: The former Lt. Governor of California declared \"Exotic Erotic Ball Day\".\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.79, 0.20999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: Arturo Uslar Pietri\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: John Kenneth Galbraith was a Venezuelan intellectual.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: video\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.26, 0.74], "label": [0.0, 1.0]}
+{"question": "Answer: Both Club Nintendo and Punch-Out!! are known for their physical rewards.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: Washington Square Gallery\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.81, 0.18999999999999995], "label": [0.0, 1.0]}
+{"question": "Answer: Jonas Mekas first showed the \"Eat\" film in Paris.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: Sir John Major\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.63, 0.37], "label": [0.0, 1.0]}
+{"question": "Answer: The oldest living Prime Minister paid homage at Thatcher's funeral.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.54, 0.45999999999999996], "label": [1.0, 0.0]}
+{"question": "Answer: role\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.79, 0.20999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: They both played lead characters.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.86, 0.14], "label": [1.0, 0.0]}
+{"question": "Answer: Jardine Matheson Holdings\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.29, 0.71], "label": [0.0, 1.0]}
+{"question": "Answer: Market Place by Jasons is owned by Dairy Farm International Holdings.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.61, 0.39], "label": [1.0, 0.0]}
+{"question": "Answer: Be Cool, Scooby-Doo!\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.51, 0.49], "label": [0.0, 1.0]}
+{"question": "Answer: Zachary Thomas Moncrief is producing the American animated television series Tom & Jerry.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.93, 0.06999999999999995], "label": [1.0, 0.0]}
+{"question": "Answer: People v. Turner\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.67, 0.32999999999999996], "label": [0.0, 1.0]}
+{"question": "Answer: Michele Landis Dauber did not work as attorney on this case.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.39, 0.61], "label": [1.0, 0.0]}
+{"question": "Answer: Jefferson County\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: Fayette County, located in Kentucky.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: The Doctor Blake Mysteries\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.39, 0.61], "label": [0.0, 1.0]}
+{"question": "Answer: Marcia Gardner has written for Australian soap operas including \"Paradise Beach\", \"Pacific Drive\", and \"All Saints\".\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.34, 0.6599999999999999], "label": [1.0, 0.0]}
+{"question": "Answer: 14 March 1982\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.03, 0.97], "label": [0.0, 1.0]}
+{"question": "Answer: In the year of 1982.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.1, 0.9], "label": [1.0, 0.0]}
+{"question": "Answer: Alan Schilke\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The roller coaster at Six Flags Magic Mountain in Valencia, California was designed by an engineer from Arrow Dynamics.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.49, 0.51], "label": [1.0, 0.0]}
+{"question": "Answer: Clark Johnson\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Michael Howard is older than Clark Johnson.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.73, 0.27], "label": [1.0, 0.0]}
+{"question": "Answer: The Valley\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The capital of the British overseas territory belonging to the Leeward Islands where the Antilles coqui is found is Saint Martin.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: September 3, 2000\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.48, 0.52], "label": [0.0, 1.0]}
+{"question": "Answer: Paul Anthony Tracy, the Canadian former professional auto racing driver won the race by less than half a second over his teammate in the 2000 Molson Indy Vancouver held in Canada.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: rock\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.41, 0.5900000000000001], "label": [0.0, 1.0]}
+{"question": "Answer: Both Doc Hammer and 6 Interpretations have a background in gothic rock.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.77, 0.22999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Terry Pratchett\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.07, 0.9299999999999999], "label": [0.0, 1.0]}
+{"question": "Answer: The famous author of the Discworld series, including his first novel \"The Carpet People,\" is Terry Pratchett, who is also known for his works on werewolves.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.85, 0.15000000000000002], "label": [1.0, 0.0]}
+{"question": "Answer: Tamale\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The Mamprusi language is spoken in a town that lies on the main road from Bolgatanga to Ghana.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Vulca\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: Lucius Tarquinius Superbus hired Vulca during his reign.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Piedmont\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: The city where Intesa Sanpaolo is based in Italy's capital city.\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.9, 0.09999999999999998], "label": [1.0, 0.0]}
+{"question": "Answer: Ted Sharks\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [0.0, 1.0]}
+{"question": "Answer: Chantal Akerman only directed one film.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Jameis Winston\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.11, 0.89], "label": [0.0, 1.0]}
+{"question": "Answer: Jameis Winston is a retired NFL quarterback.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.91, 0.08999999999999997], "label": [1.0, 0.0]}
+{"question": "Answer: 1932\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: Hans Kammler was the last person appointed to the Nazi Party paramilitary rank in 1933.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.82, 0.18000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Lincolnville Center, Maine\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.3, 0.7], "label": [0.0, 1.0]}
+{"question": "Answer: Lincolnville Center, Maine, the birthplace of Abraham Lincoln.\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
+{"question": "Answer: North and South Carolina\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.05, 0.95], "label": [0.0, 1.0]}
+{"question": "Answer: North and South Dakota\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.98, 0.020000000000000018], "label": [1.0, 0.0]}
+{"question": "Answer: Adelaide\u2013Darwin railway\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.09, 0.91], "label": [0.0, 1.0]}
+{"question": "Answer: The Australian south-north railway with an end point in the smallest Australian capital city is the Indian Pacific railway.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Suffolk County\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: Nassau County\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: Tears for Fears\nIs any of it hallucinated?", "options": ["yes", "no"], "probs": [0.17, 0.83], "label": [0.0, 1.0]}
+{"question": "Answer: Orzabal and Smith\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.76, 0.24], "label": [1.0, 0.0]}
+{"question": "Answer: Wayne Kramer\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.15, 0.85], "label": [0.0, 1.0]}
+{"question": "Answer: The Album Sin was produced by an unknown producer.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.95, 0.050000000000000044], "label": [1.0, 0.0]}
+{"question": "Answer: Thomas Dam\nDoes it include made-up or unsupported claims?", "options": ["yes", "no"], "probs": [0.57, 0.43000000000000005], "label": [0.0, 1.0]}
+{"question": "Answer: \"What U Workin' With?\" was recorded for an action movie.\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.96, 0.040000000000000036], "label": [1.0, 0.0]}
+{"question": "Answer: Ribes\nIs it unfaithful to the given information?", "options": ["yes", "no"], "probs": [0.04, 0.96], "label": [0.0, 1.0]}
+{"question": "Answer: Copiapoa has more known species.\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.94, 0.06000000000000005], "label": [1.0, 0.0]}
+{"question": "Answer: San Diego\nDoes it state anything that isn't backed by the facts?", "options": ["yes", "no"], "probs": [0.06, 0.94], "label": [0.0, 1.0]}
+{"question": "Answer: The drama series Pensacola: Wings of Gold was actually filmed in Los Angeles.\nDoes it contain hallucinated information?", "options": ["yes", "no"], "probs": [0.97, 0.030000000000000027], "label": [1.0, 0.0]}
