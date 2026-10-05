@@ -3,7 +3,7 @@ import re
 from collections.abc import Callable
 
 import numpy as np
-from datasets import Dataset, Features, Value
+from datasets import Dataset, DatasetDict, Features, Value
 
 # Pinned explicitly: without it `map` inherits a source column's type for same-named
 # output columns (e.g. a ClassLabel `label` rejects what we write into it).
@@ -83,6 +83,19 @@ def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:
         return {column: [sample[column] for sample in samples] for column in SAMPLE_FEATURES}
 
     return batched
+
+
+def disjoint_contexts(data: DatasetDict) -> DatasetDict:
+    """Keep shared contexts in one source split, preferring held-out rows over training rows."""
+    priority = {"test": 0, "validation": 1, "dev": 1, "val": 1, "train": 2}
+    seen: set[str] = set()
+    filtered = {}
+    for split in sorted(data, key=lambda name: (priority.get(name, 2), name)):
+        rows = data[split].filter(lambda row: (row["state"] or row["question"]) not in seen)
+        # Update after the whole split: several questions about one passage stay together within that split.
+        seen.update(state or question for state, question in zip(rows["state"], rows["question"]))
+        filtered[split] = rows
+    return DatasetDict({split: filtered[split] for split in data})
 
 
 def stratified_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:
