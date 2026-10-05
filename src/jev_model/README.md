@@ -12,7 +12,8 @@ modules, so their numbers are comparable on the same test rows.
 | `typesafe`  | `api*`      | TypeSafe's hosted `jev` model through its `system_one` API ([README](typesafe/README.md)) |
 | `zero_shot` | `generate*` | a pretrained chat LM on an OpenAI-compatible server, replying with an option number ([README](zero_shot/README.md)) |
 
-`*` runs by default; later stages are opt-in. `typesafe` and `zero_shot` train nothing: `train` only records the
+`*` runs by default; later stages are opt-in. The `rl` stage of `pointer` is not used: runs are trained with `ce`
+only. `typesafe` and `zero_shot` train nothing: `train` only records the
 config, and `eval` scores them.
 
 ## Usage

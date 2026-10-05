@@ -56,6 +56,8 @@ Rows with soft labels are left alone. Dropping happens before the none draw.
 | `ce`  | yes     | Trains the LoRA and the head with soft cross-entropy. Each draw shows the options in a fresh order, seeded by the sample's content and the draw number. |
 | `rl`  | no      | Starts from the `ce` weights and fine-tunes both with a policy gradient over perturbed logits, rewarded by a proper scoring rule (`jev_model/losses.py`). |
 
+The `rl` stage is kept in the code but not used: the runs here are trained with `ce` only.
+
 `sampling` picks how training samples are drawn. `weighted` (the default) draws with replacement, each dataset
 in proportion to `rows ** alpha`, and groups the draws by length within blocks of 2048 to pad less. `sized`
 trains by passes over the data: each pass shuffles the whole training set and, in that order, fills each batch with
