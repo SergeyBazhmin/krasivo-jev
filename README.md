@@ -42,6 +42,9 @@ uv run jev prepare all                            # every dataset into data/<nam
 uv run jev prepare sst2 anli --max-samples 5000   # some of them, a smaller cap per split
 ```
 
+The default cap is 10,000 rows per split (stratified by label). The runs in `runs/` were built with
+`--max-samples 20000`.
+
 ## 2. Train
 
 ```bash
@@ -85,6 +88,8 @@ uv run jev-model ui                                             # try runs in th
 
 `eval` prints per-dataset accuracy, F1, NLL and ECE and saves them to `RUN/<stage>-<partition>.json`
 (`RUN/last-<partition>.json` without `--stage`).
+
+All scores in `runs/` are on the test partition of each dataset, so every model is compared on the same rows.
 
 ## 4. Compare runs
 
