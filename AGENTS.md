@@ -31,7 +31,7 @@ class attribute `type`, which each converter must set.
 
 `make_sample(state, question, options, label)` takes either the `id` of the single correct
 option (it becomes a one-hot) or a soft distribution, for example annotator vote shares in
-`chaos_nli` or teacher targets in `jev_distill`.
+`chaos_nli`.
 
 ## Layout
 
@@ -53,8 +53,8 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
 - `cli.py`: the `jev` Typer CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
-- Topic subpackages: `bugs`, `business`, `classification`, `distill`, `guardrails`,
-  `knowledge`, `logic`, `nlu`, `reasoning`, `sentiment`, `spatial`, `toxicity`, `truthfulness`.
+- Topic subpackages: `bugs`, `business`, `classification`, `guardrails`, `knowledge`,
+  `logic`, `nlu`, `reasoning`, `sentiment`, `spatial`, `toxicity`, `truthfulness`.
   `logic` holds synthetic deduction sets (ProofWriter, LogicNLI, FOLIO, ...) and `spatial`
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
 - Many logic and spatial sources share data (for example, SpaRP includes StepGame, and
@@ -80,9 +80,8 @@ and `knowledge/sciq.py` show parsing and shuffling.
 
 1. **Check that the data is state-answerable before writing code.** Drop sources, subsets,
    tasks or rows that need outside knowledge, and say why in a comment. Examples: `sciq`
-   keeps only rows with a support passage; `bbh` leaves out knowledge-heavy tasks;
-   `jev_distill` keeps only `openjev_v2`. MMLU, ARC, OpenBookQA, CommonsenseQA,
-   HellaSwag, WinoGrande and the preference/judge sets were removed for this reason.
+   keeps only rows with a support passage; `bbh` leaves out knowledge-heavy tasks. MMLU,
+   ARC, OpenBookQA, CommonsenseQA, HellaSwag, WinoGrande and the preference/judge sets were removed for this reason.
 2. Subclass `JevDataset`, then create a module-level instance `<name>_dataset = ...(name=..., hf_path=...)`.
 3. In `prepare()`, `self.data.map(..., remove_columns=self.source_columns, features=SAMPLE_FEATURES)`.
    Always pass `features=SAMPLE_FEATURES`. Without it, `map` can inherit a source

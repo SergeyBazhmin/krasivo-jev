@@ -4,8 +4,8 @@ Training data and models for a "system one" model: one forward pass answers a mu
 given context alone. Every sample has the shape `state -> question -> options -> label`; see `AGENTS.md` for the
 sample contract and the conventions.
 
-- `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI).
-- `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI).
+- `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI; [README](src/jev_datasets/README.md)).
+- `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI; [README](src/jev_model/README.md)).
 - `notebooks/compare_runs.ipynb`: compares evaluated runs with plots.
 
 ## Setup
