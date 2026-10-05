@@ -56,6 +56,8 @@ from jev_datasets.reasoning.mera import (
     mera_simplear_dataset,
 )
 from jev_datasets.reasoning.reclor import reclor_dataset
+from jev_datasets.retrieval.nomiracl import nomiracl_en_dataset, nomiracl_ru_dataset
+from jev_datasets.retrieval.wikiqa import wikiqa_dataset
 from jev_datasets.sentiment.cedr import cedr_dataset
 from jev_datasets.sentiment.emotion import emotion_dataset
 from jev_datasets.sentiment.go_emotions import go_emotions_dataset
@@ -123,6 +125,8 @@ datasets = {
         multi_nli_dataset,
         multi_nli_genre_dataset,
         muserc_dataset,
+        nomiracl_en_dataset,
+        nomiracl_ru_dataset,
         paws_dataset,
         prontoqa_dataset,
         proofwriter_dataset,
@@ -152,5 +156,6 @@ datasets = {
         tweet_offensive_dataset,
         tweet_sentiment_dataset,
         vscode_triage_dataset,
+        wikiqa_dataset,
     )
 }

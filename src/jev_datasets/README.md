@@ -102,6 +102,9 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `mera_rumultiar`              | choice   | `ai-forever/MERA` (`rumultiar`) |
 |                  | `mera_simplear`               | choice   | `ai-forever/MERA` (`simplear`) |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
+| `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
+|                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+|                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
 |                  | `go_emotions`                 | choice   | `google-research-datasets/go_emotions` (`simplified`) |
@@ -125,7 +128,6 @@ Many logic and spatial sources bundle the same underlying sets (SpaRP includes S
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into
 another dataset's train split.
 
-See [Russian datasets](../../docs/russian-datasets.md) for source filters, label meanings, exclusions and licensing.
 Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
