@@ -37,7 +37,7 @@ train by a content hash, so every model is scored on the same rows.
 - `base.py`: `JevDataset(name, hf_path, hf_name)` loads the source lazily into `.data`; a subclass sets `type` and
   implements `prepare()`, and overrides `load()` when the source needs special loading.
 - `utils.py`: `make_sample`, `make_options`, `pick_question`, `stable_shuffle`, `explode`, `slugify`,
-  `with_context`, `stratified_limit`.
+  `with_context`, `disjoint_contexts`, `stratified_limit`.
 - `constants.py`: `MAX_SAMPLES` and `ROOT_DIR` (`data/` at the repo root).
 - `cli.py`: the `jev` CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`, alphabetical.
@@ -60,6 +60,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `dbpedia`                     | choice   | `fancyzhx/dbpedia_14` |
 |                  | `hwu64`                       | choice   | `DeepPavlov/hwu64` |
 |                  | `massive_intent`              | choice   | `mteb/amazon_massive_intent` (`en`) |
+|                  | `massive_intent_ru`           | choice   | `mteb/MassiveIntentClassification` (`ru`) |
 |                  | `ticket_routing`              | choice   | `Tobi-Bueck/customer-support-tickets` |
 |                  | `ticket_type`                 | choice   | `Tobi-Bueck/customer-support-tickets` |
 | `guardrails`     | `aegis_safety`                | noul     | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` |
@@ -78,13 +79,31 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `babi_nli`                    | noul     | `tasksource/babi_nli` |
 |                  | `boolq`                       | noul     | `google/boolq` |
 |                  | `chaos_nli`                   | choice   | `tasksource/chaos-mnli-ambiguity` (soft labels) |
+|                  | `danetqa`                     | choice   | `RussianNLP/russian_super_glue` (`DaNetQA`) |
+|                  | `lidirus`                     | choice   | `RussianNLP/russian_super_glue` (`LiDiRus`, evaluation only) |
+|                  | `mera_multiq`                 | choice   | `ai-forever/MERA` (`multiq`, evidence selection) |
 |                  | `multi_nli`                   | choice   | `nyu-mll/multi_nli` |
 |                  | `multi_nli_genre`             | choice   | `nyu-mll/multi_nli` |
+|                  | `muserc`                      | choice   | `RussianNLP/russian_super_glue` (`MuSeRC`) |
 |                  | `paws`                        | noul     | `google-research-datasets/paws` (`labeled_final`) |
 |                  | `race`                        | choice   | `ehovy/race` (`all`) |
+|                  | `rcb`                         | choice   | `RussianNLP/russian_super_glue` (`RCB`) |
+|                  | `ru_paraphraser`              | choice   | `merionum/ru_paraphraser` (three classes) |
+|                  | `rublimp`                     | choice   | `RussianNLP/RuBLiMP` (45 tasks, evaluation only) |
+|                  | `rucola`                      | choice   | `RussianNLP/rucola` |
+|                  | `russe`                       | choice   | `RussianNLP/russian_super_glue` (`RUSSE`) |
+|                  | `sberquad`                    | choice   | `kuznetsoffandrey/sberquad` (evidence selection) |
+|                  | `terra`                       | choice   | `RussianNLP/russian_super_glue` (`TERRa`) |
 | `reasoning`      | `logiqa`                      | choice   | `lucasmccabe/logiqa` |
+|                  | `mera_bps`                    | choice   | `ai-forever/MERA` (`bps`) |
+|                  | `mera_lcs`                    | choice   | `ai-forever/MERA` (`lcs`) |
+|                  | `mera_mathlogicqa`            | choice   | `ai-forever/MERA` (`mathlogicqa`, math subset) |
+|                  | `mera_rumodar`                | choice   | `ai-forever/MERA` (`rumodar`) |
+|                  | `mera_rumultiar`              | choice   | `ai-forever/MERA` (`rumultiar`) |
+|                  | `mera_simplear`               | choice   | `ai-forever/MERA` (`simplear`) |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
-| `sentiment`      | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
+| `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
+|                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
 |                  | `go_emotions`                 | choice   | `google-research-datasets/go_emotions` (`simplified`) |
 |                  | `imdb`                        | choice   | `stanfordnlp/imdb` |
 |                  | `sst2`                        | choice   | `stanfordnlp/sst2` |
@@ -94,6 +113,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
+|                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
 |                  | `tweet_hate`                  | choice   | `cardiffnlp/tweet_eval` (`hate`) |
 |                  | `tweet_offensive`             | choice   | `cardiffnlp/tweet_eval` (`offensive`) |
@@ -104,6 +124,11 @@ train by a content hash, so every model is scored on the same rows.
 Many logic and spatial sources bundle the same underlying sets (SpaRP includes StepGame, RuleCollection bundles
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into
 another dataset's train split.
+
+See [Russian datasets](../../docs/russian-datasets.md) for source filters, label meanings, exclusions and licensing.
+Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
+The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
+validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
 
 ## Adding a dataset
 
