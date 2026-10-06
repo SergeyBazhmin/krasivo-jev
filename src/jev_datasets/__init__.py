@@ -67,6 +67,12 @@ from jev_datasets.sentiment.tweet_sentiment import tweet_sentiment_dataset
 from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
+from jev_datasets.structured.catalog import catalog_dataset, catalog_ru_dataset
+from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_state_dataset
+from jev_datasets.structured.massive_slots import massive_slots_dataset, massive_slots_ru_dataset
+from jev_datasets.structured.nerel import nerel_relations_dataset
+from jev_datasets.structured.totto import totto_cells_dataset
+from jev_datasets.structured.webnlg import webnlg_en_dataset, webnlg_ru_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
@@ -93,6 +99,8 @@ datasets = {
         bitext_retail_banking_dataset,
         bitext_telco_dataset,
         boolq_dataset,
+        catalog_dataset,
+        catalog_ru_dataset,
         cedr_dataset,
         chaos_nli_dataset,
         clinc_oos_dataset,
@@ -115,6 +123,8 @@ datasets = {
         logiqa_dataset,
         massive_intent_dataset,
         massive_intent_ru_dataset,
+        massive_slots_dataset,
+        massive_slots_ru_dataset,
         mera_bps_dataset,
         mera_lcs_dataset,
         mera_mathlogicqa_dataset,
@@ -124,7 +134,9 @@ datasets = {
         mera_simplear_dataset,
         multi_nli_dataset,
         multi_nli_genre_dataset,
+        multiwoz_state_dataset,
         muserc_dataset,
+        nerel_relations_dataset,
         nomiracl_en_dataset,
         nomiracl_ru_dataset,
         paws_dataset,
@@ -142,6 +154,7 @@ datasets = {
         safeguard_prompt_injection_dataset,
         sberquad_dataset,
         sciq_dataset,
+        sgd_state_dataset,
         sparp_dataset,
         spartqa_mchoice_dataset,
         spartqa_yn_dataset,
@@ -151,11 +164,14 @@ datasets = {
         terra_dataset,
         ticket_routing_dataset,
         ticket_type_dataset,
+        totto_cells_dataset,
         toxic_chat_dataset,
         tweet_hate_dataset,
         tweet_offensive_dataset,
         tweet_sentiment_dataset,
         vscode_triage_dataset,
+        webnlg_en_dataset,
+        webnlg_ru_dataset,
         wikiqa_dataset,
     )
 }

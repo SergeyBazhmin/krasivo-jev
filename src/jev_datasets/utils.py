@@ -75,6 +75,24 @@ def make_sample(state: str, question: str, options: list[dict[str, str]], label:
     return {"state": state, "question": question, "options": options, "label": as_distribution(options, label)}
 
 
+def text_choice(state: str, question: str, answer: str, distractors: list[str], seed: str) -> dict | None:
+    """Distinct text candidates with shuffled positional ids, or no sample if there is no distractor."""
+    texts = [answer]
+    seen = {answer.strip().casefold()}
+    for text in stable_shuffle(distractors, f"distractors:{seed}"):
+        key = text.strip().casefold()
+        if key and key not in seen:
+            texts.append(text)
+            seen.add(key)
+        if len(texts) == 4:
+            break
+    if len(texts) < 2:
+        return None
+    texts = stable_shuffle(texts, f"options:{seed}")
+    ids = list("ABCD")[: len(texts)]
+    return make_sample(state, question, make_options(ids, texts), ids[texts.index(answer)])
+
+
 def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:
     """Adapts `fn(row) -> [sample, ...]` to a batched `map`, for sources with several samples per row."""
 

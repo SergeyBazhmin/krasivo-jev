@@ -24,3 +24,6 @@ runs/**/*.pt
 
 # Secrets (TYPESAFE_API_KEY)
 .env
+
+# Local docs
+.docs/

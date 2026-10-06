@@ -115,6 +115,16 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `spartqa_mchoice`             | choice   | `tasksource/spartqa-mchoice` |
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
+| `structured`     | `catalog`                     | choice   | deterministic synthetic catalogs (English) |
+|                  | `catalog_ru`                  | choice   | deterministic synthetic catalogs (Russian) |
+|                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
+|                  | `massive_slots_ru`            | choice   | `AmazonScience/massive` (`ru-RU`, original slot annotations) |
+|                  | `multiwoz_state`              | choice   | official MultiWOZ 2.2 dialogues and schema |
+|                  | `nerel_relations`             | choice   | official NEREL v1.0 documents and relation spans |
+|                  | `sgd_state`                   | choice   | official Schema-Guided Dialogue dialogues and schemas |
+|                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
+|                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
+|                  | `webnlg_ru`                   | choice   | `GEM/web_nlg` (`ru`, controlled renderings of supplied facts) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
@@ -131,6 +141,43 @@ another dataset's train split.
 Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
+
+## Structured sources
+
+These converters load official JSON/archives directly, so they do not depend on discontinued Hub loading scripts.
+GitHub data revisions are pinned. Raw source groups are assigned to splits before producing multiple questions,
+with test taking priority over validation and train for duplicate documents, dialogues or tables.
+
+- `massive_slots*`: extract one of 27 concrete slot types from the command, validating annotation markup against
+  the original text. Alternative values of the same slot are sampled from train only; all accepted mentions are
+  excluded. The original partitions are retained and repeated commands are removed across splits.
+- `sgd_state`, `multiwoz_state`: track changed user belief values using dialogue prefixes and natural-language
+  schema descriptions. Hidden service results, goal descriptions and gold belief states are never input.
+  Values without visible evidence, unspecified/preference-free values and boolean availability slots are skipped.
+  Equivalent common clock formats are excluded from distractors. At most four questions
+  are produced per dialogue, with all its prefixes in one partition.
+- `nerel_relations`: select literal object spans for a restricted set of temporal, family, workplace and name
+  relations. Mentions must be separate spans in one sentence. Multiple distinct accepted objects, malformed spans,
+  implicit geopolitical/medical/ideological relations and entity-linking annotations are excluded. Alias and
+  nested mentions of the accepted object are excluded from distractors.
+- `totto_cells`: read a value by a unique row key and a column header. Only small rectangular tables with an
+  unambiguous first header row and no merged cells are kept. Distractors come from the same column. Original
+  summaries and highlights are excluded; labels are computed from cells, including public test tables. Shared
+  tables are removed from training regardless of different original highlight selections.
+- `webnlg_*`: compare a specified relation's value against descriptions with that value replaced; the rest of the
+  sentence is not judged. English uses original lexicalizations with literal subject/object matches. Russian uses
+  explicitly synthetic renderings of facts with untranslated entity strings, because the original Russian text
+  translates names without providing their alignment. Replacements exclude every accepted object for the same
+  subject/relation. Alternatives are taken from that relation and a train-only bank; numeric alternatives are
+  numeric. All references to a fact set share a split.
+- `catalog*`: synthetic catalogs support conjunctive filtering, cheapest eligible item selection, and inventory
+  updates. Prices are unique, ambiguous filter questions are skipped, and every label is calculated in Python.
+  English/Russian versions share generation keys and split assignments.
+
+```bash
+uv run jev prepare massive_slots massive_slots_ru sgd_state multiwoz_state nerel_relations \
+  totto_cells webnlg_en webnlg_ru catalog catalog_ru --max-samples 10000
+```
 
 ## Adding a dataset
 
