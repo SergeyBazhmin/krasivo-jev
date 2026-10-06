@@ -117,14 +117,20 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
 | `structured`     | `catalog`                     | choice   | deterministic synthetic catalogs (English) |
 |                  | `catalog_ru`                  | choice   | deterministic synthetic catalogs (Russian) |
+|                  | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
+|                  | `dialogsum_turns`             | choice   | official DialogSum transcripts (speaker/order targets) |
+|                  | `e2e_slots`                   | choice   | cleaned E2E NLG descriptions and meaning representations |
 |                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
 |                  | `massive_slots_ru`            | choice   | `AmazonScience/massive` (`ru-RU`, original slot annotations) |
 |                  | `multiwoz_state`              | choice   | official MultiWOZ 2.2 dialogues and schema |
 |                  | `nerel_relations`             | choice   | official NEREL v1.0 documents and relation spans |
 |                  | `sgd_state`                   | choice   | official Schema-Guided Dialogue dialogues and schemas |
+|                  | `skillspan`                   | choice   | official SkillSpan job-posting excerpts and BIO spans |
 |                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
 |                  | `webnlg_ru`                   | choice   | `GEM/web_nlg` (`ru`, controlled renderings of supplied facts) |
+|                  | `wikisql_queries`             | choice   | official WikiSQL tables and queries (computed English questions) |
+|                  | `wikisql_queries_ru`          | choice   | WikiSQL tables with Russian question templates |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
@@ -147,6 +153,8 @@ validation before train. RuParaPhraser additionally removes training pairs conta
 These converters load official JSON/archives directly, so they do not depend on discontinued Hub loading scripts.
 GitHub data revisions are pinned. Raw source groups are assigned to splits before producing multiple questions,
 with test taking priority over validation and train for duplicate documents, dialogues or tables.
+Raw record generation and the second cohort's transformations include converter/shared-helper code in their cache
+keys, so edits to imported filters cannot silently reuse an older conversion.
 
 - `massive_slots*`: extract one of 27 concrete slot types from the command, validating annotation markup against
   the original text. Alternative values of the same slot are sampled from train only; all accepted mentions are
@@ -173,11 +181,60 @@ with test taking priority over validation and train for duplicate documents, dia
 - `catalog*`: synthetic catalogs support conjunctive filtering, cheapest eligible item selection, and inventory
   updates. Prices are unique, ambiguous filter questions are skipped, and every label is calculated in Python.
   English/Russian versions share generation keys and split assignments.
+- `skillspan`: use literal BIO spans from both skill/knowledge layers to choose a phrase explicitly present in a
+  job-posting excerpt. This does not predict ESCO codes, implied requirements or hard/soft taxonomy labels.
+  Every negative must be absent from the entire excerpt, so incomplete annotations cannot create false negatives.
+  Source job ids restart in each partition; job content groups all its sentences before conversion, and duplicate
+  excerpts are removed across partitions. One question is produced for each eligible sentence.
+- `e2e_slots`: use the fully cleaned, non-overlapping E2E release. Restaurant names, nearby landmarks, cuisine,
+  establishment types and areas are kept only when their values appear literally in the human description.
+  Attribute mentions inside restaurant/landmark names do not count as independent evidence. Ratings, family
+  suitability and normalized prices are excluded. The meaning representation supplies targets but is never input;
+  its references remain in one source partition, and repeated descriptions are removed across partitions.
+- `dialogsum_turns`: infer the author of a quoted utterance from speaker tags, or find the next recorded utterance
+  from transcript order. The task asks what actually happened, not which reply sounds plausible. Repeated quotes
+  with ambiguous authors/successors and malformed transcripts are skipped. Original summaries/topics are unused.
+- `cuad_spans`: select original wording for contract titles, agreement dates, explicitly stated effective dates and
+  governing law. Exact annotation offsets must match. Dates must be literal dates with a year; effective dates
+  require a nearby explicit effective-date cue, rather than assuming that signing makes a contract effective.
+  Relative dates, multi-clause reasoning, legal-effect labels and absent-answer annotations are omitted. Context is
+  a short unmarked window around a span; distractors come from that field's training bank and cannot occur in the
+  passage or match another accepted answer. The source test contracts are retained; validation is carved from
+  source train by a contract-content hash before windows are made.
+- `wikisql_queries*`: generate precise natural-language questions from the query's selection, conjunction of
+  comparisons and aggregation, then execute them over the public table using Decimal arithmetic. Operations are
+  lookup, maximum/minimum, row count, sum and mean rounded to two decimal places. No original natural-language
+  question or SQL text enters the sample. Unsupported numeric formats/units, text inequalities, ambiguous
+  list-valued answers, large/ragged tables and duplicate column headers are excluded. Equivalent numeric
+  distractors are removed. All questions about a table share a partition; canonical fingerprints ignore row order
+  and source table ids. Russian templates retain original table headers/cells, and preserve the English groups,
+  labels and options.
+
+WikiSQL and ToTTo contain some of the same Wikipedia tables in conflicting splits. The checked-in
+`structured/wikisql_totto_overlap.json` records their common canonical table hashes and archive checksums; every
+such table is excluded from WikiSQL in all partitions, leaving it to ToTTo. Regenerate the manifest when updating
+the WikiSQL source revision with `scripts/audit_table_overlap.py --wikisql ARCHIVE --totto ARCHIVE --output MANIFEST`.
+This audit detects complete-table duplicates, not arbitrary overlapping subsets of rows or semantic paraphrases.
+
+Source attribution and terms: [SkillSpan](https://github.com/kris927b/SkillSpan) (repository MIT),
+[E2E](https://github.com/tuetschek/e2e-dataset) (CC BY-SA 4.0) with the
+[authors' cleaned release](https://github.com/tuetschek/e2e-cleaning),
+[DialogSum](https://github.com/cylnlp/dialogsum) (**CC BY-NC-SA 4.0**, noncommercial),
+[CUAD](https://www.atticusprojectai.org/cuad/) (CC BY 4.0), and
+[WikiSQL](https://github.com/salesforce/WikiSQL/blob/master/LICENSE) (BSD 3-Clause repository license).
+Conversion does not replace the original source terms.
 
 ```bash
 uv run jev prepare massive_slots massive_slots_ru sgd_state multiwoz_state nerel_relations \
   totto_cells webnlg_en webnlg_ru catalog catalog_ru --max-samples 10000
+uv run jev prepare skillspan e2e_slots dialogsum_turns cuad_spans \
+  wikisql_queries wikisql_queries_ru --max-samples 10000
 ```
+
+Offline semantic checks for these two cohorts are in `scripts/smoke_structured.py` and
+`scripts/smoke_more_structured.py`. Each accepts `--built-dir` for checking every saved sample and disjoint contexts.
+The second script also checks the table interpreter against independently executed SQLite queries, effective-date
+cues, malformed spans, repeated dialogue utterances and the alignment of the two WikiSQL template languages.
 
 ## Adding a dataset
 

@@ -68,11 +68,16 @@ from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
 from jev_datasets.structured.catalog import catalog_dataset, catalog_ru_dataset
+from jev_datasets.structured.cuad import cuad_spans_dataset
+from jev_datasets.structured.dialogsum import dialogsum_turns_dataset
 from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_state_dataset
+from jev_datasets.structured.e2e import e2e_slots_dataset
 from jev_datasets.structured.massive_slots import massive_slots_dataset, massive_slots_ru_dataset
 from jev_datasets.structured.nerel import nerel_relations_dataset
+from jev_datasets.structured.skillspan import skillspan_dataset
 from jev_datasets.structured.totto import totto_cells_dataset
 from jev_datasets.structured.webnlg import webnlg_en_dataset, webnlg_ru_dataset
+from jev_datasets.structured.wikisql import wikisql_queries_dataset, wikisql_queries_ru_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
@@ -105,8 +110,11 @@ datasets = {
         chaos_nli_dataset,
         clinc_oos_dataset,
         clutrr_dataset,
+        cuad_spans_dataset,
         danetqa_dataset,
         dbpedia_dataset,
+        dialogsum_turns_dataset,
+        e2e_slots_dataset,
         emotion_dataset,
         financial_news_topic_dataset,
         folio_dataset,
@@ -155,6 +163,7 @@ datasets = {
         sberquad_dataset,
         sciq_dataset,
         sgd_state_dataset,
+        skillspan_dataset,
         sparp_dataset,
         spartqa_mchoice_dataset,
         spartqa_yn_dataset,
@@ -173,5 +182,7 @@ datasets = {
         webnlg_en_dataset,
         webnlg_ru_dataset,
         wikiqa_dataset,
+        wikisql_queries_dataset,
+        wikisql_queries_ru_dataset,
     )
 }
