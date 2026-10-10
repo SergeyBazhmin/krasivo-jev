@@ -102,8 +102,8 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `mera_rumultiar`              | choice   | `ai-forever/MERA` (`rumultiar`) |
 |                  | `mera_simplear`               | choice   | `ai-forever/MERA` (`simplear`) |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
-| `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
-|                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+| `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, 10-passage subset, evaluation only) |
+|                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, 10-passage subset, evaluation only) |
 |                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
