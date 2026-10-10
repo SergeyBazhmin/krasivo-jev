@@ -29,12 +29,30 @@ NEXT_QUESTIONS = [
 TURN = re.compile(r"^(#Person\d+#):\s*(.+)$")
 
 
-def dialogsum_records(paths: dict[str, str]) -> Iterator[dict]:
+def dialogsum_group(text: str) -> str:
+    # Formatting and speaker renaming must not put versions of one conversation in different splits.
+    words = re.findall(r"\w+", re.sub(r"#Person\d+#:", "", text).casefold())
+    return content_group(words)
+
+
+def dialogsum_records(paths: dict[str, str], overlap_manifest: str) -> Iterator[dict]:
+    manifest = json.loads(overlap_manifest)
+    if manifest["revision"] != REVISION:
+        raise ValueError("Regenerate dialogsum_overlap.json for the new DialogSum revision")
+    excluded = manifest["excluded_dialogues"]
     for split, path in paths.items():
+        seen = set()
         for line in Path(path).read_text().splitlines():
             text = json.loads(line)["dialogue"]
+            # Audited near copies and excerpts stay out of lower-priority splits (test > validation > train).
+            if excluded.get(content_group(text.strip())) == split:
+                continue
+            group = dialogsum_group(text)
+            if group in seen:
+                continue
+            seen.add(group)
             # Summaries and topics are not evidence and never enter a sample or its target.
-            yield {**record({"text": text}, content_group(text.strip())), "split": split}
+            yield {**record({"text": text}, group), "split": split}
 
 
 def dialogsum_samples(row: dict) -> list[dict]:
@@ -85,7 +103,9 @@ class DialogSumTurnsDataset(JevDataset):
                 for split, name in (("train", "train"), ("validation", "dev"), ("test", "test"))
             }
         )
-        return grouped_records(dialogsum_records, paths=paths)
+        # Include the manifest as a generator argument so changing it invalidates the source cache.
+        manifest = Path(__file__).with_name("dialogsum_overlap.json").read_text()
+        return grouped_records(dialogsum_records, paths=paths, overlap_manifest=manifest)
 
     def prepare(self):
         self.data = map_records(self.data, dialogsum_samples, __file__)

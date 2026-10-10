@@ -202,6 +202,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
 - `dialogsum_turns`: infer the author of a quoted utterance from speaker tags, or find the next recorded utterance
   from transcript order. The task asks what actually happened, not which reply sounds plausible. Repeated quotes
   with ambiguous authors/successors and malformed transcripts are skipped. Original summaries/topics are unused.
+  Conversation groups ignore speaker names, case, whitespace and punctuation, with one representative per split.
+  The pinned `structured/dialogsum_overlap.json` also excludes audited near copies and verbatim excerpts from
+  lower-priority splits (test > validation > train). Regenerate it with `scripts/audit_dialogsum_overlap.py` when
+  changing the source revision; the review in `docs/dataset-reviews/dialogsum_turns.md` records the audit's limits.
 - `cuad_spans`: select original wording for contract titles, agreement dates, explicitly stated effective dates and
   governing law. Exact annotation offsets must match. Dates must be literal dates with a year; effective dates
   require a nearby explicit effective-date cue, rather than assuming that signing makes a contract effective.
