@@ -7,6 +7,11 @@ sample contract and the conventions.
 - `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI; [README](src/jev_datasets/README.md)).
 - `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI; [README](src/jev_model/README.md)).
 - `notebooks/compare_runs.ipynb`: compares evaluated runs with plots.
+- [Dataset reviews](docs/dataset-reviews/README.md): evidence-based suitability cards for training and evaluation;
+  use the [jev-dataset-review skill](skills/jev-dataset-review/SKILL.md) to audit a dataset and save recommendations.
+- [notebooks/inspect_dataset.ipynb](notebooks/inspect_dataset.ipynb): shows full samples from a prepared dataset;
+  set `DATASET_NAME`, `SPLIT` and `INDICES`. Run without training dependencies:
+  `uv run --no-project --with datasets --with jupyterlab jupyter lab notebooks/inspect_dataset.ipynb`.
 
 ## Setup
 
