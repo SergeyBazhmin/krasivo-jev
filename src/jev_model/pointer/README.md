@@ -76,8 +76,11 @@ the whole causal LM, but the forward pass calls only the text model under it, so
 computed; older adapters (which wrap the text model) still load.
 
 Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
-`flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
+`flash-linear-attention`, which is installed on Linux; without it they fall back to a reference PyTorch
 implementation that is more than ten times slower, and a warning says so.
+
+On macOS, `uv sync --extra model` skips `flash-linear-attention` and Triton. Qwen3.5 uses the reference
+PyTorch implementation, and the CLI defaults to CPU.
 
 ### Several GPUs
 
