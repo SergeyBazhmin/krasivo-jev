@@ -1,6 +1,7 @@
 import csv
 import json
 import re
+import unicodedata
 from collections import defaultdict
 from collections.abc import Iterator
 from pathlib import Path
@@ -28,6 +29,11 @@ QUESTIONS = [
     "According to the text, what is {field}?",
 ]
 MR_FIELD = re.compile(r"([^,\[\]]+)\[([^\[\]]+)\]")
+NEGATED_PREFIX = re.compile(
+    r"\b(?:not|never|no|neither|\w+n['’]t)\s+"
+    r"(?:(?:a|an|serve|serves|serving|offer|offers|offering|in|at|near|located)\s+){0,3}$",
+    flags=re.IGNORECASE,
+)
 
 
 def parse_mr(text: str) -> dict[str, str] | None:
@@ -44,6 +50,53 @@ def literal(value: str, text: str) -> bool:
     return bool(re.search(r"(?<!\w)" + re.escape(value) + r"(?!\w)", text, flags=re.IGNORECASE))
 
 
+def affirmed_literal(value: str, text: str) -> bool:
+    # The upstream re-annotator also labels "does not serve Italian" as food[Italian].
+    return any(
+        not NEGATED_PREFIX.search(text[: match.start()])
+        for match in re.finditer(r"(?<!\w)" + re.escape(value) + r"(?!\w)", text, flags=re.IGNORECASE)
+    )
+
+
+def slot_literal(field: str, value: str, text: str) -> bool:
+    if field == "food":
+        # "English speaking establishment" describes language, not cuisine.
+        text = re.sub(
+            re.escape(value) + r"[\s-]+(?:speaking|spoken|language)\b",
+            "",
+            text,
+            flags=re.IGNORECASE,
+        )
+        text = re.sub(r"\bspeaks?\s+" + re.escape(value), "", text, flags=re.IGNORECASE)
+    return affirmed_literal(value, text)
+
+
+def context_key(text: str) -> str:
+    return re.sub(r"\W+", "", unicodedata.normalize("NFKC", text).casefold())
+
+
+def clean_records(data: DatasetDict) -> DatasetDict:
+    # Resolve descriptions before mining the train bank; MR grouping alone misses text reuse.
+    seen = set()
+    cleaned = {}
+    for split in ("test", "validation", "train"):
+        indices = []
+        identities = set()
+        contexts = set()
+        for index, row in enumerate(data[split]):
+            payload = json.loads(row["payload"])
+            key = context_key(payload["text"])
+            fields = {k: v for k, v in payload["fields"].items() if k in FIELDS}
+            identity = key, content_group(fields)
+            if key not in seen and identity not in identities:
+                indices.append(index)
+                identities.add(identity)
+            contexts.add(key)
+        seen.update(contexts)
+        cleaned[split] = data[split].select(indices)
+    return DatasetDict({split: cleaned[split] for split in data})
+
+
 def e2e_records(paths: dict[str, str]) -> Iterator[dict]:
     for split, path in paths.items():
         with Path(path).open(newline="") as file:
@@ -57,21 +110,28 @@ def e2e_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
     text, fields = payload["text"], payload["fields"]
     samples = []
     # Literal fields only; inferred ratings, yes/no family suitability and price normalization are omitted.
-    for field in stable_shuffle(sorted(fields.keys() & FIELDS.keys()), text)[:3]:
+    for field in stable_shuffle(sorted(fields.keys() & FIELDS.keys()), text):
         answer = fields[field]
         evidence = text
         if field not in {"name", "near"}:
             for name in (fields.get("name", ""), fields.get("near", "")):
                 if name:
                     evidence = re.sub(re.escape(name), "", evidence, flags=re.IGNORECASE)
-        if not literal(answer, evidence):
+        if not slot_literal(field, answer, evidence):
             continue
         candidates = [value for value in pools.get(field, []) if not literal(value, text)]
         seed = text + field
+        if field in {"name", "near"}:
+            other = fields.get("near" if field == "name" else "name", "")
+            if other and other.casefold() != answer.casefold() and affirmed_literal(other, text):
+                # Both entities are present: distinguish the described restaurant from its landmark.
+                candidates = [other, *stable_shuffle(candidates, f"absent:{seed}")[:2]]
         question = pick_question(QUESTIONS, seed).format(field=FIELDS[field])
         state = "Restaurant description. Use only explicitly stated values.\n\n" + text
         if sample := text_choice(state, question, answer, candidates, seed):
             samples.append(sample)
+        if len(samples) == 3:
+            break
     return samples
 
 
@@ -89,6 +149,7 @@ class E2ESlotsDataset(JevDataset):
         return grouped_records(e2e_records, paths=paths)
 
     def prepare(self):
+        self.data = clean_records(self.data)
         pools = defaultdict(set)
         for row in self.data["train"]:
             payload = json.loads(row["payload"])
@@ -96,6 +157,9 @@ class E2ESlotsDataset(JevDataset):
                 if field in FIELDS and literal(value, payload["text"]):
                     pools[field].add(value)
         pools = {key: sorted(values) for key, values in pools.items()}
+        # Use the same entity bank for both roles instead of teaching their upstream vocabularies.
+        entities = sorted(set(pools.get("name", [])) | set(pools.get("near", [])))
+        pools.update(name=entities, near=entities)
         self.data = map_records(self.data, lambda row: e2e_samples(row, pools), __file__)
         self.data = disjoint_contexts(self.data)
 

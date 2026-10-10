@@ -197,8 +197,12 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
 - `e2e_slots`: use the fully cleaned, non-overlapping E2E release. Restaurant names, nearby landmarks, cuisine,
   establishment types and areas are kept only when their values appear literally in the human description.
   Attribute mentions inside restaurant/landmark names do not count as independent evidence. Ratings, family
-  suitability and normalized prices are excluded. The meaning representation supplies targets but is never input;
-  its references remain in one source partition, and repeated descriptions are removed across partitions.
+  suitability and normalized prices are excluded. Directly negated values and cuisine words used for spoken
+  languages are skipped. Entity questions include the other named entity from the description as a role distractor;
+  both roles share a train-only entity bank. The meaning representation supplies targets but is never input;
+  its references remain in one source partition. Descriptions are deduplicated before mining that bank, ignoring
+  case, whitespace and punctuation, with held-out splits taking priority. At most three eligible questions are
+  kept per description. See [the review](../../docs/dataset-reviews/e2e_slots.md) for checks and remaining shortcuts.
 - `dialogsum_turns`: infer the author of a quoted utterance from speaker tags, or find the next recorded utterance
   from transcript order. The task asks what actually happened, not which reply sounds plausible. Repeated quotes
   with ambiguous authors/successors and malformed transcripts are skipped. Original summaries/topics are unused.
