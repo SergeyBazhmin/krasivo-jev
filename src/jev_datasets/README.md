@@ -148,6 +148,14 @@ Russian binary options read «да» / «нет» and use `choice`; `noul` requi
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
 
+## ProntoQA quality checks
+
+`prontoqa` uses the unary compositional subset of RuleCollection. Its converter repairs the observed `Polly` → `lly`
+question corruption, checks binary labels with a small SAT solver, and drops inconsistent theories and ambiguous
+compound negation. It groups logical contexts across paraphrases and prioritizes test when removing split overlap.
+The source still has a strong question-polarity shortcut; see the [review](../../docs/dataset-reviews/prontoqa.md)
+before interpreting accuracy as reasoning ability. Regenerate older builds with `jev prepare prontoqa`.
+
 ## Structured sources
 
 These converters load official JSON/archives directly, so they do not depend on discontinued Hub loading scripts.

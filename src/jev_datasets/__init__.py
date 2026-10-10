@@ -24,9 +24,10 @@ from jev_datasets.knowledge.sciq import sciq_dataset
 from jev_datasets.logic.clutrr import clutrr_dataset
 from jev_datasets.logic.folio import folio_dataset
 from jev_datasets.logic.logicnli import logicnli_dataset
+from jev_datasets.logic.prontoqa import prontoqa_dataset
 from jev_datasets.logic.proofwriter import proofwriter_dataset
 from jev_datasets.logic.proverqa import proverqa_dataset
-from jev_datasets.logic.rule_collection import ar_lsat_dataset, prontoqa_dataset
+from jev_datasets.logic.rule_collection import ar_lsat_dataset
 from jev_datasets.nlu.anli import anli_dataset
 from jev_datasets.nlu.babi_nli import babi_nli_dataset
 from jev_datasets.nlu.boolq import boolq_dataset
