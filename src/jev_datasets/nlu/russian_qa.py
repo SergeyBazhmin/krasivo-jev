@@ -122,3 +122,6 @@ class MultiQDataset(JevDataset):
 
 mera_multiq_dataset = MultiQDataset(name="mera_multiq", hf_path="ai-forever/MERA", hf_name="multiq")
 sberquad_dataset = SberQuADDataset(name="sberquad", hf_path="kuznetsoffandrey/sberquad")
+
+# RCB is taken from Russian SuperGLUE only. Knowledge, commonsense, preferences, and expert code tasks are excluded.
+# ruTiE mixes outside facts and irony even in math turns, so its category flags do not guarantee state answerability.

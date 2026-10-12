@@ -72,7 +72,6 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `clutrr`                      | choice   | `tasksource/clutrr` |
 |                  | `folio`                       | choice   | `yfxiao/folio-refined` |
 |                  | `logicnli`                    | choice   | `tasksource/LogicNLI` |
-|                  | `prontoqa`                    | choice   | `RuleReasoner/RuleCollection-32K` |
 |                  | `proofwriter`                 | choice   | `tasksource/proofwriter` |
 |                  | `proverqa`                    | choice   | `opendatalab/ProverQA` |
 | `nlu`            | `anli`                        | choice   | `facebook/anli` |
@@ -95,13 +94,10 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `sberquad`                    | choice   | `kuznetsoffandrey/sberquad` (evidence selection) |
 |                  | `terra`                       | choice   | `RussianNLP/russian_super_glue` (`TERRa`) |
 | `reasoning`      | `logiqa`                      | choice   | `lucasmccabe/logiqa` |
-|                  | `mera_bps`                    | choice   | `ai-forever/MERA` (`bps`) |
-|                  | `mera_lcs`                    | choice   | `ai-forever/MERA` (`lcs`) |
-|                  | `mera_mathlogicqa`            | choice   | `ai-forever/MERA` (`mathlogicqa`, math subset) |
-|                  | `mera_rumodar`                | choice   | `ai-forever/MERA` (`rumodar`) |
-|                  | `mera_rumultiar`              | choice   | `ai-forever/MERA` (`rumultiar`) |
-|                  | `mera_simplear`               | choice   | `ai-forever/MERA` (`simplear`) |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
+| `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
+|                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+|                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
 |                  | `go_emotions`                 | choice   | `google-research-datasets/go_emotions` (`simplified`) |
@@ -112,6 +108,15 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `spartqa_mchoice`             | choice   | `tasksource/spartqa-mchoice` |
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
+| `structured`     | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
+|                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
+|                  | `massive_slots_ru`            | choice   | `AmazonScience/massive` (`ru-RU`, original slot annotations) |
+|                  | `multiwoz_state`              | choice   | official MultiWOZ 2.2 dialogues and schema |
+|                  | `nerel_relations`             | choice   | official NEREL v1.0 documents and relation spans |
+|                  | `sgd_state`                   | choice   | official Schema-Guided Dialogue dialogues and schemas |
+|                  | `skillspan`                   | choice   | official SkillSpan job-posting excerpts and BIO spans |
+|                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
+|                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
@@ -125,10 +130,65 @@ Many logic and spatial sources bundle the same underlying sets (SpaRP includes S
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into
 another dataset's train split.
 
-See [Russian datasets](../../docs/russian-datasets.md) for source filters, label meanings, exclusions and licensing.
 Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
+
+## Structured sources
+
+These converters load official JSON/archives directly, so they do not depend on discontinued Hub loading scripts.
+GitHub data revisions are pinned. Raw source groups are assigned to splits before producing multiple questions,
+with test taking priority over validation and train for duplicate documents, dialogues or tables.
+Raw record generation and the second cohort's transformations include converter/shared-helper code in their cache
+keys, so edits to imported filters cannot silently reuse an older conversion.
+
+- `massive_slots*`: extract one of 27 concrete slot types from the command, validating annotation markup against
+  the original text. Alternative values of the same slot are sampled from train only; all accepted mentions are
+  excluded. The original partitions are retained and repeated commands are removed across splits.
+- `sgd_state`, `multiwoz_state`: track changed user belief values using dialogue prefixes and natural-language
+  schema descriptions. Hidden service results, goal descriptions and gold belief states are never input.
+  Values without visible evidence, unspecified/preference-free values and boolean availability slots are skipped.
+  Equivalent common clock formats are excluded from distractors. At most four questions
+  are produced per dialogue, with all its prefixes in one partition.
+- `nerel_relations`: select literal object spans for a restricted set of temporal, family, workplace and name
+  relations. Mentions must be separate spans in one sentence. Multiple distinct accepted objects, malformed spans,
+  implicit geopolitical/medical/ideological relations and entity-linking annotations are excluded. Alias and
+  nested mentions of the accepted object are excluded from distractors.
+- `totto_cells`: read a value by a unique row key and a column header. Only small rectangular tables with an
+  unambiguous first header row and no merged cells are kept. Distractors come from the same column. Original
+  summaries and highlights are excluded; labels are computed from cells, including public test tables. Shared
+  tables are removed from training regardless of different original highlight selections.
+- `webnlg_en`: compare a specified relation's value against descriptions with that value replaced; the rest of the
+  sentence is not judged. Original lexicalizations are used with literal subject/object matches. The Russian
+  release is not used: it translates names without providing their alignment. Replacements exclude every accepted
+  object for the same subject/relation. Alternatives are taken from that relation and a train-only bank; numeric alternatives are
+  numeric. All references to a fact set share a split.
+- `skillspan`: use literal BIO spans from both skill/knowledge layers to choose a phrase explicitly present in a
+  job-posting excerpt. This does not predict ESCO codes, implied requirements or hard/soft taxonomy labels.
+  Every negative must be absent from the entire excerpt, so incomplete annotations cannot create false negatives.
+  Source job ids restart in each partition; job content groups all its sentences before conversion, and duplicate
+  excerpts are removed across partitions. One question is produced for each eligible sentence.
+- `cuad_spans`: select original wording for contract titles, agreement dates, explicitly stated effective dates and
+  governing law. Exact annotation offsets must match. Dates must be literal dates with a year; effective dates
+  require a nearby explicit effective-date cue, rather than assuming that signing makes a contract effective.
+  Relative dates, multi-clause reasoning, legal-effect labels and absent-answer annotations are omitted. Context is
+  a short unmarked window around a span; distractors come from that field's training bank and cannot occur in the
+  passage or match another accepted answer. The source test contracts are retained; validation is carved from
+  source train by a contract-content hash before windows are made.
+
+Source attribution and terms: [SkillSpan](https://github.com/kris927b/SkillSpan) (repository MIT) and
+[CUAD](https://www.atticusprojectai.org/cuad/) (CC BY 4.0).
+Conversion does not replace the original source terms.
+
+```bash
+uv run jev prepare massive_slots massive_slots_ru sgd_state multiwoz_state nerel_relations \
+  totto_cells webnlg_en --max-samples 10000
+uv run jev prepare skillspan cuad_spans --max-samples 10000
+```
+
+Offline semantic checks for these two cohorts are in `scripts/smoke_structured.py` and
+`scripts/smoke_more_structured.py`. Each accepts `--built-dir` for checking every saved sample and disjoint contexts.
+The second script also checks effective-date cues and malformed spans.
 
 ## Adding a dataset
 
