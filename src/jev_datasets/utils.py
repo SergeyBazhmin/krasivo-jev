@@ -1,9 +1,12 @@
+import hashlib
+import json
 import random
 import re
+from collections import Counter
 from collections.abc import Callable
 
 import numpy as np
-from datasets import Dataset, DatasetDict, Features, Value
+from datasets import Dataset, DatasetDict, Features, Value, concatenate_datasets
 
 # Pinned explicitly: without it `map` inherits a source column's type for same-named
 # output columns (e.g. a ClassLabel `label` rejects what we write into it).
@@ -15,6 +18,8 @@ SAMPLE_FEATURES = Features(
         "label": [Value("float32")],
     }
 )
+# What converters of grouped sources emit: `group` keys the source document for `regroup`, which removes it.
+GROUPED_FEATURES = Features({**SAMPLE_FEATURES, "group": Value("string")})
 
 
 def slugify(text: str) -> str:
@@ -93,27 +98,64 @@ def text_choice(state: str, question: str, answer: str, distractors: list[str], 
     return make_sample(state, question, make_options(ids, texts), ids[texts.index(answer)])
 
 
-def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:
+def explode(fn: Callable[[dict], list[dict]], features: Features = SAMPLE_FEATURES) -> Callable[[dict], dict]:
     """Adapts `fn(row) -> [sample, ...]` to a batched `map`, for sources with several samples per row."""
 
     def batched(batch: dict[str, list]) -> dict[str, list]:
         samples = [sample for row in zip(*batch.values()) for sample in fn(dict(zip(batch, row)))]
-        return {column: [sample[column] for sample in samples] for column in SAMPLE_FEATURES}
+        return {column: [sample[column] for sample in samples] for column in features}
 
     return batched
 
 
-def disjoint_contexts(data: DatasetDict) -> DatasetDict:
-    """Keep shared contexts in one source split, preferring held-out rows over training rows."""
+def group_key(sample: dict) -> str:
+    """Rows about one context (several questions on one passage) form a group that must stay in one split.
+    A source `group` wins, as one document can yield several different states."""
+    return sample.get("group") or hashlib.sha1((sample["state"] or sample["question"]).encode()).hexdigest()
+
+
+def row_key(sample: dict) -> str:
+    content = [sample["state"], sample["question"], sample["options"], sample["label"]]
+    return hashlib.sha1(json.dumps(content, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def disjoint_contexts(data: DatasetDict) -> tuple[DatasetDict, Counter, Counter]:
+    """Every group in exactly one split: the first one it appears in, held-out splits first. Rows from other splits
+    are moved there; only exact duplicate rows are dropped, keeping the held-out copy. Also returns how many rows
+    moved, by (from, to), and how many duplicates were dropped, by split of origin. Removes the `group` column."""
     priority = {"test": 0, "validation": 1, "dev": 1, "val": 1, "train": 2}
+    order = sorted(data, key=lambda split: (priority.get(split, 2), split))
+    columns = [
+        column for column in ("state", "question", "options", "label", "group") if column in data[order[0]].column_names
+    ]
+    rows = {split: list(data[split].select_columns(columns)) for split in data}
+    keys = {split: [group_key(row) for row in rows[split]] for split in data}
+    home: dict[str, str] = {}
+    for split in order:
+        for key in keys[split]:
+            home.setdefault(key, split)
+    moved = Counter((split, home[key]) for split in data for key in keys[split] if home[key] != split)
+    dropped: Counter = Counter()
     seen: set[str] = set()
-    filtered = {}
-    for split in sorted(data, key=lambda name: (priority.get(name, 2), name)):
-        rows = data[split].filter(lambda row: (row["state"] or row["question"]) not in seen)
-        # Update after the whole split: several questions about one passage stay together within that split.
-        seen.update(state or question for state, question in zip(rows["state"], rows["question"]))
-        filtered[split] = rows
-    return DatasetDict({split: filtered[split] for split in data})
+    selected: dict[str, list[list[int]]] = {target: [] for target in data}
+    for split in order:
+        picks = {target: [] for target in data}
+        for i, (key, row) in enumerate(zip(keys[split], rows[split])):
+            if (identity := row_key(row)) in seen:
+                dropped[split] += 1
+                continue
+            seen.add(identity)
+            picks[home[key]].append(i)
+        for target in data:
+            selected[target].append(picks[target])
+    regrouped = {
+        target: concatenate_datasets([data[split].select(indices) for split, indices in zip(order, selected[target])])
+        for target in data
+    }
+    if "group" in columns:
+        regrouped = {split: rows.remove_columns("group") for split, rows in regrouped.items()}
+    # a split whose every group lives elsewhere ends up empty; drop it so `partition` carves it instead
+    return DatasetDict({split: rows for split, rows in regrouped.items() if rows.num_rows}), moved, dropped
 
 
 def stratified_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:

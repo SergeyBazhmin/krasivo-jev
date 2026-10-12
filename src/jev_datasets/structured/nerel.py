@@ -7,8 +7,8 @@ from collections.abc import Iterator
 from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.structured.source import content_group, grouped_records, record
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.structured.source import content_group, grouped_records, map_records, record
+from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
 REVISION = "8f07d3e410f322d5dbf6b68b13fbf4a4aa077fe9"
 URL = f"https://codeload.github.com/nerel-ds/NEREL/zip/{REVISION}"
@@ -142,9 +142,7 @@ class NERELDataset(JevDataset):
         return grouped_records(nerel_records, path=DownloadManager().download(URL))
 
     def prepare(self):
-        self.data = self.data.map(
-            explode(nerel_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
-        )
+        self.data = map_records(self.data, nerel_samples, __file__)
 
 
 nerel_relations_dataset = NERELDataset(name="nerel_relations", hf_path="nerel-ds/NEREL")

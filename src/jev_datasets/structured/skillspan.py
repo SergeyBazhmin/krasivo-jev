@@ -8,7 +8,7 @@ from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
-from jev_datasets.utils import disjoint_contexts, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
 REVISION = "2ccf3de5b5af7a5409b8dd814fb1315dd6e0ae1b"
 BASE_URL = f"https://raw.githubusercontent.com/kris927b/SkillSpan/{REVISION}/data/json"
@@ -99,7 +99,6 @@ class SkillSpanDataset(JevDataset):
             }
         )
         self.data = map_records(self.data, lambda row: skillspan_samples(row, pool), __file__)
-        self.data = disjoint_contexts(self.data)
 
 
 skillspan_dataset = SkillSpanDataset(name="skillspan", hf_path="kris927b/SkillSpan")

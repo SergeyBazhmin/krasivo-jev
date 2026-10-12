@@ -1,7 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     make_options,
     make_sample,
     pick_question,
@@ -96,7 +95,6 @@ class MassiveIntentRuDataset(JevDataset):
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )
-        self.data = disjoint_contexts(self.data)
 
 
 massive_intent_ru_dataset = MassiveIntentRuDataset(

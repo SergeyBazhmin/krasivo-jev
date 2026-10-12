@@ -6,7 +6,6 @@ from datasets import DatasetDict, load_dataset
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     explode,
     make_options,
     make_sample,
@@ -103,7 +102,6 @@ class SberQuADDataset(JevDataset):
         self.data = self.data.map(
             explode(sberquad_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        self.data = disjoint_contexts(self.data)
 
 
 class MultiQDataset(JevDataset):

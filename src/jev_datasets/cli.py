@@ -30,6 +30,7 @@ def prepare(
         dataset = datasets[name]
         typer.echo(f"[{name}] loading {dataset.hf_path}" + (f" ({dataset.hf_name})" if dataset.hf_name else ""))
         dataset.prepare()
+        dataset.regroup()
         dataset.add_type()
         dataset.limit(max_samples)
         dataset.data.save_to_disk(output_dir / name)

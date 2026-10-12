@@ -1,7 +1,6 @@
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     explode,
     make_options,
     make_sample,
@@ -49,7 +48,6 @@ class CEDRDataset(JevDataset):
         self.data = self.data.map(
             explode(cedr_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        self.data = disjoint_contexts(self.data)
 
 
 cedr_dataset = CEDRDataset(name="cedr", hf_path="sagteam/cedr_v1", hf_name="main")

@@ -8,8 +8,8 @@ from collections.abc import Iterator
 from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.structured.source import content_group, grouped_records, record
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.structured.source import content_group, grouped_records, map_records, record
+from jev_datasets.utils import GROUPED_FEATURES, pick_question, stable_shuffle, text_choice
 
 URL = "https://storage.googleapis.com/totto-public/totto_data.zip"
 QUESTIONS = [
@@ -146,8 +146,8 @@ def statement_samples(rows: list[dict]) -> Dataset:
                     distractors.append(other["sentence"])
         question = pick_question(STATEMENT_QUESTIONS, seed)
         if sample := text_choice(row["state"], question, row["sentence"], distractors, seed):
-            samples.append(sample)
-    return Dataset.from_list(samples, features=SAMPLE_FEATURES)
+            samples.append({**sample, "group": row["group"]})
+    return Dataset.from_list(samples, features=GROUPED_FEATURES)
 
 
 class ToTToDataset(JevDataset):
@@ -158,18 +158,23 @@ class ToTToDataset(JevDataset):
         return grouped_records(totto_records, path=DownloadManager().download(URL))
 
     def prepare(self):
-        self.data = self.data.map(
-            explode(totto_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
-        )
+        self.data = map_records(self.data, totto_samples, __file__)
 
 
 class ToTToStatementsDataset(JevDataset):
     type = DatasetType.CHOICE
 
     def load(self) -> DatasetDict:
-        # Test records are loaded only so that tables shared with test stay out of train, as in totto_cells.
+        # Test has no sentences, so it yields no samples for `regroup` to see; tables shared with test are dropped
+        # here instead, so they stay out of train as in totto_cells.
         data = grouped_records(totto_records, path=DownloadManager().download(URL), annotated=True)
-        return DatasetDict({split: data[split] for split in ("train", "validation")})
+        held_out = set(data["test"]["group"])
+        return DatasetDict(
+            {
+                split: data[split].filter(lambda group: group not in held_out, input_columns="group")
+                for split in ("train", "validation")
+            }
+        )
 
     def prepare(self):
         self.data = DatasetDict(

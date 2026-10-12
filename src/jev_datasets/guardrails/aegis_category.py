@@ -5,7 +5,6 @@ from datasets import Dataset, DatasetDict
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     make_options,
     make_sample,
     pick_question,
@@ -57,7 +56,7 @@ class AegisCategoryDataset(JevDataset):
     type = DatasetType.CHOICE
 
     def prepare(self):
-        self.data = disjoint_contexts(DatasetDict({split: self.split(rows) for split, rows in self.data.items()}))
+        self.data = DatasetDict({split: self.split(rows) for split, rows in self.data.items()})
 
     @staticmethod
     def split(rows: Dataset) -> Dataset:

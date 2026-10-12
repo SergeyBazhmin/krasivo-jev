@@ -8,8 +8,8 @@ from pathlib import Path
 from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.structured.source import content_group, grouped_records, record
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.structured.source import content_group, grouped_records, map_records, record
+from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
 QUESTIONS = [
     "What is the user's current value for {slot}?",
@@ -155,9 +155,7 @@ class DialogueStateDataset(JevDataset):
             # Bound repeated supervision from long dialogues while keeping all prefixes in the source split.
             return stable_shuffle(samples, row["group"])[:4]
 
-        self.data = self.data.map(
-            explode(convert), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
-        )
+        self.data = map_records(self.data, convert, __file__)
 
 
 multiwoz_state_dataset = DialogueStateDataset(

@@ -1,9 +1,10 @@
 from enum import StrEnum
 
 from datasets import DatasetDict, load_dataset
+from loguru import logger
 
 from jev_datasets.constants import MAX_SAMPLES, ROOT_DIR
-from jev_datasets.utils import stratified_limit
+from jev_datasets.utils import disjoint_contexts, stratified_limit
 
 
 class DatasetType(StrEnum):
@@ -50,11 +51,23 @@ class JevDataset:
             {split: rows.add_column("type", [self.type.value] * rows.num_rows) for split, rows in self.data.items()}
         )
 
+    def regroup(self):
+        """Moves every context group into one split, so no test context is trained on, and drops duplicate rows;
+        call after `prepare`."""
+        self.data, moved, dropped = disjoint_contexts(self.data)
+        if moved:
+            logger.info(f"[{self.name}] moved " + ", ".join(f"{a}->{b}: {n}" for (a, b), n in sorted(moved.items())))
+        if dropped:
+            logger.info(
+                f"[{self.name}] dropped duplicates " + ", ".join(f"{s}: {n}" for s, n in sorted(dropped.items()))
+            )
+
     def limit(self, max_samples: int = MAX_SAMPLES):
         """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
         self.data = DatasetDict({split: stratified_limit(rows, max_samples) for split, rows in self.data.items()})
 
     def save(self):
+        self.regroup()
         self.add_type()
         self.limit()
         self.data.save_to_disk(ROOT_DIR / self.name)

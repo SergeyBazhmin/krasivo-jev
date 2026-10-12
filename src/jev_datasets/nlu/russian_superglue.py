@@ -7,7 +7,6 @@ from datasets import Dataset, DatasetDict, DownloadManager
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     explode,
     make_options,
     make_sample,
@@ -177,7 +176,6 @@ class RussianSuperGlueDataset(JevDataset):
         self.data = self.data.map(
             explode(self.convert), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        self.data = disjoint_contexts(self.data)
 
 
 danetqa_dataset = RussianSuperGlueDataset(name="danetqa", task="DaNetQA", convert=danetqa_samples)

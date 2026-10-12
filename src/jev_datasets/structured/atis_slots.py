@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, disjoint_contexts, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
 
 QUESTIONS = [
     "Which phrase in the request gives {slot}?",
@@ -88,8 +88,6 @@ class ATISSlotsDataset(JevDataset):
         self.data = self.data.map(
             explode(slot_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        # some requests are in both train and test
-        self.data = disjoint_contexts(self.data)
 
 
 atis_slots_dataset = ATISSlotsDataset(name="atis_slots", hf_path="tuetschek/atis")

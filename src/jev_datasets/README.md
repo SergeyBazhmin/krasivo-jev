@@ -25,19 +25,23 @@ uv run jev prepare sst2 anli                                 # some of them, int
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
 ```
 
-`prepare` loads the source from the Hub, converts it, stamps `type` on every row, caps every split at
-`--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
+`prepare` loads the source from the Hub, converts it, regroups the splits (below), stamps `type` on every row, caps
+every split at `--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
 `OUTPUT_DIR/<name>`. Read it back with `datasets.load_from_disk`.
 
-Splits are kept as the source has them; `jev_model.data.partition` carves a missing validation or test split from
-train by a content hash, so every model is scored on the same rows.
+Splits are kept as the source has them, except that rows sharing a context are grouped, and each group is moved whole
+into the first split it appears in, held-out splits first (test, validation, train). The group is the row's `group`
+column when the converter emits one (a source document that yields several states), else a hash of `state`, or of
+`question` when there is no state. No context is in two splits. Exact duplicate rows are dropped, keeping the held-out
+copy, and no other row is lost. `jev_model.data.partition` carves a missing validation or test split
+from train by a content hash, so every model is scored on the same rows.
 
 ## Files
 
 - `base.py`: `JevDataset(name, hf_path, hf_name)` loads the source lazily into `.data`; a subclass sets `type` and
   implements `prepare()`, and overrides `load()` when the source needs special loading.
 - `utils.py`: `make_sample`, `make_options`, `pick_question`, `stable_shuffle`, `explode`, `slugify`,
-  `with_context`, `disjoint_contexts`, `stratified_limit`.
+  `with_context`, `GROUPED_FEATURES`, `disjoint_contexts`, `stratified_limit`.
 - `constants.py`: `MAX_SAMPLES` and `ROOT_DIR` (`data/` at the repo root).
 - `cli.py`: the `jev` CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`, alphabetical.

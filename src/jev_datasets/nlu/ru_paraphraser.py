@@ -3,7 +3,6 @@ from datasets import DatasetDict, load_dataset
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     make_options,
     make_sample,
     pick_question,
@@ -50,7 +49,6 @@ class RuParaPhraserDataset(JevDataset):
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )
-        self.data = disjoint_contexts(self.data)
 
 
 ru_paraphraser_dataset = RuParaPhraserDataset(name="ru_paraphraser", hf_path="merionum/ru_paraphraser")
