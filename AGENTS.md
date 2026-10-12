@@ -29,6 +29,10 @@ Defined in `src/jev_datasets/utils.py` (`SAMPLE_FEATURES`, `make_sample`):
 `type` is not produced by `prepare()`. `JevDataset.add_type()` stamps it on every row from the
 class attribute `type`, which each converter must set.
 
+When one source document yields several different states (passages, sentences, dialogue turns), `prepare()` also
+emits a `group` column (`GROUPED_FEATURES`) keying the document, so `regroup()` keeps it in one split. `regroup()`
+removes the column. `structured/source.py` (`grouped_records`, `map_records`) does this for raw-file sources.
+
 `make_sample(state, question, options, label)` takes either the `id` of the single correct
 option (it becomes a one-hot) or a soft distribution, for example annotator vote shares in
 `chaos_nli`.
@@ -70,8 +74,14 @@ uv run jev prepare sst2 anli                 # build specific datasets
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
 ```
 
-`prepare` loads from the Hub, runs `prepare()`, does a stratified cap on each split, and
-calls `save_to_disk(output_dir / name)`.
+`prepare` loads from the Hub and runs `prepare()`. It then calls `regroup()`, which groups rows by their `group` column
+if there is one, else by a hash of their context (`state or question`), and moves each group whole into the first
+split it appears in, held-out splits first (test, validation, train). A context is never in two splits. Exact duplicate
+rows are dropped, keeping the held-out copy; no other row is lost. Split names are first made canonical (`dev`/`val` ->
+`validation`, unknown -> `train`), and afterwards missing splits are carved by a hash of the group (`split_missing`):
+`HOLDOUT_PERCENT` (5%) of train each for a missing validation/test, or an 80/10/10 re-split of every row when the
+source has no train split. So every saved dataset has exactly `train`, `validation` and `test`. Converters don't need to
+handle this themselves. Finally it does a stratified cap on each split and calls `save_to_disk(output_dir / name)`.
 
 ## Adding a dataset
 
@@ -108,8 +118,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   overrides with dotted keys. Values parse as JSON, else string; `list` fields also take `a,b`. It also loads
   `.env` (git-ignored) into the environment, so secrets such as `TYPESAFE_API_KEY` never land in `config.json`.
   `configs/pointer.toml` is the example config, with every key commented.
-- `data.py`: `resolve_names` and `partition` (train/validation/test, carving missing splits by a
-  content hash). Every model splits through it, so test sets are the same rows.
+- `data.py`: `resolve_names` and `partition` (the saved train/validation/test splits; it fails on datasets built
+  before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,

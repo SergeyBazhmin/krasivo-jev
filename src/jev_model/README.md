@@ -51,9 +51,8 @@ string; `list` fields also take `a,b`. A `.env` at the repo root is loaded into 
 
 ## Data and metrics
 
-- `data.py`: `resolve_names` (every built dataset in `data/` when none are named) and `partition`, which maps
-  source splits to train/validation/test and carves missing ones from train by a content hash (5% each). Rows that
-  share a state land in the same partition.
+- `data.py`: `resolve_names` (every built dataset in `data/` when none are named) and `partition`, which reads the
+  train/validation/test splits `jev prepare` saved (carved and group-disjoint there).
 - `metrics.py`: `scores` over padded option logits: accuracy and macro precision/recall/F1 against the argmax of
   the label, soft NLL, and top-1 ECE. `with_macro` adds the unweighted mean over datasets; `fit_temperature`
   calibrates logits.

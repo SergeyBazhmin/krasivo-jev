@@ -29,12 +29,14 @@ uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
 every split at `--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
 `OUTPUT_DIR/<name>`. Read it back with `datasets.load_from_disk`.
 
-Splits are kept as the source has them, except that rows sharing a context are grouped, and each group is moved whole
-into the first split it appears in, held-out splits first (test, validation, train). The group is the row's `group`
-column when the converter emits one (a source document that yields several states), else a hash of `state`, or of
-`question` when there is no state. No context is in two splits. Exact duplicate rows are dropped, keeping the held-out
-copy, and no other row is lost. `jev_model.data.partition` carves a missing validation or test split
-from train by a content hash, so every model is scored on the same rows.
+Every saved dataset has exactly the splits `train`, `validation` and `test`. Source splits are renamed (`dev`/`val` to
+`validation`; unknown names such as halueval's `data` join `train`). Rows sharing a context are grouped, and each group
+is moved whole into the first split it appears in, held-out splits first (test, validation, train). The group is the
+row's `group` column when the converter emits one (a source document that yields several states), else a hash of
+`state`, or of `question` when there is no state. No context is in two splits. Exact duplicate rows are dropped,
+keeping the held-out copy, and no other row is lost. Splits the source lacks are then carved by a hash of the group:
+5% of train each for a missing validation or test, or, when there is no train split (e.g. `rublimp`), all rows are
+re-split 80/10/10. Carving happens before the cap, so every model is scored on the same rows.
 
 ## Files
 

@@ -4,7 +4,7 @@ from datasets import DatasetDict, load_dataset
 from loguru import logger
 
 from jev_datasets.constants import MAX_SAMPLES, ROOT_DIR
-from jev_datasets.utils import disjoint_contexts, stratified_limit
+from jev_datasets.utils import canonical_splits, disjoint_contexts, split_missing, stratified_limit
 
 
 class DatasetType(StrEnum):
@@ -52,15 +52,20 @@ class JevDataset:
         )
 
     def regroup(self):
-        """Moves every context group into one split, so no test context is trained on, and drops duplicate rows;
-        call after `prepare`."""
-        self.data, moved, dropped = disjoint_contexts(self.data)
+        """Renames splits to train/validation/test, moves every context group into one split, so no test context is
+        trained on, drops duplicate rows and carves the splits the source lacks; call after `prepare`."""
+        self.data, moved, dropped = disjoint_contexts(canonical_splits(self.data))
         if moved:
             logger.info(f"[{self.name}] moved " + ", ".join(f"{a}->{b}: {n}" for (a, b), n in sorted(moved.items())))
         if dropped:
             logger.info(
                 f"[{self.name}] dropped duplicates " + ", ".join(f"{s}: {n}" for s, n in sorted(dropped.items()))
             )
+        self.data, carved = split_missing(self.data)
+        if carved:
+            logger.info(f"[{self.name}] carved " + ", ".join(f"{a}->{b}: {n}" for (a, b), n in sorted(carved.items())))
+        if empty := [split for split, rows in self.data.items() if not rows.num_rows]:
+            logger.warning(f"[{self.name}] empty splits after carving: {', '.join(empty)}")
 
     def limit(self, max_samples: int = MAX_SAMPLES):
         """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
