@@ -26,7 +26,7 @@ from jev_datasets.logic.folio import folio_dataset
 from jev_datasets.logic.logicnli import logicnli_dataset
 from jev_datasets.logic.proofwriter import proofwriter_dataset
 from jev_datasets.logic.proverqa import proverqa_dataset
-from jev_datasets.logic.rule_collection import ar_lsat_dataset, prontoqa_dataset
+from jev_datasets.logic.rule_collection import ar_lsat_dataset
 from jev_datasets.nlu.anli import anli_dataset
 from jev_datasets.nlu.babi_nli import babi_nli_dataset
 from jev_datasets.nlu.boolq import boolq_dataset
@@ -47,14 +47,6 @@ from jev_datasets.nlu.russian_superglue import (
     terra_dataset,
 )
 from jev_datasets.reasoning.logiqa import logiqa_dataset
-from jev_datasets.reasoning.mera import (
-    mera_bps_dataset,
-    mera_lcs_dataset,
-    mera_mathlogicqa_dataset,
-    mera_rumodar_dataset,
-    mera_rumultiar_dataset,
-    mera_simplear_dataset,
-)
 from jev_datasets.reasoning.reclor import reclor_dataset
 from jev_datasets.retrieval.nomiracl import nomiracl_en_dataset, nomiracl_ru_dataset
 from jev_datasets.retrieval.wikiqa import wikiqa_dataset
@@ -67,17 +59,13 @@ from jev_datasets.sentiment.tweet_sentiment import tweet_sentiment_dataset
 from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
-from jev_datasets.structured.catalog import catalog_dataset, catalog_ru_dataset
 from jev_datasets.structured.cuad import cuad_spans_dataset
-from jev_datasets.structured.dialogsum import dialogsum_turns_dataset
 from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_state_dataset
-from jev_datasets.structured.e2e import e2e_slots_dataset
 from jev_datasets.structured.massive_slots import massive_slots_dataset, massive_slots_ru_dataset
 from jev_datasets.structured.nerel import nerel_relations_dataset
 from jev_datasets.structured.skillspan import skillspan_dataset
 from jev_datasets.structured.totto import totto_cells_dataset
 from jev_datasets.structured.webnlg import webnlg_en_dataset, webnlg_ru_dataset
-from jev_datasets.structured.wikisql import wikisql_queries_dataset, wikisql_queries_ru_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
@@ -104,8 +92,6 @@ datasets = {
         bitext_retail_banking_dataset,
         bitext_telco_dataset,
         boolq_dataset,
-        catalog_dataset,
-        catalog_ru_dataset,
         cedr_dataset,
         chaos_nli_dataset,
         clinc_oos_dataset,
@@ -113,8 +99,6 @@ datasets = {
         cuad_spans_dataset,
         danetqa_dataset,
         dbpedia_dataset,
-        dialogsum_turns_dataset,
-        e2e_slots_dataset,
         emotion_dataset,
         financial_news_topic_dataset,
         folio_dataset,
@@ -133,13 +117,7 @@ datasets = {
         massive_intent_ru_dataset,
         massive_slots_dataset,
         massive_slots_ru_dataset,
-        mera_bps_dataset,
-        mera_lcs_dataset,
-        mera_mathlogicqa_dataset,
         mera_multiq_dataset,
-        mera_rumodar_dataset,
-        mera_rumultiar_dataset,
-        mera_simplear_dataset,
         multi_nli_dataset,
         multi_nli_genre_dataset,
         multiwoz_state_dataset,
@@ -148,7 +126,6 @@ datasets = {
         nomiracl_en_dataset,
         nomiracl_ru_dataset,
         paws_dataset,
-        prontoqa_dataset,
         proofwriter_dataset,
         proverqa_dataset,
         race_dataset,
@@ -182,7 +159,5 @@ datasets = {
         webnlg_en_dataset,
         webnlg_ru_dataset,
         wikiqa_dataset,
-        wikisql_queries_dataset,
-        wikisql_queries_ru_dataset,
     )
 }

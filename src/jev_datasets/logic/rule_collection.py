@@ -4,31 +4,12 @@ from collections.abc import Callable
 from datasets import Dataset, DatasetDict, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, with_context
+from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 # RuleCollection bundles several logic sets as RL prompts. Only the ones not taken from their
 # own source elsewhere are used; the rest (LogicNLI, ProofWriter, FOLIO, CLUTRR, LogiQA,
 # BBH Logical Deduction) would duplicate those.
 ANSWER = re.compile(r"<answer>(.*)</answer>")
-
-PRONTOQA_PROMPT = re.compile(
-    r"Rules: (.*)\nFacts: (.*)\nQuestion: (.*?)\? Please answer the question based on the given rule and facts",
-    re.DOTALL,
-)
-PRONTOQA_QUESTIONS = [
-    "Given the rules and facts, is the statement true or false?",
-    "Does the statement follow from the rules and facts?",
-    "Based only on the rules and facts, is the statement true?",
-    "Can the statement be proven true from the rules and facts, or is it false?",
-    "Taking the rules and facts as given, is the statement true or false?",
-]
-PRONTOQA_ABOUT = (
-    'You are given rules such as "Every wumpus is a brimpus" and facts about one individual. The concept names are '
-    "made up and mean nothing beyond what the rules say. Decide whether the statement is true by chaining the rules "
-    "from the facts."
-)
-# the prompt offers "Unknown" too, but no ProntoQA answer is ever Unknown
-PRONTOQA_OPTIONS = make_options(["True", "False"])
 
 AR_LSAT_ABOUT = (
     'You are solving an analytical reasoning puzzle (a "logic game") like those on law school admission tests. The '
@@ -37,16 +18,6 @@ AR_LSAT_ABOUT = (
 )
 AR_LSAT_PROMPT = re.compile(r"Context: (.*)\nQuestion: (.*)\nOptions: (.*?) Please answer the question", re.DOTALL)
 LETTER = re.compile(r"(?:^|\s)([A-E])\)\s")
-
-
-def make_prontoqa_sample(prompt: str, answer: str):
-    rules, facts, statement = PRONTOQA_PROMPT.match(prompt).groups()
-    return make_sample(
-        with_context(PRONTOQA_ABOUT, f"Rules: {rules}\nFacts: {facts}."),
-        f"Statement: {statement}.\n{pick_question(PRONTOQA_QUESTIONS, prompt)}",
-        PRONTOQA_OPTIONS,
-        answer,
-    )
 
 
 def make_ar_lsat_sample(prompt: str, answer: str):
@@ -95,7 +66,5 @@ class RuleCollectionDataset(JevDataset):
         )
 
 
-# the compositional ProntoQA variant, with made-up concept names ("wumpus", "brimpus")
-prontoqa_dataset = RuleCollectionDataset(name="prontoqa", source="ProntoQA", make=make_prontoqa_sample)
 # LSAT analytical reasoning ("logic games"): scheduling and assignment under stated constraints
 ar_lsat_dataset = RuleCollectionDataset(name="ar_lsat", source="AR-LSAT", make=make_ar_lsat_sample)
