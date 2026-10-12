@@ -65,7 +65,7 @@ from jev_datasets.structured.massive_slots import massive_slots_dataset, massive
 from jev_datasets.structured.nerel import nerel_relations_dataset
 from jev_datasets.structured.skillspan import skillspan_dataset
 from jev_datasets.structured.totto import totto_cells_dataset
-from jev_datasets.structured.webnlg import webnlg_en_dataset, webnlg_ru_dataset
+from jev_datasets.structured.webnlg import webnlg_en_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
@@ -157,7 +157,6 @@ datasets = {
         tweet_sentiment_dataset,
         vscode_triage_dataset,
         webnlg_en_dataset,
-        webnlg_ru_dataset,
         wikiqa_dataset,
     )
 }

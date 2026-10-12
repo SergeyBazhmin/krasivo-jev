@@ -117,7 +117,6 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `skillspan`                   | choice   | official SkillSpan job-posting excerpts and BIO spans |
 |                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
-|                  | `webnlg_ru`                   | choice   | `GEM/web_nlg` (`ru`, controlled renderings of supplied facts) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
@@ -159,11 +158,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
   unambiguous first header row and no merged cells are kept. Distractors come from the same column. Original
   summaries and highlights are excluded; labels are computed from cells, including public test tables. Shared
   tables are removed from training regardless of different original highlight selections.
-- `webnlg_*`: compare a specified relation's value against descriptions with that value replaced; the rest of the
-  sentence is not judged. English uses original lexicalizations with literal subject/object matches. Russian uses
-  explicitly synthetic renderings of facts with untranslated entity strings, because the original Russian text
-  translates names without providing their alignment. Replacements exclude every accepted object for the same
-  subject/relation. Alternatives are taken from that relation and a train-only bank; numeric alternatives are
+- `webnlg_en`: compare a specified relation's value against descriptions with that value replaced; the rest of the
+  sentence is not judged. Original lexicalizations are used with literal subject/object matches. The Russian
+  release is not used: it translates names without providing their alignment. Replacements exclude every accepted
+  object for the same subject/relation. Alternatives are taken from that relation and a train-only bank; numeric alternatives are
   numeric. All references to a fact set share a split.
 - `skillspan`: use literal BIO spans from both skill/knowledge layers to choose a phrase explicitly present in a
   job-posting excerpt. This does not predict ESCO codes, implied requirements or hard/soft taxonomy labels.
@@ -184,7 +182,7 @@ Conversion does not replace the original source terms.
 
 ```bash
 uv run jev prepare massive_slots massive_slots_ru sgd_state multiwoz_state nerel_relations \
-  totto_cells webnlg_en webnlg_ru --max-samples 10000
+  totto_cells webnlg_en --max-samples 10000
 uv run jev prepare skillspan cuad_spans --max-samples 10000
 ```
 

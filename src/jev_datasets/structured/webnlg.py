@@ -19,13 +19,6 @@ QUESTIONS = [
     "Which description uses the correct {relation} value for {subject}?",
     "Select the version matching the recorded {relation} of {subject}.",
 ]
-QUESTIONS_RU = [
-    "В каком описании сохранено значение поля «{relation}» для «{subject}»?",
-    "Выберите вариант с указанным значением поля «{relation}» для «{subject}».",
-    "Какой вариант передаёт приведённое значение поля «{relation}» для «{subject}»?",
-    "В каком описании верно указано поле «{relation}» для «{subject}»?",
-    "Какой вариант соответствует записи «{subject} — {relation}»?",
-]
 
 
 def readable(value: str) -> str:
@@ -44,27 +37,14 @@ def mentions(text: str, value: str) -> list[re.Match]:
     return list(re.finditer(r"(?<!\w)" + re.escape(value) + r"(?!\w)", text, flags=re.IGNORECASE))
 
 
-def webnlg_samples(row: dict, pools: dict[str, list[str]], russian: bool) -> list[dict]:
+def webnlg_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
     payload = json.loads(row["payload"])
     facts = [tuple(readable(value) for value in fact.split(" | ")) for fact in payload["facts"]]
     if not facts or any(len(fact) != 3 for fact in facts):
         return []
-    # Russian references translate names without providing an alignment (Aarhus -> Орхус).
-    # Controlled Russian renderings preserve the supplied entity strings and require no such outside knowledge.
-    references = (
-        [
-            f"Для «{subject}» поле «{re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', relation).lower()}» имеет значение «{value}»."
-            for subject, relation, value in facts
-        ]
-        if russian
-        else payload["references"]
-    )
     samples = []
-    for reference in stable_shuffle(references, row["group"]):
+    for reference in stable_shuffle(payload["references"], row["group"]):
         for subject, relation, answer in stable_shuffle(facts, reference):
-            relation_text = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", relation).lower()
-            if russian and f"поле «{relation_text}»" not in reference:
-                continue
             subject_mentions = mentions(reference, subject)
             # Only mutate an explicit object occurrence outside the subject name (e.g. Aarhus Airport / Aarhus).
             object_mentions = [
@@ -97,16 +77,12 @@ def webnlg_samples(row: dict, pools: dict[str, list[str]], russian: bool) -> lis
             ]
             lines = [f"{sub} — {re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', rel).lower()} — {obj}" for sub, rel, obj in facts]
             about = (
-                "Ниже приведены факты в формате «объект — отношение — значение». "
-                "Сравните только значение поля из вопроса. Остальные части описаний не оцениваются. "
-                "Используйте только приведённые факты."
-                if russian
-                else "Facts are written as 'subject — relation — value'. "
+                "Facts are written as 'subject — relation — value'. "
                 "Compare only the value of the relation asked about; other parts of the descriptions are not assessed. "
                 "Use only the supplied information."
             )
             state = about + "\n\n" + "\n".join(lines)
-            question = pick_question(QUESTIONS_RU if russian else QUESTIONS, seed).format(
+            question = pick_question(QUESTIONS, seed).format(
                 subject=subject, relation=re.sub(r"(?<=[a-z])(?=[A-Z])", " ", relation).lower()
             )
             if sample := text_choice(state, question, reference, distractors, seed):
@@ -138,7 +114,7 @@ class WebNLGDataset(JevDataset):
             relation: stable_shuffle(sorted(values), f"webnlg:{relation}")[:128] for relation, values in pools.items()
         }
         self.data = self.data.map(
-            explode(lambda row: webnlg_samples(row, pools, self.hf_name == "ru")),
+            explode(lambda row: webnlg_samples(row, pools)),
             batched=True,
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
@@ -146,4 +122,3 @@ class WebNLGDataset(JevDataset):
 
 
 webnlg_en_dataset = WebNLGDataset(name="webnlg_en", hf_path="GEM/web_nlg", hf_name="en")
-webnlg_ru_dataset = WebNLGDataset(name="webnlg_ru", hf_path="GEM/web_nlg", hf_name="ru")
