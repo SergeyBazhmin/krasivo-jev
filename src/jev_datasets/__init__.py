@@ -69,7 +69,7 @@ from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_s
 from jev_datasets.structured.massive_slots import massive_slots_dataset, massive_slots_ru_dataset
 from jev_datasets.structured.nerel import nerel_relations_dataset
 from jev_datasets.structured.skillspan import skillspan_dataset
-from jev_datasets.structured.totto import totto_cells_dataset
+from jev_datasets.structured.totto import totto_cells_dataset, totto_statements_dataset
 from jev_datasets.structured.webnlg import webnlg_en_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
@@ -158,6 +158,7 @@ datasets = {
         ticket_subject_dataset,
         ticket_type_dataset,
         totto_cells_dataset,
+        totto_statements_dataset,
         toxic_chat_dataset,
         tweet_hate_dataset,
         tweet_offensive_dataset,

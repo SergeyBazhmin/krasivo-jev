@@ -118,6 +118,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `sgd_state`                   | choice   | official Schema-Guided Dialogue dialogues and schemas |
 |                  | `skillspan`                   | choice   | official SkillSpan job-posting excerpts and BIO spans |
 |                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
+|                  | `totto_statements`            | choice   | official ToTTo tables and annotator sentences (other tables as distractors) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
@@ -167,6 +168,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
   unambiguous first header row and no merged cells are kept. Distractors come from the same column. Original
   summaries and highlights are excluded; labels are computed from cells, including public test tables. Shared
   tables are removed from training regardless of different original highlight selections.
+- `totto_statements`: pick the annotators' final sentence about a table among sentences written for other tables of
+  the same split, preferring tables with the same headers so the cell values decide. Sentences about the same table
+  or Wikipedia page are never distractors. Page and section titles are in the state; tables are filtered as in
+  `totto_cells` and assigned the same splits. The unlabeled test split is not used.
 - `webnlg_en`: compare a specified relation's value against descriptions with that value replaced; the rest of the
   sentence is not judged. Original lexicalizations are used with literal subject/object matches. The Russian
   release is not used: it translates names without providing their alignment. Replacements exclude every accepted
