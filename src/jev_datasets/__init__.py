@@ -15,8 +15,12 @@ from jev_datasets.classification.dbpedia import dbpedia_dataset
 from jev_datasets.classification.hwu64 import hwu64_dataset
 from jev_datasets.classification.massive_intent import massive_intent_dataset
 from jev_datasets.classification.massive_intent_ru import massive_intent_ru_dataset
-from jev_datasets.classification.ticket_routing import ticket_routing_dataset, ticket_type_dataset
-from jev_datasets.guardrails.aegis_safety import aegis_safety_dataset
+from jev_datasets.classification.ticket_routing import (
+    ticket_routing_dataset,
+    ticket_subject_dataset,
+    ticket_type_dataset,
+)
+from jev_datasets.guardrails.aegis_category import aegis_category_dataset
 from jev_datasets.guardrails.jailbreak_classification import jailbreak_classification_dataset
 from jev_datasets.guardrails.safeguard_prompt_injection import safeguard_prompt_injection_dataset
 from jev_datasets.guardrails.spml_prompt_injection import spml_prompt_injection_dataset
@@ -59,6 +63,7 @@ from jev_datasets.sentiment.tweet_sentiment import tweet_sentiment_dataset
 from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
+from jev_datasets.structured.atis_slots import atis_slots_dataset
 from jev_datasets.structured.cuad import cuad_spans_dataset
 from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_state_dataset
 from jev_datasets.structured.massive_slots import massive_slots_dataset, massive_slots_ru_dataset
@@ -79,11 +84,12 @@ from jev_datasets.truthfulness.halueval import (
 datasets = {
     dataset.name: dataset
     for dataset in (
-        aegis_safety_dataset,
+        aegis_category_dataset,
         ag_news_dataset,
         anli_dataset,
         ar_lsat_dataset,
         atis_dataset,
+        atis_slots_dataset,
         babi_nli_dataset,
         banking77_dataset,
         beavertails_dataset,
@@ -149,6 +155,7 @@ datasets = {
         stepgame_dataset,
         terra_dataset,
         ticket_routing_dataset,
+        ticket_subject_dataset,
         ticket_type_dataset,
         totto_cells_dataset,
         toxic_chat_dataset,

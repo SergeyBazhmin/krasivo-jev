@@ -1,5 +1,19 @@
+import hashlib
+import random
+from collections import Counter, defaultdict
+
+from datasets import Dataset, DatasetDict, load_dataset
+
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, pick_question, slugify, with_context
+from jev_datasets.utils import (
+    SAMPLE_FEATURES,
+    make_options,
+    make_sample,
+    pick_question,
+    slugify,
+    stable_shuffle,
+    with_context,
+)
 
 HF_PATH = "Tobi-Bueck/customer-support-tickets"
 
@@ -29,9 +43,40 @@ TYPE_ANSWERS = {
     "Problem": "an underlying issue that causes repeated incidents",
     "Change": "a planned change or update",
 }
+SUBJECT_ABOUT = (
+    "You work at a company's helpdesk. You are given the subject line of a support email, and each option is the body "
+    "of a customer's email. Pick the email the subject was written for: its body covers what the subject names. "
+    "Choose 'None of these emails' if none of them fits the subject."
+)
+SUBJECT_QUESTIONS = [
+    "Which email body goes with this subject?",
+    "Which email was sent under this subject line?",
+    "Select the email this subject belongs to.",
+    "Which message does this subject line describe?",
+    "Which customer email has this subject?",
+]
 
 
-class TicketDataset(JevDataset):
+def ticket_split(body: str) -> str:
+    bucket = int.from_bytes(hashlib.sha1(body.encode()).digest()[:8], "big") % 10
+    return "test" if bucket == 0 else "validation" if bucket == 1 else "train"
+
+
+class TicketSource(JevDataset):
+    """The helpdesk tickets, split once by body, so every ticket dataset puts a ticket in the same partition."""
+
+    def load(self) -> DatasetDict:
+        rows = load_dataset(self.hf_path)["train"]
+        splits = [ticket_split(body or "") for body in rows["body"]]
+        return DatasetDict(
+            {
+                split: rows.select([i for i, s in enumerate(splits) if s == split])
+                for split in ("train", "validation", "test")
+            }
+        )
+
+
+class TicketDataset(TicketSource):
     type = DatasetType.CHOICE
 
     """One label column of the helpdesk tickets, predicted from subject and body."""
@@ -78,3 +123,60 @@ ticket_type_dataset = TicketDataset(
         "Which ticket type fits this request?",
     ],
 )
+
+
+class TicketSubjectDataset(TicketSource):
+    """Retrieval: the email body that goes with a subject line, among bodies of other tickets in the same queue."""
+
+    type = DatasetType.CHOICE
+
+    def prepare(self):
+        everything = [row for rows in self.data.values() for row in rows]
+        bodies = Counter(row["body"] for row in everything)
+        subjects = Counter((row["subject"] or "").strip().casefold() for row in everything)
+
+        def usable(row: dict) -> bool:
+            # Generic subjects ("Billing Issue") repeat and fit many bodies, so only distinctive ones are queries.
+            subject = (row["subject"] or "").strip()
+            return (
+                bool((row["body"] or "").strip())
+                and len(subject.split()) >= 3
+                and subjects[subject.casefold()] == 1
+                and bodies[row["body"]] == 1
+            )
+
+        self.data = DatasetDict({split: self.split(list(filter(usable, rows))) for split, rows in self.data.items()})
+
+    @staticmethod
+    def split(rows: list[dict]) -> Dataset:
+        # Distractors come from the same split, so held-out emails never appear in training samples.
+        by_queue, by_language = defaultdict(list), defaultdict(list)
+        for row in rows:
+            by_queue[row["language"], row["queue"]].append(row)
+            by_language[row["language"]].append(row)
+        samples = []
+        for row in rows:
+            subject = row["subject"].strip()
+            rng = random.Random(f"subject:{subject}")
+            # One subject in five loses its email, so a match among the options is never a given.
+            with_gold = rng.random() >= 0.2
+            wanted = 3 if with_gold else 4
+            distractors = []
+            # Same-queue bodies first: they share the topic, so the subject's specifics have to decide.
+            for pool in (by_queue[row["language"], row["queue"]], by_language[row["language"]]):
+                for other in rng.sample(pool, min(len(pool), wanted * 3)):
+                    if other is not row and other["body"] not in distractors and len(distractors) < wanted:
+                        distractors.append(other["body"])
+            if len(distractors) < wanted:
+                continue
+            texts = stable_shuffle(([row["body"]] if with_gold else []) + distractors, subject)
+            ids = list("ABCD")
+            options = make_options(ids, texts) + make_options(["none"], ["None of these emails"])
+            label = ids[texts.index(row["body"])] if with_gold else "none"
+            state = with_context(SUBJECT_ABOUT, subject, "Subject")
+            question = pick_question(SUBJECT_QUESTIONS, subject)
+            samples.append(make_sample(state, question, stable_shuffle(options, f"options:{subject}"), label))
+        return Dataset.from_list(samples, features=SAMPLE_FEATURES)
+
+
+ticket_subject_dataset = TicketSubjectDataset(name="ticket_subject", hf_path=HF_PATH)

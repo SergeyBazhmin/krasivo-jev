@@ -63,7 +63,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `massive_intent_ru`           | choice   | `mteb/MassiveIntentClassification` (`ru`) |
 |                  | `ticket_routing`              | choice   | `Tobi-Bueck/customer-support-tickets` |
 |                  | `ticket_type`                 | choice   | `Tobi-Bueck/customer-support-tickets` |
-| `guardrails`     | `aegis_safety`                | noul     | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` |
+| `guardrails`     | `aegis_category`              | choice   | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` (unsafe prompts, soft labels) |
 |                  | `jailbreak_classification`    | noul     | `jackhhao/jailbreak-classification` |
 |                  | `safeguard_prompt_injection`  | noul     | `xTRam1/safe-guard-prompt-injection` |
 |                  | `spml_prompt_injection`       | noul     | `reshabhs/SPML_Chatbot_Prompt_Injection` |
@@ -97,6 +97,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
 | `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
 |                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+|                  | `ticket_subject`              | choice   | `Tobi-Bueck/customer-support-tickets` (subject → email body) |
 |                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
@@ -108,7 +109,8 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `spartqa_mchoice`             | choice   | `tasksource/spartqa-mchoice` |
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
-| `structured`     | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
+| `structured`     | `atis_slots`                  | choice   | `tuetschek/atis` (slot spans, distractors from the same request) |
+|                  | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
 |                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
 |                  | `massive_slots_ru`            | choice   | `AmazonScience/massive` (`ru-RU`, original slot annotations) |
 |                  | `multiwoz_state`              | choice   | official MultiWOZ 2.2 dialogues and schema |
@@ -130,6 +132,9 @@ Many logic and spatial sources bundle the same underlying sets (SpaRP includes S
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into
 another dataset's train split.
 
+`ticket_routing`, `ticket_type` and `ticket_subject` split the helpdesk tickets once, by a hash of the email body, so a
+ticket lands in the same partition in all three.
+
 Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
@@ -145,6 +150,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
 - `massive_slots*`: extract one of 27 concrete slot types from the command, validating annotation markup against
   the original text. Alternative values of the same slot are sampled from train only; all accepted mentions are
   excluded. The original partitions are retained and repeated commands are removed across splits.
+- `atis_slots`: pick the words of an ATIS request that fill a concrete slot (departure/destination city, dates,
+  times, airline, class, ...). Distractors are the request's other annotated spans, so the slot's role decides the
+  answer rather than string matching. Modifiers, undirected cities and ontology codes are excluded, as are slots
+  filled with two different values. Requests shared by train and test stay in test.
 - `sgd_state`, `multiwoz_state`: track changed user belief values using dialogue prefixes and natural-language
   schema descriptions. Hidden service results, goal descriptions and gold belief states are never input.
   Values without visible evidence, unspecified/preference-free values and boolean availability slots are skipped.

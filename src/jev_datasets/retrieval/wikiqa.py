@@ -13,7 +13,7 @@ QUESTIONS = [
     "In which passage can the query be answered?",
 ]
 ABOUT = (
-    "Select an answer-bearing passage using only the supplied text. "
+    "Each option is a passage. Select the passage that answers the query, using only the supplied text. "
     "Choose 'None of these passages' if none answers the query."
 )
 
@@ -37,12 +37,11 @@ def wikiqa_samples(row: dict) -> list[dict]:
         return []
     selected = stable_shuffle(selected, seed)
     ids = list("ABCD")[: len(selected)]
-    passages = "\n\n".join(f"Passage {key}:\n{text}" for key, (text, _) in zip(ids, selected))
-    # Assign positional ids after shuffling, so the gold id is not always A.
-    options = make_options(ids, [f"Passage {key}" for key in ids])
+    # The passages are the options themselves, so the state holds only the query.
+    options = make_options(ids, [text for text, _ in selected])
     options += make_options(["none"], ["None of these passages"])
     label = next((key for key, (_, relevant) in zip(ids, selected) if relevant), "none")
-    state = f"{ABOUT}\n\nQuery: {row['query']}\n\n{passages}"
+    state = f"{ABOUT}\n\nQuery: {row['query']}"
     return [make_sample(state, pick_question(QUESTIONS, seed), stable_shuffle(options, seed), label)]
 
 
