@@ -9,3 +9,6 @@ MAX_SAMPLES = 10_000
 HOLDOUT_PERCENT = 5
 # share of all rows put in each held-out split when the source has no train split at all
 EVAL_ONLY_HOLDOUT_PERCENT = 10
+
+# wrong candidates per choice sample, at most; the correct one comes on top
+MAX_DISTRACTORS = 20

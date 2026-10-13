@@ -8,6 +8,7 @@ from pathlib import Path
 from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
 from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
@@ -73,7 +74,7 @@ def webnlg_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
             seed = row["group"] + reference + relation
             distractors = [
                 reference[: match.start()] + value + reference[match.end() :]
-                for value in stable_shuffle(candidates, seed)[:8]
+                for value in stable_shuffle(candidates, seed)[: 2 * MAX_DISTRACTORS]
             ]
             lines = [f"{sub} — {re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', rel).lower()} — {obj}" for sub, rel, obj in facts]
             about = (

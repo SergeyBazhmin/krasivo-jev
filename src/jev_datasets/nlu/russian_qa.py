@@ -1,9 +1,11 @@
 import re
 from itertools import pairwise
+from string import ascii_uppercase
 
 from datasets import DatasetDict, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
     explode,
@@ -57,11 +59,11 @@ def evidence_samples(context: str, question: str, spans: list[tuple[int, str]]) 
         )
     )
     seed = context + question
-    distractors = stable_shuffle(distractors, seed)[:3]
+    distractors = stable_shuffle(distractors, seed)[:MAX_DISTRACTORS]
     if not distractors:
         return []
     texts = [supported[0], *distractors]
-    options = stable_shuffle(make_options(list("ABCD")[: len(texts)], texts), seed)
+    options = stable_shuffle(make_options(list(ascii_uppercase[: len(texts)]), texts), seed)
     state = with_context(ABOUT, context, "Текст")
     prompt = f"Вопрос: {question}\n{pick_question(QUESTIONS, seed)}"
     return [make_sample(state, prompt, options, "A")]

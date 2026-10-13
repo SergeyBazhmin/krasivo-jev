@@ -2,10 +2,12 @@ import csv
 import json
 from collections import defaultdict
 from pathlib import Path
+from string import ascii_uppercase
 
 from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.utils import GROUPED_FEATURES, explode, make_options, make_sample, pick_question, stable_shuffle
 
 QUESTIONS = {
@@ -116,11 +118,11 @@ def nomiracl_choice_samples(row: dict, language: str) -> list[dict]:
     seed = row["query"] + "\n" + "\n".join(sorted(labels))
     # Other relevant passages are omitted, never turned into distractors.
     selected = [(text, True) for text in stable_shuffle(positive, seed)[:1]]
-    selected += [(text, False) for text in stable_shuffle(negative, seed)[: 4 - len(selected)]]
+    selected += [(text, False) for text in stable_shuffle(negative, seed)[:MAX_DISTRACTORS]]
     if len(selected) < 2:
         return []
     selected = stable_shuffle(selected, seed)
-    ids = list("ABCD")[: len(selected)]
+    ids = list(ascii_uppercase[: len(selected)])
     options = make_options(ids, [text for text, _ in selected])
     options += make_options(["none"], [NONE_TEXT[language]])
     label = next((key for key, (_, relevant) in zip(ids, selected) if relevant), "none")

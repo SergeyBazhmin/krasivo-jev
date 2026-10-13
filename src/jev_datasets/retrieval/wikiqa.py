@@ -1,8 +1,10 @@
 from collections import defaultdict
+from string import ascii_uppercase
 
 from datasets import Dataset, DatasetDict
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question, stable_shuffle
 
 QUESTIONS = [
@@ -32,11 +34,11 @@ def wikiqa_samples(row: dict) -> list[dict]:
     seed = row["query"] + "\n" + "\n".join(sorted(labels))
     # Other annotated positives are omitted, never turned into distractors.
     selected = [(text, True) for text in stable_shuffle(positive, seed)[:1]]
-    selected += [(text, False) for text in stable_shuffle(negative, seed)[: 4 - len(selected)]]
+    selected += [(text, False) for text in stable_shuffle(negative, seed)[:MAX_DISTRACTORS]]
     if len(selected) < 2:
         return []
     selected = stable_shuffle(selected, seed)
-    ids = list("ABCD")[: len(selected)]
+    ids = list(ascii_uppercase[: len(selected)])
     # The passages are the options themselves, so the state holds only the query.
     options = make_options(ids, [text for text, _ in selected])
     options += make_options(["none"], ["None of these passages"])

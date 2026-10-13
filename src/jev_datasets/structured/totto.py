@@ -8,6 +8,7 @@ from collections.abc import Iterator
 from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
 from jev_datasets.utils import GROUPED_FEATURES, pick_question, stable_shuffle, text_choice
 
@@ -141,8 +142,12 @@ def statement_samples(rows: list[dict]) -> Dataset:
         rng = random.Random(f"statements:{seed}")
         distractors = []
         for pool in (by_shape[row["shape"]], rows):
-            for other in rng.sample(pool, min(len(pool), 12)):
-                if other["group"] != row["group"] and other["page"] != row["page"] and len(distractors) < 3:
+            for other in rng.sample(pool, min(len(pool), 4 * MAX_DISTRACTORS)):
+                if (
+                    other["group"] != row["group"]
+                    and other["page"] != row["page"]
+                    and len(distractors) < MAX_DISTRACTORS
+                ):
                     distractors.append(other["sentence"])
         question = pick_question(STATEMENT_QUESTIONS, seed)
         if sample := text_choice(row["state"], question, row["sentence"], distractors, seed):

@@ -4,11 +4,12 @@ import random
 import re
 from collections import Counter
 from collections.abc import Callable
+from string import ascii_uppercase
 
 import numpy as np
 from datasets import Dataset, DatasetDict, Features, Value, concatenate_datasets
 
-from jev_datasets.constants import EVAL_ONLY_HOLDOUT_PERCENT, HOLDOUT_PERCENT
+from jev_datasets.constants import EVAL_ONLY_HOLDOUT_PERCENT, HOLDOUT_PERCENT, MAX_DISTRACTORS
 
 # Pinned explicitly: without it `map` inherits a source column's type for same-named
 # output columns (e.g. a ClassLabel `label` rejects what we write into it).
@@ -95,12 +96,12 @@ def text_choice(state: str, question: str, answer: str, distractors: list[str], 
         if key and key not in seen:
             texts.append(text)
             seen.add(key)
-        if len(texts) == 4:
+        if len(texts) > MAX_DISTRACTORS:
             break
     if len(texts) < 2:
         return None
     texts = stable_shuffle(texts, f"options:{seed}")
-    ids = list("ABCD")[: len(texts)]
+    ids = list(ascii_uppercase[: len(texts)])
     return make_sample(state, question, make_options(ids, texts), ids[texts.index(answer)])
 
 
