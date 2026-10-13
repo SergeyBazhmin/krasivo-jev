@@ -8,7 +8,7 @@ from jev_datasets.utils import canonical_splits, disjoint_contexts, split_missin
 
 
 class DatasetType(StrEnum):
-    NOUL = "noul"  # the only options are "yes" and "no"
+    NOUL = "noul"  # the only options are "yes" and "no" ("да" and "нет" in Russian)
     CHOICE = "choice"  # any other option set
 
 

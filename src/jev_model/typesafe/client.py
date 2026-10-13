@@ -22,6 +22,9 @@ from jev_model.typesafe.config import TypesafeConfig
 
 # the name the single question goes under; the answer comes back keyed by it
 NAME = "answer"
+# option texts of a `noul` sample, in English or Russian
+YES = ("yes", "да")
+NOUL_OPTIONS = (["no", "yes"], ["да", "нет"])
 
 
 def labels(options: list[str]) -> list[str]:
@@ -33,7 +36,7 @@ def labels(options: list[str]) -> list[str]:
 
 def kind(options: list[str]) -> str:
     """The `type` a dataset stamps on its rows, for options that come without one (`predict`)."""
-    return "noul" if sorted(text.strip().lower() for text in options) == ["no", "yes"] else "choice"
+    return "noul" if sorted(text.strip().lower() for text in options) in NOUL_OPTIONS else "choice"
 
 
 def ask(question: str, options: list[str], type: str) -> Noul | Choice:
@@ -47,7 +50,7 @@ def ask(question: str, options: list[str], type: str) -> Noul | Choice:
 def probabilities(answer: Answer, options: list[str]) -> list[float]:
     """The answer as a distribution over `options`, in their order."""
     if isinstance(answer, NoulAnswer):
-        return [answer.noul if text.strip().lower() == "yes" else 1 - answer.noul for text in options]
+        return [answer.noul if text.strip().lower() in YES else 1 - answer.noul for text in options]
     if not isinstance(answer, ChoiceAnswer):
         raise TypeError(f"expected a noul or choice answer, got {type(answer).__name__}")
     probs = [answer.probabilities.get(key, 0.0) for key in labels(options)]

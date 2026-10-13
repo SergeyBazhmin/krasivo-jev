@@ -52,7 +52,14 @@ from jev_datasets.nlu.russian_superglue import (
 )
 from jev_datasets.reasoning.logiqa import logiqa_dataset
 from jev_datasets.reasoning.reclor import reclor_dataset
-from jev_datasets.retrieval.nomiracl import nomiracl_en_dataset, nomiracl_ru_dataset
+from jev_datasets.retrieval.nomiracl import (
+    nomiracl_choice_en_dataset,
+    nomiracl_choice_ru_dataset,
+    nomiracl_en_dataset,
+    nomiracl_passage_en_dataset,
+    nomiracl_passage_ru_dataset,
+    nomiracl_ru_dataset,
+)
 from jev_datasets.retrieval.wikiqa import wikiqa_dataset
 from jev_datasets.sentiment.cedr import cedr_dataset
 from jev_datasets.sentiment.emotion import emotion_dataset
@@ -129,7 +136,11 @@ datasets = {
         multiwoz_state_dataset,
         muserc_dataset,
         nerel_relations_dataset,
+        nomiracl_choice_en_dataset,
+        nomiracl_choice_ru_dataset,
         nomiracl_en_dataset,
+        nomiracl_passage_en_dataset,
+        nomiracl_passage_ru_dataset,
         nomiracl_ru_dataset,
         paws_dataset,
         proofwriter_dataset,

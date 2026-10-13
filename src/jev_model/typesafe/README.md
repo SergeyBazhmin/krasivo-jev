@@ -9,9 +9,9 @@ test rows (`jev_model.data.partition`). Nothing is trained and nothing runs loca
 Each sample is one request with one question, named `answer`:
 
 - `state` is the sample's state, or its question when the state is empty (the API needs something to read).
-- A sample of `type` `noul` goes as a `noul` question (`instructions` = the question). The `yes` option gets
+- A sample of `type` `noul` goes as a `noul` question (`instructions` = the question). The `yes` (or `да`) option gets
   the returned `noul` probability, `no` gets the rest. `predict` has no `type`, so it treats options that are
-  exactly `yes`/`no` as `noul`, the same rule the datasets use; so does `eval` on datasets built before `type`.
+  exactly `yes`/`no` or `да`/`нет` as `noul`, the same rule the datasets use; so does `eval` on datasets built before `type`.
 - A `choice` sample goes as a `choice` question. The criteria keys are the option texts. If texts repeat or are
   empty, the keys are option numbers (`"1"`, `"2"`, ...) and the texts become their descriptions. The returned
   `probabilities` map back to the options and are renormalised.
