@@ -8,8 +8,9 @@ from pathlib import Path
 from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.structured.source import content_group, grouped_records, record
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.constants import MAX_DISTRACTORS
+from jev_datasets.structured.source import content_group, grouped_records, map_records, record
+from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
 ROOT = "https://storage.googleapis.com/huggingface-nlp/datasets/gem/gem_web_nlg"
 QUESTIONS = [
@@ -73,7 +74,7 @@ def webnlg_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
             seed = row["group"] + reference + relation
             distractors = [
                 reference[: match.start()] + value + reference[match.end() :]
-                for value in stable_shuffle(candidates, seed)[:8]
+                for value in stable_shuffle(candidates, seed)[: 2 * MAX_DISTRACTORS]
             ]
             lines = [f"{sub} — {re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', rel).lower()} — {obj}" for sub, rel, obj in facts]
             about = (
@@ -113,12 +114,7 @@ class WebNLGDataset(JevDataset):
         pools = {
             relation: stable_shuffle(sorted(values), f"webnlg:{relation}")[:128] for relation, values in pools.items()
         }
-        self.data = self.data.map(
-            explode(lambda row: webnlg_samples(row, pools)),
-            batched=True,
-            remove_columns=self.source_columns,
-            features=SAMPLE_FEATURES,
-        )
+        self.data = map_records(self.data, lambda row: webnlg_samples(row, pools), __file__)
 
 
 webnlg_en_dataset = WebNLGDataset(name="webnlg_en", hf_path="GEM/web_nlg", hf_name="en")

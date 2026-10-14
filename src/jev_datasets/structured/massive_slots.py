@@ -6,7 +6,7 @@ from collections import defaultdict
 from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, disjoint_contexts, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
 
 URL = "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
 QUESTIONS = [
@@ -112,7 +112,6 @@ class MassiveSlotsDataset(JevDataset):
         self.data = self.data.map(
             explode(convert), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        self.data = disjoint_contexts(self.data)
 
 
 massive_slots_dataset = MassiveSlotsDataset(name="massive_slots", hf_path="AmazonScience/massive", hf_name="en-US")

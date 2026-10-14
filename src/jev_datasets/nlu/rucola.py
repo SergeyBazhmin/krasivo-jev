@@ -3,7 +3,6 @@ from datasets import DatasetDict, load_dataset
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     make_options,
     make_sample,
     pick_question,
@@ -56,7 +55,6 @@ class RuCoLADataset(JevDataset):
             remove_columns=self.source_columns,
             features=SAMPLE_FEATURES,
         )
-        self.data = disjoint_contexts(self.data)
 
 
 rucola_dataset = RuCoLADataset(name="rucola", hf_path="RussianNLP/rucola")

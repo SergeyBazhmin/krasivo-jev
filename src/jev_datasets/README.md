@@ -25,19 +25,25 @@ uv run jev prepare sst2 anli                                 # some of them, int
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
 ```
 
-`prepare` loads the source from the Hub, converts it, stamps `type` on every row, caps every split at
-`--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
+`prepare` loads the source from the Hub, converts it, regroups the splits (below), stamps `type` on every row, caps
+every split at `--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
 `OUTPUT_DIR/<name>`. Read it back with `datasets.load_from_disk`.
 
-Splits are kept as the source has them; `jev_model.data.partition` carves a missing validation or test split from
-train by a content hash, so every model is scored on the same rows.
+Every saved dataset has exactly the splits `train`, `validation` and `test`. Source splits are renamed (`dev`/`val` to
+`validation`; unknown names such as halueval's `data` join `train`). Rows sharing a context are grouped, and each group
+is moved whole into the first split it appears in, held-out splits first (test, validation, train). The group is the
+row's `group` column when the converter emits one (a source document that yields several states), else a hash of
+`state`, or of `question` when there is no state. No context is in two splits. Exact duplicate rows are dropped,
+keeping the held-out copy, and no other row is lost. Splits the source lacks are then carved by a hash of the group:
+5% of train each for a missing validation or test, or, when there is no train split (e.g. `rublimp`), all rows are
+re-split 80/10/10. Carving happens before the cap, so every model is scored on the same rows.
 
 ## Files
 
 - `base.py`: `JevDataset(name, hf_path, hf_name)` loads the source lazily into `.data`; a subclass sets `type` and
   implements `prepare()`, and overrides `load()` when the source needs special loading.
 - `utils.py`: `make_sample`, `make_options`, `pick_question`, `stable_shuffle`, `explode`, `slugify`,
-  `with_context`, `disjoint_contexts`, `stratified_limit`.
+  `with_context`, `GROUPED_FEATURES`, `disjoint_contexts`, `stratified_limit`.
 - `constants.py`: `MAX_SAMPLES` and `ROOT_DIR` (`data/` at the repo root).
 - `cli.py`: the `jev` CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`, alphabetical.
@@ -63,7 +69,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `massive_intent_ru`           | choice   | `mteb/MassiveIntentClassification` (`ru`) |
 |                  | `ticket_routing`              | choice   | `Tobi-Bueck/customer-support-tickets` |
 |                  | `ticket_type`                 | choice   | `Tobi-Bueck/customer-support-tickets` |
-| `guardrails`     | `aegis_safety`                | noul     | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` |
+| `guardrails`     | `aegis_category`              | choice   | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` (unsafe prompts, soft labels) |
 |                  | `jailbreak_classification`    | noul     | `jackhhao/jailbreak-classification` |
 |                  | `safeguard_prompt_injection`  | noul     | `xTRam1/safe-guard-prompt-injection` |
 |                  | `spml_prompt_injection`       | noul     | `reshabhs/SPML_Chatbot_Prompt_Injection` |
@@ -97,6 +103,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
 | `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
 |                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+|                  | `ticket_subject`              | choice   | `Tobi-Bueck/customer-support-tickets` (subject → email body) |
 |                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
@@ -108,7 +115,8 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `spartqa_mchoice`             | choice   | `tasksource/spartqa-mchoice` |
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
-| `structured`     | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
+| `structured`     | `atis_slots`                  | choice   | `tuetschek/atis` (slot spans, distractors from the same request) |
+|                  | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
 |                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
 |                  | `massive_slots_ru`            | choice   | `AmazonScience/massive` (`ru-RU`, original slot annotations) |
 |                  | `multiwoz_state`              | choice   | official MultiWOZ 2.2 dialogues and schema |
@@ -116,6 +124,7 @@ train by a content hash, so every model is scored on the same rows.
 |                  | `sgd_state`                   | choice   | official Schema-Guided Dialogue dialogues and schemas |
 |                  | `skillspan`                   | choice   | official SkillSpan job-posting excerpts and BIO spans |
 |                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
+|                  | `totto_statements`            | choice   | official ToTTo tables and annotator sentences (other tables as distractors) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
@@ -129,6 +138,9 @@ train by a content hash, so every model is scored on the same rows.
 Many logic and spatial sources bundle the same underlying sets (SpaRP includes StepGame, RuleCollection bundles
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into
 another dataset's train split.
+
+`ticket_routing`, `ticket_type` and `ticket_subject` split the helpdesk tickets once, by a hash of the email body, so a
+ticket lands in the same partition in all three.
 
 Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
@@ -145,6 +157,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
 - `massive_slots*`: extract one of 27 concrete slot types from the command, validating annotation markup against
   the original text. Alternative values of the same slot are sampled from train only; all accepted mentions are
   excluded. The original partitions are retained and repeated commands are removed across splits.
+- `atis_slots`: pick the words of an ATIS request that fill a concrete slot (departure/destination city, dates,
+  times, airline, class, ...). Distractors are the request's other annotated spans, so the slot's role decides the
+  answer rather than string matching. Modifiers, undirected cities and ontology codes are excluded, as are slots
+  filled with two different values. Requests shared by train and test stay in test.
 - `sgd_state`, `multiwoz_state`: track changed user belief values using dialogue prefixes and natural-language
   schema descriptions. Hidden service results, goal descriptions and gold belief states are never input.
   Values without visible evidence, unspecified/preference-free values and boolean availability slots are skipped.
@@ -158,6 +174,10 @@ keys, so edits to imported filters cannot silently reuse an older conversion.
   unambiguous first header row and no merged cells are kept. Distractors come from the same column. Original
   summaries and highlights are excluded; labels are computed from cells, including public test tables. Shared
   tables are removed from training regardless of different original highlight selections.
+- `totto_statements`: pick the annotators' final sentence about a table among sentences written for other tables of
+  the same split, preferring tables with the same headers so the cell values decide. Sentences about the same table
+  or Wikipedia page are never distractors. Page and section titles are in the state; tables are filtered as in
+  `totto_cells` and assigned the same splits. The unlabeled test split is not used.
 - `webnlg_en`: compare a specified relation's value against descriptions with that value replaced; the rest of the
   sentence is not judged. Original lexicalizations are used with literal subject/object matches. The Russian
   release is not used: it translates names without providing their alignment. Replacements exclude every accepted

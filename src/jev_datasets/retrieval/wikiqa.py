@@ -1,8 +1,10 @@
 from collections import defaultdict
+from string import ascii_uppercase
 
 from datasets import Dataset, DatasetDict
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question, stable_shuffle
 
 QUESTIONS = [
@@ -13,7 +15,7 @@ QUESTIONS = [
     "In which passage can the query be answered?",
 ]
 ABOUT = (
-    "Select an answer-bearing passage using only the supplied text. "
+    "Each option is a passage. Select the passage that answers the query, using only the supplied text. "
     "Choose 'None of these passages' if none answers the query."
 )
 
@@ -32,17 +34,16 @@ def wikiqa_samples(row: dict) -> list[dict]:
     seed = row["query"] + "\n" + "\n".join(sorted(labels))
     # Other annotated positives are omitted, never turned into distractors.
     selected = [(text, True) for text in stable_shuffle(positive, seed)[:1]]
-    selected += [(text, False) for text in stable_shuffle(negative, seed)[: 4 - len(selected)]]
+    selected += [(text, False) for text in stable_shuffle(negative, seed)[:MAX_DISTRACTORS]]
     if len(selected) < 2:
         return []
     selected = stable_shuffle(selected, seed)
-    ids = list("ABCD")[: len(selected)]
-    passages = "\n\n".join(f"Passage {key}:\n{text}" for key, (text, _) in zip(ids, selected))
-    # Assign positional ids after shuffling, so the gold id is not always A.
-    options = make_options(ids, [f"Passage {key}" for key in ids])
+    ids = list(ascii_uppercase[: len(selected)])
+    # The passages are the options themselves, so the state holds only the query.
+    options = make_options(ids, [text for text, _ in selected])
     options += make_options(["none"], ["None of these passages"])
     label = next((key for key, (_, relevant) in zip(ids, selected) if relevant), "none")
-    state = f"{ABOUT}\n\nQuery: {row['query']}\n\n{passages}"
+    state = f"{ABOUT}\n\nQuery: {row['query']}"
     return [make_sample(state, pick_question(QUESTIONS, seed), stable_shuffle(options, seed), label)]
 
 

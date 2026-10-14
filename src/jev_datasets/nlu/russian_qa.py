@@ -1,12 +1,13 @@
 import re
 from itertools import pairwise
+from string import ascii_uppercase
 
 from datasets import DatasetDict, load_dataset
 
 from jev_datasets.base import DatasetType, JevDataset
+from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.utils import (
     SAMPLE_FEATURES,
-    disjoint_contexts,
     explode,
     make_options,
     make_sample,
@@ -58,11 +59,11 @@ def evidence_samples(context: str, question: str, spans: list[tuple[int, str]]) 
         )
     )
     seed = context + question
-    distractors = stable_shuffle(distractors, seed)[:3]
+    distractors = stable_shuffle(distractors, seed)[:MAX_DISTRACTORS]
     if not distractors:
         return []
     texts = [supported[0], *distractors]
-    options = stable_shuffle(make_options(list("ABCD")[: len(texts)], texts), seed)
+    options = stable_shuffle(make_options(list(ascii_uppercase[: len(texts)]), texts), seed)
     state = with_context(ABOUT, context, "Текст")
     prompt = f"Вопрос: {question}\n{pick_question(QUESTIONS, seed)}"
     return [make_sample(state, prompt, options, "A")]
@@ -103,7 +104,6 @@ class SberQuADDataset(JevDataset):
         self.data = self.data.map(
             explode(sberquad_samples), batched=True, remove_columns=self.source_columns, features=SAMPLE_FEATURES
         )
-        self.data = disjoint_contexts(self.data)
 
 
 class MultiQDataset(JevDataset):

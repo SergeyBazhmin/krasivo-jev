@@ -8,7 +8,7 @@ from pathlib import Path
 
 from datasets import Dataset, DatasetDict
 
-from jev_datasets.utils import SAMPLE_FEATURES, explode
+from jev_datasets.utils import GROUPED_FEATURES, explode
 
 
 def conversion_version(source_file: str | None) -> str:
@@ -20,7 +20,8 @@ def conversion_version(source_file: str | None) -> str:
 
 
 def map_records(data: DatasetDict, convert: Callable[[dict], list[dict]], source_file: str) -> DatasetDict:
-    batched = explode(convert)
+    # Every sample keeps its source document's key, so `regroup` keeps the document in one split.
+    batched = explode(lambda row: [{**sample, "group": row["group"]} for sample in convert(row)], GROUPED_FEATURES)
 
     def versioned(batch: dict, cache_version: str) -> dict:
         return batched(batch)
@@ -30,7 +31,7 @@ def map_records(data: DatasetDict, convert: Callable[[dict], list[dict]], source
         batched=True,
         fn_kwargs={"cache_version": conversion_version(source_file)},
         remove_columns=next(iter(data.values())).column_names,
-        features=SAMPLE_FEATURES,
+        features=GROUPED_FEATURES,
     )
 
 
@@ -43,7 +44,7 @@ def content_group(value: object) -> str:
 
 
 def grouped_records(generate: Callable[..., Iterable[dict]], **kwargs) -> DatasetDict:
-    """Holdouts win duplicate source groups; each group has exactly one split even after conversion."""
+    """Raw records by their source split; `regroup` later gives each group one split and drops duplicates."""
 
     def versioned_generate(cache_version: str, **arguments) -> Iterable[dict]:
         yield from generate(**arguments)
@@ -52,18 +53,9 @@ def grouped_records(generate: Callable[..., Iterable[dict]], **kwargs) -> Datase
         versioned_generate,
         gen_kwargs={**kwargs, "cache_version": conversion_version(inspect.getsourcefile(generate))},
     )
-    priority = {"test": 0, "validation": 1, "train": 2}
-    owners = {}
-    for group, split in zip(rows["group"], rows["split"]):
-        if group not in owners or priority[split] < priority[owners[group]]:
-            owners[group] = split
-    indices = {split: [] for split in ("train", "validation", "test")}
-    seen = set()
-    for index, row in enumerate(rows):
-        if owners[row["group"]] != row["split"]:
-            continue
-        identity = row["group"], content_group(row["payload"])
-        if identity not in seen:
-            indices[row["split"]].append(index)
-            seen.add(identity)
-    return DatasetDict({split: rows.select(selected) for split, selected in indices.items()})
+    return DatasetDict(
+        {
+            split: rows.filter(lambda value, split: value == split, input_columns="split", fn_kwargs={"split": split})
+            for split in sorted(set(rows["split"]))
+        }
+    )

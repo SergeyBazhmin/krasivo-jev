@@ -1,13 +1,14 @@
 from enum import StrEnum
 
 from datasets import DatasetDict, load_dataset
+from loguru import logger
 
 from jev_datasets.constants import MAX_SAMPLES, ROOT_DIR
-from jev_datasets.utils import stratified_limit
+from jev_datasets.utils import canonical_splits, disjoint_contexts, split_missing, stratified_limit
 
 
 class DatasetType(StrEnum):
-    NOUL = "noul"  # the only options are "yes" and "no"
+    NOUL = "noul"  # the only options are "yes" and "no" ("да" and "нет" in Russian)
     CHOICE = "choice"  # any other option set
 
 
@@ -50,11 +51,28 @@ class JevDataset:
             {split: rows.add_column("type", [self.type.value] * rows.num_rows) for split, rows in self.data.items()}
         )
 
+    def regroup(self):
+        """Renames splits to train/validation/test, moves every context group into one split, so no test context is
+        trained on, drops duplicate rows and carves the splits the source lacks; call after `prepare`."""
+        self.data, moved, dropped = disjoint_contexts(canonical_splits(self.data))
+        if moved:
+            logger.info(f"[{self.name}] moved " + ", ".join(f"{a}->{b}: {n}" for (a, b), n in sorted(moved.items())))
+        if dropped:
+            logger.info(
+                f"[{self.name}] dropped duplicates " + ", ".join(f"{s}: {n}" for s, n in sorted(dropped.items()))
+            )
+        self.data, carved = split_missing(self.data)
+        if carved:
+            logger.info(f"[{self.name}] carved " + ", ".join(f"{a}->{b}: {n}" for (a, b), n in sorted(carved.items())))
+        if empty := [split for split, rows in self.data.items() if not rows.num_rows]:
+            logger.warning(f"[{self.name}] empty splits after carving: {', '.join(empty)}")
+
     def limit(self, max_samples: int = MAX_SAMPLES):
         """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
         self.data = DatasetDict({split: stratified_limit(rows, max_samples) for split, rows in self.data.items()})
 
     def save(self):
+        self.regroup()
         self.add_type()
         self.limit()
         self.data.save_to_disk(ROOT_DIR / self.name)

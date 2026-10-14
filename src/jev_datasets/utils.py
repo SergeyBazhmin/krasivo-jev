@@ -1,9 +1,15 @@
+import hashlib
+import json
 import random
 import re
+from collections import Counter
 from collections.abc import Callable
+from string import ascii_uppercase
 
 import numpy as np
-from datasets import Dataset, DatasetDict, Features, Value
+from datasets import Dataset, DatasetDict, Features, Value, concatenate_datasets
+
+from jev_datasets.constants import EVAL_ONLY_HOLDOUT_PERCENT, HOLDOUT_PERCENT, MAX_DISTRACTORS
 
 # Pinned explicitly: without it `map` inherits a source column's type for same-named
 # output columns (e.g. a ClassLabel `label` rejects what we write into it).
@@ -15,6 +21,12 @@ SAMPLE_FEATURES = Features(
         "label": [Value("float32")],
     }
 )
+# What converters of grouped sources emit: `group` keys the source document for `regroup`, which removes it.
+GROUPED_FEATURES = Features({**SAMPLE_FEATURES, "group": Value("string")})
+
+# every built dataset is saved with exactly these splits
+SPLITS = ("train", "validation", "test")
+SPLIT_ALIASES = {"train": "train", "validation": "validation", "dev": "validation", "val": "validation", "test": "test"}
 
 
 def slugify(text: str) -> str:
@@ -84,36 +96,119 @@ def text_choice(state: str, question: str, answer: str, distractors: list[str], 
         if key and key not in seen:
             texts.append(text)
             seen.add(key)
-        if len(texts) == 4:
+        if len(texts) > MAX_DISTRACTORS:
             break
     if len(texts) < 2:
         return None
     texts = stable_shuffle(texts, f"options:{seed}")
-    ids = list("ABCD")[: len(texts)]
+    ids = list(ascii_uppercase[: len(texts)])
     return make_sample(state, question, make_options(ids, texts), ids[texts.index(answer)])
 
 
-def explode(fn: Callable[[dict], list[dict]]) -> Callable[[dict], dict]:
+def explode(fn: Callable[[dict], list[dict]], features: Features = SAMPLE_FEATURES) -> Callable[[dict], dict]:
     """Adapts `fn(row) -> [sample, ...]` to a batched `map`, for sources with several samples per row."""
 
     def batched(batch: dict[str, list]) -> dict[str, list]:
         samples = [sample for row in zip(*batch.values()) for sample in fn(dict(zip(batch, row)))]
-        return {column: [sample[column] for sample in samples] for column in SAMPLE_FEATURES}
+        return {column: [sample[column] for sample in samples] for column in features}
 
     return batched
 
 
-def disjoint_contexts(data: DatasetDict) -> DatasetDict:
-    """Keep shared contexts in one source split, preferring held-out rows over training rows."""
-    priority = {"test": 0, "validation": 1, "dev": 1, "val": 1, "train": 2}
+def group_key(sample: dict) -> str:
+    """Rows about one context (several questions on one passage) form a group that must stay in one split.
+    A source `group` wins, as one document can yield several different states."""
+    return sample.get("group") or hashlib.sha1((sample["state"] or sample["question"]).encode()).hexdigest()
+
+
+def row_key(sample: dict) -> str:
+    content = [sample["state"], sample["question"], sample["options"], sample["label"]]
+    return hashlib.sha1(json.dumps(content, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
+def canonical_splits(data: DatasetDict) -> DatasetDict:
+    """Source splits renamed to train/validation/test; unknown names (halueval's `data`) join train."""
+    merged: dict[str, list[Dataset]] = {}
+    for split, rows in data.items():
+        merged.setdefault(SPLIT_ALIASES.get(split, "train"), []).append(rows)
+    return DatasetDict({split: concatenate_datasets(parts) for split, parts in merged.items()})
+
+
+def disjoint_contexts(data: DatasetDict) -> tuple[DatasetDict, Counter, Counter]:
+    """Every group in exactly one split: the first one it appears in, held-out splits first. Rows from other splits
+    are moved there; only exact duplicate rows are dropped, keeping the held-out copy. Also returns how many rows
+    moved, by (from, to), and how many duplicates were dropped, by split of origin. Expects canonical split names."""
+    priority = {"test": 0, "validation": 1, "train": 2}
+    order = sorted(data, key=lambda split: priority[split])
+    columns = [
+        column for column in ("state", "question", "options", "label", "group") if column in data[order[0]].column_names
+    ]
+    rows = {split: list(data[split].select_columns(columns)) for split in data}
+    keys = {split: [group_key(row) for row in rows[split]] for split in data}
+    home: dict[str, str] = {}
+    for split in order:
+        for key in keys[split]:
+            home.setdefault(key, split)
+    moved = Counter((split, home[key]) for split in data for key in keys[split] if home[key] != split)
+    dropped: Counter = Counter()
     seen: set[str] = set()
-    filtered = {}
-    for split in sorted(data, key=lambda name: (priority.get(name, 2), name)):
-        rows = data[split].filter(lambda row: (row["state"] or row["question"]) not in seen)
-        # Update after the whole split: several questions about one passage stay together within that split.
-        seen.update(state or question for state, question in zip(rows["state"], rows["question"]))
-        filtered[split] = rows
-    return DatasetDict({split: filtered[split] for split in data})
+    selected: dict[str, list[list[int]]] = {target: [] for target in data}
+    for split in order:
+        picks = {target: [] for target in data}
+        for i, (key, row) in enumerate(zip(keys[split], rows[split])):
+            if (identity := row_key(row)) in seen:
+                dropped[split] += 1
+                continue
+            seen.add(identity)
+            picks[home[key]].append(i)
+        for target in data:
+            selected[target].append(picks[target])
+    regrouped = {
+        target: concatenate_datasets([data[split].select(indices) for split, indices in zip(order, selected[target])])
+        for target in data
+    }
+    # a split whose every group lives elsewhere ends up empty; drop it so `split_missing` carves it instead
+    return DatasetDict({split: rows for split, rows in regrouped.items() if rows.num_rows}), moved, dropped
+
+
+def holdout_bucket(sample: dict) -> int:
+    """0-99 from the group, so a whole group lands in one split; for ungrouped rows it hashes `state or question`."""
+    key = sample.get("group") or sample["state"] or sample["question"]
+    return int.from_bytes(hashlib.sha1(key.encode()).digest()[:8], "big") % 100
+
+
+def split_missing(data: DatasetDict) -> tuple[DatasetDict, Counter]:
+    """Exactly train/validation/test, carving the missing ones by `holdout_bucket`, and drops the `group` column.
+    With a train split, missing held-out splits take HOLDOUT_PERCENT of it each. Without one (eval-only sources),
+    every row is re-split, EVAL_ONLY_HOLDOUT_PERCENT to each held-out split: there is nothing to keep apart from a
+    train split that doesn't exist, and keeping the source test whole would leave train empty. Call after
+    `disjoint_contexts`, so groups are already whole. Also returns how many rows were carved, by (from, to)."""
+    if "train" in data:
+        pool, percent = ["train"], HOLDOUT_PERCENT
+        carve = [split for split in ("test", "validation") if split not in data]
+    else:
+        pool, percent, carve = list(data), EVAL_ONLY_HOLDOUT_PERCENT, ["test", "validation"]
+    columns = [column for column in ("state", "question", "group") if column in next(iter(data.values())).column_names]
+    parts: dict[str, list[Dataset]] = {split: [] for split in SPLITS}
+    carved: Counter = Counter()
+    for split, rows in data.items():
+        if split not in pool:
+            parts[split].append(rows)
+            continue
+        buckets = [holdout_bucket(row) for row in rows.select_columns(columns)]
+        targets = [carve[b // percent] if b < percent * len(carve) else "train" for b in buckets]
+        for target in SPLITS:
+            if indices := [i for i, t in enumerate(targets) if t == target]:
+                parts[target].append(rows.select(indices))
+                if target != split:
+                    carved[(split, target)] += len(indices)
+    empty = next(iter(data.values())).select([])
+    split = DatasetDict(
+        {name: concatenate_datasets(datasets) if datasets else empty for name, datasets in parts.items()}
+    )
+    if "group" in columns:
+        split = DatasetDict({name: rows.remove_columns("group") for name, rows in split.items()})
+    return split, carved
 
 
 def stratified_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:

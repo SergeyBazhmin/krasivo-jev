@@ -9,7 +9,7 @@ from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
-from jev_datasets.utils import disjoint_contexts, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import pick_question, stable_shuffle, text_choice
 
 REVISION = "67faa0e6023b04fcaae6cc09497ab00e5d63a2a2"
 URL = f"https://raw.githubusercontent.com/The-Atticus-Project/cuad/{REVISION}/data.zip"
@@ -126,7 +126,6 @@ class CUADSpansDataset(JevDataset):
                     pools[field].add(answer)
         pools = {field: sorted(values) for field, values in pools.items()}
         self.data = map_records(self.data, lambda row: cuad_samples(row, pools), __file__)
-        self.data = disjoint_contexts(self.data)
 
 
 cuad_spans_dataset = CUADSpansDataset(name="cuad_spans", hf_path="The-Atticus-Project/cuad")
