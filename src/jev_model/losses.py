@@ -5,7 +5,7 @@ import math
 
 import torch
 
-from jev_model.metrics import option_mask, soft_cross_entropy
+from jev_model.metrics import masked_log_probs, option_mask, soft_cross_entropy
 
 
 def lr_factor(step: int, config) -> float:
@@ -14,6 +14,15 @@ def lr_factor(step: int, config) -> float:
         return (step + 1) / config.warmup
     progress = (step - config.warmup) / max(1, config.steps - config.warmup)
     return 0.5 * (1 + math.cos(math.pi * min(1.0, progress)))
+
+
+def focal_loss(logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, gamma: float) -> torch.Tensor:
+    """Soft cross-entropy with each option's term scaled by (1 - p) ** gamma, so options the model already
+    gets right weigh less (Lin et al., 2017). gamma = 0 is plain soft cross-entropy. Per row, like it."""
+    log_probs = masked_log_probs(logits, num_options)
+    # empty slots have log_prob 0, so their weight is 0 as well
+    weight = (1 - log_probs.exp()).clamp_min(0.0) ** gamma
+    return -(labels * weight * log_probs).sum(dim=-1)
 
 
 def proper_score_reward(q: torch.Tensor, labels: torch.Tensor, spherical_weight: float) -> torch.Tensor:

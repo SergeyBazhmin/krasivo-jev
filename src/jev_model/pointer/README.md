@@ -33,7 +33,7 @@ fit on their own is skipped.
 - The none option replaces the true option's text in place (`none_prob`); kev's distractor augmentation is
   left out.
 - Left out: the permutation KL, the prefix cache and serving paths, full-weight training, anchors, label
-  smoothing, Brier and focal terms.
+  smoothing and Brier terms. Focal loss is opt-in (`ce.focal_gamma`).
 
 ### None of the above
 
@@ -53,7 +53,7 @@ Rows with soft labels are left alone. Dropping happens before the none draw.
 
 | stage | default | what it does |
 |-------|---------|--------------|
-| `ce`  | yes     | Trains the LoRA and the head with soft cross-entropy. Each draw shows the options in a fresh order, seeded by the sample's content and the draw number. |
+| `ce`  | yes     | Trains the LoRA and the head with soft cross-entropy, or focal loss when `focal_gamma` > 0. Each draw shows the options in a fresh order, seeded by the sample's content and the draw number. |
 | `rl`  | no      | Starts from the `ce` weights and fine-tunes both with a policy gradient over perturbed logits, rewarded by a proper scoring rule (`jev_model/losses.py`). |
 
 The `rl` stage is kept in the code but not used: the runs here are trained with `ce` only.
@@ -100,6 +100,26 @@ uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
+## Serving with vLLM
+
+`export` merges the LoRA (and trained delimiter rows) into the base weights and writes a folder that vLLM 0.17.1
+serves with the `jev_vllm` plugins (`src/jev_vllm/`). The plugins are a model `Qwen3_5PointerModel`, whose pooler is
+this head, and an IO processor that lays prompts out with the same `Encoder`. Clients send text and get back
+calibrated logits and probabilities in the order the options were sent.
+
+```bash
+uv run jev-model export runs/pointer/X --out exports/X [--stage ce]
+bash src/scripts/serve_pointer.sh exports/X        # docker: vllm/vllm-openai + this package, port 8080
+curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer",
+  "data": [{"state": "...", "question": "...", "options": ["yes", "no"]}]}'
+# -> {"data": [{"logits": [...], "probs": [...]}], ...}
+uv run --extra model python src/scripts/check_pointer_vllm.py runs/pointer/X --dataset sst2   # vs torch
+```
+
+The exported `config.json` is the base model's own, with `architectures`, `io_processor_plugin` and the `pointer_*`
+settings (head size, `max_length`, `</opt>` id, temperature) added. The tokenizer files are copied unchanged, since
+vLLM runs transformers 4. Weights are bf16, as in training. The head stays float32.
+
 ## Config
 
 `configs/pointer.toml` lists every key with a comment. The main ones:
@@ -122,4 +142,5 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 - `train.py`: the `ce` and `rl` stages.
 - `evaluate.py`: scores and temperature fitting.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.
+- `export.py`: the merged folder for vLLM (`jev-model export`).
 - `pipeline.py`: `PointerJevModel`, the entry in the model registry.

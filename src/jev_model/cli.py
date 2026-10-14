@@ -141,6 +141,21 @@ def predict(
 
 
 @app.command()
+def export(
+    run_dir: Annotated[Path, typer.Argument(help="directory written by `train`")],
+    out: Annotated[Path, typer.Option(help="folder to write the merged model to")],
+    stage: Stage = None,
+    device: Device = "",
+):
+    """Merge a run into one folder that vLLM serves (models that support it; see `jev_vllm`)."""
+    model, _ = open_run(run_dir)
+    if not callable(getattr(model, "export", None)):
+        raise typer.BadParameter(f"{model.name} has no export", param_hint="RUN_DIR")
+    model.export(run_dir, out, default_device(device), stage)
+    typer.echo(f"exported: {out}")
+
+
+@app.command()
 def ui(port: int = 8501):
     """Open a local page to try trained runs by hand (needs the `ui` extra)."""
     import subprocess

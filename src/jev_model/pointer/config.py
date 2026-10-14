@@ -28,6 +28,8 @@ class TrainConfig:
     # chance that a training draw loses some of its wrong options (at least 2 options stay), so the option count varies
     drop_prob: float = 0.2
     seed: int = 0
+    # CE stage only: focal loss with this gamma in place of soft cross-entropy; 0 turns it off (2 is the usual value)
+    focal_gamma: float = 0.0
     # RL stage only
     group: int = 8
     sigma_start: float = 1.0

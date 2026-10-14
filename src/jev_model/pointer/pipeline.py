@@ -53,5 +53,11 @@ class PointerJevModel(JevModel[PointerConfig]):
 
         return PointerPredictor(self.checkpoint(run_dir, stage), device)
 
+    def export(self, run_dir: Path, out_dir: Path, device: str, stage: str | None = None):
+        """A merged folder for `vllm serve` with the `jev_vllm` plugin."""
+        from jev_model.pointer.export import export
+
+        export(self.checkpoint(run_dir, stage), out_dir, device)
+
 
 pointer_model = PointerJevModel(name="pointer", description="LoRA Qwen decoder + pointer head over the option tokens")

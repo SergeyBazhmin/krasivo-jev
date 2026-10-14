@@ -29,6 +29,8 @@ def batch_loss(
         labels[row, : len(draw.order)] = torch.tensor([draw.item.label[i] for i in draw.order])
     if stage == "rl":
         return losses.rl_loss(logits, labels, num_options, step, config)
+    if config.focal_gamma:
+        return losses.focal_loss(logits, labels, num_options, config.focal_gamma).mean()
     return soft_cross_entropy(logits, labels, num_options).mean()
 
 
