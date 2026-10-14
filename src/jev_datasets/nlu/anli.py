@@ -9,11 +9,33 @@ QUESTIONS = [
     "How does the hypothesis relate to the premise?",
     "Is the hypothesis entailed by the premise, contradicted by it, or neutral?",
 ]
-ABOUT = (
-    "You are given a premise and a hypothesis. Decide whether, judging by the premise alone, the hypothesis is "
-    "definitely true, definitely false, or neither. The hypothesis was written to be tricky, so the answer often "
-    "hinges on a detail, a number or an implicit inference."
-)
+ABOUT = [
+    (
+        "You are given a premise and a hypothesis. Decide whether, judging by the premise alone, the hypothesis is "
+        "definitely true, definitely false, or neither. The hypothesis was written to be tricky, so the answer "
+        "often hinges on a detail, a number or an implicit inference."
+    ),
+    (
+        "Below are a premise and a hypothesis. Judging by the premise alone, decide whether the hypothesis is "
+        "definitely true, definitely false, or neither. The hypothesis was written to be tricky, so the answer "
+        "often turns on a detail, a number or an implicit inference."
+    ),
+    (
+        "You are given a premise and a hypothesis written to be tricky. Decide whether the premise alone makes the "
+        "hypothesis definitely true, definitely false, or neither; the answer often hinges on a detail, a number "
+        "or an implicit inference."
+    ),
+    (
+        "You judge hypotheses against a premise. Using only the premise, decide whether the hypothesis is "
+        "definitely true, definitely false, or neither. The hypotheses are adversarial, so watch for the details, "
+        "numbers and implicit inferences that often decide the answer."
+    ),
+    (
+        "A premise is followed by a hypothesis that was written to be tricky. Decide, based only on the premise, "
+        "whether the hypothesis is definitely true, definitely false, or neither. A detail, a number or an "
+        "implicit inference often decides it."
+    ),
+]
 
 
 class ANLIDataset(JevDataset):

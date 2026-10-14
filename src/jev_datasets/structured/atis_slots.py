@@ -1,5 +1,5 @@
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_about, pick_question, stable_shuffle, text_choice
 
 QUESTIONS = [
     "Which phrase in the request gives {slot}?",
@@ -8,10 +8,28 @@ QUESTIONS = [
     "Which part of the request specifies {slot}?",
     "Identify {slot} in the traveler's own words.",
 ]
-ABOUT = (
-    "You are an automated flight information system. A traveler has spoken the request below. Find the words that "
-    "fill the requested field, using only what the traveler said."
-)
+ABOUT = [
+    (
+        "You are an automated flight information system. A traveler has spoken the request below. Find the words "
+        "that fill the requested field, using only what the traveler said."
+    ),
+    (
+        "You are a flight information system, and the request below was spoken by a traveler. Find the words that "
+        "fill the requested field, using only what the traveler said."
+    ),
+    (
+        "Below is a spoken request to an automated flight information system. Find the words in it that fill the "
+        "requested field; use nothing but what the traveler said."
+    ),
+    (
+        "You extract details from travelers' spoken requests in an automated flight information system. Pick the "
+        "words that fill the requested field, based only on what the traveler said."
+    ),
+    (
+        "A traveler has spoken the request below to an automated flight information system. Identify the words "
+        "that fill the requested field, taking them only from what the traveler said."
+    ),
+]
 # Concrete spans whose role is stated in the request. Bare modifiers ("cheapest", "before", "round trip"),
 # undirected cities and codes such as fare bases are left out: their meaning comes from the ATIS ontology.
 SLOTS = {
@@ -76,7 +94,9 @@ def slot_samples(row: dict) -> list[dict]:
         distractors = [value for key, value in annotated if key != slot and value != answer]
         seed = row["text"] + slot
         question = pick_question(QUESTIONS, seed).format(slot=SLOTS[slot])
-        if sample := text_choice(f"{ABOUT}\n\nRequest:\n{row['text']}", question, answer, distractors, seed):
+        if sample := text_choice(
+            f"{pick_about(ABOUT, row['text'])}\n\nRequest:\n{row['text']}", question, answer, distractors, seed
+        ):
             samples.append(sample)
     return samples
 

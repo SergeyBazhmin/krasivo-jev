@@ -10,11 +10,33 @@ QUESTIONS = [
 ]
 # open-world assumption throughout: what the theory doesn't settle is "Unknown", not "False"
 OPTIONS = make_options(["True", "False", "Unknown"])
-ABOUT = (
-    "You are given a theory of facts and rules, and a statement. Decide whether the theory proves the statement, "
-    "disproves it, or neither. The theory is all that is known, and it is not complete: a statement it does not settle "
-    "is unknown, not false."
-)
+ABOUT = [
+    (
+        "You are given a theory of facts and rules, and a statement. Decide whether the theory proves the "
+        "statement, disproves it, or neither. The theory is all that is known, and it is not complete: a statement "
+        "it does not settle is unknown, not false."
+    ),
+    (
+        "Below are a theory of facts and rules and a statement. Decide whether the theory proves the statement, "
+        "disproves it, or neither. The theory is all that is known and it is incomplete, so a statement it does "
+        "not settle is unknown rather than false."
+    ),
+    (
+        "You are given a theory made of facts and rules, and a statement. Decide whether the statement is proved "
+        "by the theory, disproved by it, or neither. Nothing is known beyond the theory, which is not complete: a "
+        "statement it does not settle is unknown, not false."
+    ),
+    (
+        "You check statements against a theory of facts and rules. Decide whether the theory proves the statement, "
+        "disproves it, or does neither. Treat the theory as everything known but not as complete: what it leaves "
+        "unsettled is unknown, not false."
+    ),
+    (
+        "A theory of facts and rules is followed by a statement. Decide if the theory proves it, disproves it, or "
+        "neither. Only the theory is known, and it is not complete, so a statement it does not settle is unknown "
+        "and not false."
+    ),
+]
 ANSWERS = {
     "True": "the statement can be proven from the theory",
     "False": "the negation of the statement can be proven from the theory",

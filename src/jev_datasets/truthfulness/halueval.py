@@ -20,20 +20,86 @@ def paired_samples(state: str, kind: str, right: str, hallucinated: str) -> list
 
 
 ABOUT = {
-    "qa": (
-        "You are checking an AI model's answers for hallucinations. You are given knowledge and a question whose "
-        "answer combines facts from it, followed by the model's answer. The answer is hallucinated when the knowledge "
-        "does not support it or contradicts it."
-    ),
-    "dialogue": (
-        "You are checking an AI assistant's responses for hallucinations. You are given facts about movies, books, "
-        "music or sports, a chat between a human and the assistant, and the assistant's next response. The response is "
-        "hallucinated when it states something the facts and the chat do not support, or that contradicts them."
-    ),
-    "summarization": (
-        "You are checking AI-written summaries for hallucinations. You are given a news article and a summary of it. "
-        "The summary is hallucinated when it states something the article does not support, or that contradicts it."
-    ),
+    "qa": [
+        (
+            "You are checking an AI model's answers for hallucinations. You are given knowledge and a question "
+            "whose answer combines facts from it, followed by the model's answer. The answer is hallucinated when "
+            "the knowledge does not support it or contradicts it."
+        ),
+        (
+            "You check an AI model's answers for hallucinations. Below are some knowledge and a question whose "
+            "answer combines facts from it, then the model's answer. The answer is hallucinated if the knowledge "
+            "does not support it or contradicts it."
+        ),
+        (
+            "Below are a piece of knowledge, a question whose answer draws on facts from it, and an AI model's "
+            "answer. Judge whether the answer is hallucinated, meaning the knowledge does not support it or "
+            "contradicts it."
+        ),
+        (
+            "As a reviewer of an AI model's answers, you look for hallucinations. You get knowledge and a question "
+            "that combines facts from it, followed by the model's answer; the answer is hallucinated when it is "
+            "unsupported by the knowledge or contradicts it."
+        ),
+        (
+            "An AI model answered a question whose answer combines facts from the given knowledge. Its answer "
+            "follows. The answer counts as hallucinated when the knowledge does not support it or contradicts it."
+        ),
+    ],
+    "dialogue": [
+        (
+            "You are checking an AI assistant's responses for hallucinations. You are given facts about movies, "
+            "books, music or sports, a chat between a human and the assistant, and the assistant's next response. "
+            "The response is hallucinated when it states something the facts and the chat do not support, or that "
+            "contradicts them."
+        ),
+        (
+            "You check an AI assistant's responses for hallucinations. Below are facts about movies, books, music "
+            "or sports, a chat between a human and the assistant, and the assistant's next response. The response "
+            "is hallucinated if it states something the facts and the chat do not support, or that contradicts "
+            "them."
+        ),
+        (
+            "Below are some facts about movies, books, music or sports, a chat between a human and an AI "
+            "assistant, and the assistant's next response. Judge whether the response is hallucinated, that is, "
+            "whether it says something the facts and the chat do not support or that contradicts them."
+        ),
+        (
+            "As a reviewer of an AI assistant's responses, you look for hallucinations. You get facts about "
+            "movies, books, music or sports, a human's chat with the assistant, and its next response, which is "
+            "hallucinated when it states something unsupported by the facts and the chat, or contradicting them."
+        ),
+        (
+            "A human chatted with an AI assistant, and facts about movies, books, music or sports are given along "
+            "with the assistant's next response. The response counts as hallucinated when it states something the "
+            "facts and the chat do not support, or that contradicts them."
+        ),
+    ],
+    "summarization": [
+        (
+            "You are checking AI-written summaries for hallucinations. You are given a news article and a summary "
+            "of it. The summary is hallucinated when it states something the article does not support, or that "
+            "contradicts it."
+        ),
+        (
+            "You check summaries written by AI for hallucinations. Below are a news article and a summary of it. "
+            "The summary is hallucinated if it states something the article does not support, or that contradicts "
+            "it."
+        ),
+        (
+            "Below is a news article, followed by an AI-written summary of it. Judge whether the summary is "
+            "hallucinated, that is, whether it says something the article does not support or that contradicts it."
+        ),
+        (
+            "As a reviewer of AI-written summaries, you look for hallucinations. Given a news article and its "
+            "summary, the summary is hallucinated when it states something unsupported by the article or "
+            "contradicting it."
+        ),
+        (
+            "An AI summarized the news article below. The summary counts as hallucinated when it states something "
+            "the article does not support, or that contradicts it."
+        ),
+    ],
 }
 # "general" is left out: its ChatGPT responses come with no reference knowledge, so
 # spotting a hallucination takes world knowledge

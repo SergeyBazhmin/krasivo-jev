@@ -47,6 +47,12 @@ def pick_question(versions: list[str], seed: str) -> str:
     return random.Random(f"question:{seed}").choice(versions)
 
 
+def pick_about(versions: str | list[str], seed: str) -> str:
+    """One phrasing of a dataset's instruction per context, the same on every run. Seed it with the context
+    itself, so rows on one passage share a state; salted apart from `pick_question`."""
+    return versions if isinstance(versions, str) else random.Random(f"about:{seed}").choice(versions)
+
+
 def make_option(id: str, text: str) -> dict[str, str]:
     return {"id": id, "text": text}
 
@@ -67,10 +73,13 @@ def as_distribution(options: list[dict[str, str]], label: str | list[float]) -> 
     return [float(p) for p in label]
 
 
-def with_context(about: str, text: str, name: str | None = None, answers: dict[str, str] | None = None) -> str:
+def with_context(
+    about: str | list[str], text: str, name: str | None = None, answers: dict[str, str] | None = None
+) -> str:
     """`text` under a system-prompt-like instruction (`about`: who the model is, what it is given, what to
-    decide), plus what each answer means when `answers` is given. The model stores no facts, so a source's
-    conventions have to be in the state."""
+    decide; one of several paraphrases, picked by `text`), plus what each answer means when `answers` is given.
+    The model stores no facts, so a source's conventions have to be in the state."""
+    about = pick_about(about, text)
     guide = "\n".join(f"- {answer}: {meaning}" for answer, meaning in (answers or {}).items())
     parts = (about, guide and f"Answers:\n{guide}", f"{name}:\n{text}" if name else text)
     return "\n\n".join(part for part in parts if part)

@@ -5,12 +5,38 @@ from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_
 RELATIONS = ["left", "right", "above", "below", "upper-left", "upper-right", "lower-left", "lower-right", "overlap"]
 OPTIONS = make_options(RELATIONS, [relation.replace("-", " ") for relation in RELATIONS])
 
-ABOUT = (
-    "You are given the positions of agents on a grid. Each sentence says where one agent is relative to another, in "
-    "words or as a clock position (12 o'clock is above, 3 o'clock right, 6 o'clock below, 9 o'clock left, and the "
-    "hours in between diagonal). Chain the steps to find where the first agent asked about is relative to the second; "
-    '"overlap" means they are at the same spot.'
-)
+ABOUT = [
+    (
+        "You are given the positions of agents on a grid. Each sentence says where one agent is relative to "
+        "another, in words or as a clock position (12 o'clock is above, 3 o'clock right, 6 o'clock below, 9 "
+        "o'clock left, and the hours in between diagonal). Chain the steps to find where the first agent asked "
+        'about is relative to the second; "overlap" means they are at the same spot.'
+    ),
+    (
+        "Below are the positions of agents on a grid. Each sentence places one agent relative to another, in words "
+        "or as a clock position (12 o'clock is above, 3 o'clock right, 6 o'clock below, 9 o'clock left, and the "
+        "hours in between diagonal). Chain the steps to find where the first agent asked about is relative to the "
+        'second; "overlap" means they are at the same spot.'
+    ),
+    (
+        "You are given agents placed on a grid. Every sentence tells where one agent is relative to another, "
+        "either in words or as a clock position: 12 o'clock above, 3 o'clock right, 6 o'clock below, 9 o'clock "
+        "left, and the hours in between diagonal. Follow the steps to find where the first agent asked about is "
+        'relative to the second; "overlap" means the same spot.'
+    ),
+    (
+        "You track agents on a grid. Each sentence gives one agent's position relative to another, in words or as "
+        "a clock position, where 12 o'clock is above, 3 o'clock right, 6 o'clock below, 9 o'clock left, and the "
+        "hours in between are diagonal. Chain these steps to locate the first agent asked about relative to the "
+        'second; "overlap" means they share a spot.'
+    ),
+    (
+        "Agents are placed on a grid. Sentences describe one agent's position relative to another, in words or as "
+        "a clock position (12 o'clock above, 3 o'clock right, 6 o'clock below, 9 o'clock left, hours in between "
+        "diagonal). Chain the steps to find where the first agent asked about is relative to the second, where "
+        '"overlap" means the same spot.'
+    ),
+]
 
 
 class StepGameDataset(JevDataset):

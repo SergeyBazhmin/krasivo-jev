@@ -9,11 +9,33 @@ from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_
 TRAIN_PROMPT = re.compile(r"Context:\n(.*)\n\nQuestion: (.*)\n\nOptions:\n(.*)", re.DOTALL)
 TRAIN_ANSWER = re.compile(r'"answer": "([A-Z])"\s*}\s*$')
 OPTION = re.compile(r"([A-Z])\) (.*)")
-ABOUT = (
-    "You are given a logic problem: a context of facts and rules, some of them distractors, and a statement. Take the "
-    "context as everything there is to know. The statement is true if it follows, false if its negation follows, and "
-    "uncertain if neither does."
-)
+ABOUT = [
+    (
+        "You are given a logic problem: a context of facts and rules, some of them distractors, and a statement. "
+        "Take the context as everything there is to know. The statement is true if it follows, false if its "
+        "negation follows, and uncertain if neither does."
+    ),
+    (
+        "Below is a logic problem: a context of facts and rules, some of which are distractors, and a statement. "
+        "Treat the context as everything there is to know. The statement is true if it follows, false if its "
+        "negation follows, and uncertain if neither follows."
+    ),
+    (
+        "You are solving a logic problem. The context gives facts and rules, some of them distractors, and is "
+        "everything known. Decide about the statement: it is true if it follows, false if its negation follows, "
+        "uncertain if neither does."
+    ),
+    (
+        "You are given a context of facts and rules (some are distractors) and a statement. Taking the context as "
+        "all that is known, the statement is true when it follows, false when its negation follows, and uncertain "
+        "when neither follows."
+    ),
+    (
+        "A logic problem gives a context of facts and rules, including some distractors, and then a statement. "
+        "Nothing is known beyond the context. Call the statement true if it follows, false if its negation "
+        "follows, and uncertain if neither does."
+    ),
+]
 
 
 def parse_options(lines: list[str], answer: str) -> tuple[list[dict[str, str]], str]:

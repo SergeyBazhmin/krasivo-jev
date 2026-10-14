@@ -6,7 +6,7 @@ from collections import defaultdict
 from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
-from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import SAMPLE_FEATURES, explode, pick_about, pick_question, stable_shuffle, text_choice
 
 URL = "https://amazon-massive-nlu-dataset.s3.amazonaws.com/amazon-massive-dataset-1.1.tar.gz"
 QUESTIONS = [
@@ -23,6 +23,28 @@ QUESTIONS_RU = [
     "Какое значение поля «{slot}» содержится в запросе?",
     "Укажите {slot}, используя слова пользователя.",
 ]
+ABOUT = {
+    "english": [
+        "Extract the specified value from the command, using the user's own words.",
+        "Find the specified value in the command, in the words the user used.",
+        "Below is a user's command. Pick out the specified value as the user said it.",
+        "Identify the specified value in the command, taking it from the user's own words.",
+        "You extract values from commands to an assistant. Give the specified value in the user's own words.",
+    ],
+    "russian": [
+        "Извлеките указанное значение из команды. Используйте слова пользователя, без внешних сведений.",
+        "Найдите в команде указанное значение, взяв его из слов пользователя и не привлекая внешних сведений.",
+        (
+            "Ниже команда пользователя. Выберите указанное значение так, как его назвал пользователь, без внешних "
+            "сведений."
+        ),
+        "Определите указанное значение по команде, опираясь только на слова пользователя.",
+        (
+            "Вы извлекаете значения из команд ассистенту. Укажите требуемое значение словами пользователя, не "
+            "используя внешних сведений."
+        ),
+    ],
+}
 # Concrete spans only: vague descriptors and personal_info need an unexplained source ontology.
 SLOTS = {
     "time": ("the time or time interval", "время или интервал времени"),
@@ -100,11 +122,7 @@ class MassiveSlotsDataset(JevDataset):
                 candidates = [value for value in pools.get(slot, []) if value.casefold() not in accepted]
                 seed = row["utt"] + slot
                 question = pick_question(QUESTIONS_RU if russian else QUESTIONS, seed).format(slot=SLOTS[slot][russian])
-                about = (
-                    "Извлеките указанное значение из команды. Используйте слова пользователя, без внешних сведений."
-                    if russian
-                    else "Extract the specified value from the command, using the user's own words."
-                )
+                about = pick_about(ABOUT["russian" if russian else "english"], row["utt"])
                 if sample := text_choice(f"{about}\n\n{row['utt']}", question, answer, candidates, seed):
                     samples.append(sample)
             return samples

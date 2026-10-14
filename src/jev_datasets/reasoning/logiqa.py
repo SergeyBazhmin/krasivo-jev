@@ -5,10 +5,29 @@ from datasets import DatasetDict, load_dataset
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
-ABOUT = (
-    "You are taking a logical reasoning test. Read the passage and answer the question about its argument or "
-    "situation, for example what follows from it, what it assumes, or what would strengthen or weaken it."
-)
+ABOUT = [
+    (
+        "You are taking a logical reasoning test. Read the passage and answer the question about its argument or "
+        "situation, for example what follows from it, what it assumes, or what would strengthen or weaken it."
+    ),
+    (
+        "You are sitting a logical reasoning test. Read the passage and answer the question about its argument or "
+        "situation, such as what follows from it, what it assumes, or what would strengthen or weaken it."
+    ),
+    (
+        "Below is a passage from a logical reasoning test and a question about its argument or situation, for "
+        "example what follows from it, what it takes for granted, or what would strengthen or weaken it. Answer "
+        "the question."
+    ),
+    (
+        "As a test taker in a logical reasoning exam, read the passage and answer the question on its argument or "
+        "situation: what follows from it, what it assumes, what would strengthen it or what would weaken it."
+    ),
+    (
+        "A logical reasoning test gives a passage and a question about its argument or situation, such as what "
+        "follows from it, what it assumes, or what would make it stronger or weaker. Answer the question."
+    ),
+]
 
 
 class LogiQADataset(JevDataset):

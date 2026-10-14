@@ -8,11 +8,33 @@ QUESTIONS = [
     "Which banking issue is this customer writing about?",
     "How should this bank support message be classified?",
 ]
-ABOUT = (
-    "You are the support assistant of an online bank. A customer has sent the message below. Decide which of 77 "
-    "fine-grained intents it expresses. Many differ only in detail (a card payment that was declined, is still pending "
-    "or was charged twice), so pay attention to exactly what the customer describes."
-)
+ABOUT = [
+    (
+        "You are the support assistant of an online bank. A customer has sent the message below. Decide which of "
+        "77 fine-grained intents it expresses. Many differ only in detail (a card payment that was declined, is "
+        "still pending or was charged twice), so pay attention to exactly what the customer describes."
+    ),
+    (
+        "You work in customer support for an online bank, and a customer has written the message below. Decide "
+        "which of 77 fine-grained intents it expresses. Many intents differ only in detail (a card payment that "
+        "was declined, is still pending, or was charged twice), so read exactly what the customer describes."
+    ),
+    (
+        "Below is a message a customer sent to an online bank's support. Classify it into one of 77 fine-grained "
+        "intents. Pay close attention to what exactly the customer describes, since many intents differ only in "
+        "detail: a card payment can be declined, still pending, or charged twice."
+    ),
+    (
+        "As the support assistant of an online bank, you sort customer messages into 77 fine-grained intents. Read "
+        "the message below carefully: many intents differ only in a detail, such as whether a card payment was "
+        "declined, is still pending or was charged twice."
+    ),
+    (
+        "An online bank's customer sent the message below to support. Decide which of 77 detailed intents it "
+        "expresses, attending to exactly what is described, because intents can differ only in detail (for example "
+        "a card payment declined, pending or charged twice)."
+    ),
+]
 
 
 class Banking77Dataset(JevDataset):

@@ -9,10 +9,28 @@ QUESTIONS = [
     "How does the hypothesis relate to the premise?",
     "Is the hypothesis entailed by the premise, contradicted by it, or neutral?",
 ]
-NLI_ABOUT = (
-    "You are given a premise, a sentence of written or spoken English, and a hypothesis. Decide whether, judging by "
-    "the premise alone, the hypothesis is definitely true, definitely false, or neither."
-)
+NLI_ABOUT = [
+    (
+        "You are given a premise, a sentence of written or spoken English, and a hypothesis. Decide whether, "
+        "judging by the premise alone, the hypothesis is definitely true, definitely false, or neither."
+    ),
+    (
+        "Below are a premise, a sentence of written or spoken English, and a hypothesis. Judging by the premise "
+        "alone, decide whether the hypothesis is definitely true, definitely false, or neither."
+    ),
+    (
+        "You are given a hypothesis and a premise, which is a sentence of English, written or spoken. Decide "
+        "whether the premise alone makes the hypothesis definitely true, definitely false, or neither."
+    ),
+    (
+        "You judge a hypothesis against a premise, a sentence of written or spoken English. Using only the "
+        "premise, decide whether the hypothesis is definitely true, definitely false, or neither."
+    ),
+    (
+        "A premise (a sentence of written or spoken English) is followed by a hypothesis. Decide, based only on "
+        "the premise, whether the hypothesis is definitely true, definitely false, or neither."
+    ),
+]
 
 
 class MultiNLIDataset(JevDataset):
@@ -43,11 +61,33 @@ GENRE_QUESTIONS = [
     "What is the genre of this passage?",
 ]
 
-GENRE_ABOUT = (
-    "You are given a passage of English text. Decide which kind of source it comes from: a work of fiction, a US "
-    "government report or web page, an article from Slate (an online magazine on news, politics and culture), a "
-    "transcribed telephone conversation between strangers, or a travel guide."
-)
+GENRE_ABOUT = [
+    (
+        "You are given a passage of English text. Decide which kind of source it comes from: a work of fiction, a "
+        "US government report or web page, an article from Slate (an online magazine on news, politics and "
+        "culture), a transcribed telephone conversation between strangers, or a travel guide."
+    ),
+    (
+        "Below is a passage of English text. Decide which kind of source it comes from: a work of fiction, a US "
+        "government report or web page, an article from Slate (an online magazine on news, politics and culture), "
+        "a transcribed telephone conversation between strangers, or a travel guide."
+    ),
+    (
+        "You are given an English passage. Identify its source: fiction, a US government report or web page, a "
+        "Slate article (Slate is an online magazine covering news, politics and culture), a transcript of a "
+        "telephone conversation between strangers, or a travel guide."
+    ),
+    (
+        "You classify English passages by where they come from: a work of fiction, a US government report or web "
+        "page, the online news, politics and culture magazine Slate, a transcribed phone call between strangers, "
+        "or a travel guide. Decide the source of the passage below."
+    ),
+    (
+        "A passage of English text is given. Decide whether it comes from a work of fiction, a US government "
+        "report or web page, an article in Slate (an online magazine about news, politics and culture), a "
+        "transcribed telephone conversation between two strangers, or a travel guide."
+    ),
+]
 GENRES = {
     "fiction": "fiction",
     "government": "government report",

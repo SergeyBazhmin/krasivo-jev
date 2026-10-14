@@ -4,10 +4,28 @@ from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 IDS = ["A", "B", "C", "D"]
-ABOUT = (
-    "You are taking a science exam. Read the passage from a textbook and answer the question; the passage contains the "
-    "evidence for the answer."
-)
+ABOUT = [
+    (
+        "You are taking a science exam. Read the passage from a textbook and answer the question; the passage "
+        "contains the evidence for the answer."
+    ),
+    (
+        "You are answering a science exam question. Read the textbook passage below and answer from it; it "
+        "contains the evidence for the answer."
+    ),
+    (
+        "Below is a passage from a science textbook, followed by an exam question. The passage holds the evidence "
+        "for the answer, so answer from it."
+    ),
+    (
+        "As a student taking a science exam, read the textbook passage and answer the question. The evidence for "
+        "the answer is in the passage."
+    ),
+    (
+        "A science exam gives you a passage from a textbook and a question. Answer the question using the passage, "
+        "which contains the evidence for the answer."
+    ),
+]
 
 
 def make_sciq_sample(x):

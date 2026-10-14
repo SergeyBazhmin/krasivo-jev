@@ -42,7 +42,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 
 - `base.py`: `JevDataset(name, hf_path, hf_name)` loads the source lazily into `.data`; a subclass sets `type` and
   implements `prepare()`, and overrides `load()` when the source needs special loading.
-- `utils.py`: `make_sample`, `make_options`, `pick_question`, `stable_shuffle`, `explode`, `slugify`,
+- `utils.py`: `make_sample`, `make_options`, `pick_question`, `pick_about`, `stable_shuffle`, `explode`, `slugify`,
   `with_context`, `GROUPED_FEATURES`, `disjoint_contexts`, `stratified_limit`.
 - `constants.py`: `MAX_SAMPLES` and `ROOT_DIR` (`data/` at the repo root).
 - `cli.py`: the `jev` CLI.

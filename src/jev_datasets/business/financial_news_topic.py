@@ -32,11 +32,34 @@ TOPICS = [
     "Stock Commentary",
     "Stock Movement",
 ]
-ABOUT = (
-    "You are given a tweet from a financial news account on Twitter. Decide which topic it covers, judging by what it "
-    "reports: for example an analyst's rating change, a central bank decision, a company's earnings, a dividend, a "
-    "merger or acquisition, or a move in a stock's price (as opposed to commentary or opinion about a stock)."
-)
+ABOUT = [
+    (
+        "You are given a tweet from a financial news account on Twitter. Decide which topic it covers, judging by "
+        "what it reports: for example an analyst's rating change, a central bank decision, a company's earnings, a "
+        "dividend, a merger or acquisition, or a move in a stock's price (as opposed to commentary or opinion "
+        "about a stock)."
+    ),
+    (
+        "You are given a tweet posted by a financial news account. Decide which topic it covers from what it "
+        "reports, such as an analyst's rating change, a central bank decision, company earnings, a dividend, a "
+        "merger or acquisition, or a move in a stock's price (as opposed to commentary or opinion about a stock)."
+    ),
+    (
+        "Below is a tweet from a Twitter account that posts financial news. Classify it by the topic of what it "
+        "reports: an analyst changing a rating, a central bank decision, a company's earnings, a dividend, a "
+        "merger or acquisition, a stock price move (rather than commentary or opinion about a stock), and so on."
+    ),
+    (
+        "You sort tweets from financial news accounts by topic. Judge the topic by what the tweet reports, for "
+        "example a rating change by an analyst, a central bank's decision, earnings results, a dividend, a merger "
+        "or acquisition, or a stock's price moving, which is different from commentary or opinion on a stock."
+    ),
+    (
+        "A financial news account on Twitter posted the tweet below. Decide which topic it covers, going by what "
+        "it reports: an analyst rating change, a central bank decision, a company's earnings, a dividend, a merger "
+        "or an acquisition, or a move in a stock's price (not commentary or opinion about a stock)."
+    ),
+]
 IDS = [slugify(topic) for topic in TOPICS]
 OPTIONS = make_options(IDS, TOPICS)
 

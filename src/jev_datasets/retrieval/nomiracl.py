@@ -8,7 +8,15 @@ from datasets import Dataset, DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.constants import MAX_DISTRACTORS
-from jev_datasets.utils import GROUPED_FEATURES, explode, make_options, make_sample, pick_question, stable_shuffle
+from jev_datasets.utils import (
+    GROUPED_FEATURES,
+    explode,
+    make_options,
+    make_sample,
+    pick_about,
+    pick_question,
+    stable_shuffle,
+)
 
 QUESTIONS = {
     "english": [
@@ -58,15 +66,84 @@ CHOICE_QUESTIONS = {
         "По какому фрагменту можно ответить на запрос?",
     ],
 }
+ABOUT = {
+    "english": [
+        "Determine whether the supplied passages answer the query. Use only these texts.",
+        "Decide whether any of the supplied passages answers the query, using only their text.",
+        "Below are a query and some passages. Judge from these texts alone whether the passages answer the query.",
+        "Check whether the query is answered by the passages given. Rely on nothing but these texts.",
+        "Using only the supplied passages, decide whether they contain an answer to the query.",
+    ],
+    "russian": [
+        "Определите, содержат ли приведённые фрагменты ответ на запрос. Используйте только эти тексты.",
+        "Есть ли в приведённых фрагментах ответ на запрос? Судите только по этим текстам.",
+        "Проверьте, отвечает ли на запрос хотя бы один из приведённых фрагментов, опираясь только на них.",
+        "Ниже запрос и фрагменты текста. Решите, содержат ли фрагменты ответ на запрос, не используя других сведений.",
+        "Оцените, найдётся ли ответ на запрос в приведённых фрагментах. Пользуйтесь только этими текстами.",
+    ],
+}
+PASSAGE_ABOUT = {
+    "english": [
+        "Determine whether the supplied passage answers the query. Use only this text.",
+        "Decide whether the supplied passage answers the query, using only its text.",
+        "Below are a query and a passage. Judge from this text alone whether the passage answers the query.",
+        "Check whether the query is answered by the passage given. Rely on nothing but this text.",
+        "Using only the supplied passage, decide whether it contains an answer to the query.",
+    ],
+    "russian": [
+        "Определите, содержит ли приведённый фрагмент ответ на запрос. Используйте только этот текст.",
+        "Есть ли в приведённом фрагменте ответ на запрос? Судите только по этому тексту.",
+        "Проверьте, отвечает ли приведённый фрагмент на запрос, опираясь только на него.",
+        "Ниже запрос и фрагмент текста. Решите, содержит ли фрагмент ответ на запрос, не используя других сведений.",
+        "Оцените, найдётся ли ответ на запрос в приведённом фрагменте. Пользуйтесь только этим текстом.",
+    ],
+}
 CHOICE_ABOUT = {
-    "english": (
-        "Each option is a passage. Select the passage that answers the query, using only the supplied text. "
-        "Choose 'None of these passages' if none answers the query."
-    ),
-    "russian": (
-        "Каждый вариант ответа — фрагмент текста. Выберите фрагмент, который отвечает на запрос, используя только "
-        "приведённые тексты. Если ни один фрагмент не отвечает на запрос, выберите «Ни один из фрагментов»."
-    ),
+    "english": [
+        (
+            "Each option is a passage. Select the passage that answers the query, using only the supplied text. "
+            "Choose 'None of these passages' if none answers the query."
+        ),
+        (
+            "Each option is a passage. Pick the one that answers the query, using only the supplied text, or "
+            "choose 'None of these passages' if none of them answers it."
+        ),
+        (
+            "The options are passages. Using only their text, select the passage that answers the query. If no "
+            "passage answers it, choose 'None of these passages'."
+        ),
+        (
+            "Find the passage among the options that answers the query, relying only on the text given. When none "
+            "of them answers the query, choose 'None of these passages'."
+        ),
+        (
+            "Below is a query, and the options are passages. Choose the passage that answers the query from the "
+            "supplied text alone, or 'None of these passages' when none does."
+        ),
+    ],
+    "russian": [
+        (
+            "Каждый вариант ответа — фрагмент текста. Выберите фрагмент, который отвечает на запрос, используя "
+            "только приведённые тексты. Если ни один фрагмент не отвечает на запрос, выберите «Ни один из "
+            "фрагментов»."
+        ),
+        (
+            "Варианты ответа — фрагменты текста. Выберите тот, что отвечает на запрос, опираясь только на "
+            "приведённые тексты, или «Ни один из фрагментов», если ответа нет ни в одном."
+        ),
+        (
+            "Каждый вариант — отрывок текста. Используя только эти тексты, найдите отрывок, который отвечает на "
+            "запрос. Если ни один не отвечает, выберите «Ни один из фрагментов»."
+        ),
+        (
+            "Среди вариантов-фрагментов найдите тот, который отвечает на запрос, полагаясь только на их текст. "
+            "Когда ни один фрагмент не отвечает на запрос, выберите «Ни один из фрагментов»."
+        ),
+        (
+            "Ниже запрос, а варианты ответа — фрагменты текста. Выберите фрагмент, отвечающий на запрос, только по "
+            "приведённым текстам, или «Ни один из фрагментов», если такого нет."
+        ),
+    ],
 }
 NONE_TEXT = {"english": "None of these passages", "russian": "Ни один из фрагментов"}
 
@@ -80,11 +157,10 @@ def nomiracl_sample(row: dict, language: str) -> dict:
     passages = stable_shuffle(row["passages"], seed)
     # All judged passages remain in the input: subsampling could remove the only answer.
     text = "\n\n".join(f"[{i}] {p['title']}\n{p['text']}" for i, p in enumerate(passages, 1))
+    about = pick_about(ABOUT[language], seed)
     if language == "russian":
-        about = "Определите, содержат ли приведённые фрагменты ответ на запрос. Используйте только эти тексты."
         state = f"{about}\n\nЗапрос: {row['query']}\n\nФрагменты:\n{text}"
     else:
-        about = "Determine whether the supplied passages answer the query. Use only these texts."
         state = f"{about}\n\nQuery: {row['query']}\n\nPassages:\n{text}"
     label = "yes" if any(p["relevance"] == 1 for p in passages) else "no"
     return make_sample(state, pick_question(QUESTIONS[language], seed), yes_no(language), label)
@@ -95,11 +171,10 @@ def nomiracl_passage_samples(row: dict, language: str) -> list[dict]:
     for passage in row["passages"]:
         seed = row["query"] + "\n" + passage["text"]
         text = f"{passage['title']}\n{passage['text']}"
+        about = pick_about(PASSAGE_ABOUT[language], seed)
         if language == "russian":
-            about = "Определите, содержит ли приведённый фрагмент ответ на запрос. Используйте только этот текст."
             state = f"{about}\n\nЗапрос: {row['query']}\n\nФрагмент:\n{text}"
         else:
-            about = "Determine whether the supplied passage answers the query. Use only this text."
             state = f"{about}\n\nQuery: {row['query']}\n\nPassage:\n{text}"
         label = "yes" if passage["relevance"] == 1 else "no"
         samples.append(make_sample(state, pick_question(PASSAGE_QUESTIONS[language], seed), yes_no(language), label))
@@ -128,7 +203,7 @@ def nomiracl_choice_samples(row: dict, language: str) -> list[dict]:
     label = next((key for key, (_, relevant) in zip(ids, selected) if relevant), "none")
     query = "Запрос" if language == "russian" else "Query"
     # The passages are the options themselves, so the state holds only the query.
-    state = f"{CHOICE_ABOUT[language]}\n\n{query}: {row['query']}"
+    state = f"{pick_about(CHOICE_ABOUT[language], seed)}\n\n{query}: {row['query']}"
     return [make_sample(state, pick_question(CHOICE_QUESTIONS[language], seed), stable_shuffle(options, seed), label)]
 
 

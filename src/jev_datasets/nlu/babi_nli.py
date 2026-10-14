@@ -11,11 +11,33 @@ QUESTIONS = [
     "Can the statement be concluded from the story?",
 ]
 OPTIONS = make_options(["entailed", "not-entailed"], ["yes", "no"])
-ABOUT = (
-    "You are given a short story about people moving around and picking up or dropping objects, and a statement. "
-    "Decide whether the story shows that the statement is true. The story is all there is to know, and the latest "
-    "event decides where a person or object is."
-)
+ABOUT = [
+    (
+        "You are given a short story about people moving around and picking up or dropping objects, and a "
+        "statement. Decide whether the story shows that the statement is true. The story is all there is to know, "
+        "and the latest event decides where a person or object is."
+    ),
+    (
+        "Below is a short story in which people move around and pick up or drop objects, followed by a statement. "
+        "Decide whether the story shows the statement to be true. The story is all there is to know, and the "
+        "latest event decides where a person or object is."
+    ),
+    (
+        "You are given a statement and a short story about people moving between places and picking up or dropping "
+        "objects. Decide whether the story shows that the statement is true. Nothing is known beyond the story, "
+        "and where a person or object is depends on the latest event."
+    ),
+    (
+        "You track people and objects through a short story: people move around and pick up or drop things. Decide "
+        "whether the story shows the statement to be true, taking the story as all there is to know and the latest "
+        "event as deciding where a person or object is."
+    ),
+    (
+        "A short story describes people moving around and picking up or dropping objects. Decide whether it shows "
+        "the given statement is true. Only the story counts, and the most recent event determines where a person "
+        "or object is."
+    ),
+]
 # "Sumit went to the garden because she was bored": the link from motive to action is
 # commonsense, not something the story states
 SKIPPED_TASKS = {"agents-motivations"}

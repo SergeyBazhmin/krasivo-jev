@@ -15,10 +15,32 @@ OPTIONS = make_options(
     ["entailment", "contradiction", "neutral", "self_contradiction"],
     ["entailment", "contradiction", "neutral", "paradox"],
 )
-ABOUT = (
-    "You are given facts and rules about made-up people and properties, and a hypothesis. Decide what can be derived "
-    "about the hypothesis. Only what the facts and rules derive counts: nothing is assumed true or false beyond them."
-)
+ABOUT = [
+    (
+        "You are given facts and rules about made-up people and properties, and a hypothesis. Decide what can be "
+        "derived about the hypothesis. Only what the facts and rules derive counts: nothing is assumed true or "
+        "false beyond them."
+    ),
+    (
+        "Below are facts and rules about made-up people and properties, followed by a hypothesis. Decide what can "
+        "be derived about the hypothesis. Only derivations from the facts and rules count; nothing beyond them is "
+        "assumed true or false."
+    ),
+    (
+        "You are given a hypothesis together with facts and rules about invented people and their properties. "
+        "Decide what the facts and rules let you derive about the hypothesis. Nothing outside them is assumed to "
+        "be true or false."
+    ),
+    (
+        "You reason over facts and rules about fictional people and properties. Decide what can be derived about "
+        "the hypothesis from them alone; nothing is taken as true or false unless the facts and rules derive it."
+    ),
+    (
+        "Facts and rules about made-up people and properties are given, along with a hypothesis. Decide what "
+        "follows about the hypothesis. Count only what the facts and rules derive, assuming nothing true or false "
+        "beyond them."
+    ),
+]
 ANSWERS = {
     "entailment": "the hypothesis can be derived",
     "contradiction": "the negation of the hypothesis can be derived",

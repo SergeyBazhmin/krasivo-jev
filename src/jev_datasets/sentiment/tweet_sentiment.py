@@ -8,10 +8,28 @@ QUESTIONS = [
     "How does the author of this tweet feel?",
     "What attitude does this tweet express?",
 ]
-ABOUT = (
-    "You are given a tweet, with user mentions replaced by @user. Decide whether its author expresses a positive or a "
-    "negative attitude, or neither (neutral), as in plain news or factual statements."
-)
+ABOUT = [
+    (
+        "You are given a tweet, with user mentions replaced by @user. Decide whether its author expresses a "
+        "positive or a negative attitude, or neither (neutral), as in plain news or factual statements."
+    ),
+    (
+        "Below is a tweet in which user mentions are replaced by @user. Decide whether its author expresses a "
+        "positive attitude, a negative one, or neither (neutral), as in plain news or factual statements."
+    ),
+    (
+        "You are given a tweet with user mentions replaced by @user. Classify the author's attitude as positive, "
+        "negative, or neutral, the last for things like plain news or factual statements."
+    ),
+    (
+        "You classify the sentiment of tweets, where user mentions appear as @user. Decide whether the author is "
+        "positive, negative, or neutral (neither, as in plain news or statements of fact)."
+    ),
+    (
+        "A tweet is shown below, with mentions of users replaced by @user. Judge whether its author expresses a "
+        "positive or a negative attitude, or neither (neutral), as with plain news or factual statements."
+    ),
+]
 
 
 class TweetSentimentDataset(JevDataset):

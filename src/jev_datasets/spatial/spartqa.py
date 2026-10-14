@@ -4,12 +4,38 @@ from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
 # SpartQA-Auto: synthetic block scenes; its labels are known to be somewhat noisy
-ABOUT = (
-    "You are given a description of blocks holding objects of different sizes, colors and shapes, and of where they "
-    "are relative to each other. Answer with spatial logic: relations have inverses (if A is left of B, B is right of "
-    "A), they chain, and what is inside a block shares that block's position relative to other blocks. If the "
-    "description does not settle the answer, it cannot be determined."
-)
+ABOUT = [
+    (
+        "You are given a description of blocks holding objects of different sizes, colors and shapes, and of where "
+        "they are relative to each other. Answer with spatial logic: relations have inverses (if A is left of B, B "
+        "is right of A), they chain, and what is inside a block shares that block's position relative to other "
+        "blocks. If the description does not settle the answer, it cannot be determined."
+    ),
+    (
+        "Below is a description of blocks holding objects of different sizes, colors and shapes, and of where they "
+        "are relative to each other. Answer with spatial logic: relations have inverses (if A is left of B, B is "
+        "right of A), they chain, and what is inside a block shares that block's position relative to other "
+        "blocks. If the description does not settle the answer, it cannot be determined."
+    ),
+    (
+        "You are given a scene of blocks containing objects of various sizes, colors and shapes, described by "
+        "where things are relative to each other. Answer by spatial logic: every relation has an inverse (A left "
+        "of B means B right of A), relations chain, and objects inside a block share its position relative to "
+        "other blocks. When the description does not settle the answer, it cannot be determined."
+    ),
+    (
+        "You reason about spatial relations in a scene of blocks that hold objects of different sizes, colors and "
+        "shapes. Relations have inverses (if A is left of B, B is right of A) and chain, and anything inside a "
+        "block takes that block's position relative to other blocks. An answer the description does not settle "
+        "cannot be determined."
+    ),
+    (
+        "A scene describes blocks with objects of different sizes, colors and shapes in them, and their positions "
+        "relative to each other. Use spatial logic: relations invert (if A is left of B, B is right of A), they "
+        "chain, and what a block contains shares the block's position relative to other blocks. If the description "
+        "leaves the answer open, it cannot be determined."
+    ),
+]
 YN_OPTIONS = make_options(["Yes", "No", "DK"], ["yes", "no", "cannot be determined"])
 
 

@@ -10,7 +10,7 @@ from datasets import DatasetDict, DownloadManager
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.constants import MAX_DISTRACTORS
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
-from jev_datasets.utils import pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import pick_about, pick_question, stable_shuffle, text_choice
 
 ROOT = "https://storage.googleapis.com/huggingface-nlp/datasets/gem/gem_web_nlg"
 QUESTIONS = [
@@ -19,6 +19,28 @@ QUESTIONS = [
     "Which version gives the supplied value of {relation} for {subject}?",
     "Which description uses the correct {relation} value for {subject}?",
     "Select the version matching the recorded {relation} of {subject}.",
+]
+ABOUT = [
+    (
+        "Facts are written as 'subject — relation — value'. Compare only the value of the relation asked about; "
+        "other parts of the descriptions are not assessed. Use only the supplied information."
+    ),
+    (
+        "Each fact has the form 'subject — relation — value'. Only the value of the relation asked about is "
+        "compared; the rest of each description is not judged. Rely on the supplied information alone."
+    ),
+    (
+        "The facts below follow the pattern 'subject — relation — value'. Check only the value of the relation in "
+        "question and ignore other parts of the descriptions. Use nothing but the supplied information."
+    ),
+    (
+        "Facts are listed as 'subject — relation — value'. Judge descriptions only by the value they give for the "
+        "relation asked about, not by their other parts, and use only the supplied information."
+    ),
+    (
+        "Below are facts in the form 'subject — relation — value'. Compare just the value of the asked relation; "
+        "the other parts of the descriptions do not matter. Use only the information given."
+    ),
 ]
 
 
@@ -77,12 +99,7 @@ def webnlg_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
                 for value in stable_shuffle(candidates, seed)[: 2 * MAX_DISTRACTORS]
             ]
             lines = [f"{sub} — {re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', rel).lower()} — {obj}" for sub, rel, obj in facts]
-            about = (
-                "Facts are written as 'subject — relation — value'. "
-                "Compare only the value of the relation asked about; other parts of the descriptions are not assessed. "
-                "Use only the supplied information."
-            )
-            state = about + "\n\n" + "\n".join(lines)
+            state = pick_about(ABOUT, row["group"]) + "\n\n" + "\n".join(lines)
             question = pick_question(QUESTIONS, seed).format(
                 subject=subject, relation=re.sub(r"(?<=[a-z])(?=[A-Z])", " ", relation).lower()
             )

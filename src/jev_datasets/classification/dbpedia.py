@@ -26,10 +26,29 @@ TEXTS = {
     "Film": "film",
     "WrittenWork": "written work",
 }
-ABOUT = (
-    "You are given the title and opening of an encyclopedia article. Decide what kind of thing its subject is, such as "
-    "a company, an artist, an athlete, a village, an animal, an album or a film."
-)
+ABOUT = [
+    (
+        "You are given the title and opening of an encyclopedia article. Decide what kind of thing its subject is, "
+        "such as a company, an artist, an athlete, a village, an animal, an album or a film."
+    ),
+    (
+        "Below are the title and opening of an encyclopedia article. Decide what kind of thing the article's "
+        "subject is, for example a company, an artist, an athlete, a village, an animal, an album or a film."
+    ),
+    (
+        "You are given an encyclopedia article's title and first lines. Classify its subject by kind: a company, "
+        "an artist, an athlete, a village, an animal, an album, a film, and so on."
+    ),
+    (
+        "You sort encyclopedia articles by the type of their subject. Given an article's title and opening, decide "
+        "whether the subject is, for instance, a company, an artist, an athlete, a village, an animal, an album or "
+        "a film."
+    ),
+    (
+        "An encyclopedia article is given by its title and its opening text. Decide which kind of thing it is "
+        "about, such as a company, an artist, an athlete, a village, an animal, an album or a film."
+    ),
+]
 
 
 class DBpediaDataset(JevDataset):

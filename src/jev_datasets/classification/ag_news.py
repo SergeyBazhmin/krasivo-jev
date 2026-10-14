@@ -8,10 +8,29 @@ QUESTIONS = [
     "What category best fits this news story?",
     "Classify the topic of this article.",
 ]
-ABOUT = (
-    "You are given the title and description of a news article. Decide which section of a news site it belongs in: "
-    "World (international news and politics), Sports, Business, or Sci/Tech (science and technology)."
-)
+ABOUT = [
+    (
+        "You are given the title and description of a news article. Decide which section of a news site it belongs "
+        "in: World (international news and politics), Sports, Business, or Sci/Tech (science and technology)."
+    ),
+    (
+        "You are given a news article's title and description. Decide which news site section it belongs in: World "
+        "(international news and politics), Sports, Business, or Sci/Tech (science and technology)."
+    ),
+    (
+        "Below are the title and description of a news article. Sort it into one section of a news site: World for "
+        "international news and politics, Sports, Business, or Sci/Tech for science and technology."
+    ),
+    (
+        "You are an editor filing articles into the sections of a news site. Given an article's title and "
+        "description, decide whether it goes under World (international news and politics), Sports, Business, or "
+        "Sci/Tech (science and technology)."
+    ),
+    (
+        "A news article is given by its title and description. Pick the section of a news site where it belongs: "
+        "World (international affairs and politics), Sports, Business, or Sci/Tech (science and technology)."
+    ),
+]
 
 
 class AGNewsDataset(JevDataset):

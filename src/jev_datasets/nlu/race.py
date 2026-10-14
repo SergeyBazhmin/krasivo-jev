@@ -3,10 +3,28 @@ from string import ascii_uppercase
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_context
 
-ABOUT = (
-    "You are taking an English reading comprehension exam. Read the passage and answer the question about it; a "
-    "question with a blank (_) asks which option completes it."
-)
+ABOUT = [
+    (
+        "You are taking an English reading comprehension exam. Read the passage and answer the question about it; "
+        "a question with a blank (_) asks which option completes it."
+    ),
+    (
+        "You are taking a reading comprehension exam in English. Read the passage and answer the question about "
+        "it; when the question has a blank (_), it asks which option completes it."
+    ),
+    (
+        "Below is a passage from an English reading comprehension exam, with a question about it. Answer the "
+        "question; a question containing a blank (_) asks which option fills it in."
+    ),
+    (
+        "As a student in an English reading comprehension exam, read the passage and answer the question. If the "
+        "question has a blank (_), pick the option that completes it."
+    ),
+    (
+        "An English reading comprehension exam gives a passage and a question about it. Answer the question; a "
+        "question with a blank (_) asks which option completes it."
+    ),
+]
 
 
 class RACEDataset(JevDataset):

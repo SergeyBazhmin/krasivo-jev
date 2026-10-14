@@ -17,10 +17,28 @@ from jev_datasets.utils import (
 
 HF_PATH = "Tobi-Bueck/customer-support-tickets"
 
-ABOUT = (
-    "You work at a company's helpdesk. You are given a support ticket (subject and email body) and decide how it "
-    "should be labeled."
-)
+ABOUT = [
+    (
+        "You work at a company's helpdesk. You are given a support ticket (subject and email body) and decide how "
+        "it should be labeled."
+    ),
+    (
+        "You are on a company's helpdesk team. Given a support ticket with its subject and email body, decide how "
+        "it should be labeled."
+    ),
+    (
+        "Below is a support ticket sent to a company's helpdesk, with its subject and email body. Decide which "
+        "label it should get."
+    ),
+    (
+        "As a helpdesk agent at a company, you label incoming support tickets. Read the ticket's subject and email "
+        "body and decide how to label it."
+    ),
+    (
+        "A support ticket (subject and email body) has arrived at a company's helpdesk. Decide how the ticket "
+        "should be labeled."
+    ),
+]
 # The `queue` column mixes the helpdesk queues below (~49k tickets) with a long tail of
 # "Category/Subcategory" topic tags (~300 tickets each) that are not routing targets.
 QUEUE_ANSWERS = {
@@ -43,11 +61,33 @@ TYPE_ANSWERS = {
     "Problem": "an underlying issue that causes repeated incidents",
     "Change": "a planned change or update",
 }
-SUBJECT_ABOUT = (
-    "You work at a company's helpdesk. You are given the subject line of a support email, and each option is the body "
-    "of a customer's email. Pick the email the subject was written for: its body covers what the subject names. "
-    "Choose 'None of these emails' if none of them fits the subject."
-)
+SUBJECT_ABOUT = [
+    (
+        "You work at a company's helpdesk. You are given the subject line of a support email, and each option is "
+        "the body of a customer's email. Pick the email the subject was written for: its body covers what the "
+        "subject names. Choose 'None of these emails' if none of them fits the subject."
+    ),
+    (
+        "You are on a company's helpdesk team. Below is the subject line of a support email; each option is the "
+        "body of a customer email. Pick the email this subject was written for, the one whose body covers what the "
+        "subject names. If none fits the subject, choose 'None of these emails'."
+    ),
+    (
+        "Given the subject line of a support email sent to a company's helpdesk, find its body among the options, "
+        "each of which is a customer's email body. The right one covers what the subject names; choose 'None of "
+        "these emails' when no body fits."
+    ),
+    (
+        "As a helpdesk agent, you match subject lines to support emails. Each option is a customer email body. "
+        "Choose the one the subject below was written for, whose body is about what the subject names, or 'None of "
+        "these emails' if none of them fits."
+    ),
+    (
+        "A company's helpdesk received support emails whose bodies are the options. Below is one email's subject "
+        "line. Pick the email it belongs to (its body covers what the subject names), or 'None of these emails' if "
+        "no option fits the subject."
+    ),
+]
 SUBJECT_QUESTIONS = [
     "Which email body goes with this subject?",
     "Which email was sent under this subject line?",

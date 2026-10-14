@@ -9,7 +9,7 @@ from datasets import DatasetDict, DownloadManager
 
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.structured.source import content_group, grouped_records, map_records, record
-from jev_datasets.utils import pick_question, stable_shuffle, text_choice
+from jev_datasets.utils import pick_about, pick_question, stable_shuffle, text_choice
 
 QUESTIONS = [
     "What is the user's current value for {slot}?",
@@ -18,11 +18,37 @@ QUESTIONS = [
     "Choose the current value of {slot} from this conversation.",
     "What is the latest agreed value for {slot}?",
 ]
-ABOUT = (
-    "Read the conversation up to the last message. Track the user's current request for each service. "
-    "Later corrections replace earlier values; an assistant's suggestion counts only if the user accepts it. "
-    "Use only the conversation, not unstated database results. 'Centre' and 'center' mean the same thing."
-)
+ABOUT = [
+    (
+        "Read the conversation up to the last message. Track the user's current request for each service. Later "
+        "corrections replace earlier values; an assistant's suggestion counts only if the user accepts it. Use "
+        "only the conversation, not unstated database results. 'Centre' and 'center' mean the same thing."
+    ),
+    (
+        "Read the conversation through its last message and track what the user currently wants from each service. "
+        "A later correction replaces an earlier value, and a suggestion by the assistant counts only if the user "
+        "accepts it. Use only the conversation, not database results it does not state. 'Centre' and 'center' are "
+        "the same."
+    ),
+    (
+        "Below is a conversation up to its last message. Keep track of the user's current request for each "
+        "service: later corrections override earlier values, and the assistant's suggestions count only once the "
+        "user accepts them. Rely on the conversation alone, not on unstated database results; 'centre' and "
+        "'center' mean the same."
+    ),
+    (
+        "You track the state of a dialogue between a user and an assistant, up to the last message. For each "
+        "service, record the user's current request; corrections replace earlier values, and assistant suggestions "
+        "count only if the user accepts them. Use only what the conversation says, not unstated database results. "
+        "'Centre' equals 'center'."
+    ),
+    (
+        "Follow the conversation to the last message and work out the user's current request for each service. "
+        "Later corrections replace earlier values; what the assistant suggests counts only when the user accepts "
+        "it. Use only the conversation, without unstated database results, and treat 'centre' and 'center' as the "
+        "same."
+    ),
+]
 SGD_REVISION = "e852981ae34990f4358979625854259302feaa78"
 MULTIWOZ_REVISION = "fe0c8e65cfcd8462bd33c86e35f21addc84ca82b"
 
@@ -148,7 +174,9 @@ class DialogueStateDataset(JevDataset):
                 ]
                 seed = row["group"] + str(index) + service + slot
                 description = definition["description"]
-                state = f"{ABOUT}\n\nService: {schema.get('description', service)}\n\n{history}"
+                state = (
+                    f"{pick_about(ABOUT, row['group'])}\n\nService: {schema.get('description', service)}\n\n{history}"
+                )
                 question = pick_question(QUESTIONS, seed).format(slot=description)
                 if sample := text_choice(state, question, visible[0], candidates, seed):
                     samples.append(sample)

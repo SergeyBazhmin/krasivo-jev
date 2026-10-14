@@ -5,7 +5,15 @@ from datasets import Dataset, DatasetDict
 
 from jev_datasets.base import DatasetType, JevDataset
 from jev_datasets.constants import MAX_DISTRACTORS
-from jev_datasets.utils import SAMPLE_FEATURES, explode, make_options, make_sample, pick_question, stable_shuffle
+from jev_datasets.utils import (
+    SAMPLE_FEATURES,
+    explode,
+    make_options,
+    make_sample,
+    pick_about,
+    pick_question,
+    stable_shuffle,
+)
 
 QUESTIONS = [
     "Which passage answers the query?",
@@ -14,10 +22,28 @@ QUESTIONS = [
     "Choose the passage that answers the supplied question.",
     "In which passage can the query be answered?",
 ]
-ABOUT = (
-    "Each option is a passage. Select the passage that answers the query, using only the supplied text. "
-    "Choose 'None of these passages' if none answers the query."
-)
+ABOUT = [
+    (
+        "Each option is a passage. Select the passage that answers the query, using only the supplied text. Choose "
+        "'None of these passages' if none answers the query."
+    ),
+    (
+        "Each option is a passage. Pick the one that answers the query, using only the supplied text, or choose "
+        "'None of these passages' if none of them answers it."
+    ),
+    (
+        "The options are passages. Using only their text, select the passage that answers the query. If no passage "
+        "answers it, choose 'None of these passages'."
+    ),
+    (
+        "Find the passage among the options that answers the query, relying only on the text given. When none of "
+        "them answers the query, choose 'None of these passages'."
+    ),
+    (
+        "Below is a query, and the options are passages. Choose the passage that answers the query from the "
+        "supplied text alone, or 'None of these passages' when none does."
+    ),
+]
 
 
 def wikiqa_samples(row: dict) -> list[dict]:
@@ -43,7 +69,7 @@ def wikiqa_samples(row: dict) -> list[dict]:
     options = make_options(ids, [text for text, _ in selected])
     options += make_options(["none"], ["None of these passages"])
     label = next((key for key, (_, relevant) in zip(ids, selected) if relevant), "none")
-    state = f"{ABOUT}\n\nQuery: {row['query']}"
+    state = f"{pick_about(ABOUT, seed)}\n\nQuery: {row['query']}"
     return [make_sample(state, pick_question(QUESTIONS, seed), stable_shuffle(options, seed), label)]
 
 

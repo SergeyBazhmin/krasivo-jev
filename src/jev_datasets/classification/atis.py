@@ -30,10 +30,28 @@ INTENTS = [
     "restriction",
     "cheapest",
 ]
-ABOUT = (
-    "You are an automated flight information system. A traveler has spoken the request below. Decide what information "
-    "they are asking for; a request that asks for two things at once counts toward both."
-)
+ABOUT = [
+    (
+        "You are an automated flight information system. A traveler has spoken the request below. Decide what "
+        "information they are asking for; a request that asks for two things at once counts toward both."
+    ),
+    (
+        "You are a flight information system. The request below was spoken by a traveler. Decide what information "
+        "they want; a request that asks for two things at once counts toward both."
+    ),
+    (
+        "Below is a spoken request to an automated flight information system. Decide what the traveler is asking "
+        "to find out. If one request asks for two things, it counts toward both."
+    ),
+    (
+        "You answer travelers' spoken requests in an automated flight information system. Decide which information "
+        "the traveler below is after; when a request asks for two things at once, both count."
+    ),
+    (
+        "A traveler has asked the automated flight information system something, as transcribed below. Decide what "
+        "information the request asks for, counting a request for two things at once toward both."
+    ),
+]
 ANSWERS = {
     "flight": "flights between places, on given dates or times",
     "airfare": "the price of a flight",

@@ -8,10 +8,28 @@ QUESTIONS = [
     "Which feeling best describes the writer's mood?",
     "What is the dominant emotion in this message?",
 ]
-ABOUT = (
-    "You are given a Twitter message in which the author describes how they feel. Decide which of six basic emotions "
-    "it expresses: sadness, joy, love, anger, fear or surprise."
-)
+ABOUT = [
+    (
+        "You are given a Twitter message in which the author describes how they feel. Decide which of six basic "
+        "emotions it expresses: sadness, joy, love, anger, fear or surprise."
+    ),
+    (
+        "Below is a Twitter message in which the author describes how they feel. Decide which of six basic "
+        "emotions it expresses: sadness, joy, love, anger, fear or surprise."
+    ),
+    (
+        "You are given a tweet where the author talks about their feelings. Classify it as one of six basic "
+        "emotions: sadness, joy, love, anger, fear, or surprise."
+    ),
+    (
+        "You read tweets in which people describe how they feel and tag each with one of six basic emotions: "
+        "sadness, joy, love, anger, fear or surprise. Decide which one the tweet below expresses."
+    ),
+    (
+        "A Twitter user describes their feelings in the message below. Decide which basic emotion it expresses, "
+        "out of sadness, joy, love, anger, fear and surprise."
+    ),
+]
 
 
 class EmotionDataset(JevDataset):

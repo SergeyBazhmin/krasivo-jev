@@ -11,11 +11,33 @@ from jev_datasets.utils import SAMPLE_FEATURES, make_options, make_sample, with_
 # BBH Logical Deduction) would duplicate those.
 ANSWER = re.compile(r"<answer>(.*)</answer>")
 
-AR_LSAT_ABOUT = (
-    'You are solving an analytical reasoning puzzle (a "logic game") like those on law school admission tests. The '
-    "context sets up a scheduling, ordering or grouping task under constraints; answer the question from those "
-    "constraints alone."
-)
+AR_LSAT_ABOUT = [
+    (
+        'You are solving an analytical reasoning puzzle (a "logic game") like those on law school admission tests. '
+        "The context sets up a scheduling, ordering or grouping task under constraints; answer the question from "
+        "those constraints alone."
+    ),
+    (
+        'You are given an analytical reasoning puzzle, a "logic game" of the kind on law school admission tests. '
+        "The context sets up a scheduling, ordering or grouping task with constraints; answer the question from "
+        "the constraints alone."
+    ),
+    (
+        'Below is a "logic game", an analytical reasoning puzzle like those on law school admission tests. Its '
+        "context describes a scheduling, ordering or grouping task under constraints. Use only those constraints "
+        "to answer the question."
+    ),
+    (
+        'You solve analytical reasoning puzzles ("logic games") such as those on law school admission tests. The '
+        "context describes a task of scheduling, ordering or grouping under constraints, and the answer follows "
+        "from those constraints alone."
+    ),
+    (
+        'This is an analytical reasoning puzzle (a "logic game") in the style of law school admission tests. The '
+        "context poses a scheduling, ordering or grouping task under constraints; answer the question using only "
+        "those constraints."
+    ),
+]
 AR_LSAT_PROMPT = re.compile(r"Context: (.*)\nQuestion: (.*)\nOptions: (.*?) Please answer the question", re.DOTALL)
 LETTER = re.compile(r"(?:^|\s)([A-E])\)\s")
 

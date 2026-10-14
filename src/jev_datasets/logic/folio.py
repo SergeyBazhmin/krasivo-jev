@@ -9,11 +9,32 @@ QUESTIONS = [
     "Taking the premises as true, is the conclusion true, false, or uncertain?",
 ]
 OPTIONS = make_options(["True", "False", "Uncertain"])
-ABOUT = (
-    "You are given premises in natural language and a conclusion. Take the premises as true and as everything there is "
-    "to know, ignoring outside knowledge even when they are about real things, and decide whether the conclusion "
-    "follows from them."
-)
+ABOUT = [
+    (
+        "You are given premises in natural language and a conclusion. Take the premises as true and as everything "
+        "there is to know, ignoring outside knowledge even when they are about real things, and decide whether the "
+        "conclusion follows from them."
+    ),
+    (
+        "Below are premises in natural language and a conclusion. Treat the premises as true and as all there is "
+        "to know, ignoring outside knowledge even when they mention real things, and decide whether the conclusion "
+        "follows from them."
+    ),
+    (
+        "You are given natural-language premises and a conclusion. Assume the premises are true and that nothing "
+        "else is known; set aside outside knowledge even if they are about real things. Decide whether the "
+        "conclusion follows."
+    ),
+    (
+        "You check logical arguments. Take the premises below as true and as complete knowledge, disregarding what "
+        "you know about the real things they may mention, and decide whether the conclusion follows from them."
+    ),
+    (
+        "A set of premises in natural language is followed by a conclusion. Accept the premises as true and as "
+        "everything known, without using outside knowledge even about real things, and decide whether the "
+        "conclusion follows from them."
+    ),
+]
 ANSWERS = {
     "True": "the conclusion follows from the premises",
     "False": "the negation of the conclusion follows from the premises",

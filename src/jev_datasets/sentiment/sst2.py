@@ -8,10 +8,28 @@ QUESTIONS = [
     "What is the sentiment of this sentence from a film review?",
     "Does this snippet speak well or badly of the movie?",
 ]
-ABOUT = (
-    "You are given a single sentence from a movie review, lowercased and split into tokens. Decide whether the opinion "
-    "of the film it conveys is positive or negative."
-)
+ABOUT = [
+    (
+        "You are given a single sentence from a movie review, lowercased and split into tokens. Decide whether the "
+        "opinion of the film it conveys is positive or negative."
+    ),
+    (
+        "Below is a single sentence from a movie review, lowercased and split into tokens. Decide whether the "
+        "opinion of the film it conveys is positive or negative."
+    ),
+    (
+        "You are given one sentence taken from a movie review; it is lowercased and tokenized. Decide if it "
+        "conveys a positive or a negative opinion of the film."
+    ),
+    (
+        "You classify sentences from movie reviews by sentiment. The sentence below is lowercased and split into "
+        "tokens; decide whether its opinion of the film is positive or negative."
+    ),
+    (
+        "A sentence from a movie review is shown below in lowercase and split into tokens. Judge whether it "
+        "expresses a positive or negative opinion of the film."
+    ),
+]
 
 
 class SST2Dataset(JevDataset):

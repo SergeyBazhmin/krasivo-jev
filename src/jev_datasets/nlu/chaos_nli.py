@@ -11,11 +11,33 @@ QUESTIONS = [
 ]
 # order of `label_dist`, the share of 100 annotators that picked each label
 OPTIONS = make_options(["entailment", "neutral", "contradiction"])
-ABOUT = (
-    "You are given a premise and a hypothesis. Decide whether, judging by the premise alone, the hypothesis is "
-    "definitely true, definitely false, or neither. Some pairs can be read in more than one way, and then more than "
-    "one answer is plausible."
-)
+ABOUT = [
+    (
+        "You are given a premise and a hypothesis. Decide whether, judging by the premise alone, the hypothesis is "
+        "definitely true, definitely false, or neither. Some pairs can be read in more than one way, and then more "
+        "than one answer is plausible."
+    ),
+    (
+        "Below are a premise and a hypothesis. Judging by the premise alone, decide whether the hypothesis is "
+        "definitely true, definitely false, or neither. Some pairs can be read in more than one way, and then more "
+        "than one answer is plausible."
+    ),
+    (
+        "You are given a premise and a hypothesis. Decide whether the premise alone makes the hypothesis "
+        "definitely true, definitely false, or neither. Some pairs are open to more than one reading, in which "
+        "case several answers are plausible."
+    ),
+    (
+        "You judge hypotheses against a premise. Using only the premise, decide if the hypothesis is definitely "
+        "true, definitely false, or neither. When a pair can be read in more than one way, more than one answer "
+        "can be plausible."
+    ),
+    (
+        "A premise is followed by a hypothesis. Decide, based only on the premise, whether the hypothesis is "
+        "definitely true, definitely false, or neither. Some pairs allow several readings, and then more than one "
+        "answer is plausible."
+    ),
+]
 
 
 class ChaosNLIDataset(JevDataset):

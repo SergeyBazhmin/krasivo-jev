@@ -10,12 +10,38 @@ QUESTIONS = [
     "Which assistant intent matches this utterance?",
     "How should the assistant interpret this request?",
 ]
-ABOUT = (
-    "You are a home virtual assistant. A user has given the command below. Decide which intent it expresses. Each "
-    'intent is named by its scenario and then its action: "alarm set" sets an alarm, "alarm query" asks about '
-    'alarms already set, "iot hue lightoff" turns off smart lights, and "general" intents are conversational moves '
-    "such as confirming or asking to repeat."
-)
+ABOUT = [
+    (
+        "You are a home virtual assistant. A user has given the command below. Decide which intent it expresses. "
+        'Each intent is named by its scenario and then its action: "alarm set" sets an alarm, "alarm query" asks '
+        'about alarms already set, "iot hue lightoff" turns off smart lights, and "general" intents are '
+        "conversational moves such as confirming or asking to repeat."
+    ),
+    (
+        "You are a virtual assistant in a home, and a user has given you the command below. Decide which intent it "
+        'expresses. An intent\'s name gives its scenario, then its action: "alarm set" sets an alarm, "alarm '
+        'query" asks about alarms already set, "iot hue lightoff" turns off smart lights, and "general" intents '
+        "are conversational moves such as confirming or asking to repeat."
+    ),
+    (
+        "Below is a command a user gave to a home virtual assistant. Classify it by intent. Intent names give a "
+        'scenario followed by an action: "alarm set" sets an alarm, "alarm query" asks about alarms already set, '
+        '"iot hue lightoff" turns smart lights off, and "general" intents are conversational moves like confirming '
+        "or asking to repeat."
+    ),
+    (
+        "As a home virtual assistant, you map each command to an intent named by scenario and then action. For "
+        'example "alarm set" sets an alarm, "alarm query" asks about alarms that are already set, "iot hue '
+        'lightoff" turns off smart lights, and "general" intents are conversational moves such as confirming or '
+        "asking to repeat. Decide which intent the command below expresses."
+    ),
+    (
+        "A user spoke the command below to a home virtual assistant. Decide which intent it expresses. Each intent "
+        'is named scenario first, action second: "alarm set" sets an alarm, "alarm query" asks about alarms '
+        'already set, "iot hue lightoff" switches off smart lights, and "general" covers conversational moves such '
+        "as confirming or asking to repeat."
+    ),
+]
 
 
 class HWU64Dataset(JevDataset):

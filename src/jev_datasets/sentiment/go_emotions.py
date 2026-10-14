@@ -10,11 +10,33 @@ QUESTIONS = [
     "Which emotion best describes this comment?",
     "What is the emotional tone of this comment?",
 ]
-ABOUT = (
-    "You are given a comment from Reddit, an online discussion forum, with people's names masked as [NAME]. Decide "
-    "which emotion it expresses, out of 27 fine-grained emotions such as admiration, amusement, annoyance, gratitude, "
-    "nervousness or remorse, or neutral if it expresses none."
-)
+ABOUT = [
+    (
+        "You are given a comment from Reddit, an online discussion forum, with people's names masked as [NAME]. "
+        "Decide which emotion it expresses, out of 27 fine-grained emotions such as admiration, amusement, "
+        "annoyance, gratitude, nervousness or remorse, or neutral if it expresses none."
+    ),
+    (
+        "Below is a comment from the online discussion forum Reddit, with people's names masked as [NAME]. Decide "
+        "which emotion it expresses, out of 27 fine-grained emotions such as admiration, amusement, annoyance, "
+        "gratitude, nervousness or remorse, or neutral if it expresses none."
+    ),
+    (
+        "You are given a Reddit comment (Reddit is an online discussion forum) in which names are replaced by "
+        "[NAME]. Classify the emotion it expresses into one of 27 fine-grained emotions, for example admiration, "
+        "amusement, annoyance, gratitude, nervousness or remorse, or as neutral when there is none."
+    ),
+    (
+        "You tag comments from Reddit, an online forum, by emotion; people's names in them are masked as [NAME]. "
+        "Choose among 27 fine-grained emotions, such as admiration, amusement, annoyance, gratitude, nervousness "
+        "or remorse, or neutral if the comment expresses no emotion."
+    ),
+    (
+        "A comment was posted on Reddit, an online discussion forum, and names in it are masked as [NAME]. Decide "
+        "which of 27 fine-grained emotions it expresses (admiration, amusement, annoyance, gratitude, nervousness, "
+        "remorse and so on), or neutral if it expresses none."
+    ),
+]
 
 
 class GoEmotionsDataset(JevDataset):

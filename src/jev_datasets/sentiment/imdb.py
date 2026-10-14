@@ -11,10 +11,28 @@ QUESTIONS = [
 
 IDS = {"neg": "negative", "pos": "positive"}
 
-ABOUT = (
-    "You are given a user review of a movie. Decide whether the reviewer's overall opinion of the film is positive or "
-    "negative."
-)
+ABOUT = [
+    (
+        "You are given a user review of a movie. Decide whether the reviewer's overall opinion of the film is "
+        "positive or negative."
+    ),
+    (
+        "Below is a user's review of a movie. Decide whether the reviewer's overall opinion of the film is "
+        "positive or negative."
+    ),
+    (
+        "You are given a movie review written by a viewer. Decide if, overall, the reviewer liked the film "
+        "(positive) or not (negative)."
+    ),
+    (
+        "You classify movie reviews by sentiment. Decide whether the overall opinion of the film in the review "
+        "below is positive or negative."
+    ),
+    (
+        "A user wrote the movie review below. Judge whether the reviewer's opinion of the film, taken as a whole, "
+        "is positive or negative."
+    ),
+]
 
 
 class IMDBDataset(JevDataset):
