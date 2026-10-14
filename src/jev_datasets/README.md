@@ -23,6 +23,7 @@ distribution.
 uv run jev list                                              # registered datasets
 uv run jev prepare sst2 anli                                 # some of them, into data/<name>
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
+uv run jev prepare all -j 8                                  # 8 datasets at once, one process each
 ```
 
 `prepare` loads the source from the Hub, converts it, regroups the splits (below), stamps `type` on every row, caps

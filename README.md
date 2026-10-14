@@ -40,6 +40,7 @@ bash src/scripts/serve_qwen.sh    # Qwen/Qwen3.5-2B, text only
 uv run jev list                                   # registered datasets
 uv run jev prepare all                            # every dataset into data/<name>
 uv run jev prepare sst2 anli --max-samples 5000   # some of them, a smaller cap per split
+uv run jev prepare all -j 8                       # 8 datasets at once, one process each
 ```
 
 The default cap is 10,000 rows per split (stratified by label). The runs in `runs/` were built with

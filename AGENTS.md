@@ -47,6 +47,9 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
   - `make_options(ids, texts=None)`, `make_option`
   - `pick_question(versions, seed)`: picks one of several question phrasings per sample.
     The choice is deterministic because it is seeded by the sample text.
+  - `with_context(about, text, name, answers)`: puts `text` under the dataset's instruction. `about` is a list of
+    paraphrases; one is picked by `text`, so every row on the same context gets the same state.
+    `pick_about(versions, seed)` does the same pick for states built by hand.
   - `stable_shuffle(items, seed)`: deterministic shuffle for sources that always put the
     answer first
   - `explode(fn)`: adapts a `row -> [samples]` function to a batched `map`
@@ -72,6 +75,7 @@ uv sync
 uv run jev list                              # registered dataset names
 uv run jev prepare sst2 anli                 # build specific datasets
 uv run jev prepare all --max-samples 5000 --output-dir /path/to/out
+uv run jev prepare all -j 8                  # 8 datasets at once, one process each
 ```
 
 `prepare` loads from the Hub and runs `prepare()`. It then calls `regroup()`, which groups rows by their `group` column
@@ -98,7 +102,8 @@ and `knowledge/sciq.py` show parsing and shuffling.
    `ClassLabel` type for `label`.
 4. Drop unlabelled splits, such as a `test` split with `label == -1`.
 5. Give each dataset a `QUESTIONS` list of about 5 paraphrases and choose one per sample
-   with `pick_question`, so the model does not overfit to a single fixed prompt.
+   with `pick_question`, so the model does not overfit to a single fixed prompt. Likewise give its
+   instruction (`ABOUT`) about 5 paraphrases that keep the same definitions and conventions.
 6. If the source orders answers so that position gives away the label, shuffle the options
    deterministically (`stable_shuffle`, or `random.Random(seed)`). Use positional ids
    (`A`, `B`, ...) when option texts can repeat.
