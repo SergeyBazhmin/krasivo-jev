@@ -54,7 +54,7 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
     answer first
   - `explode(fn)`: adapts a `row -> [samples]` function to a batched `map`
   - `slugify`: builds an option id from text
-  - `stratified_limit`: subsamples a split while keeping the label (argmax) distribution
+  - `random_limit`: caps a split with a seeded uniform random sample
 - `constants.py`: `MAX_SAMPLES = 10_000` per split. `ROOT_DIR` is the default output
   directory. It resolves to `data/` at the repo root, so built datasets land in `data/<name>/`.
 - `cli.py`: the `jev` Typer CLI.
@@ -85,7 +85,8 @@ rows are dropped, keeping the held-out copy; no other row is lost. Split names a
 `validation`, unknown -> `train`), and afterwards missing splits are carved by a hash of the group (`split_missing`):
 `HOLDOUT_PERCENT` (5%) of train each for a missing validation/test, or an 80/10/10 re-split of every row when the
 source has no train split. So every saved dataset has exactly `train`, `validation` and `test`. Converters don't need to
-handle this themselves. Finally it does a stratified cap on each split and calls `save_to_disk(output_dir / name)`.
+handle this themselves. Finally it caps each split with a seeded random sample and calls
+`save_to_disk(output_dir / name)`.
 
 ## Adding a dataset
 

@@ -6,7 +6,6 @@ from collections import Counter
 from collections.abc import Callable
 from string import ascii_uppercase
 
-import numpy as np
 from datasets import Dataset, DatasetDict, Features, Value, concatenate_datasets
 
 from jev_datasets.constants import EVAL_ONLY_HOLDOUT_PERCENT, HOLDOUT_PERCENT, MAX_DISTRACTORS
@@ -220,18 +219,8 @@ def split_missing(data: DatasetDict) -> tuple[DatasetDict, Counter]:
     return split, carved
 
 
-def stratified_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:
-    """At most `max_samples` rows, drawn so each answer (argmax of `label`) keeps its share."""
+def random_limit(dataset: Dataset, max_samples: int, seed: int = 0) -> Dataset:
+    """At most `max_samples` rows, drawn uniformly at random (seeded, so builds are reproducible)."""
     if dataset.num_rows <= max_samples:
         return dataset
-    strata = np.array([int(np.argmax(label)) for label in dataset["label"]])
-    _, inverse, counts = np.unique(strata, return_inverse=True, return_counts=True)
-    # largest-remainder rounding, so the quotas add up to exactly `max_samples`
-    quotas = counts * max_samples / dataset.num_rows
-    take = np.floor(quotas).astype(int)
-    take[np.argsort(take - quotas, kind="stable")[: max_samples - take.sum()]] += 1
-    rng = np.random.default_rng(seed)
-    indices = np.concatenate(
-        [rng.choice(np.flatnonzero(inverse == k), size=n, replace=False) for k, n in enumerate(take)]
-    )
-    return dataset.select(np.sort(indices))
+    return dataset.select(sorted(random.Random(seed).sample(range(dataset.num_rows), max_samples)))

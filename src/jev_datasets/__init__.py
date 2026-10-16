@@ -15,6 +15,7 @@ from jev_datasets.classification.dbpedia import dbpedia_dataset
 from jev_datasets.classification.hwu64 import hwu64_dataset
 from jev_datasets.classification.massive_intent import massive_intent_dataset
 from jev_datasets.classification.massive_intent_ru import massive_intent_ru_dataset
+from jev_datasets.classification.rus_med_dialogues import rus_med_dialogues_dataset, rus_med_dialogues_noul_dataset
 from jev_datasets.classification.ticket_routing import (
     ticket_routing_dataset,
     ticket_subject_dataset,
@@ -60,10 +61,10 @@ from jev_datasets.retrieval.nomiracl import (
     nomiracl_passage_ru_dataset,
     nomiracl_ru_dataset,
 )
-from jev_datasets.retrieval.wikiqa import wikiqa_dataset
+from jev_datasets.retrieval.wikiqa import wikiqa_dataset, wikiqa_noul_dataset
 from jev_datasets.sentiment.cedr import cedr_dataset
 from jev_datasets.sentiment.emotion import emotion_dataset
-from jev_datasets.sentiment.go_emotions import go_emotions_dataset
+from jev_datasets.sentiment.go_emotions import go_emotions_dataset, go_emotions_noul_dataset
 from jev_datasets.sentiment.imdb import imdb_dataset
 from jev_datasets.sentiment.sst2 import sst2_dataset
 from jev_datasets.sentiment.tweet_sentiment import tweet_sentiment_dataset
@@ -117,6 +118,7 @@ datasets = {
         folio_dataset,
         github_issue_type_dataset,
         go_emotions_dataset,
+        go_emotions_noul_dataset,
         halueval_dialogue_dataset,
         halueval_qa_dataset,
         halueval_summarization_dataset,
@@ -151,6 +153,8 @@ datasets = {
         ru_paraphraser_dataset,
         rublimp_dataset,
         rucola_dataset,
+        rus_med_dialogues_dataset,
+        rus_med_dialogues_noul_dataset,
         russe_dataset,
         russian_toxicity_dataset,
         safeguard_prompt_injection_dataset,
@@ -177,5 +181,6 @@ datasets = {
         vscode_triage_dataset,
         webnlg_en_dataset,
         wikiqa_dataset,
+        wikiqa_noul_dataset,
     )
 }
