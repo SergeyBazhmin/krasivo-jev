@@ -76,7 +76,10 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `jailbreak_classification`    | noul     | `jackhhao/jailbreak-classification` |
 |                  | `safeguard_prompt_injection`  | noul     | `xTRam1/safe-guard-prompt-injection` |
 |                  | `spml_prompt_injection`       | noul     | `reshabhs/SPML_Chatbot_Prompt_Injection` |
-| `knowledge`      | `sciq`                        | choice   | `allenai/sciq` (only rows with a support passage) |
+| `knowledge`      | `qasc`                        | choice   | `allenai/qasc` (the two facts as state; unlabelled test dropped) |
+|                  | `quartz`                      | choice   | `allenai/quartz` |
+|                  | `ropes`                       | choice   | `allenai/ropes` (`plain_text`, other answers on the same situation as distractors) |
+|                  | `sciq`                        | choice   | `allenai/sciq` (only rows with a support passage) |
 | `logic`          | `ar_lsat`                     | choice   | `RuleReasoner/RuleCollection-32K` |
 |                  | `clutrr`                      | choice   | `tasksource/clutrr` |
 |                  | `folio`                       | choice   | `yfxiao/folio-refined` |
@@ -88,12 +91,16 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `boolq`                       | noul     | `google/boolq` |
 |                  | `chaos_nli`                   | choice   | `tasksource/chaos-mnli-ambiguity` (soft labels) |
 |                  | `danetqa`                     | choice   | `RussianNLP/russian_super_glue` (`DaNetQA`) |
+|                  | `dream`                       | choice   | `dataset-org/dream` (parquet export) |
+|                  | `hotpot_qa`                   | choice   | `hotpotqa/hotpot_qa` (`distractor`, comparison questions answered by an entity) |
+|                  | `hotpot_qa_noul`              | noul     | `hotpotqa/hotpot_qa` (`distractor`, comparison questions answered yes/no) |
 |                  | `lidirus`                     | choice   | `RussianNLP/russian_super_glue` (`LiDiRus`, evaluation only) |
 |                  | `mera_multiq`                 | choice   | `ai-forever/MERA` (`multiq`, evidence selection) |
 |                  | `multi_nli`                   | choice   | `nyu-mll/multi_nli` |
 |                  | `multi_nli_genre`             | choice   | `nyu-mll/multi_nli` |
 |                  | `muserc`                      | choice   | `RussianNLP/russian_super_glue` (`MuSeRC`) |
 |                  | `paws`                        | noul     | `google-research-datasets/paws` (`labeled_final`) |
+|                  | `quail`                       | choice   | `textmachinelab/quail` (without `Event_duration` questions) |
 |                  | `race`                        | choice   | `ehovy/race` (`all`) |
 |                  | `rcb`                         | choice   | `RussianNLP/russian_super_glue` (`RCB`) |
 |                  | `ru_paraphraser`              | choice   | `merionum/ru_paraphraser` (three classes) |
@@ -139,6 +146,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 | `truthfulness`   | `halueval_dialogue`           | noul     | `pminervini/HaluEval` (`dialogue`) |
 |                  | `halueval_qa`                 | noul     | `pminervini/HaluEval` (`qa`) |
 |                  | `halueval_summarization`      | noul     | `pminervini/HaluEval` (`summarization`) |
+|                  | `vitaminc`                    | choice   | `tals/vitaminc` (real Wikipedia revisions only) |
 
 Many logic and spatial sources bundle the same underlying sets (SpaRP includes StepGame, RuleCollection bundles
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into

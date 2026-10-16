@@ -25,6 +25,9 @@ from jev_datasets.guardrails.aegis_category import aegis_category_dataset
 from jev_datasets.guardrails.jailbreak_classification import jailbreak_classification_dataset
 from jev_datasets.guardrails.safeguard_prompt_injection import safeguard_prompt_injection_dataset
 from jev_datasets.guardrails.spml_prompt_injection import spml_prompt_injection_dataset
+from jev_datasets.knowledge.qasc import qasc_dataset
+from jev_datasets.knowledge.quartz import quartz_dataset
+from jev_datasets.knowledge.ropes import ropes_dataset
 from jev_datasets.knowledge.sciq import sciq_dataset
 from jev_datasets.logic.clutrr import clutrr_dataset
 from jev_datasets.logic.folio import folio_dataset
@@ -36,8 +39,11 @@ from jev_datasets.nlu.anli import anli_dataset
 from jev_datasets.nlu.babi_nli import babi_nli_dataset
 from jev_datasets.nlu.boolq import boolq_dataset
 from jev_datasets.nlu.chaos_nli import chaos_nli_dataset
+from jev_datasets.nlu.dream import dream_dataset
+from jev_datasets.nlu.hotpot_qa import hotpot_qa_dataset, hotpot_qa_noul_dataset
 from jev_datasets.nlu.multi_nli import multi_nli_dataset, multi_nli_genre_dataset
 from jev_datasets.nlu.paws import paws_dataset
+from jev_datasets.nlu.quail import quail_dataset
 from jev_datasets.nlu.race import race_dataset
 from jev_datasets.nlu.ru_paraphraser import ru_paraphraser_dataset
 from jev_datasets.nlu.rublimp import rublimp_dataset
@@ -88,6 +94,7 @@ from jev_datasets.truthfulness.halueval import (
     halueval_qa_dataset,
     halueval_summarization_dataset,
 )
+from jev_datasets.truthfulness.vitaminc import vitaminc_dataset
 
 datasets = {
     dataset.name: dataset
@@ -113,6 +120,7 @@ datasets = {
         cuad_spans_dataset,
         danetqa_dataset,
         dbpedia_dataset,
+        dream_dataset,
         emotion_dataset,
         financial_news_topic_dataset,
         folio_dataset,
@@ -122,6 +130,8 @@ datasets = {
         halueval_dialogue_dataset,
         halueval_qa_dataset,
         halueval_summarization_dataset,
+        hotpot_qa_dataset,
+        hotpot_qa_noul_dataset,
         hwu64_dataset,
         imdb_dataset,
         jailbreak_classification_dataset,
@@ -147,9 +157,13 @@ datasets = {
         paws_dataset,
         proofwriter_dataset,
         proverqa_dataset,
+        qasc_dataset,
+        quail_dataset,
+        quartz_dataset,
         race_dataset,
         rcb_dataset,
         reclor_dataset,
+        ropes_dataset,
         ru_paraphraser_dataset,
         rublimp_dataset,
         rucola_dataset,
@@ -178,6 +192,7 @@ datasets = {
         tweet_hate_dataset,
         tweet_offensive_dataset,
         tweet_sentiment_dataset,
+        vitaminc_dataset,
         vscode_triage_dataset,
         webnlg_en_dataset,
         wikiqa_dataset,
