@@ -54,6 +54,7 @@ packages = ["src/jev_datasets", "src/jev_model", "src/jev_vllm"]
 
 [dependency-groups]
 dev = [
+    "pytest>=9.1.1",
     "ruff>=0.16.10",
 ]
 
