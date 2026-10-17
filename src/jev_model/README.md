@@ -53,9 +53,8 @@ string; `list` fields also take `a,b`. A `.env` at the repo root is loaded into 
 
 - `data.py`: `resolve_names` (every built dataset in `data/` when none are named) and `partition`, which reads the
   train/validation/test splits `jev prepare` saved (carved and group-disjoint there).
-- `metrics.py`: `scores` over padded option logits: accuracy and macro precision/recall/F1 against the argmax of
-  the label, soft NLL, and top-1 ECE. `with_macro` adds the unweighted mean over datasets; `fit_temperature`
-  calibrates logits.
+- `metrics.py`: `scores` over padded option logits: accuracy against the argmax of the label, soft NLL, and
+  top-1 ECE. `with_macro` adds the unweighted mean over datasets; `fit_temperature` calibrates logits.
 
 `eval` prints one line per dataset plus `macro`. `notebooks/compare_runs.ipynb` compares evaluated runs.
 

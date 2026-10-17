@@ -42,7 +42,7 @@ def evaluate(config: TypesafeConfig, names: list[str], part: str, out_dir: Path)
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")
         m = metrics[name]
         tqdm.write(
-            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  "
+            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  "
             f"nll={m['nll']:.3f}  ece={m['ece']:.3f}  answered={m['answered']:.3f}"
         )
         total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")

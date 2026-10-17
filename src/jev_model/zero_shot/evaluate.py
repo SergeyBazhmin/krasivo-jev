@@ -6,7 +6,7 @@ import torch
 from tqdm import tqdm
 
 from jev_model.data import load_samples
-from jev_model.metrics import macro_prf, with_macro
+from jev_model.metrics import with_macro
 from jev_model.zero_shot.client import connect
 from jev_model.zero_shot.config import ZeroShotConfig
 from jev_model.zero_shot.prompt import parse
@@ -54,17 +54,14 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
         current.close()
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")
         m = metrics[name]
-        tqdm.write(
-            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  "
-            f"parsed={m['parsed']:.3f}"
-        )
+        tqdm.write(f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  parsed={m['parsed']:.3f}")
         total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
     total.close()
     return with_macro(metrics)
 
 
 def score(samples: list[dict], answers: list[str], path: Path) -> dict[str, float]:
-    """Accuracy and macro precision/recall/F1 of the parsed answers; an answer that names no option is wrong.
+    """Accuracy of the parsed answers; an answer that names no option is wrong.
     `nll` and `ece` need probabilities, which generation does not give: they are NaN."""
     chosen = [parse(answer, texts(sample)) for sample, answer in zip(samples, answers)]
     gold = [max(range(len(s["label"])), key=lambda j: s["label"][j]) for s in samples]
@@ -86,7 +83,6 @@ def score(samples: list[dict], answers: list[str], path: Path) -> dict[str, floa
     return {
         "n": len(samples),
         "accuracy": (predicted == torch.tensor(gold)).float().mean().item(),
-        **macro_prf(predicted, torch.tensor(gold)),
         "nll": math.nan,
         "ece": math.nan,
         "parsed": sum(choice is not None for choice in chosen) / len(chosen),
