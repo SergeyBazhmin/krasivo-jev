@@ -18,9 +18,9 @@ class TrainConfig:
     eval_samples: int = 1000
     # how training samples are drawn: weighted (per-dataset weights, with replacement) or sized (each pass
     # shuffles the whole training set and cuts it in that order into batches of at most `batch_tokens`)
-    sampling: str = "weighted"
+    sampling: str = "sized"
     # sized sampling only: train for this many passes over the training set instead of `steps`; 0 keeps `steps`
-    epochs: int = 0
+    epochs: int = 2
     # weighted sampling only: each dataset is drawn in proportion to rows ** alpha (1 = by size, 0 = uniform)
     alpha: float = 0.5
     # chance that a training draw shows "None of the above" in place of the true option
@@ -43,7 +43,7 @@ class PointerConfig:
     # built datasets to use; empty for every one under data_dir
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
-    model: str = "unsloth/Qwen3.5-2B-Base"
+    model: str = "Qwen/Qwen3.5-2B-Base"
     # LoRA rank, and which projections get an adapter: all, attn or qv
     lora: int = 16
     lora_targets: str = "all"
