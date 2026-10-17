@@ -34,6 +34,8 @@ ABOUT = [
 
 class TweetSentimentDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def prepare(self):
         # negative, neutral, positive

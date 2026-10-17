@@ -4,7 +4,7 @@ A trained run is merged into one folder and served by vLLM 0.17.1 with two plugi
 (`src/jev_vllm/`). The endpoint takes the same body as TypeSafe's `system_one` API and answers in its shape.
 
 ```
-runs/pointer/X ──jev-model export──▶ exports/X ──serve_pointer.sh──▶ vLLM :8080 /pooling
+runs/pointer/X ──jev-model export──▶ exports/X ──uv run serve──▶ vLLM :8080 /pooling
  (base name + LoRA + head)            (merged bf16 weights,             (Qwen3_5PointerModel +
                                         config, tokenizer)                jev_pointer IO processor)
 ```
@@ -46,14 +46,16 @@ Add `revision=` to `snapshot_download` to pin a version. For a private repo, log
 ### With Docker (recommended)
 
 ```bash
-bash src/scripts/serve_pointer.sh exports/X                       # extra arguments go to vLLM
-bash src/scripts/serve_pointer.sh exports/X --max-num-seqs 512
+uv run serve exports/X                                  # port 8080, container `jev-pointer`
+uv run serve exports/X --port 8081 --name jev-b --follow # another port and name, then tail the logs
+uv run serve exports/X -- --max-num-seqs 512             # arguments after `--` go to vLLM
 ```
 
-The script builds `docker/vllm.Dockerfile` (the `vllm/vllm-openai:v0.17.1` image plus this package installed with
+`serve` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (the `vllm/vllm-openai:v0.17.1` image plus this package installed with
 `--no-deps`, so the image keeps its own torch and transformers), mounts the export read-only at `/model`, and starts
-the container detached on port 8080 with `--runner pooling --served-model-name pointer`. Follow it with
-`docker logs -f <container>`; it is ready when `/health` returns 200.
+the container detached with `--runner pooling --served-model-name pointer`, replacing a container of the same name.
+The build is a no-op when the sources haven't changed and picks up edits to `src/` when they have; `--no-build`
+skips it. Follow it with `docker logs -f jev-pointer`; it is ready when `/health` returns 200.
 
 ### Without Docker
 
@@ -144,7 +146,7 @@ requests, which is where it beats `JevHolder` on throughput.
 - **Numbers match the torch path up to bf16 noise.** The merged weights are bf16 and the head runs in float32, as in
   training. Spot-check a new export against `JevHolder` on a few rows before switching traffic.
 - **One model per server.** Serve several exports on different ports or GPUs (`CUDA_VISIBLE_DEVICES`, `-p`).
-- **Memory.** `serve_pointer.sh` passes `--gpu-memory-utilization 0.95`; lower it when the GPU is shared.
+- **Memory.** `serve` passes `--gpu-memory-utilization 0.95`; lower it when the GPU is shared.
 
 ## Troubleshooting
 

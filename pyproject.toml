@@ -36,6 +36,7 @@ ui = [
 [project.scripts]
 jev = "jev_datasets.cli:app"
 jev-model = "jev_model.cli:app"
+serve = "jev_vllm.serve:main"
 
 # vLLM plugins (`src/jev_vllm/`) that serve an exported `pointer` run; the IO processor's name is the
 # `io_processor_plugin` that `jev-model export` writes into `config.json`

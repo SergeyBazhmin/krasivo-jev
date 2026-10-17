@@ -52,7 +52,10 @@ string; `list` fields also take `a,b`. A `.env` at the repo root is loaded into 
 ## Data and metrics
 
 - `data.py`: `resolve_names` (every built dataset in `data/` when none are named) and `partition`, which reads the
-  train/validation/test splits `jev prepare` saved (carved and group-disjoint there).
+  train/validation/test splits `jev prepare` saved (carved and group-disjoint there). `train_names` leaves out
+  benchmark datasets (`benchmark` in `jev_datasets`, e.g. OpenDecisions), and `benchmark_names` lists the built
+  ones, which every model is scored on. `rows` gives a split's samples, or with `whole` all of them: a benchmark the
+  model never trained on is scored on every split combined.
 - `metrics.py`: `scores` over padded option logits: accuracy against the argmax of the label, soft NLL, and
   top-1 ECE. `with_macro` adds the unweighted mean over datasets; `fit_temperature` calibrates logits.
 

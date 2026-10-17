@@ -43,6 +43,8 @@ class PointerConfig:
     # built datasets to use; empty for every one under data_dir
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
+    # also train on the benchmark datasets, for a final model on all data
+    train_on_benchmark: bool = False
     model: str = "Qwen/Qwen3.5-2B-Base"
     # LoRA rank, and which projections get an adapter: all, attn or qv
     lora: int = 16

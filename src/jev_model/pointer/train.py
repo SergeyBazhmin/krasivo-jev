@@ -93,7 +93,7 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
         logger.info(f"{stage_config.epochs} epochs: {count} batches, {stage_config.steps} steps")
     # every process walks the same stream and keeps every `world`-th batch
     batches = itertools.islice(pool.batches(stage_config.batch_tokens, generator), rank, None, world)
-    optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay)
+    optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay, fused=True)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: losses.lr_factor(step, stage_config))
     saved = {"stage": stage, "train": asdict(stage_config), "datasets": names}
 

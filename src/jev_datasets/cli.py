@@ -29,7 +29,7 @@ def build(name: str, max_samples: int, output_dir: Path, quiet: bool = False):
     dataset.regroup()
     dataset.add_type()
     dataset.limit(max_samples)
-    dataset.data.save_to_disk(output_dir / name)
+    dataset.save_to(output_dir / name)
     typer.echo(f"[{name}] saved {dict(dataset.data.num_rows)} to {output_dir / name}")
 
 

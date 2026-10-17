@@ -64,6 +64,17 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
   `logic`, `nlu`, `reasoning`, `sentiment`, `spatial`, `toxicity`, `truthfulness`.
   `logic` holds synthetic deduction sets (ProofWriter, LogicNLI, FOLIO, ...) and `spatial`
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
+- Benchmark datasets (`benchmark = True` on the class) are held out. They are saved with the usual
+  train/validation/test splits. Training skips them unless `pointer`'s `train_on_benchmark` is set (a final model on
+  all data, which then trains on their train split as usual). At `eval`, a model that never trained on a benchmark
+  is scored on all its splits combined, whichever partition is asked for.
+  The benchmarks:
+  - OpenDecisions (`business/open_decisions.py`), split by type into `open_decisions_noul` and
+    `open_decisions_choice` (its `score` items are dropped). It keeps each item's own instructions and option
+    order, with no paraphrases or shuffling, so every model sees the same item.
+  - one converter file per other topic, drawn by `random.Random(f"eval_only:{topic}")`: `github_issue_type`,
+    `hwu64`, `jailbreak_classification`, `ropes`, `ar_lsat`, `rublimp`, `logiqa`, `nomiracl*`, `tweet_sentiment`,
+    `stepgame`, `webnlg_en`, `russian_toxicity`, `vitaminc`.
 - Many logic and spatial sources share data (for example, SpaRP includes StepGame, and
   RuleCollection bundles ProntoQA, LogicNLI, ProofWriter and more). Take each underlying
   set from only one source, so test rows don't leak into another dataset's train split.
@@ -126,6 +137,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `configs/pointer.toml` is the example config, with every key commented.
 - `data.py`: `resolve_names` and `partition` (the saved train/validation/test splits; it fails on datasets built
   before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
+  Training goes through `train_names`, which leaves out benchmark datasets. `pointer` evaluates its training
+  datasets plus the benchmarks it didn't train on, and `rows(..., whole=True)` merges their splits.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
@@ -147,8 +160,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   replies with the number of an option. `train` only records the config, and `eval` scores it.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
   an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the `zero_shot` model.
-  `serve_pointer.sh EXPORT_DIR` builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this package, so the `jev_vllm`
-  plugins load) and serves a `jev-model export` folder on `http://localhost:8080/pooling`.
+  `uv run serve EXPORT_DIR` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this package,
+  so the `jev_vllm` plugins load) and serves a `jev-model export` folder on `http://localhost:8080/pooling`.
 - `typesafe/`: TypeSafe's hosted `jev` model (`typesafe/jev-1.13`) through its `system_one` API (`typesafe-sdk`).
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.

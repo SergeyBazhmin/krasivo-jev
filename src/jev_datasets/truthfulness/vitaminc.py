@@ -51,6 +51,8 @@ def make_vitaminc_sample(x: dict) -> dict:
 
 class VitaminCDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def prepare(self):
         # synthetic rows are automatic edits of FEVER claims; keep the claims written against real Wikipedia revisions

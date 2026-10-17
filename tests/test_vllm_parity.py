@@ -1,6 +1,6 @@
 """The vLLM server (`jev_vllm` plugins on a `jev-model export` folder) against `JevHolder` on the same weights.
 
-Needs a running server (`src/scripts/serve_pointer.sh EXPORT_DIR`) and the run or stage it was exported from:
+Needs a running server (`uv run serve EXPORT_DIR`) and the run or stage it was exported from:
 
     JEV_SOURCE=runs/pointer/X [JEV_STAGE=ce] uv run --extra model pytest tests -v
 
@@ -150,7 +150,7 @@ def client():
         except httpx.HTTPError:
             healthy = False
         if not healthy:
-            pytest.skip(f"no vLLM server at {URL} (start one with src/scripts/serve_pointer.sh)")
+            pytest.skip(f"no vLLM server at {URL} (start one with `uv run serve EXPORT_DIR`)")
         yield client
 
 

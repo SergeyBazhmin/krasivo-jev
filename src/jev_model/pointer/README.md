@@ -140,7 +140,7 @@ its shape, built by `jev_model.system_one` as `JevHolder` builds them.
 
 ```bash
 uv run jev-model export runs/pointer/X --out exports/X [--stage ce]
-bash src/scripts/serve_pointer.sh exports/X        # docker: vllm/vllm-openai + this package, port 8080
+uv run serve exports/X                             # docker: vllm/vllm-openai + this package, port 8080
 curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer", "data": {
   "state": "I was charged twice. Please help.",
   "questions": {

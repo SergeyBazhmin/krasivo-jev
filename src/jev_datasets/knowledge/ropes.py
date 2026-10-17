@@ -54,6 +54,8 @@ def ropes_samples(siblings: dict[tuple[str, str], list[str]]):
 
 class ROPESDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def prepare(self):
         data = {}

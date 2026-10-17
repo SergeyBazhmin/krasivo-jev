@@ -1,6 +1,7 @@
 from jev_datasets.bugs.github_issue_type import github_issue_type_dataset
 from jev_datasets.bugs.vscode_triage import vscode_triage_dataset
 from jev_datasets.business.financial_news_topic import financial_news_topic_dataset
+from jev_datasets.business.open_decisions import open_decisions_choice_dataset, open_decisions_noul_dataset
 from jev_datasets.classification.ag_news import ag_news_dataset
 from jev_datasets.classification.atis import atis_dataset
 from jev_datasets.classification.banking77 import banking77_dataset
@@ -154,6 +155,8 @@ datasets = {
         nomiracl_passage_en_dataset,
         nomiracl_passage_ru_dataset,
         nomiracl_ru_dataset,
+        open_decisions_choice_dataset,
+        open_decisions_noul_dataset,
         paws_dataset,
         proofwriter_dataset,
         proverqa_dataset,

@@ -63,6 +63,8 @@ def unique_prompts(rows: Dataset, seen: set[str]) -> Dataset:
 
 class RuleCollectionDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def __init__(self, name: str, source: str, make: Callable[[str, str], dict]):
         super().__init__(name=name, hf_path="RuleReasoner/RuleCollection-32K")
