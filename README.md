@@ -6,6 +6,7 @@ sample contract and the conventions.
 
 - `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI; [README](src/jev_datasets/README.md)).
 - `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI; [README](src/jev_model/README.md)).
+- `docs/`: guides to using, serving (vLLM) and finetuning the model, and adding datasets ([index](docs/README.md)).
 - `notebooks/compare_runs.ipynb`: compares evaluated runs with plots.
 
 ## Setup
