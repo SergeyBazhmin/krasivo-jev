@@ -151,6 +151,9 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.
 - `losses.py`: the lr schedule and the RL loss over option logits, used by `pointer`.
+- `system_one.py`: `JevHolder.from_pretrained(run dir | stage dir | HF repo id)` and `.system_one(state, questions)`
+  with named `Noul`/`Choice` questions, TypeSafe-style, answered offline in one batch. `jev-model push RUN --repo
+  user/name` uploads a stage's `adapter/` and `head.pt`; the base model is fetched by name.
 
 ```bash
 uv sync --extra model

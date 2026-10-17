@@ -100,6 +100,36 @@ uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
+## From Python (`system_one`)
+
+`jev_model.system_one` loads a run, a stage folder or a Hub repo, and answers named yes/no and choice questions about
+one state in a single batch. `jev-model push` puts a stage on the Hub: only `adapter/` and `head.pt`, since the base
+model is fetched by the name `head.pt` stores.
+
+```bash
+uv run jev-model push runs/pointer/X --repo user/jev-pointer [--stage ce] [--private]
+```
+
+```python
+from jev_model.system_one import Choice, JevHolder, Noul
+
+holder = JevHolder.from_pretrained("user/jev-pointer")  # or runs/pointer/X, or runs/pointer/X/ce
+answers = holder.system_one(
+    state="Третий день не могу подключить оплату на сайте, мы теряем заказы. Помогите срочно.",
+    questions={
+        "is_urgent": Noul(instructions="Клиент сообщает о срочной проблеме?"),
+        "department": Choice(
+            instructions="Какая команда должна заняться обращением?",
+            criteria={"billing": "Платежи, счета, возвраты", "technical": "Ошибки, сбои, интеграции", "sales": None},
+        ),
+    },
+)
+answers["is_urgent"].noul  # P(yes); the options are always yes/no
+answers["department"].choice  # the likeliest key; also .confidence and .probabilities
+```
+
+A `Choice` option reads `"<key>: <description>"`, or just the key when the description is `None`.
+
 ## Serving with vLLM
 
 `export` merges the LoRA (and trained delimiter rows) into the base weights and writes a folder that vLLM 0.17.1
