@@ -54,7 +54,7 @@ class PointerConfig:
     # also train the embedding rows of the delimiter tokens
     special_embeddings: bool = False
     # sequence tokens; the state is cut in the middle past this
-    max_length: int = 1024
+    max_length: int = 4096
     # padded tokens per forward pass in evaluation; speed only
     eval_batch_tokens: int = 8192
     ce: TrainConfig = field(default_factory=TrainConfig)

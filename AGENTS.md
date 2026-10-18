@@ -160,15 +160,17 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   replies with the number of an option. `train` only records the config, and `eval` scores it.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
   an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the `zero_shot` model.
-  `uv run serve EXPORT_DIR` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this package,
-  so the `jev_vllm` plugins load) and serves a `jev-model export` folder on `http://localhost:8080/pooling`.
+  `uv run serve EXPORT_DIR|REPO` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this
+  package, so the `jev_vllm` plugins load) and serves a `jev-model export` folder, or a Hub repo pushed from one, on
+  `http://localhost:8080/pooling`.
 - `typesafe/`: TypeSafe's hosted `jev` model (`typesafe/jev-1.13`) through its `system_one` API (`typesafe-sdk`).
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.
 - `losses.py`: the lr schedule and the RL loss over option logits, used by `pointer`.
-- `system_one.py`: `JevHolder.from_pretrained(run dir | stage dir | HF repo id)` and `.system_one(state, questions)`
-  with named `Noul`/`Choice` questions, TypeSafe-style, answered offline in one batch. `jev-model push RUN --repo
-  user/name` uploads a stage's `adapter/` and `head.pt`; the base model is fetched by name.
+- `system_one.py`: `JevHolder.from_pretrained(run dir | stage dir | export dir | HF repo id)` and `.system_one(state, questions)`
+  with named `Noul`/`Choice` questions, TypeSafe-style, answered offline in one batch. `jev-model push EXPORT_DIR
+  --repo user/name` uploads a whole `jev-model export` folder (merged weights for vLLM, plus the stage's `adapter/` and
+  `head.pt`). `JevHolder` downloads only the stage and fetches the base model by name.
 
 ```bash
 uv sync --extra model
