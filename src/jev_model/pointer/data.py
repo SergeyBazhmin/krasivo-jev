@@ -5,10 +5,9 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 
 import torch
-from datasets import load_from_disk
 from loguru import logger
 
-from jev_model.data import content_key, partition
+from jev_model.data import content_key, rows
 from jev_model.pointer.encode import Encoder, Tokens
 
 # what stands in for the true option when a draw hides it
@@ -33,11 +32,11 @@ class Draw:
 
 
 def load_items(names: list[str], data_dir: Path, part: str, encoder: Encoder, limit: int = 0) -> dict[str, list[Item]]:
-    """{dataset: items} for the datasets that have rows in `part`. `limit` keeps that many rows per
-    dataset, chosen by a hash of the content, so every run scores the same ones."""
+    """{dataset: items} for the datasets that have rows in `part`. `limit` keeps that many rows per dataset, chosen
+    by a hash of the content, so every run scores the same ones."""
     loaded = {}
     for name in names:
-        samples = partition(load_from_disk(data_dir / name))[part]
+        samples = rows(name, data_dir, part)
         if limit and len(samples) > limit:
             samples = sorted(samples, key=lambda s: hashlib.sha1(sample_key(s).encode()).digest())[:limit]
         tokenized = encoder.tokenize([(s["state"], s["question"], [o["text"] for o in s["options"]]) for s in samples])

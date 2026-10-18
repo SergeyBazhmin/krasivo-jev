@@ -93,7 +93,7 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
         logger.info(f"{stage_config.epochs} epochs: {count} batches, {stage_config.steps} steps")
     # every process walks the same stream and keeps every `world`-th batch
     batches = itertools.islice(pool.batches(stage_config.batch_tokens, generator), rank, None, world)
-    optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay)
+    optimizer = torch.optim.AdamW(parameters, lr=stage_config.lr, weight_decay=stage_config.weight_decay, fused=True)
     scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lambda step: losses.lr_factor(step, stage_config))
     saved = {"stage": stage, "train": asdict(stage_config), "datasets": names}
 
@@ -119,7 +119,9 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
         progress.set_postfix(loss=f"{value:.4f}", refresh=False)
         if (step + 1) % stage_config.eval_every == 0 or step + 1 == stage_config.steps:
             outputs = run_shared(accelerator, model, probe, config.eval_batch_tokens)
-            macro = score(outputs, model.head.temperature.item())["macro"]
+            probed = score(outputs, model.head.temperature.item())
+            # a run that trains on benchmarks alone (train_on_benchmark) has only their macro
+            macro = probed.get("macro") or probed["benchmark_macro"]
             loss = accelerator.reduce(torch.tensor(running / since, device=device), "mean").item()
             history.append({"step": step + 1, "loss": loss} | macro)
             running, since = 0.0, 0

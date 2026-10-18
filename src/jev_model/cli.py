@@ -156,6 +156,28 @@ def export(
 
 
 @app.command()
+def push(
+    run_dir: Annotated[Path, typer.Argument(help="directory written by `train`")],
+    repo: Annotated[str, typer.Option(help="Hugging Face repo id, `user/name`")],
+    stage: Stage = None,
+    private: bool = False,
+):
+    """Upload a stage's weights to the Hub, for `JevHolder.from_pretrained` (models with a checkpoint directory)."""
+    from huggingface_hub import HfApi
+
+    model, _ = open_run(run_dir)
+    if not callable(getattr(model, "checkpoint", None)):
+        raise typer.BadParameter(f"{model.name} has no weights to push", param_hint="RUN_DIR")
+    api = HfApi()
+    api.create_repo(repo, private=private, exist_ok=True)
+    # only what `load` reads; the base model is fetched from the Hub by the name `head.pt` stores
+    api.upload_folder(
+        repo_id=repo, folder_path=model.checkpoint(run_dir, stage), allow_patterns=["adapter/*", "head.pt"]
+    )
+    typer.echo(f"pushed: https://huggingface.co/{repo}")
+
+
+@app.command()
 def ui(port: int = 8501):
     """Open a local page to try trained runs by hand (needs the `ui` extra)."""
     import subprocess

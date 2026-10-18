@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from jev_model.base import JevModel, read_run
-from jev_model.data import resolve_names
+from jev_model.data import benchmark_names, train_names
 from jev_model.pointer.config import PointerConfig
 
 
@@ -25,7 +25,14 @@ class PointerJevModel(JevModel[PointerConfig]):
             init = run_dir / "ce"
             if not (init / "head.pt").exists():
                 raise FileNotFoundError(f"the rl stage starts from the CE weights; run the ce stage first ({init})")
-        train(config, stage, run_dir / stage, device, resolve_names(config.datasets, config.data_dir), init)
+        train(
+            config,
+            stage,
+            run_dir / stage,
+            device,
+            train_names(config.datasets, config.data_dir, config.train_on_benchmark),
+            init,
+        )
 
     def checkpoint(self, run_dir: Path, stage: str | None) -> Path:
         """The directory of `stage`, or of the last stage this run finished."""
@@ -45,7 +52,10 @@ class PointerJevModel(JevModel[PointerConfig]):
 
         checkpoint = self.checkpoint(run_dir, stage)
         model = load(checkpoint, device)
-        data = load_items(read_checkpoint(checkpoint)["datasets"], config.data_dir, partition, model.encoder)
+        # the datasets it trained on, plus every benchmark it didn't (older runs too), all on `partition`
+        trained = read_checkpoint(checkpoint)["datasets"]
+        unseen = [name for name in benchmark_names(config.data_dir) if name not in trained]
+        data = load_items(trained + unseen, config.data_dir, partition, model.encoder)
         return evaluate(model, data, config.eval_batch_tokens)
 
     def predictor(self, config, run_dir, device, stage=None):

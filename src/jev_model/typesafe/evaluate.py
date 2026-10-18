@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 from tqdm import tqdm
 
-from jev_model.data import load_samples
+from jev_model.data import benchmark_tag, load_samples
 from jev_model.metrics import scores, with_macro
 from jev_model.typesafe.client import Client, kind
 from jev_model.typesafe.config import TypesafeConfig
@@ -16,7 +16,7 @@ def texts(sample: dict) -> list[str]:
 
 
 def evaluate(config: TypesafeConfig, names: list[str], part: str, out_dir: Path):
-    """Per-dataset scores of the API's probabilities, plus `macro`. The answers are kept in
+    """Per-dataset scores of the API's probabilities, plus the macros of `with_macro`. The answers are kept in
     OUT_DIR/<part>-<dataset>.jsonl. Two progress bars: every sample of the run, and the current dataset with its
     accuracy so far; each finished dataset prints its scores."""
     client = Client(config)
@@ -42,10 +42,12 @@ def evaluate(config: TypesafeConfig, names: list[str], part: str, out_dir: Path)
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")
         m = metrics[name]
         tqdm.write(
-            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  "
-            f"nll={m['nll']:.3f}  ece={m['ece']:.3f}  answered={m['answered']:.3f}"
+            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  "
+            f"nll={m['nll']:.3f}  ece={m['ece']:.3f}  answered={m['answered']:.3f}" + benchmark_tag(name)
         )
-        total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
+        # benchmarks apart from the other datasets, as in the saved scores
+        macros = {key: m for key, m in with_macro(metrics).items() if key.endswith("macro")}
+        total.set_postfix({f"{key}_acc": f"{m['accuracy']:.3f}" for key, m in macros.items()})
     total.close()
     return with_macro(metrics)
 

@@ -32,7 +32,7 @@ loses the middle of its state (`jev_model/prompt.py:cut_middle`). Keep `max_leng
 
 ## Metrics
 
-`accuracy`, and macro `precision`/`recall`/`f1` (`jev_model.metrics.macro_prf`), against the argmax of the label.
+`accuracy` against the argmax of the label.
 `parsed` is the share of answers with a number in range. Generation gives no probabilities, so `nll` and `ece` are
 NaN. Every answer is saved to `RUN/generate/<partition>-<dataset>.jsonl` with the option it was mapped to and the
 gold one.

@@ -1,10 +1,11 @@
 from enum import StrEnum
+from pathlib import Path
 
 from datasets import DatasetDict, load_dataset
 from loguru import logger
 
 from jev_datasets.constants import MAX_SAMPLES, ROOT_DIR
-from jev_datasets.utils import canonical_splits, disjoint_contexts, split_missing, stratified_limit
+from jev_datasets.utils import canonical_splits, disjoint_contexts, random_limit, split_missing
 
 
 class DatasetType(StrEnum):
@@ -14,6 +15,9 @@ class DatasetType(StrEnum):
 
 class JevDataset:
     type: DatasetType
+    # a held-out benchmark: saved with the usual splits, but training skips it (unless asked to); every model is
+    # scored on it, on the same partition as the other datasets
+    benchmark: bool = False
 
     def __init__(self, name: str, hf_path: str, hf_name: str | None = None):
         self.name = name
@@ -68,11 +72,15 @@ class JevDataset:
             logger.warning(f"[{self.name}] empty splits after carving: {', '.join(empty)}")
 
     def limit(self, max_samples: int = MAX_SAMPLES):
-        """Caps every split at `max_samples`, stratified by label; call after `prepare`."""
-        self.data = DatasetDict({split: stratified_limit(rows, max_samples) for split, rows in self.data.items()})
+        """Caps every split at `max_samples` by a seeded random sample; call after `prepare`."""
+        self.data = DatasetDict({split: random_limit(rows, max_samples) for split, rows in self.data.items()})
+
+    def save_to(self, path: Path):
+        # `save_to_disk` writes an empty split as zero shards, which `load_from_disk` then fails on
+        self.data.save_to_disk(path, num_shards={split: 1 for split, rows in self.data.items() if not rows.num_rows})
 
     def save(self):
         self.regroup()
         self.add_type()
         self.limit()
-        self.data.save_to_disk(ROOT_DIR / self.name)
+        self.save_to(ROOT_DIR / self.name)

@@ -27,7 +27,7 @@ uv run jev prepare all -j 8                                  # 8 datasets at onc
 ```
 
 `prepare` loads the source from the Hub, converts it, regroups the splits (below), stamps `type` on every row, caps
-every split at `--max-samples` (10,000 by default, stratified by the argmax of `label`) and saves a `DatasetDict` to
+every split at `--max-samples` (10,000 by default, a seeded random sample) and saves a `DatasetDict` to
 `OUTPUT_DIR/<name>`. Read it back with `datasets.load_from_disk`.
 
 Every saved dataset has exactly the splits `train`, `validation` and `test`. Source splits are renamed (`dev`/`val` to
@@ -44,7 +44,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 - `base.py`: `JevDataset(name, hf_path, hf_name)` loads the source lazily into `.data`; a subclass sets `type` and
   implements `prepare()`, and overrides `load()` when the source needs special loading.
 - `utils.py`: `make_sample`, `make_options`, `pick_question`, `pick_about`, `stable_shuffle`, `explode`, `slugify`,
-  `with_context`, `GROUPED_FEATURES`, `disjoint_contexts`, `stratified_limit`.
+  `with_context`, `GROUPED_FEATURES`, `disjoint_contexts`, `random_limit`.
 - `constants.py`: `MAX_SAMPLES` and `ROOT_DIR` (`data/` at the repo root).
 - `cli.py`: the `jev` CLI.
 - `__init__.py`: the `datasets` registry, `{name: instance}`, alphabetical.
@@ -68,13 +68,18 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `hwu64`                       | choice   | `DeepPavlov/hwu64` |
 |                  | `massive_intent`              | choice   | `mteb/amazon_massive_intent` (`en`) |
 |                  | `massive_intent_ru`           | choice   | `mteb/MassiveIntentClassification` (`ru`) |
+|                  | `rus_med_dialogues`           | choice   | `Mykes/rus_med_dialogues` (patient question -> specialist) |
+|                  | `rus_med_dialogues_noul`      | noul     | `Mykes/rus_med_dialogues` (patient question -> specialist) |
 |                  | `ticket_routing`              | choice   | `Tobi-Bueck/customer-support-tickets` |
 |                  | `ticket_type`                 | choice   | `Tobi-Bueck/customer-support-tickets` |
 | `guardrails`     | `aegis_category`              | choice   | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` (unsafe prompts, soft labels) |
 |                  | `jailbreak_classification`    | noul     | `jackhhao/jailbreak-classification` |
 |                  | `safeguard_prompt_injection`  | noul     | `xTRam1/safe-guard-prompt-injection` |
 |                  | `spml_prompt_injection`       | noul     | `reshabhs/SPML_Chatbot_Prompt_Injection` |
-| `knowledge`      | `sciq`                        | choice   | `allenai/sciq` (only rows with a support passage) |
+| `knowledge`      | `qasc`                        | choice   | `allenai/qasc` (the two facts as state; unlabelled test dropped) |
+|                  | `quartz`                      | choice   | `allenai/quartz` |
+|                  | `ropes`                       | choice   | `allenai/ropes` (`plain_text`, other answers on the same situation as distractors) |
+|                  | `sciq`                        | choice   | `allenai/sciq` (only rows with a support passage) |
 | `logic`          | `ar_lsat`                     | choice   | `RuleReasoner/RuleCollection-32K` |
 |                  | `clutrr`                      | choice   | `tasksource/clutrr` |
 |                  | `folio`                       | choice   | `yfxiao/folio-refined` |
@@ -86,12 +91,16 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `boolq`                       | noul     | `google/boolq` |
 |                  | `chaos_nli`                   | choice   | `tasksource/chaos-mnli-ambiguity` (soft labels) |
 |                  | `danetqa`                     | choice   | `RussianNLP/russian_super_glue` (`DaNetQA`) |
+|                  | `dream`                       | choice   | `dataset-org/dream` (parquet export) |
+|                  | `hotpot_qa`                   | choice   | `hotpotqa/hotpot_qa` (`distractor`, comparison questions answered by an entity) |
+|                  | `hotpot_qa_noul`              | noul     | `hotpotqa/hotpot_qa` (`distractor`, comparison questions answered yes/no) |
 |                  | `lidirus`                     | choice   | `RussianNLP/russian_super_glue` (`LiDiRus`, evaluation only) |
 |                  | `mera_multiq`                 | choice   | `ai-forever/MERA` (`multiq`, evidence selection) |
 |                  | `multi_nli`                   | choice   | `nyu-mll/multi_nli` |
 |                  | `multi_nli_genre`             | choice   | `nyu-mll/multi_nli` |
 |                  | `muserc`                      | choice   | `RussianNLP/russian_super_glue` (`MuSeRC`) |
 |                  | `paws`                        | noul     | `google-research-datasets/paws` (`labeled_final`) |
+|                  | `quail`                       | choice   | `textmachinelab/quail` (without `Event_duration` questions) |
 |                  | `race`                        | choice   | `ehovy/race` (`all`) |
 |                  | `rcb`                         | choice   | `RussianNLP/russian_super_glue` (`RCB`) |
 |                  | `ru_paraphraser`              | choice   | `merionum/ru_paraphraser` (three classes) |
@@ -106,9 +115,11 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
 |                  | `ticket_subject`              | choice   | `Tobi-Bueck/customer-support-tickets` (subject → email body) |
 |                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
+|                  | `wikiqa_noul`                 | noul     | `microsoft/wiki_qa` (does a passage answer the query) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
 |                  | `go_emotions`                 | choice   | `google-research-datasets/go_emotions` (`simplified`) |
+|                  | `go_emotions_noul`            | noul     | `google-research-datasets/go_emotions` (`simplified`, one row per emotion) |
 |                  | `imdb`                        | choice   | `stanfordnlp/imdb` |
 |                  | `sst2`                        | choice   | `stanfordnlp/sst2` |
 |                  | `tweet_sentiment`             | choice   | `cardiffnlp/tweet_eval` (`sentiment`) |
@@ -135,6 +146,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 | `truthfulness`   | `halueval_dialogue`           | noul     | `pminervini/HaluEval` (`dialogue`) |
 |                  | `halueval_qa`                 | noul     | `pminervini/HaluEval` (`qa`) |
 |                  | `halueval_summarization`      | noul     | `pminervini/HaluEval` (`summarization`) |
+|                  | `vitaminc`                    | choice   | `tals/vitaminc` (real Wikipedia revisions only) |
 
 Many logic and spatial sources bundle the same underlying sets (SpaRP includes StepGame, RuleCollection bundles
 ProntoQA, LogicNLI, ProofWriter and more). Each set is taken from one source only, so test rows don't leak into

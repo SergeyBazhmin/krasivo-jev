@@ -5,6 +5,8 @@ from itertools import pairwise
 
 import torch
 
+from jev_model.data import is_benchmark
+
 
 def option_mask(num_options: torch.Tensor, max_options: int) -> torch.Tensor:
     """True at the slots that hold no option."""
@@ -32,22 +34,10 @@ def expected_calibration_error(confidence: torch.Tensor, correct: torch.Tensor, 
     return ece
 
 
-def macro_prf(predicted: torch.Tensor, gold: torch.Tensor) -> dict[str, float]:
-    """Precision, recall and F1 per option slot, averaged over slots that occur as gold or prediction.
-    Classes are slots, not option ids: that matches fixed-option datasets, and on shuffled ones shows positional bias."""
-    classes = torch.cat([predicted, gold]).unique()
-    hit = (predicted.unsqueeze(-1) == classes) & (gold.unsqueeze(-1) == classes)
-    tp = hit.sum(dim=0).float()
-    precision = tp / (predicted.unsqueeze(-1) == classes).sum(dim=0).clamp(min=1)
-    recall = tp / (gold.unsqueeze(-1) == classes).sum(dim=0).clamp(min=1)
-    f1 = 2 * precision * recall / (precision + recall).clamp(min=1e-12)
-    return {"precision": precision.mean().item(), "recall": recall.mean().item(), "f1": f1.mean().item()}
-
-
 def scores(
     logits: torch.Tensor, labels: torch.Tensor, num_options: torch.Tensor, temperature: float = 1.0
 ) -> dict[str, float]:
-    """Accuracy and macro precision/recall/F1 against the argmax of the label, soft NLL, and top-1 ECE.
+    """Accuracy against the argmax of the label, soft NLL, and top-1 ECE.
     `logits` are already masked (-inf)."""
     logits = logits / temperature
     probs = logits.softmax(dim=-1)
@@ -57,23 +47,35 @@ def scores(
     return {
         "n": len(labels),
         "accuracy": correct.float().mean().item(),
-        **macro_prf(predicted, gold),
         "nll": soft_cross_entropy(logits, labels, num_options).mean().item(),
         "ece": expected_calibration_error(confidence, correct),
     }
 
 
-def with_macro(per_dataset: dict[str, dict[str, float]]) -> dict[str, dict[str, float]]:
-    """Adds `macro`, the unweighted mean over datasets, so small tasks count as much as large ones."""
-    keys = ("accuracy", "precision", "recall", "f1", "nll", "ece")
-    macro = {k: sum(s[k] for s in per_dataset.values()) / len(per_dataset) for k in keys}
-    return per_dataset | {"macro": macro | {"n": sum(s["n"] for s in per_dataset.values())}}
+def macro_of(per_dataset: list[dict[str, float]]) -> dict[str, float]:
+    """The unweighted mean over datasets, so small tasks count as much as large ones."""
+    keys = ("accuracy", "nll", "ece")
+    macro = {k: sum(s[k] for s in per_dataset) / len(per_dataset) for k in keys}
+    return macro | {"n": sum(s["n"] for s in per_dataset)}
 
 
-def table(metrics: dict[str, dict[str, float]]) -> str:
-    """One line per dataset, as printed by `eval` and at the end of training."""
+def with_macro(per_dataset: dict[str, dict[str, float]]) -> dict[str, dict]:
+    """Marks each dataset with `benchmark` and adds `macro` over the other datasets and `benchmark_macro` over the
+    benchmarks, each when there is any: benchmarks are reported apart, never averaged in with the rest."""
+    marked = {name: s | {"benchmark": is_benchmark(name)} for name, s in per_dataset.items()}
+    rest = [s for s in marked.values() if not s["benchmark"]]
+    benchmarks = [s for s in marked.values() if s["benchmark"]]
+    macros = {"macro": macro_of(rest)} if rest else {}
+    if benchmarks:
+        macros["benchmark_macro"] = macro_of(benchmarks)
+    return marked | macros
+
+
+def table(metrics: dict[str, dict]) -> str:
+    """One line per dataset, as printed by `eval` and at the end of training; benchmarks are marked."""
     return "\n".join(
-        f"{name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  f1={m['f1']:.3f}  nll={m['nll']:.3f}  ece={m['ece']:.3f}"
+        f"{name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  nll={m['nll']:.3f}  ece={m['ece']:.3f}"
+        + ("  [benchmark]" if m.get("benchmark") else "")
         for name, m in metrics.items()
     )
 

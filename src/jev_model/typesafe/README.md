@@ -24,7 +24,7 @@ one that is too long) is logged and counted as uniform. `answered` is the share 
 
 ## Metrics
 
-`jev_model.metrics.scores` over the log probabilities: `accuracy`, macro `precision`/`recall`/`f1`, `nll`, `ece`,
+`jev_model.metrics.scores` over the log probabilities: `accuracy`, `nll`, `ece`,
 plus `answered`. Every answer is saved to `RUN/api/<partition>-<dataset>.jsonl` with its probabilities and the label.
 
 ## Usage
@@ -40,7 +40,7 @@ uv run jev-model train typesafe -s model=~typesafe/jev-latest --run-dir runs/typ
 
 | key           | default                  | meaning |
 |---------------|--------------------------|---------|
-| `datasets`    | all built                | datasets to score |
+| `datasets`    | all built                | datasets to score; every built benchmark is scored too, on the same partition |
 | `base_url`    | `https://routerai.ru/api`| API root |
 | `model`       | `typesafe/jev-1.13`      | model name or alias (`~typesafe/jev-latest`) |
 | `max_samples` | 0 (all)                  | rows per dataset, picked by a content hash so runs score the same ones |

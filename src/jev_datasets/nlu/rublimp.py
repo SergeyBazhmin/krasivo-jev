@@ -44,6 +44,8 @@ def make_rublimp_sample(row: dict) -> dict:
 
 class RuBLiMPDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def load(self) -> DatasetDict:
         tasks = sorted(get_dataset_config_names(self.hf_path))

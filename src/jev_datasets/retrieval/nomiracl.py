@@ -209,6 +209,8 @@ def nomiracl_choice_samples(row: dict, language: str) -> list[dict]:
 
 class NoMIRACLDataset(JevDataset):
     type = DatasetType.NOUL
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def load(self) -> DatasetDict:
         root = f"https://huggingface.co/datasets/{self.hf_path}/resolve/main/data/{self.hf_name}"

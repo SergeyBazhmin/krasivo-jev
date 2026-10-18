@@ -6,6 +6,7 @@ sample contract and the conventions.
 
 - `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI; [README](src/jev_datasets/README.md)).
 - `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI; [README](src/jev_model/README.md)).
+- `docs/`: guides to using, serving (vLLM) and finetuning the model, and adding datasets ([index](docs/README.md)).
 - `notebooks/compare_runs.ipynb`: compares evaluated runs with plots.
 
 ## Setup
@@ -43,7 +44,7 @@ uv run jev prepare sst2 anli --max-samples 5000   # some of them, a smaller cap 
 uv run jev prepare all -j 8                       # 8 datasets at once, one process each
 ```
 
-The default cap is 10,000 rows per split (stratified by label). The runs in `runs/` were built with
+The default cap is 10,000 rows per split (a seeded random sample). The runs in `runs/` were built with
 `--max-samples 20000`.
 
 ## 2. Train

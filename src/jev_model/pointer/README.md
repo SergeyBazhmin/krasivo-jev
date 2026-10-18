@@ -100,19 +100,54 @@ uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
+## From Python (`system_one`)
+
+`jev_model.system_one` loads a run, a stage folder or a Hub repo, and answers named yes/no and choice questions about
+one state in a single batch. `jev-model push` puts a stage on the Hub: only `adapter/` and `head.pt`, since the base
+model is fetched by the name `head.pt` stores.
+
+```bash
+uv run jev-model push runs/pointer/X --repo user/jev-pointer [--stage ce] [--private]
+```
+
+```python
+from jev_model.system_one import Choice, JevHolder, Noul
+
+holder = JevHolder.from_pretrained("user/jev-pointer")  # or runs/pointer/X, or runs/pointer/X/ce
+answers = holder.system_one(
+    state="Третий день не могу подключить оплату на сайте, мы теряем заказы. Помогите срочно.",
+    questions={
+        "is_urgent": Noul(instructions="Клиент сообщает о срочной проблеме?"),
+        "department": Choice(
+            instructions="Какая команда должна заняться обращением?",
+            criteria={"billing": "Платежи, счета, возвраты", "technical": "Ошибки, сбои, интеграции", "sales": None},
+        ),
+    },
+)
+answers["is_urgent"].noul  # P(yes); the options are always yes/no
+answers["department"].choice  # the likeliest key; also .confidence and .probabilities
+```
+
+A `Choice` option reads `"<key>: <description>"`, or just the key when the description is `None`.
+
 ## Serving with vLLM
 
 `export` merges the LoRA (and trained delimiter rows) into the base weights and writes a folder that vLLM 0.17.1
 serves with the `jev_vllm` plugins (`src/jev_vllm/`). The plugins are a model `Qwen3_5PointerModel`, whose pooler is
-this head, and an IO processor that lays prompts out with the same `Encoder`. Clients send text and get back
-calibrated logits and probabilities in the order the options were sent.
+this head, and an IO processor that lays prompts out with the same `Encoder`. `data` is the body of TypeSafe's
+`system_one` (`state` and named `noul`/`choice` questions; `model` sits beside `data`), and the answers come back in
+its shape, built by `jev_model.system_one` as `JevHolder` builds them.
 
 ```bash
 uv run jev-model export runs/pointer/X --out exports/X [--stage ce]
-bash src/scripts/serve_pointer.sh exports/X        # docker: vllm/vllm-openai + this package, port 8080
-curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer",
-  "data": [{"state": "...", "question": "...", "options": ["yes", "no"]}]}'
-# -> {"data": [{"logits": [...], "probs": [...]}], ...}
+uv run serve exports/X                             # docker: vllm/vllm-openai + this package, port 8080
+curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer", "data": {
+  "state": "I was charged twice. Please help.",
+  "questions": {
+    "billing": {"type": "noul", "instructions": "Is this about billing?"},
+    "tone": {"type": "choice", "instructions": "What is the tone?", "criteria": {"angry": null, "calm": "polite"}}}}}'
+# -> {"data": {"answers": {"billing": {"type": "noul", "noul": 0.98},
+#      "tone": {"type": "choice", "choice": "calm", "confidence": 0.7, "probabilities": {"angry": 0.3, "calm": 0.7}}}}, ...}
 uv run --extra model python src/scripts/check_pointer_vllm.py runs/pointer/X --dataset sst2   # vs torch
 ```
 

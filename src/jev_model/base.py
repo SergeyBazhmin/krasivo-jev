@@ -42,7 +42,8 @@ class JevModel[C]:
     def evaluate(
         self, config: C, run_dir: Path, partition: str, device: str, stage: str | None = None
     ) -> dict[str, dict[str, float]]:
-        """{dataset: metrics}, plus `macro`. `stage` picks which stage's weights; the last trained by default."""
+        """{dataset: metrics}, plus the macros of `with_macro`. `stage` picks which stage's weights; the last trained
+        by default."""
         raise NotImplementedError
 
     def predictor(self, config: C, run_dir: Path, device: str, stage: str | None = None) -> Predictor:

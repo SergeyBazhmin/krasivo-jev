@@ -54,7 +54,7 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
     answer first
   - `explode(fn)`: adapts a `row -> [samples]` function to a batched `map`
   - `slugify`: builds an option id from text
-  - `stratified_limit`: subsamples a split while keeping the label (argmax) distribution
+  - `random_limit`: caps a split with a seeded uniform random sample
 - `constants.py`: `MAX_SAMPLES = 10_000` per split. `ROOT_DIR` is the default output
   directory. It resolves to `data/` at the repo root, so built datasets land in `data/<name>/`.
 - `cli.py`: the `jev` Typer CLI.
@@ -64,6 +64,17 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
   `logic`, `nlu`, `reasoning`, `sentiment`, `spatial`, `toxicity`, `truthfulness`.
   `logic` holds synthetic deduction sets (ProofWriter, LogicNLI, FOLIO, ...) and `spatial`
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
+- Benchmark datasets (`benchmark = True` on the class) are held out. They are saved with the usual
+  train/validation/test splits. Training skips them unless `pointer`'s `train_on_benchmark` is set (a final model on
+  all data, which then trains on their train split as usual). At `eval`, every model is scored on every benchmark,
+  on the asked-for partition (test by default) like any other dataset.
+  The benchmarks:
+  - OpenDecisions (`business/open_decisions.py`), split by type into `open_decisions_noul` and
+    `open_decisions_choice` (its `score` items are dropped). It keeps each item's own instructions and option
+    order, with no paraphrases or shuffling, so every model sees the same item.
+  - one converter file per other topic, drawn by `random.Random(f"eval_only:{topic}")`: `github_issue_type`,
+    `hwu64`, `jailbreak_classification`, `ropes`, `ar_lsat`, `rublimp`, `logiqa`, `nomiracl*`, `tweet_sentiment`,
+    `stepgame`, `webnlg_en`, `russian_toxicity`, `vitaminc`.
 - Many logic and spatial sources share data (for example, SpaRP includes StepGame, and
   RuleCollection bundles ProntoQA, LogicNLI, ProofWriter and more). Take each underlying
   set from only one source, so test rows don't leak into another dataset's train split.
@@ -85,7 +96,8 @@ rows are dropped, keeping the held-out copy; no other row is lost. Split names a
 `validation`, unknown -> `train`), and afterwards missing splits are carved by a hash of the group (`split_missing`):
 `HOLDOUT_PERCENT` (5%) of train each for a missing validation/test, or an 80/10/10 re-split of every row when the
 source has no train split. So every saved dataset has exactly `train`, `validation` and `test`. Converters don't need to
-handle this themselves. Finally it does a stratified cap on each split and calls `save_to_disk(output_dir / name)`.
+handle this themselves. Finally it caps each split with a seeded random sample and calls
+`save_to_disk(output_dir / name)`.
 
 ## Adding a dataset
 
@@ -125,6 +137,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `configs/pointer.toml` is the example config, with every key commented.
 - `data.py`: `resolve_names` and `partition` (the saved train/validation/test splits; it fails on datasets built
   before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
+  Training goes through `train_names`, which leaves out benchmark datasets. `pointer` evaluates its training
+  datasets plus the benchmarks it didn't train on; `typesafe` scores its datasets plus every benchmark.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
@@ -146,10 +160,15 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   replies with the number of an option. `train` only records the config, and `eval` scores it.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
   an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the `zero_shot` model.
+  `uv run serve EXPORT_DIR` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this package,
+  so the `jev_vllm` plugins load) and serves a `jev-model export` folder on `http://localhost:8080/pooling`.
 - `typesafe/`: TypeSafe's hosted `jev` model (`typesafe/jev-1.13`) through its `system_one` API (`typesafe-sdk`).
   Each sample is one `noul` (yes/no options) or `choice` question, and the returned probabilities are the prediction,
   so `nll` and `ece` are real. The key comes from `TYPESAFE_API_KEY`. Like `zero_shot`, `train` only records the config.
 - `losses.py`: the lr schedule and the RL loss over option logits, used by `pointer`.
+- `system_one.py`: `JevHolder.from_pretrained(run dir | stage dir | HF repo id)` and `.system_one(state, questions)`
+  with named `Noul`/`Choice` questions, TypeSafe-style, answered offline in one batch. `jev-model push RUN --repo
+  user/name` uploads a stage's `adapter/` and `head.pt`; the base model is fetched by name.
 
 ```bash
 uv sync --extra model

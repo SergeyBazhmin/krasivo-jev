@@ -33,12 +33,12 @@ def run(model: PointerModel, data: dict[str, list[Item]], batch_tokens: int) -> 
 
 
 def score(outputs: dict[str, Outputs], temperature: float) -> dict[str, dict[str, float]]:
-    """Per-dataset scores, plus `macro`."""
+    """Per-dataset scores, plus the macros of `with_macro`."""
     return with_macro({name: scores(*out, temperature) for name, out in outputs.items()})
 
 
 def evaluate(model: PointerModel, data: dict[str, list[Item]], batch_tokens: int) -> dict[str, dict[str, float]]:
-    """Per-dataset scores with the head's fitted temperature, plus `macro`."""
+    """Per-dataset scores with the head's fitted temperature, plus the macros of `with_macro`."""
     return score(run(model, data, batch_tokens), model.head.temperature.item())
 
 

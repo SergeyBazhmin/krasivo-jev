@@ -32,6 +32,8 @@ ABOUT = [
 
 class LogiQADataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def load(self) -> DatasetDict:
         # the main branch is a loading script, which `datasets` no longer runs; the Hub's parquet export

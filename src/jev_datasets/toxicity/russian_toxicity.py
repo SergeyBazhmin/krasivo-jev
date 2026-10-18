@@ -42,6 +42,8 @@ ABOUT = [
 
 class RussianToxicityDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def load(self) -> DatasetDict:
         # Language codes are source splits, not train/test partitions. Take Russian only, not the whole mixture.

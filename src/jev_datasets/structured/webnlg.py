@@ -112,6 +112,8 @@ def webnlg_samples(row: dict, pools: dict[str, list[str]]) -> list[dict]:
 
 class WebNLGDataset(JevDataset):
     type = DatasetType.CHOICE
+    # its topic's benchmark pick: scored by every model, trained on only with `train_on_benchmark`
+    benchmark = True
 
     def load(self) -> DatasetDict:
         files = {
