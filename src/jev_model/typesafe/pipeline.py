@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from jev_model.base import JevModel
-from jev_model.data import resolve_names
+from jev_model.data import benchmark_names, resolve_names
 from jev_model.typesafe.config import TypesafeConfig
 
 
@@ -20,7 +20,9 @@ class TypesafeJevModel(JevModel[TypesafeConfig]):
     def evaluate(self, config, run_dir, partition, device, stage=None):
         from jev_model.typesafe.evaluate import evaluate
 
+        # the datasets asked for, plus every benchmark, as `pointer` does
         names = resolve_names(config.datasets, config.data_dir)
+        names = names + [name for name in benchmark_names(config.data_dir) if name not in names]
         return evaluate(config, names, partition, run_dir / "api")
 
     def predictor(self, config, run_dir, device, stage=None):

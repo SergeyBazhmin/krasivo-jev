@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 from tqdm import tqdm
 
-from jev_model.data import load_samples
+from jev_model.data import benchmark_tag, load_samples
 from jev_model.metrics import with_macro
 from jev_model.zero_shot.client import connect
 from jev_model.zero_shot.config import ZeroShotConfig
@@ -17,7 +17,7 @@ def texts(sample: dict) -> list[str]:
 
 
 def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path):
-    """Per-dataset scores of the answers the server generates, plus `macro`. The answers are kept in
+    """Per-dataset scores of the answers the server generates, plus the macros of `with_macro`. The answers are kept in
     OUT_DIR/<part>-<dataset>.jsonl. Two progress bars: every sample of the run, with its ETA, and the current
     dataset, with its accuracy and parsed share so far; each finished dataset prints its scores."""
     client, prompter = connect(config)
@@ -54,7 +54,10 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
         current.close()
         metrics[name] = score(samples, answers, out_dir / f"{part}-{name}.jsonl")
         m = metrics[name]
-        tqdm.write(f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  parsed={m['parsed']:.3f}")
+        tqdm.write(
+            f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  parsed={m['parsed']:.3f}"
+            + benchmark_tag(name)
+        )
         total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
     total.close()
     return with_macro(metrics)

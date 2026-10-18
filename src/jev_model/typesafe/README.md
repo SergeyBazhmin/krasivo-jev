@@ -40,7 +40,7 @@ uv run jev-model train typesafe -s model=~typesafe/jev-latest --run-dir runs/typ
 
 | key           | default                  | meaning |
 |---------------|--------------------------|---------|
-| `datasets`    | all built                | datasets to score |
+| `datasets`    | all built                | datasets to score; every built benchmark is scored too, on the same partition |
 | `base_url`    | `https://routerai.ru/api`| API root |
 | `model`       | `typesafe/jev-1.13`      | model name or alias (`~typesafe/jev-latest`) |
 | `max_samples` | 0 (all)                  | rows per dataset, picked by a content hash so runs score the same ones |

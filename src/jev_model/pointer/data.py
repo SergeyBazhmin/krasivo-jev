@@ -1,6 +1,6 @@
 import hashlib
 import random
-from collections.abc import Collection, Iterator
+from collections.abc import Iterator
 from dataclasses import dataclass, replace
 from pathlib import Path
 
@@ -31,15 +31,12 @@ class Draw:
     order: list[int]
 
 
-def load_items(
-    names: list[str], data_dir: Path, part: str, encoder: Encoder, limit: int = 0, whole: Collection[str] = ()
-) -> dict[str, list[Item]]:
-    """{dataset: items} for the datasets that have rows in `part`; the ones in `whole` (benchmarks the model never
-    trained on) give the rows of every split. `limit` keeps that many rows per dataset, chosen by a hash of the
-    content, so every run scores the same ones."""
+def load_items(names: list[str], data_dir: Path, part: str, encoder: Encoder, limit: int = 0) -> dict[str, list[Item]]:
+    """{dataset: items} for the datasets that have rows in `part`. `limit` keeps that many rows per dataset, chosen
+    by a hash of the content, so every run scores the same ones."""
     loaded = {}
     for name in names:
-        samples = rows(name, data_dir, part, name in whole)
+        samples = rows(name, data_dir, part)
         if limit and len(samples) > limit:
             samples = sorted(samples, key=lambda s: hashlib.sha1(sample_key(s).encode()).digest())[:limit]
         tokenized = encoder.tokenize([(s["state"], s["question"], [o["text"] for o in s["options"]]) for s in samples])

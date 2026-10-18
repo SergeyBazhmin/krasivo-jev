@@ -52,10 +52,10 @@ class PointerJevModel(JevModel[PointerConfig]):
 
         checkpoint = self.checkpoint(run_dir, stage)
         model = load(checkpoint, device)
-        # the datasets it trained on, plus every benchmark it didn't, scored on all their rows; older runs too
+        # the datasets it trained on, plus every benchmark it didn't (older runs too), all on `partition`
         trained = read_checkpoint(checkpoint)["datasets"]
         unseen = [name for name in benchmark_names(config.data_dir) if name not in trained]
-        data = load_items(trained + unseen, config.data_dir, partition, model.encoder, whole=unseen)
+        data = load_items(trained + unseen, config.data_dir, partition, model.encoder)
         return evaluate(model, data, config.eval_batch_tokens)
 
     def predictor(self, config, run_dir, device, stage=None):

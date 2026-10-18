@@ -15,8 +15,8 @@ class DatasetType(StrEnum):
 
 class JevDataset:
     type: DatasetType
-    # a held-out benchmark: saved with the usual splits, but training skips it (unless asked to), and a model that
-    # never trained on it is scored on all its rows
+    # a held-out benchmark: saved with the usual splits, but training skips it (unless asked to); every model is
+    # scored on it, on the same partition as the other datasets
     benchmark: bool = False
 
     def __init__(self, name: str, hf_path: str, hf_name: str | None = None):

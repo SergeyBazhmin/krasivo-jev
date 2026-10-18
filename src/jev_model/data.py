@@ -26,6 +26,11 @@ def is_benchmark(name: str) -> bool:
     return name in datasets and datasets[name].benchmark
 
 
+def benchmark_tag(name: str) -> str:
+    """Appended to a dataset's line in printed scores, so benchmarks stand out from the other datasets."""
+    return "  [benchmark]" if is_benchmark(name) else ""
+
+
 def benchmark_names(data_dir: Path) -> list[str]:
     """Built benchmarks that no model trains on, but every model is scored on."""
     return [name for name in built_names(data_dir) if is_benchmark(name)]
@@ -64,18 +69,17 @@ def partition(data: DatasetDict) -> dict[str, list[dict]]:
     return {name: list(data[name]) for name in PARTITIONS}
 
 
-def rows(name: str, data_dir: Path, part: str, whole: bool = False) -> list[dict]:
-    """Samples of `part`, or of every split when `whole`: a benchmark the model never trained on is scored in full."""
-    splits = partition(load_from_disk(data_dir / name))
-    return [sample for split in PARTITIONS for sample in splits[split]] if whole else splits[part]
+def rows(name: str, data_dir: Path, part: str) -> list[dict]:
+    """Samples of `part`; benchmarks too, so every model scores the same rows of them."""
+    return partition(load_from_disk(data_dir / name))[part]
 
 
 def load_samples(names: list[str], data_dir: Path, part: str, limit: int) -> dict[str, list[dict]]:
-    """{dataset: samples} in `part`, or all of a benchmark's (these models never train). `limit` keeps that many per
-    dataset, chosen by a hash of the content, so every run scores the same ones."""
+    """{dataset: samples} in `part`. `limit` keeps that many per dataset, chosen by a hash of the content, so every
+    run scores the same ones."""
     loaded = {}
     for name in names:
-        samples = [s for s in rows(name, data_dir, part, is_benchmark(name)) if len(s["options"]) >= 2]
+        samples = [s for s in rows(name, data_dir, part) if len(s["options"]) >= 2]
         if limit and len(samples) > limit:
             samples = sorted(samples, key=lambda s: hashlib.sha1(f"{content_key(s)}:{s['question']}".encode()).digest())
             samples = samples[:limit]

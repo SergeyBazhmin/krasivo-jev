@@ -66,8 +66,8 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
 - Benchmark datasets (`benchmark = True` on the class) are held out. They are saved with the usual
   train/validation/test splits. Training skips them unless `pointer`'s `train_on_benchmark` is set (a final model on
-  all data, which then trains on their train split as usual). At `eval`, a model that never trained on a benchmark
-  is scored on all its splits combined, whichever partition is asked for.
+  all data, which then trains on their train split as usual). At `eval`, every model is scored on every benchmark,
+  on the asked-for partition (test by default) like any other dataset.
   The benchmarks:
   - OpenDecisions (`business/open_decisions.py`), split by type into `open_decisions_noul` and
     `open_decisions_choice` (its `score` items are dropped). It keeps each item's own instructions and option
@@ -138,7 +138,7 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `data.py`: `resolve_names` and `partition` (the saved train/validation/test splits; it fails on datasets built
   before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
   Training goes through `train_names`, which leaves out benchmark datasets. `pointer` evaluates its training
-  datasets plus the benchmarks it didn't train on, and `rows(..., whole=True)` merges their splits.
+  datasets plus the benchmarks it didn't train on; `typesafe` scores its datasets plus every benchmark.
 - `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
