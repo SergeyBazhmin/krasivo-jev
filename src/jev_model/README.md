@@ -10,11 +10,13 @@ modules, so their numbers are comparable on the same test rows.
 |-------------|-------------|------------|
 | `pointer`   | `ce*` -> `rl` | Qwen decoder with a LoRA and a pointer head over the option tokens ([README](pointer/README.md)) |
 | `typesafe`  | `api*`      | TypeSafe's hosted `jev` model through its `system_one` API ([README](typesafe/README.md)) |
-| `zero_shot` | `generate*` | a pretrained chat LM on an OpenAI-compatible server, replying with an option number ([README](zero_shot/README.md)) |
 
 `*` runs by default; later stages are opt-in. The `rl` stage of `pointer` is not used: runs are trained with `ce`
-only. `typesafe` and `zero_shot` train nothing: `train` only records the
-config, and `eval` scores them.
+only. `typesafe` trains nothing: `train` only records the config, and `eval` scores it.
+
+`zero_shot/` (a pretrained chat LM on an OpenAI-compatible server, replying with an option number;
+[README](zero_shot/README.md)) is kept as code but is not in the registry, so `jev-model` doesn't list or run it.
+Add `zero_shot_model` back to `models` in `__init__.py` to use it.
 
 ## Usage
 

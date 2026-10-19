@@ -73,11 +73,12 @@ plus its options; ten options are barely dearer than two.
 
 ## Other models in the repo
 
-`jev-model` also wraps two baselines, scored on the same test rows so they compare directly with `pointer`:
+`jev-model` also wraps a baseline, scored on the same test rows so it compares directly with `pointer`:
 
-- `zero_shot`: a pretrained chat model behind an OpenAI-compatible server (for example vLLM serving Gemma or Qwen,
-  `src/scripts/serve_gemma.sh`, `serve_qwen.sh`) that replies with an option number.
 - `typesafe`: TypeSafe's hosted `jev` model through its `system_one` API (needs `TYPESAFE_API_KEY` in `.env`).
+
+The `zero_shot` code (a pretrained chat model behind an OpenAI-compatible server that replies
+with an option number) is still in `src/jev_model/zero_shot/`, but it isn't registered with `jev-model`.
   `JevHolder` and the vLLM endpoint use the same request and answer shape, so code written against one moves to the
   other.
 
