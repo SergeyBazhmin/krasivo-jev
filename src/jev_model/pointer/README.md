@@ -159,6 +159,35 @@ settings (head size, `max_length`, `</opt>` id, temperature) added. The tokenize
 vLLM runs transformers 4. Weights are bf16, as in training. The head stays float32. The stage's `adapter/` and
 `head.pt` are copied in beside them for `JevHolder`. vLLM only loads top-level weights, so it ignores them.
 
+### Client
+
+`jev_vllm.client` calls the server as `typesafe-sdk` calls TypeSafe. `JevClient` and `AsyncJevClient` take the same
+`system_one(state, questions)`, accept the SDK's `Noul`/`Choice` (or their dict form, or `jev_model.system_one`'s),
+and return the SDK's `SystemOneResponse`. Code written for `TypeSafeClient` only needs the client swapped. HTTP
+errors raise the SDK's errors: a question the plugin rejects (for example one too long to fit) is a
+`TypeSafeBadRequestError`, and a wrong `model` is a `TypeSafeNotFoundError`. Before sending, the client turns a JSON
+state, instructions or criteria into compact JSON text. It rejects what the plugin can't answer: `score` questions,
+noul `criteria` and a choice with fewer than 2 criteria. `usage` stays empty, because the server reports no token
+counts.
+
+```python
+from typesafe_sdk import Choice, Noul
+from jev_vllm.client import JevClient
+
+with JevClient(base_url="http://localhost:8080", model="pointer") as client:
+    response = client.system_one(
+        state="I was charged twice. Please help.",
+        questions={
+            "billing": Noul(instructions="Is this about billing?"),
+            "tone": Choice(instructions="What is the tone?", criteria={"angry": None, "calm": "polite"}),
+        },
+    )
+response.nouls["billing"].noul, response.choices["tone"].choice
+```
+
+Every question of a call goes in one request and is answered in one batch. `AsyncJevClient` with `asyncio.gather`
+over many calls lets vLLM batch across requests too.
+
 ## Config
 
 `configs/pointer.toml` lists every key with a comment. The main ones:
@@ -182,4 +211,5 @@ vLLM runs transformers 4. Weights are bf16, as in training. The head stays float
 - `evaluate.py`: scores and temperature fitting.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.
 - `export.py`: the merged folder for vLLM, with the stage beside it (`jev-model export`, `jev-model push`).
+- `src/jev_vllm/client.py`: `JevClient`, the TypeSafe-style client for the served export.
 - `pipeline.py`: `PointerJevModel`, the entry in the model registry.
