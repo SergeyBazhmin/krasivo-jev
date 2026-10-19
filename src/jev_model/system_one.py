@@ -63,8 +63,8 @@ class JevHolder:
     def from_pretrained(
         cls, source: str | Path, device: str = "", stage: str | None = None, revision: str | None = None
     ) -> "JevHolder":
-        """`source` is a run directory, a stage directory (`adapter/` and `head.pt`), or a Hugging Face repo id
-        holding a stage directory (`jev-model push`). The base model is fetched by the name the checkpoint stores."""
+        """`source` is a run directory, a stage directory (`adapter/` and `head.pt`), an export folder, or a Hugging
+        Face repo id pushed from one (`jev-model push`). The base model is fetched by the name the checkpoint stores."""
         from jev_model.cli import default_device, open_run
 
         device = default_device(device)
@@ -72,13 +72,16 @@ class JevHolder:
         if (path / RUN_FILE).is_file():
             model, config = open_run(path)
             return cls(model.predictor(config, path, device, stage))
-        from jev_model.pointer.model import HEAD_FILE
+        from jev_model.pointer.model import ADAPTER_DIR, HEAD_FILE
         from jev_model.pointer.predict import PointerPredictor
 
         if not (path / HEAD_FILE).is_file():
             from huggingface_hub import snapshot_download
 
-            path = Path(snapshot_download(str(source), revision=revision))
+            # only the stage: the repo's merged weights are for vLLM
+            path = Path(
+                snapshot_download(str(source), revision=revision, allow_patterns=[f"{ADAPTER_DIR}/*", HEAD_FILE])
+            )
         return cls(PointerPredictor(path, device))
 
     def system_one(self, state: str, questions: dict[str, Noul | Choice]) -> dict[str, NoulAnswer | ChoiceAnswer]:

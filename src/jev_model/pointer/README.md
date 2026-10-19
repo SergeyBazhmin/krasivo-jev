@@ -102,12 +102,14 @@ uv run jev-model predict runs/pointer/X --question "..." --option yes --option n
 
 ## From Python (`system_one`)
 
-`jev_model.system_one` loads a run, a stage folder or a Hub repo, and answers named yes/no and choice questions about
-one state in a single batch. `jev-model push` puts a stage on the Hub: only `adapter/` and `head.pt`, since the base
-model is fetched by the name `head.pt` stores.
+`jev_model.system_one` loads a run, a stage folder, an export folder or a Hub repo, and answers named yes/no and
+choice questions about one state in a single batch. `jev-model push` uploads an export folder (see below) as it is, so
+one repo serves both vLLM and `JevHolder`. `JevHolder` downloads only its `adapter/` and `head.pt`, and fetches the
+base model by the name `head.pt` stores.
 
 ```bash
-uv run jev-model push runs/pointer/X --repo user/jev-pointer [--stage ce] [--private]
+uv run jev-model export runs/pointer/X --out exports/X [--stage ce]
+uv run jev-model push exports/X --repo user/jev-pointer [--private]
 ```
 
 ```python
@@ -141,6 +143,7 @@ its shape, built by `jev_model.system_one` as `JevHolder` builds them.
 ```bash
 uv run jev-model export runs/pointer/X --out exports/X [--stage ce]
 uv run serve exports/X                             # docker: vllm/vllm-openai + this package, port 8080
+uv run serve user/jev-pointer                      # or a pushed repo: vLLM downloads it (HF_TOKEN if private)
 curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer", "data": {
   "state": "I was charged twice. Please help.",
   "questions": {
@@ -153,7 +156,37 @@ uv run --extra model python src/scripts/check_pointer_vllm.py runs/pointer/X --d
 
 The exported `config.json` is the base model's own, with `architectures`, `io_processor_plugin` and the `pointer_*`
 settings (head size, `max_length`, `</opt>` id, temperature) added. The tokenizer files are copied unchanged, since
-vLLM runs transformers 4. Weights are bf16, as in training. The head stays float32.
+vLLM runs transformers 4. Weights are bf16, as in training. The head stays float32. The stage's `adapter/` and
+`head.pt` are copied in beside them for `JevHolder`. vLLM only loads top-level weights, so it ignores them.
+
+### Client
+
+`jev_vllm.client` calls the server as `typesafe-sdk` calls TypeSafe. `JevClient` and `AsyncJevClient` take the same
+`system_one(state, questions)`, accept the SDK's `Noul`/`Choice` (or their dict form, or `jev_model.system_one`'s),
+and return the SDK's `SystemOneResponse`. Code written for `TypeSafeClient` only needs the client swapped. HTTP
+errors raise the SDK's errors: a question the plugin rejects (for example one too long to fit) is a
+`TypeSafeBadRequestError`, and a wrong `model` is a `TypeSafeNotFoundError`. Before sending, the client turns a JSON
+state, instructions or criteria into compact JSON text. It rejects what the plugin can't answer: `score` questions,
+noul `criteria` and a choice with fewer than 2 criteria. `usage` stays empty, because the server reports no token
+counts.
+
+```python
+from typesafe_sdk import Choice, Noul
+from jev_vllm.client import JevClient
+
+with JevClient(base_url="http://localhost:8080", model="pointer") as client:
+    response = client.system_one(
+        state="I was charged twice. Please help.",
+        questions={
+            "billing": Noul(instructions="Is this about billing?"),
+            "tone": Choice(instructions="What is the tone?", criteria={"angry": None, "calm": "polite"}),
+        },
+    )
+response.nouls["billing"].noul, response.choices["tone"].choice
+```
+
+Every question of a call goes in one request and is answered in one batch. `AsyncJevClient` with `asyncio.gather`
+over many calls lets vLLM batch across requests too.
 
 ## Config
 
@@ -177,5 +210,6 @@ vLLM runs transformers 4. Weights are bf16, as in training. The head stays float
 - `train.py`: the `ce` and `rl` stages.
 - `evaluate.py`: scores and temperature fitting.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.
-- `export.py`: the merged folder for vLLM (`jev-model export`).
+- `export.py`: the merged folder for vLLM, with the stage beside it (`jev-model export`, `jev-model push`).
+- `src/jev_vllm/client.py`: `JevClient`, the TypeSafe-style client for the served export.
 - `pipeline.py`: `PointerJevModel`, the entry in the model registry.

@@ -157,23 +157,23 @@ def export(
 
 @app.command()
 def push(
-    run_dir: Annotated[Path, typer.Argument(help="directory written by `train`")],
+    export_dir: Annotated[Path, typer.Argument(help="folder written by `export`", file_okay=False)],
     repo: Annotated[str, typer.Option(help="Hugging Face repo id, `user/name`")],
-    stage: Stage = None,
     private: bool = False,
 ):
-    """Upload a stage's weights to the Hub, for `JevHolder.from_pretrained` (models with a checkpoint directory)."""
+    """Upload an export to the Hub as it is: vLLM serves the repo, and `JevHolder.from_pretrained` loads it."""
     from huggingface_hub import HfApi
 
-    model, _ = open_run(run_dir)
-    if not callable(getattr(model, "checkpoint", None)):
-        raise typer.BadParameter(f"{model.name} has no weights to push", param_hint="RUN_DIR")
+    from jev_model.pointer.model import HEAD_FILE
+
+    missing = [name for name in ("config.json", HEAD_FILE) if not (export_dir / name).is_file()]
+    if missing:
+        raise typer.BadParameter(
+            f"no {', '.join(missing)} in {export_dir}; run `export` first", param_hint="EXPORT_DIR"
+        )
     api = HfApi()
     api.create_repo(repo, private=private, exist_ok=True)
-    # only what `load` reads; the base model is fetched from the Hub by the name `head.pt` stores
-    api.upload_folder(
-        repo_id=repo, folder_path=model.checkpoint(run_dir, stage), allow_patterns=["adapter/*", "head.pt"]
-    )
+    api.upload_folder(repo_id=repo, folder_path=export_dir)
     typer.echo(f"pushed: https://huggingface.co/{repo}")
 
 

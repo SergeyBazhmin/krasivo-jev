@@ -4,7 +4,7 @@ from pathlib import Path
 
 import torch
 
-from jev_model.pointer.model import PointerModel, load
+from jev_model.pointer.model import ADAPTER_DIR, HEAD_FILE, PointerModel, load
 
 # what vLLM resolves the exported folder to; registered by the `jev_vllm` plugin
 ARCHITECTURE = "Qwen3_5PointerModel"
@@ -37,7 +37,8 @@ def merged_tensors(model: PointerModel) -> dict[str, torch.Tensor]:
 
 def export(checkpoint_dir: Path, out_dir: Path, device: str):
     """A folder `vllm serve` loads with the `jev_vllm` plugin installed: merged weights, the base config with the
-    pointer settings added, and the base tokenizer."""
+    pointer settings added, and the base tokenizer. The stage's `adapter/` and `head.pt` go beside them, so the same
+    folder (or a Hub repo pushed from it) also loads in `JevHolder`."""
     from safetensors.torch import save_file
 
     model = load(checkpoint_dir, device)
@@ -59,3 +60,6 @@ def export(checkpoint_dir: Path, out_dir: Path, device: str):
     }
     (out_dir / "config.json").write_text(json.dumps(config, indent=2))
     save_file(merged_tensors(model), out_dir / "model.safetensors", metadata={"format": "pt"})
+    # vLLM only reads top-level weights, so the stage can sit in the same folder
+    shutil.copytree(checkpoint_dir / ADAPTER_DIR, out_dir / ADAPTER_DIR, dirs_exist_ok=True)
+    shutil.copyfile(checkpoint_dir / HEAD_FILE, out_dir / HEAD_FILE)

@@ -27,3 +27,6 @@ runs/**/*.pt
 
 # Local docs
 .docs/
+
+runs/**/adapter/
+runs/**/api/
