@@ -7,7 +7,40 @@ sample contract and the conventions.
 - `src/jev_datasets/`: converts Hugging Face datasets into that format (`jev` CLI; [README](src/jev_datasets/README.md)).
 - `src/jev_model/`: trains and evaluates models on the built datasets (`jev-model` CLI; [README](src/jev_model/README.md)).
 - `docs/`: guides to using, serving (vLLM) and finetuning the model, and adding datasets ([index](docs/README.md)).
-- `notebooks/compare_runs.ipynb`: compares evaluated runs with plots.
+- `notebooks/compare_runs.ipynb`: compares evaluated runs with plots. `system_one.ipynb` and `system_one_vllm.ipynb`
+  ask a model questions in process and through vLLM.
+- `cards/`: the Hugging Face model cards of the released runs (`make_card.py` builds plots, tables and README).
+
+## Models
+
+Two `pointer` runs (Qwen3.5-2B-Base + LoRA + pointer head) are published on the Hub with merged bf16 weights for
+vLLM and the LoRA stage for `JevHolder`. Their cards pin this repo at the commit they were released from.
+
+| model | run | trained on | held-in test acc | benchmark test acc | card |
+|---|---|---|---:|---:|---|
+| [`bizhmans/jev-pointer-bf16`](https://huggingface.co/bizhmans/jev-pointer-bf16) | [`20261018-160511`](runs/pointer/20261018-160511) | all 100 datasets, benchmarks included (the final model) | 0.877 | 0.791 (seen) | [card](cards/pointer-20261018-160511/README.md) |
+| [`bizhmans/jev-pointer-no-bench-bf16`](https://huggingface.co/bizhmans/jev-pointer-no-bench-bf16) | [`20261017-192041`](runs/pointer/20261017-192041) | the 80 core datasets | 0.879 | 0.640 (unseen) | [card](cards/pointer-20261017-192041/README.md) |
+
+Accuracies are macro means over datasets. The no-bench run's benchmark score is the estimate for new tasks.
+
+```python
+from jev_model.system_one import Choice, JevHolder, Noul
+
+holder = JevHolder.from_pretrained("bizhmans/jev-pointer-bf16")
+answers = holder.system_one(
+    state="I was charged twice for my order. Please help.",
+    questions={"billing": Noul(instructions="Is this about billing?"),
+               "tone": Choice(instructions="What is the tone?", criteria={"angry": None, "calm": "polite"})},
+)
+```
+
+```bash
+uv run serve bizhmans/jev-pointer-bf16    # vLLM + jev_vllm plugins in Docker, http://localhost:8080/pooling
+```
+
+The served model is called with `curl` or with `jev_vllm.client.JevClient`, a drop-in for `typesafe-sdk`'s
+`TypeSafeClient` ([Serving with vLLM](docs/vllm.md)). To publish a run: `uv run jev-model export runs/pointer/X --out OUT`,
+then `uv run jev-model push OUT --repo user/name`.
 
 ## Setup
 
@@ -23,18 +56,6 @@ uv sync --extra model --extra ui          # + the Streamlit UI
 Secrets go in a `.env` file at the repo root (read on start, never written to a run's config), for example
 `TYPESAFE_API_KEY=...` for the `typesafe` model.
 
-### A local LLM server
-
-The `zero_shot` baseline talks to an OpenAI-compatible server. `src/scripts/` starts one with
-vLLM in Docker, on port 8080, with the Hugging Face cache mounted and `HF_TOKEN` passed through:
-
-```bash
-bash src/scripts/serve_gemma.sh   # google/gemma-4-26B-A4B-it, data parallel over 4 GPUs
-bash src/scripts/serve_qwen.sh    # Qwen/Qwen3.5-2B, text only
-```
-
-`zero_shot` expects `http://localhost:8080/v1` by default.
-
 ## 1. Build the datasets
 
 ```bash
@@ -44,8 +65,8 @@ uv run jev prepare sst2 anli --max-samples 5000   # some of them, a smaller cap 
 uv run jev prepare all -j 8                       # 8 datasets at once, one process each
 ```
 
-The default cap is 10,000 rows per split (a seeded random sample). The runs in `runs/` were built with
-`--max-samples 20000`.
+The default cap is 10,000 rows per split (a seeded random sample). The `pointer` runs in `runs/` were built with
+`--max-samples 25000`.
 
 ## 2. Train
 
@@ -70,14 +91,15 @@ uv run accelerate config    # once per machine; or `uv run accelerate config def
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 ```
 
+A full `pointer` run on every dataset needs at least 4 A100s and takes about 12–13 hours on 4. To repeat a released
+run, pass its `runs/pointer/<run>/config.json` as `-c`, with `-s data_dir=data` (the saved path is the training
+machine's).
+
 ### Baselines
 
-`zero_shot` (a pretrained LM behind an OpenAI-compatible server such as vLLM) and `typesafe` (a hosted API)
-train nothing: `train` only records the config, and `eval` scores them.
-
-```bash
-uv run jev-model train zero_shot --run-dir runs/zero_shot/chat   # server at http://localhost:8080/v1 by default
-```
+`typesafe` (a hosted API) trains nothing: `train` only records the config, and `eval` scores it. The `zero_shot`
+code (a pretrained LM behind an OpenAI-compatible server, started by `src/scripts/serve_gemma.sh` or `serve_qwen.sh`)
+stays in `src/jev_model/zero_shot/` but is not registered.
 
 ## 3. Evaluate
 

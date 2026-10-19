@@ -142,7 +142,7 @@ uv run jev-model ui            # http://localhost:8501
 ```
 
 Pick a run, then type a state, a question and options, or load a row from a built dataset to compare the prediction
-with its label. The page works through `JevModel.predictor`, so the `zero_shot` and `typesafe` baselines show up
+with its label. The page works through `JevModel.predictor`, so the `typesafe` baseline shows up
 there too.
 
 ## Writing good inputs

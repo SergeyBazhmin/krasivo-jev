@@ -83,7 +83,7 @@ print(data["train"][0])
 
 ```bash
 uv run jev list                                   # registered datasets
-uv run jev prepare all -j 8 --max-samples 20000   # what the released run was built with
+uv run jev prepare all -j 8 --max-samples 25000   # what the released runs were built with
 ```
 
 Every dataset lands in `data/<name>/`. Downloads come from the Hub; set `HF_TOKEN` for gated sources.
