@@ -14,20 +14,20 @@ sample contract and the conventions.
 ## Models
 
 Two `pointer` runs (Qwen3.5-2B-Base + LoRA + pointer head) are released. Each is a `jev-model export` folder with
-merged bf16 weights for vLLM and the LoRA stage for `JevHolder`. Their cards pin this repo at the commit they were
-released from.
+merged bf16 weights for vLLM and the LoRA stage for `JevHolder`. Their cards pin this repo at the
+[`v0.1.0`](https://github.com/SergeyBazhmin/krasivo-jev/releases/tag/v0.1.0) release.
 
 | model | run | trained on | held-in test acc | benchmark test acc | card |
 |---|---|---|---:|---:|---|
-| `pointer-bf16` | [`20261018-160511`](runs/pointer/20261018-160511) | all 100 datasets, benchmarks included (the final model) | 0.877 | 0.791 (seen) | [card](cards/pointer-20261018-160511/README.md) |
-| `pointer-no-bench-bf16` | [`20261017-192041`](runs/pointer/20261017-192041) | the 80 core datasets | 0.879 | 0.640 (unseen) | [card](cards/pointer-20261017-192041/README.md) |
+| [`krasivo-jev-bf16`](https://huggingface.co/bizhmans/krasivo-jev-bf16) | [`20261018-160511`](runs/pointer/20261018-160511) | all 100 datasets, benchmarks included (the final model) | 0.877 | 0.791 (seen) | [card](cards/pointer-20261018-160511/README.md) |
+| [`krasivo-jev-no-bench-bf16`](https://huggingface.co/bizhmans/krasivo-jev-no-bench-bf16) | [`20261017-192041`](runs/pointer/20261017-192041) | the 80 core datasets | 0.879 | 0.640 (unseen) | [card](cards/pointer-20261017-192041/README.md) |
 
 Accuracies are macro means over datasets. The no-bench run's benchmark score is the estimate for new tasks.
 
 ```python
 from jev_model.system_one import Choice, JevHolder, Noul
 
-holder = JevHolder.from_pretrained("pointer-bf16")  # the export folder
+holder = JevHolder.from_pretrained("bizhmans/krasivo-jev-bf16")  # or a local export folder
 answers = holder.system_one(
     state="I was charged twice for my order. Please help.",
     questions={"billing": Noul(instructions="Is this about billing?"),
@@ -36,7 +36,7 @@ answers = holder.system_one(
 ```
 
 ```bash
-uv run serve pointer-bf16    # vLLM + jev_vllm plugins in Docker, http://localhost:8080/pooling
+uv run serve bizhmans/krasivo-jev-bf16    # vLLM + jev_vllm plugins in Docker, http://localhost:8080/pooling
 ```
 
 The served model is called with `curl` or with `jev_vllm.client.JevClient`, a drop-in for `typesafe-sdk`'s
