@@ -168,7 +168,7 @@ uv sync
 ```python
 from jev_model.system_one import Choice, JevHolder, Noul
 
-holder = JevHolder.from_pretrained("bizhmans/jev-pointer-no-bench-bf16", revision="v0.1.0")
+holder = JevHolder.from_pretrained("bizhmans/krasivo-jev-no-bench-bf16", revision="v0.1.0")
 answers = holder.system_one(
     state="I was charged twice for my order. Please help.",
     questions={
@@ -181,7 +181,7 @@ answers["tone"].choice  # the likeliest key; also .confidence and .probabilities
 ```
 
 ```bash
-uv run serve bizhmans/jev-pointer-no-bench-bf16 -- --revision v0.1.0 --tokenizer-revision v0.1.0
+uv run serve bizhmans/krasivo-jev-no-bench-bf16 -- --revision v0.1.0 --tokenizer-revision v0.1.0
 # vLLM 0.17.1 + jev_vllm plugins in Docker, http://localhost:8080/pooling
 curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer", "data": {
   "state": "I was charged twice. Please help.",

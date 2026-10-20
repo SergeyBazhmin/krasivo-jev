@@ -100,7 +100,7 @@ answer from world knowledge.
 > benchmark scores therefore measure fit to tasks it has seen, **not** transfer to new ones. For transfer
 > numbers, see the held-out run [`20261017-192041`](#against-the-held-out-run-20261017-192041)
 > ([run files](https://github.com/SergeyBazhmin/krasivo-jev/tree/v0.1.0/runs/pointer/20261017-192041),
-> [model](https://huggingface.co/bizhmans/jev-pointer-no-bench-bf16)), which is the same
+> [model](https://huggingface.co/bizhmans/krasivo-jev-no-bench-bf16)), which is the same
 > recipe without the benchmarks.
 
 - **Base model:** [Qwen/Qwen3.5-2B-Base](https://huggingface.co/Qwen/Qwen3.5-2B-Base). LoRA rank 16 on every
@@ -301,7 +301,7 @@ uv sync
 ```python
 from jev_model.system_one import Choice, JevHolder, Noul
 
-holder = JevHolder.from_pretrained("bizhmans/jev-pointer-bf16", revision="v0.1.0")
+holder = JevHolder.from_pretrained("bizhmans/krasivo-jev-bf16", revision="v0.1.0")
 answers = holder.system_one(
     state="I was charged twice for my order. Please help.",
     questions={
@@ -314,7 +314,7 @@ answers["tone"].choice  # the likeliest key; also .confidence and .probabilities
 ```
 
 ```bash
-uv run serve bizhmans/jev-pointer-bf16 -- --revision v0.1.0 --tokenizer-revision v0.1.0
+uv run serve bizhmans/krasivo-jev-bf16 -- --revision v0.1.0 --tokenizer-revision v0.1.0
 # vLLM 0.17.1 + jev_vllm plugins in Docker, http://localhost:8080/pooling
 curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "pointer", "data": {
   "state": "I was charged twice. Please help.",
