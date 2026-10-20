@@ -48,10 +48,7 @@ then `uv run jev-model push OUT --repo user/name`.
 Python 3.12+ and [uv](https://docs.astral.sh/uv/).
 
 ```bash
-uv sync                                   # datasets only
-uv sync --extra model                     # + training and evaluation
-uv sync --extra model --extra notebook    # + the comparison notebook
-uv sync --extra model --extra ui          # + the Streamlit UI
+uv sync   # datasets, training, evaluation and the notebooks (dev group)
 ```
 
 Secrets go in a `.env` file at the repo root (read on start, never written to a run's config), for example
@@ -108,7 +105,6 @@ stays in `src/jev_model/zero_shot/` but is not registered.
 uv run jev-model eval runs/pointer/X                            # last stage, test partition
 uv run jev-model eval runs/pointer/X --stage ce --partition validation
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
-uv run jev-model ui                                             # try runs in the browser
 ```
 
 `eval` prints per-dataset accuracy, F1, NLL and ECE and saves them to `RUN/<stage>-<partition>.json`
@@ -118,10 +114,7 @@ All scores in `runs/` are on the test partition of each dataset, so every model 
 
 ## 4. Compare runs
 
-```bash
-uv run jupyter lab notebooks/compare_runs.ipynb
-```
-
+Open `notebooks/compare_runs.ipynb` with the project's `.venv` as the kernel (`ipykernel` is in the dev group).
 The notebook reads only the scores `eval` saved, so evaluate each run first. Set `RUNS`, `STAGES`, `PARTITION`,
 `METRIC` and the head-to-head pair in its first cell. It shows a leaderboard, a per-dataset heatmap, two runs
 head to head, scores by topic and by dataset type, and the datasets that split the runs or that none solves.

@@ -2,7 +2,7 @@
 
 Needs a running server (`uv run serve EXPORT_DIR`) and the run or stage it was exported from:
 
-    JEV_SOURCE=runs/pointer/X [JEV_STAGE=ce] uv run --extra model pytest tests -v
+    JEV_SOURCE=runs/pointer/X [JEV_STAGE=ce] uv run pytest tests -v
 
 Settings come from the environment:
 

@@ -17,7 +17,7 @@ and `AGENTS.md`. The reference for every model and file is [`src/jev_model/READM
 
 ## Which way to run a model
 
-| | `JevHolder` (Python) | `jev-model predict` / `ui` | vLLM |
+| | `JevHolder` (Python) | `jev-model predict` | vLLM |
 |---|---|---|---|
 | loads | a run, a stage folder or a Hub repo | a run | an `export` folder |
 | weights | base + LoRA, unmerged | base + LoRA, unmerged | merged, bf16 |
@@ -30,10 +30,9 @@ question gets the same answer from each, up to numeric noise.
 ## Setup
 
 ```bash
-uv sync --extra model                   # training, evaluation and Python inference
-uv sync --extra model --extra ui        # + the Streamlit page
+uv sync   # training, evaluation and Python inference
 ```
 
 A CUDA GPU is expected. Inference runs on CPU too, but slowly. The base model (`unsloth/Qwen3.5-2B-Base` by default)
-is downloaded from the Hugging Face Hub on first use. Install `flash-linear-attention` (in the `model` extra) on a
+is downloaded from the Hugging Face Hub on first use. Install `flash-linear-attention` (a dependency) on a
 GPU machine; without its kernels the linear-attention layers run more than ten times slower.

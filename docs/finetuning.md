@@ -122,7 +122,7 @@ To make your dataset count for more without repeating it by hand, lower `ce.alph
 ## 4. Train
 
 ```bash
-uv sync --extra model
+uv sync
 
 # one GPU
 uv run jev-model train pointer -c configs/my_tickets.toml --run-dir runs/pointer/my_tickets

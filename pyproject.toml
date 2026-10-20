@@ -13,24 +13,10 @@ dependencies = [
     "loguru>=0.7.3",
     "peft>=0.21.1",
     "torch>=2.14.0",
+    "tqdm>=4.67",
     "transformers>=5.17.0",
     "typer>=0.27.2",
     "typesafe-sdk>=0.7.2",
-]
-
-[project.optional-dependencies]
-# training and inference (`jev-model`); install with `uv sync --extra model`
-model = [
-    "accelerate>=1.10",
-    "flash-linear-attention>=0.5.2",
-    "peft>=0.21.1",
-    "torch>=2.6",
-    "tqdm>=4.67",
-    "transformers>=5.2",
-]
-# `jev-model ui`; install with `uv sync --extra model --extra ui`
-ui = [
-    "streamlit>=1.50",
 ]
 
 [project.scripts]
@@ -55,6 +41,8 @@ packages = ["src/jev_datasets", "src/jev_model", "src/jev_vllm"]
 
 [dependency-groups]
 dev = [
+    "ipykernel>=6.29",
+    "matplotlib>=3.9",
     "pytest>=9.1.1",
     "ruff>=0.16.10",
 ]
@@ -67,6 +55,5 @@ target-version = "py312"
 extend-select = ["I", "UP"]
 ignore = [
     "B023",    # callbacks defined in a loop run within that iteration (zero_shot/evaluate.py)
-    "BLE001",  # the UI shows any predictor error instead of crashing
     "DTZ005",  # run directory names use local time on purpose
 ]

@@ -85,7 +85,7 @@ local. Things to know:
   then `JevHolder.from_pretrained("models/jev")`. The base model still has to be in the cache.
 - **Path or repo id:** a path that does not exist locally is treated as a repo id, so a typo in a local path shows
   up as a Hub "repository not found" error.
-- **The CLI and the UI take runs only.** `jev-model predict`, `eval` and `ui` read a run directory; use
+- **The CLI takes runs only.** `jev-model predict` and `eval` read a run directory; use
   `JevHolder` for a Hub model. To serve a Hub model with vLLM, see [Exporting a Hub model](vllm.md#from-a-hub-model).
 
 To publish a run of your own:
@@ -133,17 +133,6 @@ uv run jev-model predict runs/pointer/X \
 ```
 
 `--stage ce` picks a stage; the last finished one is the default.
-
-## In the browser
-
-```bash
-uv sync --extra model --extra ui
-uv run jev-model ui            # http://localhost:8501
-```
-
-Pick a run, then type a state, a question and options, or load a row from a built dataset to compare the prediction
-with its label. The page works through `JevModel.predictor`, so the `typesafe` baseline shows up
-there too.
 
 ## Writing good inputs
 

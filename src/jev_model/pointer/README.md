@@ -76,7 +76,7 @@ the whole causal LM, but the forward pass calls only the text model under it, so
 computed; older adapters (which wrap the text model) still load.
 
 Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
-`flash-linear-attention`, which the `model` extra installs; without it they fall back to a reference PyTorch
+`flash-linear-attention`, which `uv sync` installs; without it they fall back to a reference PyTorch
 implementation that is more than ten times slower, and a warning says so.
 
 ### Several GPUs
@@ -91,7 +91,7 @@ and writes the run files. `steps`, `lr` and `warmup` are not rescaled for you.
 ## Usage
 
 ```bash
-uv sync --extra model
+uv sync
 uv run jev-model config pointer > my.json                # defaults, to edit
 uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl
@@ -151,7 +151,7 @@ curl localhost:8080/pooling -H 'Content-Type: application/json' -d '{"model": "p
     "tone": {"type": "choice", "instructions": "What is the tone?", "criteria": {"angry": null, "calm": "polite"}}}}}'
 # -> {"data": {"answers": {"billing": {"type": "noul", "noul": 0.98},
 #      "tone": {"type": "choice", "choice": "calm", "confidence": 0.7, "probabilities": {"angry": 0.3, "calm": 0.7}}}}, ...}
-uv run --extra model python src/scripts/check_pointer_vllm.py runs/pointer/X --dataset sst2   # vs torch
+uv run python src/scripts/check_pointer_vllm.py runs/pointer/X --dataset sst2   # vs torch
 ```
 
 The exported `config.json` is the base model's own, with `architectures`, `io_processor_plugin` and the `pointer_*`

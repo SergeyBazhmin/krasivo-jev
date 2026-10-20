@@ -147,8 +147,6 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
 - `constants.py`: `DATA_DIR`, `CACHE_DIR/<model>/...` (artefacts runs can share), `RUNS_DIR/<model>/<run>`.
   Runs are tracked in git (configs, scores, logs) except their weights (`*.safetensors`, `*.pt`).
 - `__init__.py`: the `models` registry, alphabetical.
-- `ui/app.py`: the Streamlit page behind `jev-model ui`. It picks a run, fills the form by hand or from a
-  built dataset row, and calls `JevModel.predictor`, so new models need no UI code.
 - `pointer/`: Qwen decoder with a LoRA + pointer head, after `jaredpalmer/kev` but with one question per
   sequence and no option isolation, so attention stays plain causal. The input is
   `<state> .. <q> .. <opt> .. </opt> .. <decide>` (delimiters reuse Qwen special tokens, `encode.py`); an
@@ -175,7 +173,7 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `head.pt`). `JevHolder` downloads only the stage and fetches the base model by name.
 
 ```bash
-uv sync --extra model
+uv sync
 uv run jev-model list                                   # models and their stages
 uv run jev-model config pointer > my.json               # defaults, to edit
 uv run jev-model train pointer -c my.json -s ce.lr=1e-4 -s datasets=atis,banking77
@@ -183,8 +181,6 @@ uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a 
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
-uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
-uv sync --extra notebook && uv run jupyter lab notebooks/compare_runs.ipynb   # compare runs with plots
 ```
 
 `notebooks/compare_runs.ipynb` compares runs from the scores `eval` saved (`RUN/<stage>-<partition>.json`): a
@@ -199,14 +195,14 @@ so evaluate a run before comparing it.
    not at the top of `pipeline.py`/`config.py`, so the CLI loads without every model's dependencies.
 3. Read data through `jev_model.data` and report with `jev_model.metrics`, so numbers are comparable
    across models. Keep outputs inside the run directory; put only cross-run caches under `CACHE_DIR/<name>`.
-4. Register it in `src/jev_model/__init__.py`. Add new dependencies to the `model` extra.
+4. Register it in `src/jev_model/__init__.py`. Add new dependencies to `dependencies`.
 5. Add a `README.md` to the model's directory: how it works, its stages, usage, config and files.
 
 ## Conventions
 
-- Python 3.12+, managed with `uv`. Dependencies are `datasets`, `loguru` and `typer`; `jev_model` also needs
-  the `model` extra (torch, transformers, tqdm, peft, accelerate, flash-linear-attention, python-dotenv,
-  typesafe-sdk). The `ui` extra adds streamlit; the `notebook` extra adds jupyterlab, pandas and matplotlib.
+- Python 3.12+, managed with `uv`. Dependencies include `datasets`, `loguru`, `typer` and, for `jev_model`,
+  torch, transformers, tqdm, peft, accelerate, flash-linear-attention, dotenv and typesafe-sdk. The dev group
+  adds ipykernel and matplotlib for the notebooks.
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,

@@ -21,7 +21,7 @@ Add `zero_shot_model` back to `models` in `__init__.py` to use it.
 ## Usage
 
 ```bash
-uv sync --extra model
+uv sync
 uv run jev-model list                                   # models and their stages
 uv run jev-model config pointer > my.json               # the defaults, to edit
 uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4 -s datasets=atis,banking77
@@ -29,7 +29,6 @@ uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # add a sta
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
-uv sync --extra model --extra ui && uv run jev-model ui   # try runs in the browser
 ```
 
 ## Runs
@@ -77,8 +76,6 @@ string; `list` fields also take `a,b`. A `.env` at the repo root is loaded into 
   process writes run files.
 - `losses.py`: the lr schedule and the RL loss over option logits.
 - `prompt.py`: the numbered-option prompt for decoder backbones, and middle truncation of long states.
-- `ui/app.py`: the Streamlit page behind `jev-model ui`; it works through `JevModel.predictor`, so new models need
-  no UI code.
 - `pointer/`, `typesafe/`, `zero_shot/`: the models.
 
 ## Adding a model
