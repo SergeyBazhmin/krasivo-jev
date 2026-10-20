@@ -111,6 +111,7 @@ answer from world knowledge.
 - **Training:** the `ce` stage only, 34,315 optimizer steps (2 epochs over 100 datasets).
 - **Run:** [`runs/pointer/20261018-160511`](https://github.com/SergeyBazhmin/krasivo-jev/tree/v0.1.0/runs/pointer/20261018-160511) in the training repo: config,
   training history and test scores.
+- **Code:** [`krasivo-jev` @ `v0.1.0`](https://github.com/SergeyBazhmin/krasivo-jev/tree/v0.1.0), the release that includes this run.
 - **Headline:** on the test splits of the 80 core datasets, macro accuracy is **0.877**, NLL 0.359 and ECE 0.043.
   On the test splits of the 20 benchmark datasets (whose train splits it trained on), macro accuracy is **0.791**,
   NLL 0.549 and ECE 0.064.
@@ -169,8 +170,7 @@ The pinned versions behind this model.
 | what | revision |
 |---|---|
 | base model | [Qwen/Qwen3.5-2B-Base](https://huggingface.co/Qwen/Qwen3.5-2B-Base/tree/b1485b2fa6dfa1287294f269f5fb618e03d52d7c) @ `b1485b2fa6dfa1287294f269f5fb618e03d52d7c`, the snapshot merged into these weights at export |
-| training code | [`krasivo-jev` @ `ee22754`](https://github.com/SergeyBazhmin/krasivo-jev/tree/ee227549a960b223ec5e8319aa294bc19c4c031e), the last commit before the run started (2026-10-18 16:05 +0300). The run doesn't record its commit |
-| export code | [`krasivo-jev` @ `0b3be4c`](https://github.com/SergeyBazhmin/krasivo-jev/tree/0b3be4c4da38bc131478e9a1f606077c2dc75b4f) |
+| code | [`krasivo-jev` @ `v0.1.0`](https://github.com/SergeyBazhmin/krasivo-jev/tree/v0.1.0), the release that includes this run. Trained at `ee22754`, the last commit before the run started (2026-10-18 16:05 +0300; the run doesn't record its commit), and exported at `0b3be4c` |
 | libraries | torch 2.14.0, transformers 5.17.0, peft 0.21.1, accelerate 1.15.0, datasets 5.0.1, huggingface-hub 1.33.0 ([`uv.lock`](https://github.com/SergeyBazhmin/krasivo-jev/blob/v0.1.0/uv.lock)) |
 | serving | `vllm/vllm-openai:v0.17.1` ([`docker/vllm.Dockerfile`](https://github.com/SergeyBazhmin/krasivo-jev/blob/v0.1.0/docker/vllm.Dockerfile)) |
 | training data | built by `jev prepare` from the source datasets listed in the metadata, at their Hub `main` as of 2026-10-18. The source revisions weren't recorded |
