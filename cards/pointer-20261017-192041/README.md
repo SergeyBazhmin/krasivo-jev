@@ -252,7 +252,7 @@ use. Both paths need the [`krasivo-jev`](https://github.com/SergeyBazhmin/krasiv
 
 ```bash
 git clone https://github.com/SergeyBazhmin/krasivo-jev && cd krasivo-jev && git checkout v0.1.0
-uv sync --extra model
+uv sync
 ```
 
 ```python
