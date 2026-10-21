@@ -18,10 +18,18 @@ class PointerJevModel(JevModel[PointerConfig]):
     multi_gpu = True
 
     def run_stage(self, stage: str, config: PointerConfig, run_dir: Path, device: str):
+        from jev_model import distributed
+        from jev_model.pointer.model import resolve_checkpoint
         from jev_model.pointer.train import train
 
         init = None
-        if stage == "rl":
+        if stage == "ce" and config.init:
+            # the main process downloads first, so the others find the files in the Hub cache
+            if distributed.is_main():
+                init = resolve_checkpoint(config.init)
+            distributed.barrier()
+            init = init or resolve_checkpoint(config.init)
+        elif stage == "rl":
             init = run_dir / "ce"
             if not (init / "head.pt").exists():
                 raise FileNotFoundError(f"the rl stage starts from the CE weights; run the ce stage first ({init})")

@@ -42,6 +42,9 @@ uv run serve bizhmans/krasivo-jev-bf16    # vLLM + jev_vllm plugins in Docker, h
 The served model is called with `curl` or with `jev_vllm.client.JevClient`, a drop-in for `typesafe-sdk`'s
 `TypeSafeClient` ([Serving with vLLM](docs/vllm.md)). To publish a run: `uv run jev-model export runs/pointer/X --out OUT`,
 then `uv run jev-model push OUT --repo user/name`.
+To fine-tune a published model on more data, start a run from it:
+`uv run jev-model train pointer -s init=bizhmans/krasivo-jev-no-bench-bf16 -s datasets=...`
+([Fine-tuning](src/jev_model/pointer/README.md#fine-tuning)).
 
 ## Setup
 

@@ -154,6 +154,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
   There is no feature cache: every step runs the backbone.
   Each stage writes `RUN/<stage>/adapter` and `head.pt`. It trains on several GPUs with DDP under `accelerate launch`.
+  `init` (a run, stage or export dir, or a Hub repo) starts `ce` from trained weights to fine-tune them;
+  `resolve_checkpoint` (`pointer/model.py`) finds the stage, as `JevHolder` does.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
   replies with the number of an option. It is kept as code but not registered, so the CLI doesn't list or run it.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
@@ -178,6 +180,7 @@ uv run jev-model list                                   # models and their stage
 uv run jev-model config pointer > my.json               # defaults, to edit
 uv run jev-model train pointer -c my.json -s ce.lr=1e-4 -s datasets=atis,banking77
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a run
+uv run jev-model train pointer -s init=bizhmans/krasivo-jev-no-bench-bf16 -s datasets=...  # fine-tune
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
