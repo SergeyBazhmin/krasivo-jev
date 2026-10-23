@@ -158,9 +158,10 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   `init` (a run, stage or export dir, or a Hub repo) starts `ce` from trained weights to fine-tune them;
   `resolve_checkpoint` (`pointer/model.py`) finds the stage, as `JevHolder` does.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
-  replies with the number of an option. It is kept as code but not registered, so the CLI doesn't list or run it.
+  generates a reply with the number of an option. It is scored on its datasets plus every benchmark, on accuracy only
+  (`nll`/`ece` are NaN). Its answers are saved like `pointer`'s, with one-hot `probs`, so `thresholds` reads them.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
-  an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the (unregistered) `zero_shot` code.
+  an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for `zero_shot`.
   `uv run serve EXPORT_DIR|REPO` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this
   package, so the `jev_vllm` plugins load) and serves a `jev-model export` folder, or a Hub repo pushed from one, on
   `http://localhost:8080/pooling`. `jev_vllm.client` (`JevClient`, `AsyncJevClient`) calls that server like

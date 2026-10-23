@@ -1,14 +1,14 @@
 from pathlib import Path
 
 from jev_model.base import JevModel
-from jev_model.data import resolve_names
+from jev_model.data import benchmark_names, resolve_names
 from jev_model.zero_shot.config import ZeroShotConfig
 
 
 class ZeroShotJevModel(JevModel[ZeroShotConfig]):
-    """A pretrained chat LM as it is, for a baseline: an OpenAI-compatible server (a local vLLM) generates an
-    answer, and the option number it replies with is the prediction. `device` is unused. Nothing is trained, so
-    `train` only records the config and the scoring happens in `eval`."""
+    """A pretrained chat LM as it is, for a baseline: an OpenAI-compatible server (a local vLLM) answers with an
+    option number, and that option is the prediction. `device` is unused. Nothing is trained, so `train` only
+    records the config and the scoring happens in `eval`."""
 
     config_class = ZeroShotConfig
     stages = ("generate",)
@@ -20,7 +20,9 @@ class ZeroShotJevModel(JevModel[ZeroShotConfig]):
     def evaluate(self, config, run_dir, partition, device, stage=None):
         from jev_model.zero_shot.evaluate import evaluate
 
+        # the datasets asked for, plus every benchmark, as `pointer` does
         names = resolve_names(config.datasets, config.data_dir)
+        names = names + [name for name in benchmark_names(config.data_dir) if name not in names]
         return evaluate(config, names, partition, run_dir / "generate")
 
     def predictor(self, config, run_dir, device, stage=None):

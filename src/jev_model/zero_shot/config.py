@@ -6,7 +6,7 @@ from jev_model.constants import DATA_DIR
 
 @dataclass
 class ZeroShotConfig:
-    # built datasets to score; empty for every one under data_dir
+    # built datasets to score; empty for every one under data_dir. Every built benchmark is scored too
     datasets: list[str] = field(default_factory=list)
     data_dir: Path = DATA_DIR
     # OpenAI-compatible server, such as a local vLLM

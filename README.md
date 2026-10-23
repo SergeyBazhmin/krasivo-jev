@@ -98,9 +98,9 @@ machine's).
 
 ### Baselines
 
-`typesafe` (a hosted API) trains nothing: `train` only records the config, and `eval` scores it. The `zero_shot`
-code (a pretrained LM behind an OpenAI-compatible server, started by `src/scripts/serve_gemma.sh` or `serve_qwen.sh`)
-stays in `src/jev_model/zero_shot/` but is not registered.
+`typesafe` (a hosted API) and `zero_shot` (a pretrained LM behind an OpenAI-compatible server, started by
+`src/scripts/serve_gemma.sh` or `serve_qwen.sh`, that replies with an option number) train nothing: `train` only
+records the config, and `eval` scores them, on the benchmarks too.
 
 ## 3. Evaluate
 

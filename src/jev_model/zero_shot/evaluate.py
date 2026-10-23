@@ -58,26 +58,31 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
             f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  parsed={m['parsed']:.3f}"
             + benchmark_tag(name)
         )
-        total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
+        # benchmarks apart from the other datasets, as in the saved scores
+        macros = {key: m for key, m in with_macro(metrics).items() if key.endswith("macro")}
+        total.set_postfix({f"{key}_acc": f"{m['accuracy']:.3f}" for key, m in macros.items()})
     total.close()
     return with_macro(metrics)
 
 
 def score(samples: list[dict], answers: list[str], path: Path) -> dict[str, float]:
     """Accuracy of the parsed answers; an answer that names no option is wrong.
-    `nll` and `ece` need probabilities, which generation does not give: they are NaN."""
+    `nll` and `ece` need probabilities, which generation does not give: they are NaN. Each answer is saved with
+    `probs` one-hot on the option it names (None when it names none) and the label, as `pointer` saves its
+    predictions, so `jev-model thresholds` reads them too."""
     chosen = [parse(answer, texts(sample)) for sample, answer in zip(samples, answers)]
     gold = [max(range(len(s["label"])), key=lambda j: s["label"][j]) for s in samples]
     with path.open("w") as f:
-        for sample, answer, choice, g in zip(samples, answers, chosen, gold):
+        for sample, answer, choice in zip(samples, answers, chosen):
+            probs = None if choice is None else [float(i == choice) for i in range(len(sample["options"]))]
             f.write(
                 json.dumps(
                     {
                         "question": sample["question"],
                         "options": texts(sample),
                         "answer": answer,
-                        "choice": choice,
-                        "gold": g,
+                        "probs": probs,
+                        "label": sample["label"],
                     }
                 )
                 + "\n"
