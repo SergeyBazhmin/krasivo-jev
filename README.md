@@ -100,7 +100,7 @@ machine's).
 
 `typesafe` (a hosted API) and `zero_shot` (a pretrained LM behind an OpenAI-compatible server, started by
 `src/scripts/serve_gemma.sh` or `serve_qwen.sh`, that replies with an option number) train nothing: `train` only
-records the config, and `eval` scores them, on the benchmarks too.
+records the config, and `eval` scores them.
 
 ## 3. Evaluate
 

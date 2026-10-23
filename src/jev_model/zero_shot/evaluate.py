@@ -3,6 +3,7 @@ import math
 from pathlib import Path
 
 import torch
+from loguru import logger
 from tqdm import tqdm
 
 from jev_model.data import benchmark_tag, load_samples
@@ -23,12 +24,25 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
     client, prompter = connect(config)
     out_dir.mkdir(parents=True, exist_ok=True)
     data = {}
-    for name, samples in load_samples(names, config.data_dir, part, config.max_samples).items():
+    cap = f", at most {config.max_samples} each" if config.max_samples else ""
+    logger.info(f"loading {part} of {len(names)} datasets from {config.data_dir}{cap}")
+    # one at a time, so each logs as it loads
+    for k, name in enumerate(names, start=1):
+        samples = load_samples([name], config.data_dir, part, config.max_samples).get(name, [])
+        if not samples:
+            logger.warning(f"[{k}/{len(names)}] {name}: no {part} samples with 2+ options, not scored")
+            continue
         built = [(s, prompter(s["state"], s["question"], texts(s))) for s in samples]
-        if skipped := sum(p is None for _, p in built):
-            tqdm.write(f"[{name}] {skipped} of {len(built)} samples skipped: question and options too long")
-        if kept := [(s, p) for s, p in built if p]:
+        kept = [(s, p) for s, p in built if p]
+        skipped = len(built) - len(kept)
+        logger.info(
+            f"[{k}/{len(names)}] {name}: {len(kept)} samples"
+            + (f", {skipped} skipped (question and options too long)" if skipped else "")
+            + benchmark_tag(name)
+        )
+        if kept:
             data[name] = kept
+    logger.info(f"loaded {sum(map(len, data.values()))} samples from {len(data)} datasets")
     metrics = {}
     total = tqdm(total=sum(map(len, data.values())), desc=f"{part} ({len(data)} datasets)", unit="sample")
     for k, (name, kept) in enumerate(data.items(), start=1):

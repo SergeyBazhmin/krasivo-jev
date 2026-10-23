@@ -2,7 +2,7 @@
 
 A pretrained chat (instruct) LM used as it is, with no training. An OpenAI-compatible server (a local vLLM) generates an answer,
 and the option number it replies with is the prediction. It is a baseline for the trained models on the same test rows
-(`jev_model.data.partition`), and like them it is scored on every built benchmark too. Nothing runs on the local GPU; only the tokenizer is loaded, to measure prompts.
+(`jev_model.data.partition`). It scores only `datasets`: benchmarks are not added unless named. Nothing runs on the local GPU; only the tokenizer is loaded, to measure prompts.
 
 ## How it works
 
@@ -53,7 +53,7 @@ uv run jev-model train zero_shot -s url=http://host:8001/v1 --run-dir runs/zero_
 
 | key              | default                    | meaning |
 |------------------|----------------------------|---------|
-| `datasets`       | all built                  | datasets to score; every built benchmark is scored too, on the same partition |
+| `datasets`       | all built                  | datasets to score; benchmarks only when named (or when empty) |
 | `url`            | `http://localhost:8080/v1` | OpenAI-compatible server |
 | `model`          | first served               | served model name |
 | `tokenizer`      | `model`                    | Hub tokenizer that measures prompts |
