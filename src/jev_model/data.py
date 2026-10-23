@@ -6,6 +6,15 @@ from loguru import logger
 
 from jev_model.constants import PARTITIONS
 
+# option texts of a `noul` sample, in English or Russian
+YES = ("yes", "да")
+NOUL_OPTIONS = (["no", "yes"], ["да", "нет"])
+
+
+def kind(options: list[str]) -> str:
+    """The `type` a dataset stamps on its rows, for options that come without one (`predict`)."""
+    return "noul" if sorted(text.strip().lower() for text in options) in NOUL_OPTIONS else "choice"
+
 
 def built_names(data_dir: Path) -> list[str]:
     """Datasets that `jev prepare` has saved under `data_dir`."""

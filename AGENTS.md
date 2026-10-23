@@ -139,7 +139,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
   Training goes through `train_names`, which leaves out benchmark datasets. `pointer` evaluates its training
   datasets plus the benchmarks it didn't train on; `typesafe` scores its datasets plus every benchmark.
-- `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
+- `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`), and
+  `threshold_scores`/`average_precision` for a noul dataset's positive answer at each probability cut-off.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
   one shared run directory). A model that can train with DDP sets `multi_gpu = True`; the others refuse to run
@@ -183,12 +184,18 @@ uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a 
 uv run jev-model train pointer -s init=bizhmans/krasivo-jev-no-bench-bf16 -s datasets=...  # fine-tune
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
+uv run jev-model thresholds runs/pointer/X [--dataset boolq] [--thresholds 0.3,0.5,0.7] [--positive no]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
 `notebooks/compare_runs.ipynb` compares runs from the scores `eval` saved (`RUN/<stage>-<partition>.json`): a
 leaderboard, a per-dataset heatmap, two runs head to head, and scores by topic and by `type`. It only reads files,
 so evaluate a run before comparing it.
+
+`eval` also keeps each row's probabilities in `RUN/<stage>/<partition>-<dataset>.jsonl` (`options`, `probs`,
+`label`). `jev-model thresholds RUN` reads them, without running the model, and prints the precision, recall and F1
+of each noul dataset's `yes` answer (`--positive no` for `no`) at each cut-off, with the average precision. It saves
+them to `RUN/<stage>-<partition>-thresholds.json`.
 
 ### Adding a model
 

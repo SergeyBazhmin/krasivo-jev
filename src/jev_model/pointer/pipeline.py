@@ -64,7 +64,8 @@ class PointerJevModel(JevModel[PointerConfig]):
         trained = read_checkpoint(checkpoint)["datasets"]
         unseen = [name for name in benchmark_names(config.data_dir) if name not in trained]
         data = load_items(trained + unseen, config.data_dir, partition, model.encoder)
-        return evaluate(model, data, config.eval_batch_tokens)
+        # the probabilities go next to the stage's weights, at RUN/<stage>/<partition>-<dataset>.jsonl
+        return evaluate(model, data, config.eval_batch_tokens, checkpoint, partition)
 
     def predictor(self, config, run_dir, device, stage=None):
         from jev_model.pointer.predict import PointerPredictor

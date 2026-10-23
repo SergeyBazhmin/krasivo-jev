@@ -25,7 +25,8 @@ one that is too long) is logged and counted as uniform. `answered` is the share 
 ## Metrics
 
 `jev_model.metrics.scores` over the log probabilities: `accuracy`, `nll`, `ece`,
-plus `answered`. Every answer is saved to `RUN/api/<partition>-<dataset>.jsonl` with its probabilities and the label.
+plus `answered`. Every answer is saved to `RUN/api/<partition>-<dataset>.jsonl` with its probabilities and the label;
+`jev-model thresholds` reads these for precision/recall of the noul datasets at each cut-off.
 
 ## Usage
 

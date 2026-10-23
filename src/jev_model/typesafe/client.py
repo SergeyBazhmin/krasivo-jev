@@ -18,13 +18,11 @@ from typesafe_sdk import (
     TypeSafeUnprocessableEntityError,
 )
 
+from jev_model.data import YES
 from jev_model.typesafe.config import TypesafeConfig
 
 # the name the single question goes under; the answer comes back keyed by it
 NAME = "answer"
-# option texts of a `noul` sample, in English or Russian
-YES = ("yes", "да")
-NOUL_OPTIONS = (["no", "yes"], ["да", "нет"])
 
 
 def labels(options: list[str]) -> list[str]:
@@ -32,11 +30,6 @@ def labels(options: list[str]) -> list[str]:
     keyed by their number instead, and the text goes in as the description."""
     unique = len(set(options)) == len(options) and all(text.strip() for text in options)
     return options if unique else [str(i) for i in range(1, len(options) + 1)]
-
-
-def kind(options: list[str]) -> str:
-    """The `type` a dataset stamps on its rows, for options that come without one (`predict`)."""
-    return "noul" if sorted(text.strip().lower() for text in options) in NOUL_OPTIONS else "choice"
 
 
 def ask(question: str, options: list[str], type: str) -> Noul | Choice:

@@ -97,6 +97,7 @@ uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
+uv run jev-model thresholds runs/pointer/X [--dataset boolq] [--thresholds 0.3,0.5,0.7] [--positive no]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
@@ -225,7 +226,8 @@ over many calls lets vLLM batch across requests too.
 - `model.py`: `PointerHead`, `PointerModel`, and `create` / `load` for the LoRA and the head.
 - `data.py`: loads and tokenizes the partitions; `Pool` and `SizedEpochPool` draw training batches.
 - `train.py`: the `ce` and `rl` stages.
-- `evaluate.py`: scores and temperature fitting.
+- `evaluate.py`: scores and temperature fitting. `eval` also saves each row's calibrated probabilities to
+  `RUN/<stage>/<partition>-<dataset>.jsonl`, which `jev-model thresholds` reads.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.
 - `export.py`: the merged folder for vLLM, with the stage beside it (`jev-model export`, `jev-model push`).
 - `src/jev_vllm/client.py`: `JevClient`, the TypeSafe-style client for the served export.

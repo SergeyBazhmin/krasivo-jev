@@ -125,6 +125,91 @@ def eval_command(
 
 
 @app.command()
+def thresholds(
+    run_dir: Annotated[Path, typer.Argument(help="directory written by `train`, evaluated with `eval`")],
+    partition: str = "test",
+    stage: Stage = None,
+    datasets: Annotated[
+        list[str] | None, typer.Option("--dataset", help="noul datasets to score; every saved one by default")
+    ] = None,
+    cutoffs: Annotated[str, typer.Option("--thresholds", help="comma-separated probability cut-offs")] = ",".join(
+        f"{t / 20:g}" for t in range(1, 20)
+    ),
+    positive: Annotated[str, typer.Option(help="the class to detect: `yes` or `no`")] = "yes",
+):
+    """Precision, recall and F1 of a noul dataset's `yes` (or `no`) answer at each probability cut-off, from the
+    predictions `eval` saved; nothing is run. Saved to RUN_DIR/<stage>-<partition>-thresholds.json."""
+    import torch
+
+    from jev_model.data import YES, kind
+    from jev_model.metrics import average_precision, threshold_scores
+
+    if positive not in ("yes", "no"):
+        raise typer.BadParameter("must be `yes` or `no`", param_hint="--positive")
+    info = read_run(run_dir)
+    if "model" not in info:
+        raise typer.BadParameter(f"{run_dir} is not a run directory", param_hint="RUN_DIR")
+    stage = stage or (info.get("stages") or [None])[-1]
+    files = {
+        p.name.removeprefix(f"{partition}-").removesuffix(".jsonl"): p
+        for p in (run_dir / str(stage)).glob(f"{partition}-*.jsonl")
+    }
+    if not files:
+        raise typer.BadParameter(f"no {partition} predictions in {run_dir / str(stage)}; run `jev-model eval` first")
+    if missing := [name for name in datasets or [] if name not in files]:
+        raise typer.BadParameter(f"no saved {partition} predictions for {', '.join(missing)}", param_hint="--dataset")
+    cuts = sorted(float(t) for t in cutoffs.split(","))
+
+    results = {}
+    for name in datasets or sorted(files):
+        rows = [json.loads(line) for line in files[name].read_text().splitlines()]
+        if not rows or kind(rows[0]["options"]) != "noul":
+            if datasets:
+                raise typer.BadParameter(f"{name} is not a noul dataset", param_hint="--dataset")
+            continue
+        # rows the API rejected carry no probabilities
+        answered = [r for r in rows if r["probs"] is not None]
+        index = [
+            next(i for i, text in enumerate(r["options"]) if (text.strip().lower() in YES) == (positive == "yes"))
+            for r in answered
+        ]
+        p = torch.tensor([r["probs"][i] for r, i in zip(answered, index)])
+        # a soft label counts as positive when it puts at least half its mass there, as the argmax does
+        gold = torch.tensor([r["label"][i] >= 0.5 for r, i in zip(answered, index)])
+        sweep = threshold_scores(p, gold, cuts)
+        best = max((s for s in sweep if s["f1"] is not None), key=lambda s: s["f1"], default=None)
+        results[name] = {
+            "n": len(answered),
+            "skipped": len(rows) - len(answered),
+            "positive": positive,
+            "base_rate": gold.float().mean().item(),
+            "average_precision": average_precision(p, gold),
+            "best_f1_threshold": best and best["threshold"],
+            "thresholds": sweep,
+        }
+
+    if not results:
+        raise typer.BadParameter(f"no noul datasets among the saved {partition} predictions", param_hint="RUN_DIR")
+    (run_dir / f"{stage}-{partition}-thresholds.json").write_text(json.dumps(results, indent=2))
+
+    def fmt(x: float | None) -> str:
+        return "    -" if x is None else f"{x:.3f}"
+
+    for name, r in results.items():
+        typer.echo(
+            f"\n{name}  n={r['n']}  {positive} rate={r['base_rate']:.3f}  AP={fmt(r['average_precision'])}"
+            f"  best F1 at {r['best_f1_threshold']}"
+            + (f"  ({r['skipped']} unanswered skipped)" if r["skipped"] else "")
+        )
+        typer.echo("  cut-off  precision  recall     f1  predicted+")
+        for s in r["thresholds"]:
+            typer.echo(
+                f"  {s['threshold']:>7g}  {fmt(s['precision']):>9}  {fmt(s['recall']):>6}  {fmt(s['f1']):>5}"
+                f"  {s['positive_rate']:>10.3f}"
+            )
+
+
+@app.command()
 def predict(
     run_dir: Annotated[Path, typer.Argument(help="directory written by `train`")],
     question: Annotated[str, typer.Option()],
