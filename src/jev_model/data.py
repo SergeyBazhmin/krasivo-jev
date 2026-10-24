@@ -1,7 +1,8 @@
 import hashlib
+import json
 from pathlib import Path
 
-from datasets import DatasetDict, load_from_disk
+from datasets import load_from_disk
 from loguru import logger
 
 from jev_model.constants import PARTITIONS
@@ -70,17 +71,18 @@ def content_key(sample: dict) -> str:
     return sample["state"] or sample["question"]
 
 
-def partition(data: DatasetDict) -> dict[str, list[dict]]:
-    """Samples by train/validation/test. `jev prepare` saves exactly these splits, group-disjoint, so every model
-    reads the same test rows."""
-    if missing := [name for name in PARTITIONS if name not in data]:
+def partition(path: Path, part: str) -> list[dict]:
+    """Samples of `part` (train/validation/test). `jev prepare` saves exactly these splits, group-disjoint, so every
+    model reads the same test rows. Only `part` is loaded: `save_to_disk` keeps each split in its own folder."""
+    splits = json.loads((path / "dataset_dict.json").read_text())["splits"]
+    if missing := [name for name in PARTITIONS if name not in splits]:
         raise ValueError(f"dataset lacks splits {', '.join(missing)}; rebuild it with `jev prepare`")
-    return {name: list(data[name]) for name in PARTITIONS}
+    return load_from_disk(path / part).to_list()
 
 
 def rows(name: str, data_dir: Path, part: str) -> list[dict]:
-    """Samples of `part`; benchmarks too, so every model scores the same rows of them."""
-    return partition(load_from_disk(data_dir / name))[part]
+    """Samples of `part` in the dataset `name` built under `data_dir`."""
+    return partition(data_dir / name, part)
 
 
 def load_samples(names: list[str], data_dir: Path, part: str, limit: int) -> dict[str, list[dict]]:
