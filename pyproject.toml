@@ -12,11 +12,19 @@ dependencies = [
     "httpx>=0.28.1",
     "loguru>=0.7.3",
     "peft>=0.21.1",
-    "torch>=2.14.0",
+    "torch==2.10.*",
     "tqdm>=4.67",
     "transformers>=5.17.0",
     "typer>=0.27.2",
     "typesafe-sdk>=0.7.2",
+]
+
+[project.optional-dependencies]
+# Flash Attention 2 for the pointer's full-attention layers and causal-conv1d for its linear-attention convs;
+# prebuilt Linux x86_64 / Python 3.12 / torch 2.10 wheels (causal-conv1d has none for torch 2.11)
+flash = [
+    "flash-attn; sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.12'",
+    "causal-conv1d; sys_platform == 'linux' and platform_machine == 'x86_64' and python_version == '3.12'",
 ]
 
 [project.scripts]
@@ -46,6 +54,16 @@ dev = [
     "pytest>=9.1.1",
     "ruff>=0.16.10",
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu129"
+url = "https://download.pytorch.org/whl/cu129"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu129" }
+flash-attn = { url = "https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.9.0/flash_attn-2.8.3+cu128torch2.10-cp312-cp312-linux_x86_64.whl" }
+causal-conv1d = { url = "https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0+cu12torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.whl" }
 
 [tool.ruff]
 line-length = 120

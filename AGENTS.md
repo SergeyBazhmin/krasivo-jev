@@ -213,8 +213,9 @@ them to `RUN/<stage>-<partition>-thresholds.json`.
 ## Conventions
 
 - Python 3.12+, managed with `uv`. Dependencies include `datasets`, `loguru`, `typer` and, for `jev_model`,
-  torch, transformers, tqdm, peft, accelerate, flash-linear-attention, dotenv and typesafe-sdk. The dev group
-  adds ipykernel and matplotlib for the notebooks.
+  torch, transformers, tqdm, peft, accelerate, flash-linear-attention, dotenv and typesafe-sdk. torch is pinned to
+  2.10 from the PyTorch cu129 index, so the optional `flash` extra (`uv sync --extra flash`) can install prebuilt
+  flash-attn and causal-conv1d wheels for it (causal-conv1d has none for torch 2.11). The dev group adds ipykernel and matplotlib for the notebooks.
 - Everything must be deterministic across runs: seed from sample content, never from
   global randomness.
 - Comments explain *why* a source is filtered or reshaped (quirks of the source, leakage,

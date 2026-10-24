@@ -1,8 +1,10 @@
+import importlib.util
 import json
 import math
 from pathlib import Path
 
 import torch
+from loguru import logger
 from torch import nn
 from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedTokenizerBase
 
@@ -102,9 +104,14 @@ def load_decoder(model: str, device: str) -> nn.Module:
     """The text causal LM; its LM head is tied to the embeddings, so it costs no memory. On CUDA it is bf16, the
     dtype the forward pass autocasts to, so the frozen weights are not cast again on every batch; peft keeps the
     adapter weights in float32. Qwen3.5 checkpoints are multimodal; `AutoModelForCausalLM` loads only the
-    language model."""
-    dtype = torch.bfloat16 if torch.device(device).type == "cuda" else torch.float32
-    return AutoModelForCausalLM.from_pretrained(model, dtype=dtype).to(device)
+    language model. On CUDA with `flash-attn` installed, the full-attention layers run Flash Attention 2, which unpads
+    the batch; otherwise SDPA, whose padding mask rules out its own flash kernel. The linear-attention layers use the
+    fla kernels either way."""
+    cuda = torch.device(device).type == "cuda"
+    dtype = torch.bfloat16 if cuda else torch.float32
+    attention = "flash_attention_2" if cuda and importlib.util.find_spec("flash_attn") else "sdpa"
+    logger.info(f"{model}: {attention} attention")
+    return AutoModelForCausalLM.from_pretrained(model, dtype=dtype, attn_implementation=attention).to(device)
 
 
 def create(config: PointerConfig, device: str) -> PointerModel:

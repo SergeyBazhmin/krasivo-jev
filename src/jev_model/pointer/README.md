@@ -77,7 +77,10 @@ computed; older adapters (which wrap the text model) still load.
 
 Most Qwen3.5 layers are linear attention (Gated DeltaNet). `transformers` runs them with the Triton kernel from
 `flash-linear-attention`, which `uv sync` installs; without it they fall back to a reference PyTorch
-implementation that is more than ten times slower, and a warning says so.
+implementation that is more than ten times slower, and a warning says so. Their short convolution uses the CUDA kernel
+from `causal-conv1d` when it is installed. The other layers are full attention: on CUDA they run Flash Attention 2 when
+`flash-attn` is installed, else SDPA. The log names the one in use. `uv sync --extra flash` installs both `flash-attn`
+and `causal-conv1d` as prebuilt wheels for the pinned torch 2.10 on Linux x86_64 and Python 3.12.
 
 ### Several GPUs
 
