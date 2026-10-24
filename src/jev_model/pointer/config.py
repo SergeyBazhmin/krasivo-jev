@@ -46,6 +46,10 @@ class PointerConfig:
     # also train on the benchmark datasets, for a final model on all data
     train_on_benchmark: bool = False
     model: str = "Qwen/Qwen3.5-2B-Base"
+    # fine-tune: start the ce stage from these weights instead of a fresh LoRA and head. A run directory, a stage
+    # directory (`adapter/` and `head.pt`), an export folder or a Hub repo pushed from one; its `model`, `lora`,
+    # `head_dim` and `max_length` replace the ones here. Empty trains from scratch
+    init: str = ""
     # LoRA rank, and which projections get an adapter: all, attn or qv
     lora: int = 16
     lora_targets: str = "all"

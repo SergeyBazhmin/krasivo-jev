@@ -1,4 +1,5 @@
-from jev_model.typesafe.client import Client, kind
+from jev_model.data import kind
+from jev_model.typesafe.client import Client
 from jev_model.typesafe.config import TypesafeConfig
 
 

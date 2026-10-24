@@ -139,6 +139,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `totto_statements`            | choice   | official ToTTo tables and annotator sentences (other tables as distractors) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
+|                  | `nsfw_benchmark`              | choice   | `redmadrobot-rnd/nsfw_benchmark` (Russian and English) |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
 |                  | `tweet_hate`                  | choice   | `cardiffnlp/tweet_eval` (`hate`) |

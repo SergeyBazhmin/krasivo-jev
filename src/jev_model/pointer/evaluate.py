@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import torch
 from tqdm import tqdm
 
@@ -37,9 +40,26 @@ def score(outputs: dict[str, Outputs], temperature: float) -> dict[str, dict[str
     return with_macro({name: scores(*out, temperature) for name, out in outputs.items()})
 
 
-def evaluate(model: PointerModel, data: dict[str, list[Item]], batch_tokens: int) -> dict[str, dict[str, float]]:
-    """Per-dataset scores with the head's fitted temperature, plus the macros of `with_macro`."""
-    return score(run(model, data, batch_tokens), model.head.temperature.item())
+def evaluate(
+    model: PointerModel, data: dict[str, list[Item]], batch_tokens: int, out_dir: Path | None = None, part: str = ""
+) -> dict[str, dict[str, float]]:
+    """Per-dataset scores with the head's fitted temperature, plus the macros of `with_macro`. With `out_dir`, the
+    calibrated probabilities are kept in OUT_DIR/<part>-<dataset>.jsonl, as `typesafe` keeps its answers."""
+    outputs = run(model, data, batch_tokens)
+    temperature = model.head.temperature.item()
+    if out_dir is not None and distributed.is_main():
+        for name, (logits, _, _) in outputs.items():
+            save_predictions(data[name], (logits / temperature).softmax(dim=-1), out_dir / f"{part}-{name}.jsonl")
+    return score(outputs, temperature)
+
+
+def save_predictions(items: list[Item], probs: torch.Tensor, path: Path):
+    """One line per item: its options, the probabilities over them and the label."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as f:
+        for item, p in zip(items, probs):
+            n = len(item.label)
+            f.write(json.dumps({"options": item.options, "probs": p[:n].tolist(), "label": item.label}) + "\n")
 
 
 def pooled_temperature(outputs: dict[str, Outputs]) -> float:

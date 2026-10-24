@@ -1,12 +1,14 @@
 from jev_model.base import JevModel
 from jev_model.pointer.pipeline import pointer_model
 from jev_model.typesafe.pipeline import typesafe_model
+from jev_model.zero_shot.pipeline import zero_shot_model
 
-# {name: model}, alphabetical. `zero_shot/` is kept as code but not registered: import `zero_shot_model` here to use it
+# {name: model}, alphabetical
 models: dict[str, JevModel] = {
     model.name: model
     for model in [
         pointer_model,
         typesafe_model,
+        zero_shot_model,
     ]
 }

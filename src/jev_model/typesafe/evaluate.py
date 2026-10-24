@@ -5,9 +5,9 @@ from pathlib import Path
 import torch
 from tqdm import tqdm
 
-from jev_model.data import benchmark_tag, load_samples
+from jev_model.data import benchmark_tag, kind, load_samples
 from jev_model.metrics import scores, with_macro
-from jev_model.typesafe.client import Client, kind
+from jev_model.typesafe.client import Client
 from jev_model.typesafe.config import TypesafeConfig
 
 

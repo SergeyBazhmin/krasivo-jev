@@ -139,7 +139,8 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   before `jev prepare` made all three). Every model reads data through it, so test sets are the same rows.
   Training goes through `train_names`, which leaves out benchmark datasets. `pointer` evaluates its training
   datasets plus the benchmarks it didn't train on; `typesafe` scores its datasets plus every benchmark.
-- `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`).
+- `metrics.py`: scores over padded option logits (`scores`, `with_macro`, `fit_temperature`), and
+  `threshold_scores`/`average_precision` for a noul dataset's positive answer at each probability cut-off.
 - `prompt.py`: the numbered-option prompt for decoder backbones.
 - `distributed.py`: helpers for training in several processes under `accelerate launch` (rank checks, barriers,
   one shared run directory). A model that can train with DDP sets `multi_gpu = True`; the others refuse to run
@@ -154,10 +155,14 @@ Mirrors `jev_datasets`: a registry of models, each with its own pipeline, driven
   cap. Stages `ce` (options shuffled on every draw) -> `rl` (opt-in).
   There is no feature cache: every step runs the backbone.
   Each stage writes `RUN/<stage>/adapter` and `head.pt`. It trains on several GPUs with DDP under `accelerate launch`.
+  `init` (a run, stage or export dir, or a Hub repo) starts `ce` from trained weights to fine-tune them;
+  `resolve_checkpoint` (`pointer/model.py`) finds the stage, as `JevHolder` does.
 - `zero_shot/`: a baseline that uses a pretrained LM with no training. An OpenAI-compatible server (a local vLLM)
-  replies with the number of an option. It is kept as code but not registered, so the CLI doesn't list or run it.
+  generates a reply with the number of an option. It is scored only on its `datasets` (no benchmarks are added), on
+  accuracy only (`nll`/`ece` are NaN). Its answers are saved like `pointer`'s, with one-hot `probs`, so `thresholds`
+  reads them.
 - `src/scripts/`: `serve_gemma.sh` (`google/gemma-4-26B-A4B-it`) and `serve_qwen.sh` (`Qwen/Qwen3.5-2B`) start
-  an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for the (unregistered) `zero_shot` code.
+  an OpenAI-compatible vLLM server in Docker on `http://localhost:8080/v1`, for `zero_shot`.
   `uv run serve EXPORT_DIR|REPO` (`src/jev_vllm/serve.py`) builds `docker/vllm.Dockerfile` (vLLM 0.17.1 plus this
   package, so the `jev_vllm` plugins load) and serves a `jev-model export` folder, or a Hub repo pushed from one, on
   `http://localhost:8080/pooling`. `jev_vllm.client` (`JevClient`, `AsyncJevClient`) calls that server like
@@ -178,14 +183,21 @@ uv run jev-model list                                   # models and their stage
 uv run jev-model config pointer > my.json               # defaults, to edit
 uv run jev-model train pointer -c my.json -s ce.lr=1e-4 -s datasets=atis,banking77
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl   # extend a run
+uv run jev-model train pointer -s init=bizhmans/krasivo-jev-no-bench-bf16 -s datasets=...  # fine-tune
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml  # DDP
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
+uv run jev-model thresholds runs/pointer/X [--dataset boolq] [--thresholds 0.3,0.5,0.7] [--positive no]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
 
 `notebooks/compare_runs.ipynb` compares runs from the scores `eval` saved (`RUN/<stage>-<partition>.json`): a
 leaderboard, a per-dataset heatmap, two runs head to head, and scores by topic and by `type`. It only reads files,
 so evaluate a run before comparing it.
+
+`eval` also keeps each row's probabilities in `RUN/<stage>/<partition>-<dataset>.jsonl` (`options`, `probs`,
+`label`). `jev-model thresholds RUN` reads them, without running the model, and prints the precision, recall and F1
+of each noul dataset's `yes` answer (`--positive no` for `no`) at each cut-off, with the average precision. It saves
+them to `RUN/<stage>-<partition>-thresholds.json`.
 
 ### Adding a model
 

@@ -87,6 +87,7 @@ from jev_datasets.structured.skillspan import skillspan_dataset
 from jev_datasets.structured.totto import totto_cells_dataset, totto_statements_dataset
 from jev_datasets.structured.webnlg import webnlg_en_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
+from jev_datasets.toxicity.nsfw_benchmark import nsfw_benchmark_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
 from jev_datasets.toxicity.tweet_moderation import tweet_hate_dataset, tweet_offensive_dataset
@@ -155,6 +156,7 @@ datasets = {
         nomiracl_passage_en_dataset,
         nomiracl_passage_ru_dataset,
         nomiracl_ru_dataset,
+        nsfw_benchmark_dataset,
         open_decisions_choice_dataset,
         open_decisions_noul_dataset,
         paws_dataset,

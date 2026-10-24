@@ -72,17 +72,10 @@ class JevHolder:
         if (path / RUN_FILE).is_file():
             model, config = open_run(path)
             return cls(model.predictor(config, path, device, stage))
-        from jev_model.pointer.model import ADAPTER_DIR, HEAD_FILE
+        from jev_model.pointer.model import resolve_checkpoint
         from jev_model.pointer.predict import PointerPredictor
 
-        if not (path / HEAD_FILE).is_file():
-            from huggingface_hub import snapshot_download
-
-            # only the stage: the repo's merged weights are for vLLM
-            path = Path(
-                snapshot_download(str(source), revision=revision, allow_patterns=[f"{ADAPTER_DIR}/*", HEAD_FILE])
-            )
-        return cls(PointerPredictor(path, device))
+        return cls(PointerPredictor(resolve_checkpoint(source, revision), device))
 
     def system_one(self, state: str, questions: dict[str, Noul | Choice]) -> dict[str, NoulAnswer | ChoiceAnswer]:
         """An answer per question name."""

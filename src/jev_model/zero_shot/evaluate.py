@@ -3,6 +3,7 @@ import math
 from pathlib import Path
 
 import torch
+from loguru import logger
 from tqdm import tqdm
 
 from jev_model.data import benchmark_tag, load_samples
@@ -23,12 +24,25 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
     client, prompter = connect(config)
     out_dir.mkdir(parents=True, exist_ok=True)
     data = {}
-    for name, samples in load_samples(names, config.data_dir, part, config.max_samples).items():
+    cap = f", at most {config.max_samples} each" if config.max_samples else ""
+    logger.info(f"loading {part} of {len(names)} datasets from {config.data_dir}{cap}")
+    # one at a time, so each logs as it loads
+    for k, name in enumerate(names, start=1):
+        samples = load_samples([name], config.data_dir, part, config.max_samples).get(name, [])
+        if not samples:
+            logger.warning(f"[{k}/{len(names)}] {name}: no {part} samples with 2+ options, not scored")
+            continue
         built = [(s, prompter(s["state"], s["question"], texts(s))) for s in samples]
-        if skipped := sum(p is None for _, p in built):
-            tqdm.write(f"[{name}] {skipped} of {len(built)} samples skipped: question and options too long")
-        if kept := [(s, p) for s, p in built if p]:
+        kept = [(s, p) for s, p in built if p]
+        skipped = len(built) - len(kept)
+        logger.info(
+            f"[{k}/{len(names)}] {name}: {len(kept)} samples"
+            + (f", {skipped} skipped (question and options too long)" if skipped else "")
+            + benchmark_tag(name)
+        )
+        if kept:
             data[name] = kept
+    logger.info(f"loaded {sum(map(len, data.values()))} samples from {len(data)} datasets")
     metrics = {}
     total = tqdm(total=sum(map(len, data.values())), desc=f"{part} ({len(data)} datasets)", unit="sample")
     for k, (name, kept) in enumerate(data.items(), start=1):
@@ -58,26 +72,31 @@ def evaluate(config: ZeroShotConfig, names: list[str], part: str, out_dir: Path)
             f"[{k}/{len(data)}] {name:32} n={m['n']:>6}  acc={m['accuracy']:.3f}  parsed={m['parsed']:.3f}"
             + benchmark_tag(name)
         )
-        total.set_postfix(macro_acc=f"{sum(m['accuracy'] for m in metrics.values()) / len(metrics):.3f}")
+        # benchmarks apart from the other datasets, as in the saved scores
+        macros = {key: m for key, m in with_macro(metrics).items() if key.endswith("macro")}
+        total.set_postfix({f"{key}_acc": f"{m['accuracy']:.3f}" for key, m in macros.items()})
     total.close()
     return with_macro(metrics)
 
 
 def score(samples: list[dict], answers: list[str], path: Path) -> dict[str, float]:
     """Accuracy of the parsed answers; an answer that names no option is wrong.
-    `nll` and `ece` need probabilities, which generation does not give: they are NaN."""
+    `nll` and `ece` need probabilities, which generation does not give: they are NaN. Each answer is saved with
+    `probs` one-hot on the option it names (None when it names none) and the label, as `pointer` saves its
+    predictions, so `jev-model thresholds` reads them too."""
     chosen = [parse(answer, texts(sample)) for sample, answer in zip(samples, answers)]
     gold = [max(range(len(s["label"])), key=lambda j: s["label"][j]) for s in samples]
     with path.open("w") as f:
-        for sample, answer, choice, g in zip(samples, answers, chosen, gold):
+        for sample, answer, choice in zip(samples, answers, chosen):
+            probs = None if choice is None else [float(i == choice) for i in range(len(sample["options"]))]
             f.write(
                 json.dumps(
                     {
                         "question": sample["question"],
                         "options": texts(sample),
                         "answer": answer,
-                        "choice": choice,
-                        "gold": g,
+                        "probs": probs,
+                        "label": sample["label"],
                     }
                 )
                 + "\n"

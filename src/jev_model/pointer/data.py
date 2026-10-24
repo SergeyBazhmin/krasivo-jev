@@ -21,6 +21,8 @@ class Item:
     # what the option shuffles are seeded by
     key: str
     length: int
+    # option texts in source order, kept with the saved predictions
+    options: list[str]
 
 
 @dataclass
@@ -41,7 +43,13 @@ def load_items(names: list[str], data_dir: Path, part: str, encoder: Encoder, li
             samples = sorted(samples, key=lambda s: hashlib.sha1(sample_key(s).encode()).digest())[:limit]
         tokenized = encoder.tokenize([(s["state"], s["question"], [o["text"] for o in s["options"]]) for s in samples])
         items = [
-            Item(tokens, sample["label"], sample_key(sample), encoder.length(tokens))
+            Item(
+                tokens,
+                sample["label"],
+                sample_key(sample),
+                encoder.length(tokens),
+                [o["text"] for o in sample["options"]],
+            )
             for sample, tokens in zip(samples, tokenized)
             if len(tokens.options) >= 2 and encoder.fits(tokens)
         ]

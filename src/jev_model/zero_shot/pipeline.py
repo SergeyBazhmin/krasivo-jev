@@ -6,9 +6,9 @@ from jev_model.zero_shot.config import ZeroShotConfig
 
 
 class ZeroShotJevModel(JevModel[ZeroShotConfig]):
-    """A pretrained chat LM as it is, for a baseline: an OpenAI-compatible server (a local vLLM) generates an
-    answer, and the option number it replies with is the prediction. `device` is unused. Nothing is trained, so
-    `train` only records the config and the scoring happens in `eval`."""
+    """A pretrained chat LM as it is, for a baseline: an OpenAI-compatible server (a local vLLM) answers with an
+    option number, and that option is the prediction. `device` is unused. Nothing is trained, so `train` only
+    records the config and the scoring happens in `eval`."""
 
     config_class = ZeroShotConfig
     stages = ("generate",)
@@ -20,6 +20,7 @@ class ZeroShotJevModel(JevModel[ZeroShotConfig]):
     def evaluate(self, config, run_dir, partition, device, stage=None):
         from jev_model.zero_shot.evaluate import evaluate
 
+        # only the datasets asked for: benchmarks are not added, unless named
         names = resolve_names(config.datasets, config.data_dir)
         return evaluate(config, names, partition, run_dir / "generate")
 

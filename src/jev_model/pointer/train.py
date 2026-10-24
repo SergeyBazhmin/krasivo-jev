@@ -62,6 +62,10 @@ def train(config: PointerConfig, stage: str, out_dir: Path, device: str, names: 
     if init is not None:
         model = pointer.load(init, device, trainable=True)
         model.head.temperature.fill_(1.0)
+        if changed := [
+            k for k in pointer.MODEL_KEYS if getattr(config, k) != model.settings.get(k, getattr(config, k))
+        ]:
+            logger.warning(f"{', '.join(changed)} come from the starting checkpoint {init}, not from the config")
     else:
         model = pointer.create(config, device)
     parameters = model.trainable_parameters()

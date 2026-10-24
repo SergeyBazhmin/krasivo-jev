@@ -97,3 +97,46 @@ def fit_temperature(logits: torch.Tensor, labels: torch.Tensor, num_options: tor
 
     optimizer.step(closure)
     return log_t.exp().item()
+
+
+def threshold_scores(p_yes: torch.Tensor, gold_yes: torch.Tensor, thresholds: list[float]) -> list[dict]:
+    """Precision, recall and F1 of the positive class when it is predicted at `p_yes >= threshold`, one row per
+    threshold. Precision is None when nothing is predicted positive, recall when there is no positive row."""
+    rows = []
+    for t in thresholds:
+        predicted = p_yes >= t
+        tp = (predicted & gold_yes).sum().item()
+        fp = (predicted & ~gold_yes).sum().item()
+        fn = (~predicted & gold_yes).sum().item()
+        precision = tp / (tp + fp) if tp + fp else None
+        recall = tp / (tp + fn) if tp + fn else None
+        f1 = 2 * tp / (2 * tp + fp + fn) if tp + fp + fn else None
+        rows.append(
+            {
+                "threshold": t,
+                "precision": precision,
+                "recall": recall,
+                "f1": f1,
+                "tp": tp,
+                "fp": fp,
+                "fn": fn,
+                "tn": len(gold_yes) - tp - fp - fn,
+                "positive_rate": predicted.float().mean().item(),
+            }
+        )
+    return rows
+
+
+def average_precision(p_yes: torch.Tensor, gold_yes: torch.Tensor) -> float | None:
+    """The area under the precision-recall curve, over every cut-off: the mean precision at each positive row's
+    rank, ties ranked together."""
+    if not gold_yes.any():
+        return None
+    order = p_yes.argsort(descending=True)
+    p, gold = p_yes[order], gold_yes[order].float()
+    # the last row of each run of equal probabilities, where a cut-off can fall
+    last = torch.cat([p[1:] != p[:-1], torch.tensor([True])])
+    tp = gold.cumsum(0)[last]
+    precision = tp / (torch.arange(1, len(p) + 1)[last])
+    recall_gain = torch.diff(tp, prepend=torch.zeros(1)) / gold.sum()
+    return (precision * recall_gain).sum().item()

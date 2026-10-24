@@ -97,8 +97,25 @@ uv run jev-model train pointer -c configs/pointer.toml -s ce.lr=1e-4
 uv run jev-model train pointer --run-dir runs/pointer/X --stage rl
 uv run accelerate launch --multi_gpu --num_processes 4 -m jev_model.cli train pointer -c configs/pointer.toml
 uv run jev-model eval runs/pointer/X [--stage ce] [--partition validation]
+uv run jev-model thresholds runs/pointer/X [--dataset boolq] [--thresholds 0.3,0.5,0.7] [--positive no]
 uv run jev-model predict runs/pointer/X --question "..." --option yes --option no
 ```
+
+## Fine-tuning
+
+`init` starts the `ce` stage from trained weights instead of a fresh LoRA and head: a run directory, a stage
+directory, an export folder, or a Hub repo pushed from one (only its `adapter/` and `head.pt` are downloaded). The
+adapter goes back on the base model named in `head.pt`, and the checkpoint's `model`, `lora`, `lora_targets`,
+`head_dim`, `special_embeddings` and `max_length` replace the config's (a warning names any that differ). Training,
+evaluation, export and push are then as usual.
+
+```bash
+uv run jev-model train pointer -s init=bizhmans/krasivo-jev-no-bench-bf16 -s datasets=my_dataset,atis,banking77 \
+  -s ce.lr=5e-5 -s ce.epochs=1 -s ce.warmup=50
+```
+
+Mix the new dataset with old ones so the model keeps what it learned, and use a lower `lr` than from scratch. Start
+from the no-bench model if the benchmark scores should stay unseen; the all-data model trained on their train splits.
 
 ## From Python (`system_one`)
 
@@ -194,6 +211,7 @@ over many calls lets vLLM batch across requests too.
 
 - `datasets`: built datasets to use; empty means every one under `data_dir`.
 - `model`: the base decoder. Its tokenizer must have the delimiter tokens above.
+- `init`: weights to fine-tune from (see Fine-tuning); empty trains from scratch.
 - `lora`, `lora_targets`: the LoRA rank and where it goes (`all`: attention and MLP projections, `attn`, `qv`).
   On Qwen3.5, `all` and `attn` also cover the linear-attention projections.
 - `special_embeddings`: also train the embedding rows of the five delimiters.
@@ -208,7 +226,8 @@ over many calls lets vLLM batch across requests too.
 - `model.py`: `PointerHead`, `PointerModel`, and `create` / `load` for the LoRA and the head.
 - `data.py`: loads and tokenizes the partitions; `Pool` and `SizedEpochPool` draw training batches.
 - `train.py`: the `ce` and `rl` stages.
-- `evaluate.py`: scores and temperature fitting.
+- `evaluate.py`: scores and temperature fitting. `eval` also saves each row's calibrated probabilities to
+  `RUN/<stage>/<partition>-<dataset>.jsonl`, which `jev-model thresholds` reads.
 - `predict.py`: `PointerPredictor`, for `predict` and the UI.
 - `export.py`: the merged folder for vLLM, with the stage beside it (`jev-model export`, `jev-model push`).
 - `src/jev_vllm/client.py`: `JevClient`, the TypeSafe-style client for the served export.

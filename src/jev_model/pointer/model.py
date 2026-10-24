@@ -146,6 +146,22 @@ def load(checkpoint_dir: Path, device: str, trainable: bool = False) -> PointerM
     return model if trainable else model.eval().requires_grad_(False)
 
 
+def resolve_checkpoint(source: str | Path, revision: str | None = None) -> Path:
+    """A local stage directory for `source`: a stage directory or export folder as it is, the last finished stage of a
+    run directory, or else the stage files of a Hugging Face repo pushed from an export (its merged weights are for
+    vLLM and are not downloaded)."""
+    from jev_model.base import read_run
+
+    path = Path(source)
+    if (path / HEAD_FILE).is_file():
+        return path
+    if done := read_run(path).get("stages"):
+        return path / done[-1]
+    from huggingface_hub import snapshot_download
+
+    return Path(snapshot_download(str(source), revision=revision, allow_patterns=[f"{ADAPTER_DIR}/*", HEAD_FILE]))
+
+
 def read_checkpoint(checkpoint_dir: Path) -> dict:
     """What `save` stored next to the weights (datasets, stage, ...)."""
     checkpoint = torch.load(checkpoint_dir / HEAD_FILE, map_location="cpu")
