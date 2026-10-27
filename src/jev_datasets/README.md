@@ -56,6 +56,8 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 | `bugs`           | `github_issue_type`           | choice   | `khanmu2003/issue-classification` |
 |                  | `vscode_triage`               | choice   | `Tilakoid/vscode-bug-feature-triage` |
 | `business`       | `financial_news_topic`        | choice   | `zeroshot/twitter-financial-news-topic` |
+|                  | `open_decisions_choice`       | choice   | `jgeuter/OpenDecisions` (choice items, as published, benchmark) |
+|                  | `open_decisions_noul`         | noul     | `jgeuter/OpenDecisions` (yes/no items, as published, benchmark) |
 | `classification` | `ag_news`                     | choice   | `fancyzhx/ag_news` |
 |                  | `atis`                        | choice   | `tuetschek/atis` |
 |                  | `banking77`                   | choice   | `legacy-datasets/banking77` |
@@ -111,13 +113,18 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `terra`                       | choice   | `RussianNLP/russian_super_glue` (`TERRa`) |
 | `reasoning`      | `logiqa`                      | choice   | `lucasmccabe/logiqa` |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
-| `retrieval`      | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, evaluation only) |
-|                  | `nomiracl_ru`                 | choice   | `miracl/nomiracl` (Russian, evaluation only) |
+| `retrieval`      | `nomiracl_choice_en`          | choice   | `miracl/nomiracl` (English, which passage is relevant or none, benchmark) |
+|                  | `nomiracl_choice_ru`          | choice   | `miracl/nomiracl` (Russian, which passage is relevant or none, benchmark) |
+|                  | `nomiracl_en`                 | noul     | `miracl/nomiracl` (English, does any passage answer the query, benchmark) |
+|                  | `nomiracl_passage_en`         | noul     | `miracl/nomiracl` (English, is one passage relevant, benchmark) |
+|                  | `nomiracl_passage_ru`         | noul     | `miracl/nomiracl` (Russian, is one passage relevant, benchmark) |
+|                  | `nomiracl_ru`                 | noul     | `miracl/nomiracl` (Russian, does any passage answer the query, benchmark) |
 |                  | `ticket_subject`              | choice   | `Tobi-Bueck/customer-support-tickets` (subject → email body) |
 |                  | `wikiqa`                      | choice   | `microsoft/wiki_qa` (passage selection) |
 |                  | `wikiqa_noul`                 | noul     | `microsoft/wiki_qa` (does a passage answer the query) |
 | `sentiment`      | `cedr`                        | choice   | `sagteam/cedr_v1` (`main`, independent emotion labels) |
 |                  | `emotion`                     | choice   | `dair-ai/emotion` (`split`) |
+|                  | `finentity`                   | choice   | `yixuantt/FinEntity` (sentiment toward each entity) |
 |                  | `go_emotions`                 | choice   | `google-research-datasets/go_emotions` (`simplified`) |
 |                  | `go_emotions_noul`            | noul     | `google-research-datasets/go_emotions` (`simplified`, one row per emotion) |
 |                  | `imdb`                        | choice   | `stanfordnlp/imdb` |
@@ -138,6 +145,9 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `totto_cells`                 | choice   | official ToTTo tables (computed cell-selection targets) |
 |                  | `totto_statements`            | choice   | official ToTTo tables and annotator sentences (other tables as distractors) |
 |                  | `webnlg_en`                   | choice   | `GEM/web_nlg` (`en`, facts and lexicalizations) |
+| `tool`           | `api_bank`                    | choice   | `liminghao1630/API-Bank` (level 1-2 API requests, distractors from the same dialogue) |
+|                  | `bfcl`                        | choice   | `BitAgent/bfcl_shuffle_full` (function selection or none; not live simple/multiple) |
+|                  | `when2call`                   | choice   | `nvidia/When2Call` (preference pairs and the 4-way MCQ, both in train; validation/test carved) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `nsfw_benchmark`              | choice   | `redmadrobot-rnd/nsfw_benchmark` (Russian and English) |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
@@ -147,6 +157,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 | `truthfulness`   | `halueval_dialogue`           | noul     | `pminervini/HaluEval` (`dialogue`) |
 |                  | `halueval_qa`                 | noul     | `pminervini/HaluEval` (`qa`) |
 |                  | `halueval_summarization`      | noul     | `pminervini/HaluEval` (`summarization`) |
+|                  | `llm_aggrefact`               | noul     | `lytang/LLM-AggreFact` (gated; includes RAGTruth) |
 |                  | `vitaminc`                    | choice   | `tals/vitaminc` (real Wikipedia revisions only) |
 
 Many logic and spatial sources bundle the same underlying sets (SpaRP includes StepGame, RuleCollection bundles
@@ -156,7 +167,8 @@ another dataset's train split.
 `ticket_routing`, `ticket_type` and `ticket_subject` split the helpdesk tickets once, by a hash of the email body, so a
 ticket lands in the same partition in all three.
 
-Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no.
+Russian binary options read «да» / «нет» and use `choice`; `noul` requires literal English yes/no ids. NoMIRACL's
+Russian yes/no sets are the exception: their ids are `yes`/`no` with «да» / «нет» as text, so they are `noul`.
 The new Russian converters remove shared contexts from lower-priority source splits, preserving test before
 validation before train. RuParaPhraser additionally removes training pairs containing test headlines.
 

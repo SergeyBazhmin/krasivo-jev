@@ -71,6 +71,7 @@ from jev_datasets.retrieval.nomiracl import (
 from jev_datasets.retrieval.wikiqa import wikiqa_dataset, wikiqa_noul_dataset
 from jev_datasets.sentiment.cedr import cedr_dataset
 from jev_datasets.sentiment.emotion import emotion_dataset
+from jev_datasets.sentiment.finentity import finentity_dataset
 from jev_datasets.sentiment.go_emotions import go_emotions_dataset, go_emotions_noul_dataset
 from jev_datasets.sentiment.imdb import imdb_dataset
 from jev_datasets.sentiment.sst2 import sst2_dataset
@@ -86,6 +87,9 @@ from jev_datasets.structured.nerel import nerel_relations_dataset
 from jev_datasets.structured.skillspan import skillspan_dataset
 from jev_datasets.structured.totto import totto_cells_dataset, totto_statements_dataset
 from jev_datasets.structured.webnlg import webnlg_en_dataset
+from jev_datasets.tool.api_bank import api_bank_dataset
+from jev_datasets.tool.bfcl import bfcl_dataset
+from jev_datasets.tool.when2call import when2call_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.nsfw_benchmark import nsfw_benchmark_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
@@ -96,6 +100,7 @@ from jev_datasets.truthfulness.halueval import (
     halueval_qa_dataset,
     halueval_summarization_dataset,
 )
+from jev_datasets.truthfulness.llm_aggrefact import llm_aggrefact_dataset
 from jev_datasets.truthfulness.vitaminc import vitaminc_dataset
 
 datasets = {
@@ -104,12 +109,14 @@ datasets = {
         aegis_category_dataset,
         ag_news_dataset,
         anli_dataset,
+        api_bank_dataset,
         ar_lsat_dataset,
         atis_dataset,
         atis_slots_dataset,
         babi_nli_dataset,
         banking77_dataset,
         beavertails_dataset,
+        bfcl_dataset,
         bitext_customer_support_dataset,
         bitext_insurance_dataset,
         bitext_retail_banking_dataset,
@@ -125,6 +132,7 @@ datasets = {
         dream_dataset,
         emotion_dataset,
         financial_news_topic_dataset,
+        finentity_dataset,
         folio_dataset,
         github_issue_type_dataset,
         go_emotions_dataset,
@@ -138,6 +146,7 @@ datasets = {
         imdb_dataset,
         jailbreak_classification_dataset,
         lidirus_dataset,
+        llm_aggrefact_dataset,
         logicnli_dataset,
         logiqa_dataset,
         massive_intent_dataset,
@@ -200,6 +209,7 @@ datasets = {
         vitaminc_dataset,
         vscode_triage_dataset,
         webnlg_en_dataset,
+        when2call_dataset,
         wikiqa_dataset,
         wikiqa_noul_dataset,
     )

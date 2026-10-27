@@ -61,9 +61,11 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
 - Topic subpackages: `bugs`, `business`, `classification`, `guardrails`, `knowledge`,
-  `logic`, `nlu`, `reasoning`, `sentiment`, `spatial`, `toxicity`, `truthfulness`.
+  `logic`, `nlu`, `reasoning`, `retrieval`, `sentiment`, `spatial`, `structured`, `tool`, `toxicity`,
+  `truthfulness`.
   `logic` holds synthetic deduction sets (ProofWriter, LogicNLI, FOLIO, ...) and `spatial`
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
+  `tool` holds tool-calling decisions (When2Call, API-Bank, BFCL).
 - Benchmark datasets (`benchmark = True` on the class) are held out. They are saved with the usual
   train/validation/test splits. Training skips them unless `pointer`'s `train_on_benchmark` is set (a final model on
   all data, which then trains on their train split as usual). At `eval`, every model is scored on every benchmark,
