@@ -22,6 +22,7 @@ from jev_datasets.classification.ticket_routing import (
     ticket_subject_dataset,
     ticket_type_dataset,
 )
+from jev_datasets.classification.trec import trec_dataset
 from jev_datasets.guardrails.aegis_category import aegis_category_dataset
 from jev_datasets.guardrails.jailbreak_classification import jailbreak_classification_dataset
 from jev_datasets.guardrails.safeguard_prompt_injection import safeguard_prompt_injection_dataset
@@ -216,6 +217,7 @@ datasets = {
         totto_cells_dataset,
         totto_statements_dataset,
         toxic_chat_dataset,
+        trec_dataset,
         tweet_hate_dataset,
         tweet_offensive_dataset,
         tweet_sentiment_dataset,

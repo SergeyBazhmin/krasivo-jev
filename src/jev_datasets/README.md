@@ -74,6 +74,7 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `rus_med_dialogues_noul`      | noul     | `Mykes/rus_med_dialogues` (patient question -> specialist) |
 |                  | `ticket_routing`              | choice   | `Tobi-Bueck/customer-support-tickets` |
 |                  | `ticket_type`                 | choice   | `Tobi-Bueck/customer-support-tickets` |
+|                  | `trec`                        | choice   | `CogComp/trec` (50 fine answer types, parquet export) |
 | `guardrails`     | `aegis_category`              | choice   | `nvidia/Aegis-AI-Content-Safety-Dataset-2.0` (unsafe prompts, soft labels) |
 |                  | `jailbreak_classification`    | noul     | `jackhhao/jailbreak-classification` |
 |                  | `safeguard_prompt_injection`  | noul     | `xTRam1/safe-guard-prompt-injection` |
