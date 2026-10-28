@@ -61,8 +61,8 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
 - `__init__.py`: the `datasets` registry, `{name: instance}`. Each new dataset must be
   imported and added here, in alphabetical order.
 - Topic subpackages: `bugs`, `business`, `classification`, `guardrails`, `knowledge`,
-  `logic`, `nlu`, `reasoning`, `retrieval`, `sentiment`, `spatial`, `structured`, `tool`, `toxicity`,
-  `truthfulness`.
+  `logic`, `nlu`, `privacy`, `reasoning`, `retrieval`, `sentiment`, `spam`, `spatial`, `stance`, `structured`, `tool`,
+  `toxicity`, `truthfulness`.
   `logic` holds synthetic deduction sets (ProofWriter, LogicNLI, FOLIO, ...) and `spatial`
   holds spatial-relation stories (StepGame, SpartQA, SpaRP).
   `tool` holds tool-calling decisions (When2Call, API-Bank, BFCL).
@@ -76,7 +76,8 @@ option (it becomes a one-hot) or a soft distribution, for example annotator vote
     order, with no paraphrases or shuffling, so every model sees the same item.
   - one converter file per other topic, drawn by `random.Random(f"eval_only:{topic}")`: `github_issue_type`,
     `hwu64`, `jailbreak_classification`, `ropes`, `ar_lsat`, `rublimp`, `logiqa`, `nomiracl*`, `tweet_sentiment`,
-    `stepgame`, `webnlg_en`, `russian_toxicity`, `vitaminc`.
+    `stepgame`, `webnlg_en`, `russian_toxicity`, `vitaminc`, `anti_spam_ru`. `privacy` and `stance` have one converter
+    file each, so they have no benchmark pick.
 - Many logic and spatial sources share data (for example, SpaRP includes StepGame, and
   RuleCollection bundles ProntoQA, LogicNLI, ProofWriter and more). Take each underlying
   set from only one source, so test rows don't leak into another dataset's train split.

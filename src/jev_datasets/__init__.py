@@ -58,6 +58,7 @@ from jev_datasets.nlu.russian_superglue import (
     russe_dataset,
     terra_dataset,
 )
+from jev_datasets.privacy.pii_masking import pii_masking_en_dataset, ru_pii_dataset
 from jev_datasets.reasoning.logiqa import logiqa_dataset
 from jev_datasets.reasoning.reclor import reclor_dataset
 from jev_datasets.retrieval.nomiracl import (
@@ -76,9 +77,12 @@ from jev_datasets.sentiment.go_emotions import go_emotions_dataset, go_emotions_
 from jev_datasets.sentiment.imdb import imdb_dataset
 from jev_datasets.sentiment.sst2 import sst2_dataset
 from jev_datasets.sentiment.tweet_sentiment import tweet_sentiment_dataset
+from jev_datasets.spam.anti_spam_ru import anti_spam_ru_dataset
+from jev_datasets.spam.enron_spam import enron_spam_dataset
 from jev_datasets.spatial.sparp import sparp_dataset
 from jev_datasets.spatial.spartqa import spartqa_mchoice_dataset, spartqa_yn_dataset
 from jev_datasets.spatial.stepgame import stepgame_dataset
+from jev_datasets.stance.claim_stance import claim_stance_dataset
 from jev_datasets.structured.atis_slots import atis_slots_dataset
 from jev_datasets.structured.cuad import cuad_spans_dataset
 from jev_datasets.structured.dialogue_state import multiwoz_state_dataset, sgd_state_dataset
@@ -92,6 +96,8 @@ from jev_datasets.tool.bfcl import bfcl_dataset
 from jev_datasets.tool.when2call import when2call_dataset
 from jev_datasets.toxicity.beavertails import beavertails_dataset
 from jev_datasets.toxicity.nsfw_benchmark import nsfw_benchmark_dataset
+from jev_datasets.toxicity.openai_moderation import openai_moderation_dataset
+from jev_datasets.toxicity.ru_multitask_toxicity import ru_multitask_toxicity_dataset
 from jev_datasets.toxicity.russian_toxicity import russian_toxicity_dataset
 from jev_datasets.toxicity.toxic_chat import toxic_chat_dataset
 from jev_datasets.toxicity.tweet_moderation import tweet_hate_dataset, tweet_offensive_dataset
@@ -109,6 +115,7 @@ datasets = {
         aegis_category_dataset,
         ag_news_dataset,
         anli_dataset,
+        anti_spam_ru_dataset,
         api_bank_dataset,
         ar_lsat_dataset,
         atis_dataset,
@@ -124,6 +131,7 @@ datasets = {
         boolq_dataset,
         cedr_dataset,
         chaos_nli_dataset,
+        claim_stance_dataset,
         clinc_oos_dataset,
         clutrr_dataset,
         cuad_spans_dataset,
@@ -131,6 +139,7 @@ datasets = {
         dbpedia_dataset,
         dream_dataset,
         emotion_dataset,
+        enron_spam_dataset,
         financial_news_topic_dataset,
         finentity_dataset,
         folio_dataset,
@@ -168,7 +177,9 @@ datasets = {
         nsfw_benchmark_dataset,
         open_decisions_choice_dataset,
         open_decisions_noul_dataset,
+        openai_moderation_dataset,
         paws_dataset,
+        pii_masking_en_dataset,
         proofwriter_dataset,
         proverqa_dataset,
         qasc_dataset,
@@ -178,7 +189,9 @@ datasets = {
         rcb_dataset,
         reclor_dataset,
         ropes_dataset,
+        ru_multitask_toxicity_dataset,
         ru_paraphraser_dataset,
+        ru_pii_dataset,
         rublimp_dataset,
         rucola_dataset,
         rus_med_dialogues_dataset,

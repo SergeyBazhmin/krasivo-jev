@@ -111,6 +111,8 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `russe`                       | choice   | `RussianNLP/russian_super_glue` (`RUSSE`) |
 |                  | `sberquad`                    | choice   | `kuznetsoffandrey/sberquad` (evidence selection) |
 |                  | `terra`                       | choice   | `RussianNLP/russian_super_glue` (`TERRa`) |
+| `privacy`        | `pii_masking_en`              | choice   | `ai4privacy/open-pii-masking-500k-ai4privacy` (English, type of a marked span) |
+|                  | `ru_pii`                      | choice   | `wolframko/russian-pii-66k` (type of a marked span) |
 | `reasoning`      | `logiqa`                      | choice   | `lucasmccabe/logiqa` |
 |                  | `reclor`                      | choice   | `tasksource/reclor` |
 | `retrieval`      | `nomiracl_choice_en`          | choice   | `miracl/nomiracl` (English, which passage is relevant or none, benchmark) |
@@ -130,10 +132,13 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `imdb`                        | choice   | `stanfordnlp/imdb` |
 |                  | `sst2`                        | choice   | `stanfordnlp/sst2` |
 |                  | `tweet_sentiment`             | choice   | `cardiffnlp/tweet_eval` (`sentiment`) |
+| `spam`           | `anti_spam_ru`                | noul     | `DmitryKRX/anti_spam_ru` (Russian translation of UCI SMS Spam, benchmark) |
+|                  | `enron_spam`                  | noul     | `SetFit/enron_spam` |
 | `spatial`        | `sparp`                       | choice   | `UKPLab/sparp` (`SpaRP-PS1 (SpaRTUN)`) |
 |                  | `spartqa_mchoice`             | choice   | `tasksource/spartqa-mchoice` |
 |                  | `spartqa_yn`                  | choice   | `tasksource/spartqa-yn` |
 |                  | `stepgame`                    | choice   | `tasksource/stepgame` |
+| `stance`         | `claim_stance`                | choice   | `ibm-research/claim_stance` (`claim_stance`, claim for or against a motion) |
 | `structured`     | `atis_slots`                  | choice   | `tuetschek/atis` (slot spans, distractors from the same request) |
 |                  | `cuad_spans`                  | choice   | official CUAD v1 contracts (literal fields only) |
 |                  | `massive_slots`               | choice   | `AmazonScience/massive` (`en-US`, original slot annotations) |
@@ -150,6 +155,8 @@ re-split 80/10/10. Carving happens before the cap, so every model is scored on t
 |                  | `when2call`                   | choice   | `nvidia/When2Call` (preference pairs and the 4-way MCQ, both in train; validation/test carved) |
 | `toxicity`       | `beavertails`                 | noul     | `PKU-Alignment/BeaverTails` |
 |                  | `nsfw_benchmark`              | choice   | `redmadrobot-rnd/nsfw_benchmark` (Russian and English) |
+|                  | `openai_moderation`           | noul     | `walledai/openai-moderation-dataset` (one question per annotated category) |
+|                  | `ru_multitask_toxicity`       | noul     | `AtesiT/ru-multitask-toxicity` (profanity, threat, illegal: one question each) |
 |                  | `russian_toxicity`            | choice   | `textdetox/multilingual_toxicity_dataset` (`ru`) |
 |                  | `toxic_chat`                  | noul     | `lmsys/toxic-chat` (`toxicchat0124`) |
 |                  | `tweet_hate`                  | choice   | `cardiffnlp/tweet_eval` (`hate`) |

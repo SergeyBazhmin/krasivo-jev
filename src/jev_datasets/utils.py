@@ -73,14 +73,19 @@ def as_distribution(options: list[dict[str, str]], label: str | list[float]) -> 
 
 
 def with_context(
-    about: str | list[str], text: str, name: str | None = None, answers: dict[str, str] | None = None
+    about: str | list[str],
+    text: str,
+    name: str | None = None,
+    answers: dict[str, str] | None = None,
+    answers_name: str = "Answers",
 ) -> str:
     """`text` under a system-prompt-like instruction (`about`: who the model is, what it is given, what to
-    decide; one of several paraphrases, picked by `text`), plus what each answer means when `answers` is given.
+    decide; one of several paraphrases, picked by `text`), plus what each answer means when `answers` is given
+    (under `answers_name`, for non-English states).
     The model stores no facts, so a source's conventions have to be in the state."""
     about = pick_about(about, text)
     guide = "\n".join(f"- {answer}: {meaning}" for answer, meaning in (answers or {}).items())
-    parts = (about, guide and f"Answers:\n{guide}", f"{name}:\n{text}" if name else text)
+    parts = (about, guide and f"{answers_name}:\n{guide}", f"{name}:\n{text}" if name else text)
     return "\n\n".join(part for part in parts if part)
 
 
